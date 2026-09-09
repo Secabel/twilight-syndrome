@@ -1,0 +1,1502 @@
+[
+ {
+  "i": 1,
+  "es": "Puedes guardar tu\nestado del juego\nen ese momento.",
+  "orig": "そのときの状態をセーブ\nすることができる。"
+ },
+ {
+  "i": 2,
+  "es": "Si tu pulso sube,\na veces puedes\nfotografiar espiritus.",
+  "orig": "心拍が高まったときは、\n霊を撮影できることがある。"
+ },
+ {
+  "i": 3,
+  "es": "Cuando escuches\nun ruido, puedes\ngrabarlo.",
+  "orig": "物音を聞いたとき、それを\n録音しておくことができる。"
+ },
+ {
+  "i": 4,
+  "es": "Ehh...",
+  "orig": "えー…。"
+ },
+ {
+  "i": 5,
+  "es": "...Eh?",
+  "orig": "…えっ？"
+ },
+ {
+  "i": 6,
+  "es": "Kana...",
+  "orig": "カナ…。"
+ },
+ {
+  "i": 7,
+  "es": "Hii...",
+  "orig": "ひっ…。"
+ },
+ {
+  "i": 8,
+  "es": "Eh...?",
+  "orig": "えっ…？"
+ },
+ {
+  "i": 9,
+  "es": "Por favor!",
+  "orig": "お願い！"
+ },
+ {
+  "i": 10,
+  "es": "Aah.....",
+  "orig": "あぁ……。"
+ },
+ {
+  "i": 11,
+  "es": "...No?",
+  "orig": "…いいえ？"
+ },
+ {
+  "i": 12,
+  "es": "Apurate...",
+  "orig": "急いで…。"
+ },
+ {
+  "i": 13,
+  "es": "Por favor...",
+  "orig": "お願い…。"
+ },
+ {
+  "i": 14,
+  "es": "...Ha...",
+  "orig": "…はっ…。"
+ },
+ {
+  "i": 15,
+  "es": "Que increible.",
+  "orig": "すごいね。"
+ },
+ {
+  "i": 16,
+  "es": "Bien.....",
+  "orig": "よし……。"
+ },
+ {
+  "i": 17,
+  "es": "...No...",
+  "orig": "…いや…。"
+ },
+ {
+  "i": 18,
+  "es": "Es en serio!",
+  "orig": "本当だって！"
+ },
+ {
+  "i": 19,
+  "es": "......",
+  "orig": "・・・・・・"
+ },
+ {
+  "i": 20,
+  "es": "......",
+  "orig": "・・・・・・"
+ },
+ {
+  "i": 21,
+  "es": "Fuerza...",
+  "orig": "がんばれ…。"
+ },
+ {
+  "i": 22,
+  "es": "(Mizuki...)",
+  "orig": "（ミズキ…）"
+ },
+ {
+  "i": 23,
+  "es": "Asi es...",
+  "orig": "そうなの…。"
+ },
+ {
+  "i": 24,
+  "es": "Relajate...",
+  "orig": "力を抜いて…。"
+ },
+ {
+  "i": 25,
+  "es": "Llegamos a tiempo...?",
+  "orig": "間に合った…？"
+ },
+ {
+  "i": 26,
+  "es": "Soy yo...?",
+  "orig": "あたし…なの？"
+ },
+ {
+  "i": 27,
+  "es": "Falta uno...",
+  "orig": "あとひとり…。"
+ },
+ {
+  "i": 28,
+  "es": "Que quieres decir?",
+  "orig": "どういうこと？"
+ },
+ {
+  "i": 29,
+  "es": "Ya se, ya se.",
+  "orig": "わかってるって。"
+ },
+ {
+  "i": 30,
+  "es": "No sueltes el dedo.",
+  "orig": "指を離さないで。"
+ },
+ {
+  "i": 31,
+  "es": "Ah...el dedo...",
+  "orig": "あ……指が……。"
+ },
+ {
+  "i": 32,
+  "es": "Eso es un matrimonio\ninternacional.",
+  "orig": "国際結婚じゃん。"
+ },
+ {
+  "i": 33,
+  "es": "...No se mueve...",
+  "orig": "…動かないね…。"
+ },
+ {
+  "i": 34,
+  "es": "...Bueno, entonces...",
+  "orig": "……じゃあ……。"
+ },
+ {
+  "i": 35,
+  "es": "Fue...muy tarde...?",
+  "orig": "お…遅かった…？"
+ },
+ {
+  "i": 36,
+  "es": "...Un zorro......",
+  "orig": "…キツネって……。"
+ },
+ {
+  "i": 37,
+  "es": "S-si...claro...",
+  "orig": "…そ…そうだね…。"
+ },
+ {
+  "i": 38,
+  "es": "Diganme, por favor...",
+  "orig": "教えてください…。"
+ },
+ {
+  "i": 39,
+  "es": "Diganme, por favor...",
+  "orig": "教えてください…。"
+ },
+ {
+  "i": 40,
+  "es": "Kana, calmate!",
+  "orig": "カナ、落ち着いて！"
+ },
+ {
+  "i": 41,
+  "es": "Bueno, una vez mas...",
+  "orig": "じゃあ、もう１回…。"
+ },
+ {
+  "i": 42,
+  "es": "Kana, calmate...",
+  "orig": "カナ、落ち着いて…。"
+ },
+ {
+  "i": 43,
+  "es": "...S-sin señal...",
+  "orig": "……け…圏外…だ…。"
+ },
+ {
+  "i": 44,
+  "es": "...Diganme, por favor...",
+  "orig": "…教えてください…。"
+ },
+ {
+  "i": 45,
+  "es": "Por favor, venga.",
+  "orig": "どうぞおいでください。"
+ },
+ {
+  "i": 46,
+  "es": "Ah...ya lo envie...?",
+  "orig": "あ…もう送ったっけ…。"
+ },
+ {
+  "i": 47,
+  "es": "Por favor, venga.",
+  "orig": "どうぞおいでください。"
+ },
+ {
+  "i": 48,
+  "es": "Muchas gracias.",
+  "orig": "ありがとうございます。"
+ },
+ {
+  "i": 49,
+  "es": "...No......no!!",
+  "orig": "…いや……いやあっ！！"
+ },
+ {
+  "i": 50,
+  "es": "Intentemoslo\nuna vez mas.",
+  "orig": "もう１回試してみよう。"
+ },
+ {
+  "i": 51,
+  "es": "Kana, no hay tiempo!\nApurate!",
+  "orig": "カナ、時間無いよ！早く！"
+ },
+ {
+  "i": 52,
+  "es": "Muchas gracias.",
+  "orig": "ありがとうございました。"
+ },
+ {
+  "i": 53,
+  "es": "Estas concentrandote\nen serio?",
+  "orig": "ちゃんと真剣に念じてる？"
+ },
+ {
+  "i": 54,
+  "es": "...Pero no hice\nninguna pregunta...",
+  "orig": "…質問…してないのに…。"
+ },
+ {
+  "i": 55,
+  "es": "...Muchas gracias.",
+  "orig": "…ありがとうございます。"
+ },
+ {
+  "i": 56,
+  "es": "Jaja...es broma,\nno?......",
+  "orig": "ははっ……冗談でしょ……。"
+ },
+ {
+  "i": 57,
+  "es": "Ah, parece que se va\na cortar la señal.",
+  "orig": "あ、なんか圏外になりそう。"
+ },
+ {
+  "i": 58,
+  "es": "Esto es grave...\nseguro que si.",
+  "orig": "やばいよ、これ…ぜったい。"
+ },
+ {
+  "i": 59,
+  "es": "...Yo podre casarme?",
+  "orig": "…あたしは結婚できますか？"
+ },
+ {
+  "i": 60,
+  "es": "...No puede ser, Kana,\nen serio crees en esto?",
+  "orig": "…まさか、カナ、信じてんの？"
+ },
+ {
+  "i": 61,
+  "es": "Ah, muchas gracias...",
+  "orig": "あ、ありがとうございます…。"
+ },
+ {
+  "i": 62,
+  "es": "Parece que no\nlo escribi bien...",
+  "orig": "上手く書けなかったみたい…。"
+ },
+ {
+  "i": 63,
+  "es": "Ah, mu-muchas...\ngracias...",
+  "orig": "あ、ありがとうござい…ます…。"
+ },
+ {
+  "i": 64,
+  "es": "Pero sabes,\nme quedo dando vueltas.",
+  "orig": "でもさ、ちょっと気になるんだ。"
+ },
+ {
+  "i": 65,
+  "es": "Perdon, no debi\ndecir algo de mas...",
+  "orig": "ごめん、あたしがよけいなこと…。"
+ },
+ {
+  "i": 66,
+  "es": "...Kokkuri-san,\nKokkuri-san...",
+  "orig": "…コックリさん、コックリさん…。"
+ },
+ {
+  "i": 67,
+  "es": "Eso quiere decir\nque aun no nos\nconocemos...?",
+  "orig": "まだ出会っていない…ということ？"
+ },
+ {
+  "i": 68,
+  "es": "...Tr-tranquila,\nen serio.\nBueno......",
+  "orig": "…だ、大丈夫だって。\nじゃあ……。"
+ },
+ {
+  "i": 69,
+  "es": "...Vamos, Megumi.\nToca la moneda?",
+  "orig": "…ほら、メグミ。\nコインに触って？"
+ },
+ {
+  "i": 70,
+  "es": "Entendido?\nNo sueltes el dedo\npor nada del mundo.",
+  "orig": "いい？\nぜったい指を離さないでよ。"
+ },
+ {
+  "i": 71,
+  "es": "Si, si,\nla culpa fue mia.",
+  "orig": "はいはい、あたしが悪かった\nですよ。"
+ },
+ {
+  "i": 72,
+  "es": "Por favor, sigan tocando\nla moneda del centro.",
+  "orig": "中央のコインを触り続けて\nください。"
+ },
+ {
+  "i": 73,
+  "es": "Por favor, sigan tocando\nla moneda del centro.",
+  "orig": "中央のコインを触り続けて\nください。"
+ },
+ {
+  "i": 74,
+  "es": "Mi futuro esposo\nes japones?",
+  "orig": "あたしの結婚相手は、日本人\nですか？"
+ },
+ {
+  "i": 75,
+  "es": "...quiero vida\n...quiero una vida...!?",
+  "orig": "……いのちほしい\n……命欲しい…！？"
+ },
+ {
+  "i": 76,
+  "es": "Si te lo tomas a broma,\nte posee el espiritu.",
+  "orig": "冗談半分にすると、取り憑かれる\nから。"
+ },
+ {
+  "i": 77,
+  "es": "En ese momento,\nla moneda se movio\nun poco.",
+  "orig": "その時、少しだけコインが\n動いたんだよ。"
+ },
+ {
+  "i": 78,
+  "es": "La pantalla de correo del\ncelular esta abajo o",
+  "orig": "携帯電話のメール画面は、\n下画面もしくは"
+ },
+ {
+  "i": 79,
+  "es": "Yo tambien me rei\ncuando lo recibi ayer.",
+  "orig": "あたしも昨日もらった時、\n笑ったんだけど。"
+ },
+ {
+  "i": 80,
+  "es": "Puedes desplazarte con\narriba y abajo del pad.",
+  "orig": "十字ボタンの上下で、\nスクロールできます。"
+ },
+ {
+  "i": 81,
+  "es": "Sera verdad...\n...muchas gracias...",
+  "orig": "ホントかな…。\n…ありがとうございます…。"
+ },
+ {
+  "i": 82,
+  "es": "Diganme el nombre\nde mi futuro esposo,\npor favor.",
+  "orig": "あたしの結婚相手の名前を教えて\nください。"
+ },
+ {
+  "i": 83,
+  "es": "Oye, como elijo a las\n6 personas para\nreenviarlo?",
+  "orig": "ね、転送する６人ってどう選んだら\nいいの？"
+ },
+ {
+  "i": 84,
+  "es": "Las preguntas\nterminaron.\nPor favor, vuelva\na su lugar.",
+  "orig": "質問は終わりです。\nどうぞ、お帰りください。"
+ },
+ {
+  "i": 85,
+  "es": "Elige a quien se lo\nquieres enviar y presiona\naceptar.",
+  "orig": "送信したい人を選んで、\n決定を押して下さい。"
+ },
+ {
+  "i": 86,
+  "es": "Escribe el kanji de perro\nen la espalda de Arisa.",
+  "orig": "漢字の「犬」をアリサの\n背中に書いて下さい。"
+ },
+ {
+  "i": 87,
+  "es": "Eso es porque se te\nacalambro el dedo.",
+  "orig": "だから、それは指の筋肉が\nケイレンしたんだよ。"
+ },
+ {
+  "i": 88,
+  "es": "Ya paremos, que\nKokkuri-san se vaya\nde una vez.",
+  "orig": "もうやめよ、コックリさんに帰って\nもらおうよ。"
+ },
+ {
+  "i": 89,
+  "es": "No tengo otra que\nenviarselo a Mizuki...\nLo siento...Mizuki...",
+  "orig": "ミズキに送るしかない…。\nごめんね…ミズキ…。"
+ },
+ {
+  "i": 90,
+  "es": "Diganme. A que edad\nme voy a casar?",
+  "orig": "教えてください。あたしが結婚する\nのはいくつですか？"
+ },
+ {
+  "i": 91,
+  "es": "...Al final, Bunjin-sama\nno sirve, o si?",
+  "orig": "………やっぱりブンシンさま\nじゃ、ダメなんじゃない？"
+ },
+ {
+  "i": 92,
+  "es": "Si es Reika...tal vez sepa\ncomo salir de aqui...",
+  "orig": "レイカなら…ここから抜け出せる\n方法がわかるかも…。"
+ },
+ {
+  "i": 93,
+  "es": "Diganme de que pais\nes mi futuro esposo.",
+  "orig": "あたしの結婚相手が、どこの国の人\nか教えてください。"
+ },
+ {
+  "i": 94,
+  "es": "Mi futuro esposo\nes alguien que ya\nconozco ahora?",
+  "orig": "あたしの結婚相手は、今のあたしが\n知っている人ですか？"
+ },
+ {
+  "i": 95,
+  "es": "Si ya ha llegado,\navance hacia el Si.",
+  "orig": "もしおいでになられましたら、\n「はい」へお進みください。"
+ },
+ {
+  "i": 96,
+  "es": "Si ya ha llegado,\navance hacia el Si.",
+  "orig": "もしおいでになられましたら、\n「はい」へお進みください。"
+ },
+ {
+  "i": 97,
+  "es": "No hay tiempo, mejor\nelijamos a alguien\ncon quien\nescribimos hoy.",
+  "orig": "時間もないし、今日メールやりとり\nした人でいいんじゃない。"
+ },
+ {
+  "i": 98,
+  "es": "Con lo de Kokkuri-san,\nen la primaria lo\nintente una vez\ncon una amiga, pero",
+  "orig": "コックリさんて、小学生の時、\n一度友達とやってみたんだけど、"
+ },
+ {
+  "i": 99,
+  "es": "(Recien se cambio\nde colegio, me daria\npena, mejor no...)",
+  "orig": "（転校してきたばかりだし、\n　かわいそうだから、やめとこ…）"
+ },
+ {
+  "i": 100,
+  "es": "Entonces, ninguno de los\ndos que se te declararon\nes la persona destinada.",
+  "orig": "じゃあ、告られている２人は、\nどっちも運命の人じゃないんだ。"
+ },
+ {
+  "i": 101,
+  "es": "Entonces, cada vez\nque respondan una\npregunta, regresen\nal torii.",
+  "orig": "では１つの質問に答えていただく\nごとに、鳥居までお戻りください。"
+ },
+ {
+  "i": 102,
+  "es": "Eh?",
+  "orig": "えっ？"
+ },
+ {
+  "i": 103,
+  "es": "Asi es.",
+  "orig": "そう。"
+ },
+ {
+  "i": 104,
+  "es": "Hii!",
+  "orig": "ひっ！"
+ },
+ {
+  "i": 105,
+  "es": "Ah!",
+  "orig": "あっ！"
+ },
+ {
+  "i": 106,
+  "es": "En serio?",
+  "orig": "ホント？"
+ },
+ {
+  "i": 107,
+  "es": "Hii...",
+  "orig": "ひっ…。"
+ },
+ {
+  "i": 108,
+  "es": "Si...",
+  "orig": "うん…。"
+ },
+ {
+  "i": 109,
+  "es": "Si...",
+  "orig": "うん…。"
+ },
+ {
+  "i": 110,
+  "es": "Estas bien?",
+  "orig": "大丈夫？"
+ },
+ {
+  "i": 111,
+  "es": "El botiquin...",
+  "orig": "救急箱…。"
+ },
+ {
+  "i": 112,
+  "es": "Es asi?",
+  "orig": "そうなの？"
+ },
+ {
+  "i": 113,
+  "es": "Mmm...",
+  "orig": "うーん…。"
+ },
+ {
+  "i": 114,
+  "es": "Aah...!",
+  "orig": "ああっ…。"
+ },
+ {
+  "i": 115,
+  "es": "...Si...",
+  "orig": "…うん…。"
+ },
+ {
+  "i": 116,
+  "es": "Basta.",
+  "orig": "やめてよ。"
+ },
+ {
+  "i": 117,
+  "es": "Eh......",
+  "orig": "えっ……。"
+ },
+ {
+  "i": 118,
+  "es": "No puede ser...",
+  "orig": "そんな…。"
+ },
+ {
+  "i": 119,
+  "es": "Es una libreta...",
+  "orig": "手帳だ…。"
+ },
+ {
+  "i": 120,
+  "es": "...Pasos...",
+  "orig": "…足音…。"
+ },
+ {
+  "i": 121,
+  "es": "No sirve...",
+  "orig": "ダメだ…。"
+ },
+ {
+  "i": 122,
+  "es": "Que es esto!?",
+  "orig": "なにこれ！？"
+ },
+ {
+  "i": 123,
+  "es": "......",
+  "orig": "・・・・・・"
+ },
+ {
+  "i": 124,
+  "es": "Eh, cual?",
+  "orig": "えっ、どれ？"
+ },
+ {
+  "i": 125,
+  "es": "Por que...!",
+  "orig": "なんでよ…！"
+ },
+ {
+  "i": 126,
+  "es": "Lo sabes?",
+  "orig": "知ってるの？"
+ },
+ {
+  "i": 127,
+  "es": "Sera que no...",
+  "orig": "まさかね…。"
+ },
+ {
+  "i": 128,
+  "es": "......",
+  "orig": "・・・・・・"
+ },
+ {
+  "i": 129,
+  "es": "Entendido...",
+  "orig": "わかった…。"
+ },
+ {
+  "i": 130,
+  "es": "Este hueco...",
+  "orig": "この空洞…。"
+ },
+ {
+  "i": 131,
+  "es": "...Lo logre...",
+  "orig": "…やった…。"
+ },
+ {
+  "i": 132,
+  "es": "La hora es distinta?",
+  "orig": "時間は違う？"
+ },
+ {
+  "i": 133,
+  "es": "...Si......",
+  "orig": "…うん……。"
+ },
+ {
+  "i": 134,
+  "es": "...Perdon...",
+  "orig": "…ごめん…。"
+ },
+ {
+  "i": 135,
+  "es": "Que te pasa?",
+  "orig": "どうしたの？"
+ },
+ {
+  "i": 136,
+  "es": "Y las letras, que tal?",
+  "orig": "文字はどう？"
+ },
+ {
+  "i": 137,
+  "es": "Bien......",
+  "orig": "よっしゃ……。"
+ },
+ {
+  "i": 138,
+  "es": "Sale algo en la foto?",
+  "orig": "何か写ってる？"
+ },
+ {
+  "i": 139,
+  "es": "Que sera esto...",
+  "orig": "なんだろう…。"
+ },
+ {
+  "i": 140,
+  "es": "...Que te pasa?",
+  "orig": "…どうしたの？"
+ },
+ {
+  "i": 141,
+  "es": "(...Nanashi...)",
+  "orig": "（…ナナシ…）"
+ },
+ {
+  "i": 142,
+  "es": "Ya paremos!",
+  "orig": "もうやめよっ！"
+ },
+ {
+  "i": 143,
+  "es": "Ah, ya veo...",
+  "orig": "あ、そっか…。"
+ },
+ {
+  "i": 144,
+  "es": "El titulo es el mismo?",
+  "orig": "題名って同じ？"
+ },
+ {
+  "i": 145,
+  "es": "Yo tambien.",
+  "orig": "あたしもだよ。"
+ },
+ {
+  "i": 146,
+  "es": "Un numero? Cual?",
+  "orig": "数字？どんな？"
+ },
+ {
+  "i": 147,
+  "es": "Si, esta vez de verdad.",
+  "orig": "うん、今度こそ。"
+ },
+ {
+  "i": 148,
+  "es": "Lo sabe usted?",
+  "orig": "知っていますか？"
+ },
+ {
+  "i": 149,
+  "es": "Bueno...una pregunta...",
+  "orig": "じゃあ…質問…。"
+ },
+ {
+  "i": 150,
+  "es": "No te estas burlando?",
+  "orig": "馬鹿にしてない？"
+ },
+ {
+  "i": 151,
+  "es": "Por favor, venga.",
+  "orig": "おいでください。"
+ },
+ {
+  "i": 152,
+  "es": "...Hay que\nconcentrarse...",
+  "orig": "…集中するの…。"
+ },
+ {
+  "i": 153,
+  "es": "No sueltes el dedo.",
+  "orig": "指を離さないで。"
+ },
+ {
+  "i": 154,
+  "es": "Lo, lo siento......",
+  "orig": "ご、ごめん……。"
+ },
+ {
+  "i": 155,
+  "es": "Esta foto...mira...",
+  "orig": "この写真…見て…。"
+ },
+ {
+  "i": 156,
+  "es": "Ah, entiendo eso.",
+  "orig": "あ、わかる、それ。"
+ },
+ {
+  "i": 157,
+  "es": "...Es distinto a antes...",
+  "orig": "…さっきと違う…。"
+ },
+ {
+  "i": 158,
+  "es": "Ah, bueno,\nesta bien entonces.",
+  "orig": "そ、ならいいけど。"
+ },
+ {
+  "i": 159,
+  "es": "Entremos a ver.",
+  "orig": "中に入ってみよう。"
+ },
+ {
+  "i": 160,
+  "es": "(Y eso que\nestoy preocupada...)",
+  "orig": "（悩んでるのに…）"
+ },
+ {
+  "i": 161,
+  "es": "Bueno, una vez mas...",
+  "orig": "じゃあ、もう１回…。"
+ },
+ {
+  "i": 162,
+  "es": "...Lleva un zorro\nen brazos...",
+  "orig": "…キツネを抱いてる。"
+ },
+ {
+  "i": 163,
+  "es": "Ah...ya lo mande, no?",
+  "orig": "あ…もう送ったよね。"
+ },
+ {
+  "i": 164,
+  "es": "Ah, hay un espiritu\nen tu hombro...",
+  "orig": "あっ、肩に背後霊…。"
+ },
+ {
+  "i": 165,
+  "es": "Bueno, empecemos.",
+  "orig": "それじゃ、始めるよ。"
+ },
+ {
+  "i": 166,
+  "es": "Bueno, relajate...",
+  "orig": "じゃ、力を抜いて…。"
+ },
+ {
+  "i": 167,
+  "es": "...Reika.........ah.",
+  "orig": "…レイカ………あっ。"
+ },
+ {
+  "i": 168,
+  "es": "9...? Que quiere decir?",
+  "orig": "９…？どういうこと？"
+ },
+ {
+  "i": 169,
+  "es": "No pasa nada...",
+  "orig": "なにも起きないよ…。"
+ },
+ {
+  "i": 170,
+  "es": "Mizuki, suelta el dedo!",
+  "orig": "ミズキ、指を離して！"
+ },
+ {
+  "i": 171,
+  "es": "Como que te lleven\nlos espiritus...",
+  "orig": "神隠しにあうとか…。"
+ },
+ {
+  "i": 172,
+  "es": "Eh...que quieres decir?",
+  "orig": "えっ…どういうこと？"
+ },
+ {
+  "i": 173,
+  "es": "En serio!?\nQue grave...",
+  "orig": "マジ！？\nやばいよ…。"
+ },
+ {
+  "i": 174,
+  "es": "Intentemoslo\nuna vez mas.",
+  "orig": "もう１回試してみよう。"
+ },
+ {
+  "i": 175,
+  "es": "Prueba golpeando por\naqui.",
+  "orig": "この辺りを叩いてみて。"
+ },
+ {
+  "i": 176,
+  "es": "Por favor, ya paremos.",
+  "orig": "お願い、もうやめよっ。"
+ },
+ {
+  "i": 177,
+  "es": "Tengo la pierna\nlastimada...",
+  "orig": "脚、ケガしてるんだ…。"
+ },
+ {
+  "i": 178,
+  "es": "No, es peligroso!",
+  "orig": "ダメだよ、危ないって！"
+ },
+ {
+  "i": 179,
+  "es": "(Parece que\nte escondieron)",
+  "orig": "（かくまったようです）"
+ },
+ {
+  "i": 180,
+  "es": "Ah...sin señal.\n...Por que?",
+  "orig": "あ…圏外だ。…なんで？"
+ },
+ {
+  "i": 181,
+  "es": "Puede que sea\npor el horario.",
+  "orig": "時間的にはそうかもね。"
+ },
+ {
+  "i": 182,
+  "es": "...Lista?\nPon el dedo...",
+  "orig": "…いい？\n指を置いて…。"
+ },
+ {
+  "i": 183,
+  "es": "Por que solo\nla de Mizuki...?",
+  "orig": "なんで、ミズキのだけ…。"
+ },
+ {
+  "i": 184,
+  "es": "Esta bien...calmate...",
+  "orig": "大丈夫よ…落ち着いて…。"
+ },
+ {
+  "i": 185,
+  "es": "(Te regañaron\ncon dureza)",
+  "orig": "（激しく叱責されました）"
+ },
+ {
+  "i": 186,
+  "es": "...Por favor, vuelva.",
+  "orig": "…どうぞ戻ってください。"
+ },
+ {
+  "i": 187,
+  "es": "...Al final...\nse la llevaron\nlos espiritus...",
+  "orig": "…やっぱり…神隠しに…。"
+ },
+ {
+  "i": 188,
+  "es": "Si paramos aqui......,\nte parece?",
+  "orig": "ここでやめたら……、ね？"
+ },
+ {
+  "i": 189,
+  "es": "Por nada del mundo\nsueltes el dedo.",
+  "orig": "ゼッタイ離しちゃダメよ。"
+ },
+ {
+  "i": 190,
+  "es": "Nunca habia visto\nun mensaje asi.",
+  "orig": "こんなメール、初めて見た。"
+ },
+ {
+  "i": 191,
+  "es": "(Llega un poco de señal)",
+  "orig": "（少しだけ電波が届いてる）"
+ },
+ {
+  "i": 192,
+  "es": "(...Por favor...\nque llegue...!!)",
+  "orig": "（…お願い…届いて…！！）"
+ },
+ {
+  "i": 193,
+  "es": "Esto es grave...\nya no hay nada\nque hacer...",
+  "orig": "超やばすぎ…もうダメだ…。"
+ },
+ {
+  "i": 194,
+  "es": "Mmm, que lindo\nel atardecer...",
+  "orig": "うーん、夕焼けがきれい…。"
+ },
+ {
+  "i": 195,
+  "es": "Asi que el viento\nvenia de aqui...",
+  "orig": "ここから風が来てたんだ…。"
+ },
+ {
+  "i": 196,
+  "es": "...ka...mi......\nka...ku...shi...?",
+  "orig": "…か…み……か…く…し…？"
+ },
+ {
+  "i": 197,
+  "es": "Uy, seguro\nes un hitodama.",
+  "orig": "わっ、きっとヒトダマだよ。"
+ },
+ {
+  "i": 198,
+  "es": "Si es asi, sera que\nlos demas son iguales...",
+  "orig": "だったら他は同じかなあ…。"
+ },
+ {
+  "i": 199,
+  "es": "(Ademas...esta\ncon caracteres raros)",
+  "orig": "（しかも…文字化けしてる）"
+ },
+ {
+  "i": 200,
+  "es": "...No...nada...",
+  "orig": "…ううん…なんでもない…。"
+ },
+ {
+  "i": 201,
+  "es": "Entonces, por que no\nlo acercas a la ventana?",
+  "orig": "じゃ、窓に近づけてみたら？"
+ },
+ {
+  "i": 202,
+  "es": "Shh...tengo que\nconcentrarme......",
+  "orig": "しっ…集中…しないと……。"
+ },
+ {
+  "i": 203,
+  "es": "...Esto es grave,\nde verdad...",
+  "orig": "……ゼッタイやばいって…。"
+ },
+ {
+  "i": 204,
+  "es": "(Era su diario)",
+  "orig": "（それは彼女の日記でした）"
+ },
+ {
+  "i": 205,
+  "es": "......\nQue raro.",
+  "orig": "・・・・・・\nおかしいなあ。"
+ },
+ {
+  "i": 206,
+  "es": "...Vamos...\nRespira hondo...",
+  "orig": "…いくよ…。\n深呼吸して…。"
+ },
+ {
+  "i": 207,
+  "es": "(Parece que lo hizo\ncon desesperacion)",
+  "orig": "（必死に行っていたようです）"
+ },
+ {
+  "i": 208,
+  "es": "Parece que no\nlo escribi bien...",
+  "orig": "上手く書けなかったみたい…。"
+ },
+ {
+  "i": 209,
+  "es": "Como es un zorro,\nB esta bien, no?",
+  "orig": "キツネだからＢでいいじゃん。"
+ },
+ {
+  "i": 210,
+  "es": "...Fue victima de\nuna desaparicion\nmisteriosa?",
+  "orig": "…神隠しに…あったのですか？"
+ },
+ {
+  "i": 211,
+  "es": "Asi es, pero cuando\nlo vi por primera vez,",
+  "orig": "そうなんだけど、最初見た時、"
+ },
+ {
+  "i": 212,
+  "es": "Que es eso, creo que\nno tiene que ver.",
+  "orig": "なにそれ、関係ないと思うよ。"
+ },
+ {
+  "i": 213,
+  "es": "Kokkuri-san...\ntengo una pregunta...",
+  "orig": "コックリさん…質問します…。"
+ },
+ {
+  "i": 214,
+  "es": "Una foto? Tambien\nuna libreta tipo diario...",
+  "orig": "写真？日記のような手帳も…。"
+ },
+ {
+  "i": 215,
+  "es": "El sonido del viento...,\nasi es, seguro...",
+  "orig": "風の音…、そうよ、きっと…。"
+ },
+ {
+  "i": 216,
+  "es": "Cuando estas\nhaciendo Kokkuri-san,",
+  "orig": "コックリさんをしてる時って、"
+ },
+ {
+  "i": 217,
+  "es": "Recien alguien me toco\nla nuca!",
+  "orig": "いま、首筋を誰かに触られた！"
+ },
+ {
+  "i": 218,
+  "es": "Bueno, empecemos.\nPon el dedo.",
+  "orig": "じゃ、始めるよ。\n指を置いて。"
+ },
+ {
+  "i": 219,
+  "es": "(Cuidaste a un zorro\nhasta que se recupero)",
+  "orig": "（１匹のキツネを看病しました）"
+ },
+ {
+  "i": 220,
+  "es": "Se nota que de dia\nes distinto, no?",
+  "orig": "やっぱ昼とは…なにか違うよね。"
+ },
+ {
+  "i": 221,
+  "es": "...Kokkuri-san,\ntengo una pregunta...",
+  "orig": "…コックリさん、質問します…。"
+ },
+ {
+  "i": 222,
+  "es": "...Entendido, bueno,\nultima pregunta.",
+  "orig": "…わかった、じゃ、最後の質問。"
+ },
+ {
+  "i": 223,
+  "es": "...Kokkuri-san,\ntengo una pregunta...",
+  "orig": "…コックリさん…質問します…。"
+ },
+ {
+  "i": 224,
+  "es": "Ya no quiero esto!\nVoy a soltar la mano.",
+  "orig": "もうやだ！\nわたし、手離すから。"
+ },
+ {
+  "i": 225,
+  "es": "...Pero hubiera sido\nbueno que saliera\nen la foto...",
+  "orig": "…でも写ってたらよかったのに…。"
+ },
+ {
+  "i": 226,
+  "es": "Porque soy buena\npara notar esas cosas.",
+  "orig": "そういうの見抜くの、うまいから。"
+ },
+ {
+  "i": 227,
+  "es": "Kokkuri-san,\nentendido\nperfectamente.",
+  "orig": "コックリさん、よくわかりました。"
+ },
+ {
+  "i": 228,
+  "es": "Los pasos se acercan...\ny son mas...",
+  "orig": "足音…近づいてるし…増えてるし。"
+ },
+ {
+  "i": 229,
+  "es": "Mejor borralo\nde una vez.",
+  "orig": "とっととサクジョした方がいいよ。"
+ },
+ {
+  "i": 230,
+  "es": "Es como poner\nuna barrera\nprotectora, no?",
+  "orig": "結界を張ってるようなものでしょ。"
+ },
+ {
+  "i": 231,
+  "es": "Oye, mejor\nterminemos esto\nrapido...",
+  "orig": "ねえ、もう早く終わらせた方が…。"
+ },
+ {
+  "i": 232,
+  "es": "Las dos son leyendas\nurbanas bastante\nconocidas...",
+  "orig": "どっちもわりと有名な都市伝説…。"
+ },
+ {
+  "i": 233,
+  "es": "Silencio...\nPrueba golpeando\notro lugar.",
+  "orig": "静かに…。\n他の場所を叩いてみて。"
+ },
+ {
+  "i": 234,
+  "es": "Donde estan\nKana y Megumi...?",
+  "orig": "カナとメグミは…どこに\nいますか？"
+ },
+ {
+  "i": 235,
+  "es": "Por favor, sigan tocando\nla moneda del centro.",
+  "orig": "中央のコインを触り続けて\nください。"
+ },
+ {
+  "i": 236,
+  "es": "Por favor, sigan tocando\nla moneda del centro.",
+  "orig": "中央のコインを触り続けて\nください。"
+ },
+ {
+  "i": 237,
+  "es": "Mmm, seguro que\neran puros nueves\nseguidos.",
+  "orig": "うーん、たしか…９ばっかり\nズラリ。"
+ },
+ {
+  "i": 238,
+  "es": "Esto...es un correo\nque recibi antes.",
+  "orig": "コレ…、もっと前にもらった\nメール。"
+ },
+ {
+  "i": 239,
+  "es": "Por favor, sigan tocando\nla moneda del centro.",
+  "orig": "中央のコインを触り続けて\nください。"
+ },
+ {
+  "i": 240,
+  "es": "Por ahora, por que no\nmiramos dentro\ndel botiquin?",
+  "orig": "とりあえず救急箱の中を見て\nみない？"
+ },
+ {
+  "i": 241,
+  "es": "Toca el lugar que\nquieras investigar.",
+  "orig": "調べたい場所をタッチ\nしてください。"
+ },
+ {
+  "i": 242,
+  "es": "Toca el lugar que\nquieras investigar.",
+  "orig": "調べたい場所をタッチ\nしてください。"
+ },
+ {
+  "i": 243,
+  "es": "Mira, hasta Nanashi\ndice esto.",
+  "orig": "ほら、ナナシだって\nこう言ってるし。"
+ },
+ {
+  "i": 244,
+  "es": "Es solo un poquito.\nLo devolvi enseguida.",
+  "orig": "ちょっとだけだから。\nすぐに戻したし。"
+ },
+ {
+  "i": 245,
+  "es": "Dada la situacion,\npensemos en positivo.",
+  "orig": "この状況だから、前向きに\n考えようよ。"
+ },
+ {
+  "i": 246,
+  "es": "...La A es el espejo...,\nla B es el zorro\nque se la lleva...",
+  "orig": "…Ａが鏡で…、\nＢはキツネに神隠し…。"
+ },
+ {
+  "i": 247,
+  "es": "Te lo dije!\nYa elegimos eso\nantes, no?",
+  "orig": "だーかーらー！\nさっきも選んだでしょ？"
+ },
+ {
+  "i": 248,
+  "es": "En el edificio viejo...\nparece que no salio\nningun fantasma...",
+  "orig": "旧校舎に…\n幽霊は写ってないみたい…。"
+ },
+ {
+  "i": 249,
+  "es": "Y ademas...si ordenas\nestas letras legibles...",
+  "orig": "それと…この読める文字を\n並べると…。"
+ },
+ {
+  "i": 250,
+  "es": "Mira...hay algo\ngrabado en las notas.",
+  "orig": "見て…、メモ機能に何か録音\nされてる。"
+ },
+ {
+  "i": 251,
+  "es": "La ultima persona\na la que Megumi\nllamo anoche...",
+  "orig": "メグミが昨晩、最後に電話をした\n人…。"
+ },
+ {
+  "i": 252,
+  "es": "En serio?\nEsto siempre esta\nen blanco, no?",
+  "orig": "そうなの？\nここ、いつも空白じゃない？"
+ },
+ {
+  "i": 253,
+  "es": "Mizuki, estas guardando\ncorreos en cadena?",
+  "orig": "ミズキ、チェンメなんか保存\nしてるの？"
+ },
+ {
+  "i": 254,
+  "es": "Es que...no puedo\nreenviarlo, me da miedo.",
+  "orig": "だって…転送できないしょ、\nこわくて。"
+ },
+ {
+  "i": 255,
+  "es": "(...Que es esto?\n...Esperar...\nen la azotea...?)",
+  "orig": "（…なにこれ？\n　…屋上で…待つ…？）"
+ },
+ {
+  "i": 256,
+  "es": "...Oye, mira\nel jardin. Algo\nesta brillando.",
+  "orig": "…ね、花壇のところ見て。\n何か光ってる。"
+ },
+ {
+  "i": 257,
+  "es": "...Lo ultimo esta\nilegible...? Lo mio\ncreo que era,",
+  "orig": "…最後が文字化け…？\nわたしのはたしか、"
+ },
+ {
+  "i": 258,
+  "es": "(Y entonces, al zorro\ntambien lo espera\nla muerte...)",
+  "orig": "（そして、キツネも殺される\n　運命に…）"
+ },
+ {
+  "i": 259,
+  "es": "No sueltes la moneda\nhasta que\nterminemos todo.",
+  "orig": "全部終わるまでコインから\n離さないでね。"
+ },
+ {
+  "i": 260,
+  "es": "Ese espiritu\nde enfermera...\nse veia muy demacrado.",
+  "orig": "あの看護師の霊…そうとう\nやつれていた。"
+ },
+ {
+  "i": 261,
+  "es": "...Es verdad...ese\nespiritu tambien\nllevaba algo preciado...",
+  "orig": "…そうだ…あの霊も大切に持って\nいた…。"
+ },
+ {
+  "i": 262,
+  "es": "...Oye...Riko......\n...se oyen pasos.........",
+  "orig": "……ねえ……リコ……\n……足音が………。"
+ },
+ {
+  "i": 263,
+  "es": "K-Kokkuri-san,\nentendido\nperfectamente.",
+  "orig": "…コ、コックリさん、\nよくわかりました。"
+ },
+ {
+  "i": 264,
+  "es": "Elige donde ampliar con\nla pantalla de abajo\no el pad direccional,",
+  "orig": "拡大する位置を下画面か\n十字ボタンで選び、"
+ },
+ {
+  "i": 265,
+  "es": "...Entonces, Kana\ny los demas creyeron\nen ese rumor...",
+  "orig": "…じゃ、カナたち、そのウワサを\n信じて…。"
+ },
+ {
+  "i": 266,
+  "es": "(De Kana...?\nPor que un correo\nen cadena?)",
+  "orig": "（カナから…？\n　なんでチェーンメール？）"
+ },
+ {
+  "i": 267,
+  "es": "Recien...las letras...\nse movieron...!?\nQue significa esto...?",
+  "orig": "今…文字が…動いた…！？\nどういうこと…？"
+ },
+ {
+  "i": 268,
+  "es": "Golpea la pared de\nla pantalla de abajo\ncon el lapiz tactil.",
+  "orig": "タッチペンで下画面の\n壁を叩いてください。"
+ },
+ {
+  "i": 269,
+  "es": "Eh? No habia texto\nescrito tambien\nen el titulo...?",
+  "orig": "あれ？題名にも文字が書かれて\nなかった…？"
+ },
+ {
+  "i": 270,
+  "es": "Habia un numero\nflotando al lado\nde Fw:.",
+  "orig": "“Ｆｗ：”の隣に数字が浮かんで\nいたのよ。"
+ },
+ {
+  "i": 271,
+  "es": "Si lo ignoras,\naparece Nanashi\ny caes en la oscuridad...",
+  "orig": "無視すると、ナナシが現れ、闇に\n落ちる…。"
+ },
+ {
+  "i": 272,
+  "es": "(Tenia muchas letras\nantiguas y costaba\nleerlo, pero,)",
+  "orig": "（古い字が多くて読みにくかった\n　けど、）"
+ },
+ {
+  "i": 273,
+  "es": "Me asuste tanto...\nque se me solto\nel dedo de la moneda.",
+  "orig": "びっくりして…コインから指が\n離れちゃった。"
+ },
+ {
+  "i": 274,
+  "es": "Pense: uy, ya\ncasi son las 3.",
+  "orig": "“げっ、もうすぐ３時じゃん”って\n思ったの。"
+ },
+ {
+  "i": 275,
+  "es": "Bueno...desaparecio\nrapido, quizas\nlo vi mal...",
+  "orig": "さあ…すぐ消えちゃったから\n見間違いかも…。"
+ },
+ {
+  "i": 276,
+  "es": "En...en fin, hay que\nhacerlo bien\nhasta el final...",
+  "orig": "と…とにかく最後まで…きちんと\nやらないと…。"
+ },
+ {
+  "i": 277,
+  "es": "Si se presenta,\navance hacia el Si.",
+  "orig": "もし現れましたら、『はい』に\n進んでください。"
+ },
+ {
+  "i": 278,
+  "es": "Es-esta bien...\nson imaginaciones\nmias...jaja...",
+  "orig": "だ、だ、大丈夫…。…気のせい…よ\n…ははっ…。"
+ },
+ {
+  "i": 279,
+  "es": "Decia: se puede saber\nel futuro exacto.\nEl lugar es la sala\nde musica.",
+  "orig": "“正確な未来がわかる。\n場所は音楽室”だったよ。"
+ },
+ {
+  "i": 280,
+  "es": "Mmm. Tal vez eso es\nsolo una diferencia\nde modelo de celular?",
+  "orig": "うーん。たぶん、それって機種の\n違いじゃないの？"
+ },
+ {
+  "i": 281,
+  "es": "...Ni siquiera lo he\npuesto en el papel,\ny ya me suda el dedo...",
+  "orig": "…まだ紙に置いてないのに、\n指が汗ばんできた…。"
+ },
+ {
+  "i": 282,
+  "es": "...Eso fue cuando\nhacian Kokkuri-san\nen el edificio viejo...?",
+  "orig": "…それって旧校舎でコックリさんを\nしていた時…？"
+ },
+ {
+  "i": 283,
+  "es": "(Esta vez tomaste\nla libreta que\nestaba en el botiquin)",
+  "orig": "（今度は救急箱にあった手帳を\n　手に取りました）"
+ },
+ {
+  "i": 284,
+  "es": "Si a medianoche pones\ndos espejos frente\na frente y cantas\nKagome Kagome,",
+  "orig": "深夜に合わせ鏡をして\n“かごめかごめ”を歌うと、"
+ },
+ {
+  "i": 285,
+  "es": "puedes hablar\ncon espiritus. Ademas,\nde noche se ve algo\ncomo un kitsune\nno yomeiri,",
+  "orig": "霊と対話できる…とか、\n夜中に狐の嫁入りと思われる"
+ },
+ {
+  "i": 286,
+  "es": "Toca el boton de\naceptar o presiona\nel boton A.",
+  "orig": "決定ボタンをタッチするか\nＡボタンを押して下さい。"
+ },
+ {
+  "i": 287,
+  "es": "(Todavia deberia\nalcanzar el plazo\nde 24 horas\npara reenviarlo)",
+  "orig": "（まだ転送できる２４時間の\n　期限に間に合うはず）"
+ },
+ {
+  "i": 288,
+  "es": "(Pero se descubrio\nque uso medicina\npara curar al zorro,)",
+  "orig": "（しかしキツネの治療に薬を\n　使ったことがばれて）"
+ },
+ {
+  "i": 289,
+  "es": "Pero...Kokkuri-san\nes hablar con\nlos espiritus, no...?",
+  "orig": "でも…コックリさんって…\n霊との対話なんでしょ…。"
+ },
+ {
+  "i": 290,
+  "es": "Cuando pierdo la señal,\nme da muchisima\nansiedad.",
+  "orig": "あたし、ケンガイになると、\nすっごい不安になるの。"
+ },
+ {
+  "i": 291,
+  "es": "No lo hice, no hay\nforma de que haga\nalgo tan espantoso.",
+  "orig": "してないよぉ、そんな怖いことする\nわけないでしょ。"
+ },
+ {
+  "i": 292,
+  "es": "(Ella, aqui, cuidaba\na los pacientes\nheridos en el\nbombardeo,)",
+  "orig": "（彼女は、ここで空襲で負傷\n　した患者たちの看護を）"
+ },
+ {
+  "i": 293,
+  "es": "(Y en cierto momento,\nella tambien se hirio\nigual que un humano)",
+  "orig": "（そして彼女はある時、\n　人間と同じように傷ついた）"
+ },
+ {
+  "i": 294,
+  "es": "De las tres,...no se\nsabe donde estan\nMegumi y Kana...",
+  "orig": "３人のうち、…メグミとカナの\n行方がわかりません…。"
+ },
+ {
+  "i": 295,
+  "es": "(El correo en cadena\nque envio Kana\nanoche era...,)",
+  "orig": "（昨晩、カナから送られてきた\n　チェーンメールは…、）"
+ },
+ {
+  "i": 296,
+  "es": "Esto, sabes, no sera\nuna pista para resolver\nel enigma de Nanashi?",
+  "orig": "これってさ、ナナシからのナゾ\nを解くヒントじゃないの。"
+ },
+ {
+  "i": 297,
+  "es": "Si suelto la mano\na medias ahora...\nlos espiritus de\nalrededor todos\nde golpe...",
+  "orig": "今、中途半端に手を離したら…\n…まわりの霊が一斉に…。"
+ },
+ {
+  "i": 298,
+  "es": "(Pensar que podia\nconocer a Nanashi...\nfue algo ingenuo\nde mi parte)",
+  "orig": "（ナナシに…会える…なんて…\n　ちょっと甘かったかな）"
+ },
+ {
+  "i": 299,
+  "es": "Si le dicen problema,\nsera que una de las\ndos es la respuesta\ncorrecta?",
+  "orig": "“問題”っていうからには、\nどっちかが“正解”ってこと？"
+ },
+ {
+  "i": 300,
+  "es": "Rompamos mas y\nagrandemos el hueco.\nQuizas haya algo...",
+  "orig": "もっと壊して穴を広げてみよう。\n何かあるかもしれない…。"
+ }
+]
