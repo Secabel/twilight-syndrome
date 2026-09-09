@@ -1,0 +1,21 @@
+# ROMs y saves (contenido con copyright del juego original, no se distribuye)
+*.nds
+*.sav
+
+# Filesystem extraido de la ROM japonesa original (graficos/audio con copyright)
+extraccion_rom/
+
+# Herramientas de terceros (emuladores, extractor) - no son parte del proyecto
+desmume-0.9.13-win64/
+melonDS-1.1-windows-x86_64/
+TinkeDSi-v0.9.6-x64/
+
+# Carpetas de trabajo temporal / regenerables (ver docs/historia-proyecto.md)
+_scratch_claude/
+inventario_graficos/
+Claude outputs/
+dumps/
+saves/
+__pycache__/
+**/__pycache__/
+*.pyc
