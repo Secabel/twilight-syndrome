@@ -147,14 +147,23 @@ def obj_geometry(attr0, attr1, attr2, tile_boundary_shift=0):
 
 
 def render_tile_block(tile_data, tile_idx, bpp, colors, w_tiles, h_tiles, palette_bank=0):
+    """FIX (2026-09-12, portado desde scripts/ncer_decode.py tras el trabajo de
+    TITLE/G02M10 y TITLE/G01M10): el offset en bytes de cada tile siempre usa
+    la unidad base FIJA de 32 bytes/tile (tile_idx*32 + n*tile_bytes), nunca
+    tile_idx*tile_bytes. tile_idx ya viene multiplicado por 2**tileBoundaryCode
+    desde obj_geometry() -- antes de este fix, en un NCER con
+    tileBoundaryCode>0 los objetos vecinos se pisaban tile por tile y el
+    contenido salia mezclado/ilegible. No afectaba a los items del inventario
+    (tileBoundaryCode=2 pero objetos todos del mismo tamano, donde el bug no
+    se notaba facil), pero si a graficos como TITLE/G02M10 y TITLE/G01M10."""
     tile_bytes = 32 if bpp == 4 else 64
+    base_off = tile_idx * 32
     img = Image.new('RGB', (w_tiles * 8, h_tiles * 8), (255, 0, 255))
     n = 0
     for ty in range(h_tiles):
         for tx in range(w_tiles):
-            t = tile_idx + n
+            off = base_off + n * tile_bytes
             n += 1
-            off = t * tile_bytes
             tb = tile_data[off:off + tile_bytes]
             if len(tb) < tile_bytes:
                 continue
