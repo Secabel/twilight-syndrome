@@ -1465,5 +1465,30 @@ sesión sobre el formato NCER:
 validado en sesiones anteriores) y sigue decodificando igual de bien
 ("懐中電灯" legible, celdas de fondo intactas).
 
-`inventario_graficos.py` NO se tocó — no decodifica NCER, solo vuelca tiles
-NCGR en orden secuencial, así que el bug no le aplicaba.
+### 2026-09-12 (misma sesión, continuación 6) — Fix del decoder NCER portado también a `scripts/inventario_completo.py`
+
+Mismo bug/fix que la entrada anterior, aplicado a `render_tile_block()` en
+`scripts/inventario_completo.py` (el script de barrido exhaustivo de toda
+la ROM, distinto del `ncer_decode.py` usado para ítems/gráficos
+individuales): el offset de cada tile ahora usa `tile_idx*32 + n*tile_bytes`
+en vez de `(tile_idx+n)*tile_bytes`. No se agregó `force_palette_bank`
+acá (ese script es de solo lectura/inventario, no hace falta forzar
+bancos para verificar una traducción). Verificado que el archivo sigue
+compilando sin errores de sintaxis.
+
+`inventario_graficos.py` (distinto de `inventario_completo.py`) NO se
+tocó — no decodifica NCER, solo vuelca tiles NCGR en orden secuencial,
+así que el bug no le aplicaba.
+
+### 2026-09-12 (misma sesión, continuación 7) — Freeze de la puerta con llave: scripts subidos a GitHub, y sincronización completa del repo
+
+Se subieron a `Secabel/twilight-syndrome` (rama `main`) todos los cambios
+de esta sesión que todavía vivían solo en la PC del usuario:
+`generar_rom_esp.py`/`generar_rom_eng.py` con el fix de
+`filter_legit_pointer_locations`, `scripts/ncer_decode.py` y
+`scripts/inventario_completo.py` con el fix de offset de tile, y este
+mismo doc actualizado junto con el nuevo `docs/guia-debugging-bugs-dificiles.md`.
+Los 6 archivos binarios nuevos (`TITLE/G02M10.NCGR`+`.NCER` y
+`TITLE/G01M10.NCGR`, esp+eng) quedan para un commit aparte por su
+naturaleza binaria — ver el resto de esta sesión para el detalle de cómo
+se subieron.
