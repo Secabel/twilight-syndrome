@@ -130,15 +130,23 @@ def obj_geometry(attr0, attr1, attr2, tile_boundary_shift=0):
 
 def render_tile(tile_data, tile_idx, bpp, colors, w_tiles, h_tiles, palette_bank=0):
     """Renderiza un bloque de w_tiles x h_tiles tiles de 8x8 empezando en tile_idx,
-    en orden de fila (estandar 'character mapping 1D')."""
+    en orden de fila (estandar 'character mapping 1D').
+
+    FIX (2026-09-12, sesion TITLE/G02M10 y TITLE/G01M10): el offset en bytes
+    de cada tile siempre usa la unidad base FIJA de 32 bytes/tile
+    (tile_idx*32 + n*tile_bytes), nunca tile_idx*tile_bytes. tile_idx ya
+    viene multiplicado por 2**tileBoundaryCode desde obj_geometry() - antes
+    de este fix, en un NCER con tileBoundaryCode>0 los objetos vecinos se
+    pisaban tile por tile y el texto salia mezclado/ilegible (bug real
+    encontrado al decodificar TITLE/G02M10)."""
     tile_bytes = 32 if bpp == 4 else 64
+    base_off = tile_idx * 32
     img = Image.new('RGB', (w_tiles * 8, h_tiles * 8), (255, 0, 255))
     n = 0
     for ty in range(h_tiles):
         for tx in range(w_tiles):
-            t = tile_idx + n
+            off = base_off + n * tile_bytes
             n += 1
-            off = t * tile_bytes
             tb = tile_data[off:off + tile_bytes]
             if len(tb) < tile_bytes:
                 continue
@@ -159,7 +167,21 @@ def render_tile(tile_data, tile_idx, bpp, colors, w_tiles, h_tiles, palette_bank
     return img
 
 
-def compose_cell(objs, tile_data, colors, bpp, tile_boundary_shift=0, transparent_idx=0):
+def compose_cell(objs, tile_data, colors, bpp, tile_boundary_shift=0, transparent_idx=0,
+                  force_palette_bank=None):
+    """force_palette_bank: si se pasa un entero, ignora el campo 'palette' que
+    declara cada OBJ y fuerza ese banco para todos los objetos de la celda.
+
+    Por que existe esto (hallazgo real, sesion TITLE/G02M10): el campo
+    'palette' de los atributos OAM NO SIEMPRE corresponde al banco de color
+    que se ve realmente en pantalla. En TITLE/G02M10 los OBJ declaraban
+    palette=0 pero el color real en juego (confirmado pixel a pixel contra
+    una captura real del usuario) salia del banco 2 del NCLR. En cambio en
+    TITLE/G01M10 el campo palette SI correspondia directo al banco real. No
+    asumir un caso a partir del otro: si el render con el 'palette' declarado
+    no coincide con una captura real, probar forzando cada banco disponible
+    del NCLR con este parametro hasta encontrar el que sí coincide (comparar
+    RGB pixel a pixel, no a ojo)."""
     geoms = [obj_geometry(*o, tile_boundary_shift=tile_boundary_shift) for o in objs]
     xs0 = [g['x'] for g in geoms]
     ys0 = [g['y'] for g in geoms]
@@ -171,7 +193,11 @@ def compose_cell(objs, tile_data, colors, bpp, tile_boundary_shift=0, transparen
     for g in geoms:
         w_tiles = g['w'] // 8
         h_tiles = g['h'] // 8
-        tile_img = render_tile(tile_data, g['tile_idx'], bpp, colors, w_tiles, h_tiles, g['palette'] if g['is256'] is False else 0)
+        if force_palette_bank is not None:
+            pal_bank = force_palette_bank
+        else:
+            pal_bank = g['palette'] if g['is256'] is False else 0
+        tile_img = render_tile(tile_data, g['tile_idx'], bpp, colors, w_tiles, h_tiles, pal_bank)
         if g['hflip']:
             tile_img = tile_img.transpose(Image.FLIP_LEFT_RIGHT)
         if g['vflip']:
@@ -188,7 +214,13 @@ def compose_cell(objs, tile_data, colors, bpp, tile_boundary_shift=0, transparen
 
 
 def main():
-    names = sys.argv[1:] or ["I00S10", "I01S10", "I02S10"]
+    args = sys.argv[1:]
+    force_bank = None
+    if "--bank" in args:
+        i = args.index("--bank")
+        force_bank = int(args[i + 1])
+        del args[i:i + 2]
+    names = args or ["I00S10", "I01S10", "I02S10"]
     for name in names:
         base = os.path.join(ROOT, name)
         ncgr = decode_ncgr(base + ".NCGR")
@@ -205,7 +237,8 @@ def main():
                       f"tile={g['tile_idx']} pal={g['palette']} hflip={g['hflip']} vflip={g['vflip']}")
             if not objs:
                 continue
-            img = compose_cell(objs, ncgr['tile_data'], colors, bpp, tile_boundary_shift=tbs)
+            img = compose_cell(objs, ncgr['tile_data'], colors, bpp, tile_boundary_shift=tbs,
+                                force_palette_bank=force_bank)
             # fondo oscuro tipo el del juego para poder comparar visualmente el texto
             bg = Image.new('RGB', img.size, (30, 20, 60))
             bg.paste(img, (0, 0), img)
