@@ -25,7 +25,7 @@ BASE_ROM = "Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds"
 ROM_OUT  = "Twilight Syndrome - ENG.nds"
 
 ARM9_PRISTINO = "extraccion_rom/root/ftc/arm9.bin"  # SIEMPRE el original sin parchear
-FONT_PATH = "assets/font/TWSFont_v21.NFTR"
+FONT_PATH = "assets/font/TWSFont_v22.NFTR"
 MAX_WIDTH_PX = 220   # presupuesto de ancho por linea antes de avisar
 MARGIN = 0x40000     # colchon en bytes despues de bss_end (256KB)
 
@@ -34,6 +34,15 @@ MARGIN = 0x40000     # colchon en bytes despues de bss_end (256KB)
 GRAPHICS_PATCHES = [
     ("SYS", "G00M10.NCGR", "assets/graficos/G00M10.NCGR"),
     ("SYS", "G00M11.NCGR", "assets/graficos/G00M11.NCGR"),
+    # Pestanas de seleccion de personaje/rol (G00M12-16): mismos nombres
+    # romanizados que G00M10/G00M11 (STAFF/SAKUMA/HASEGAWA iguales en los dos
+    # idiomas) salvo 2 roles que si difieren (payaso/dueno vs clown/owner),
+    # que viven aparte en assets/graficos/esp|eng/SYS/ (bloque automatico
+    # mas abajo, dentro de G00M14).
+    ("SYS", "G00M12.NCGR", "assets/graficos/G00M12.NCGR"),
+    ("SYS", "G00M13.NCGR", "assets/graficos/G00M13.NCGR"),
+    ("SYS", "G00M15.NCGR", "assets/graficos/G00M15.NCGR"),
+    ("SYS", "G00M16.NCGR", "assets/graficos/G00M16.NCGR"),
     # I22 (palillos): layout de celdas EXTENDIDO (caja de nombre 16x16 -> 48x16px,
     # ver claude/investigacion-items-graficos.md). El NCER es compartido entre
     # ESP y ENG porque solo define geometria/tiles-de-layout, no texto -- el
@@ -120,6 +129,17 @@ def encode_text(text):
         elif ch == ' ':
             out.append(0x20)
         elif ch in '0123456789':
+            # Los digitos ASCII 0x30-0x39 tienen glifo propio en la fuente
+            # desde TWSFont_v22.NFTR (2026-09-11): antes apuntaban al glifo
+            # 0 (blanco) en el bloque CMAP activo (0x22-0xe7), por eso
+            # salian en blanco en pantalla -- NO era un problema de
+            # encode_text. Se dibujaron 10 glifos nuevos en el mismo estilo
+            # (DejaVu Sans Condensed Bold) que las 54 letras custom,
+            # sacrificando 10 slots de kanji sin uso (indices 208,210-218,
+            # ya confirmados: aparecen solo en lineas del guion ya
+            # traducidas, nunca en las 7 lineas placeholder sin traducir) y
+            # repunteando las entradas CMAP 0x30-0x39 a esos indices. Ver
+            # historia-proyecto.md. Ahora el byte ASCII normal ya funciona.
             out.append(ord(ch))
         else:
             raise ValueError(f"caracter no soportado: {ch!r} en {text!r}")
@@ -164,6 +184,28 @@ def find_pointer_locations(data, text_offset):
     return locs
 
 
+def filter_legit_pointer_locations(data, locs, ambiguous_log):
+    """Ver generar_rom_esp.py para la explicacion completa. Descarta
+    coincidencias accidentales del patron de 4 bytes del puntero dentro de
+    datos de guion de escena (bytecode), quedandose solo con la que tiene
+    forma real de entrada de tabla (flag1=0x0002XXXX, flag2=0) cuando hay
+    ambiguedad. Bug confirmado 2026-09-12: causaba el freeze de la puerta
+    con llave."""
+    if len(locs) <= 1:
+        return locs
+    limpias = []
+    for loc in locs:
+        if loc + 12 > len(data):
+            continue
+        _, flag1, flag2 = struct.unpack_from('<III', data, loc)
+        if (flag1 >> 16) == 0x0002 and flag2 == 0:
+            limpias.append(loc)
+    if len(limpias) == 1:
+        return limpias
+    ambiguous_log.append((locs, limpias))
+    return locs
+
+
 def main():
     if not os.path.isfile(BASE_ROM):
         print(f"ERROR: no se encontro la ROM base: {BASE_ROM}")
@@ -199,6 +241,7 @@ def main():
     wide_lines = []
     errors = []
     missing_pointers = []
+    ambiguous_pointers = []
 
     for r in rows:
         t = r.get('traduccion', '')
@@ -222,6 +265,7 @@ def main():
         if not locs:
             missing_pointers.append(r['offset_hex'])
             continue
+        locs = filter_legit_pointer_locations(data, locs, ambiguous_pointers)
 
         new_ram = BASE_RAM + cursor
         for loc in locs:
@@ -246,6 +290,11 @@ def main():
     if missing_pointers:
         print(f"\n!! {len(missing_pointers)} offsets del CSV sin puntero encontrado en arm9 (revisar):")
         print("   ", missing_pointers[:30])
+
+    if ambiguous_pointers:
+        print(f"\n!! {len(ambiguous_pointers)} offsets con multiples punteros AMBIGUOS (revisar a mano):")
+        for locs, limpias in ambiguous_pointers[:10]:
+            print(f"    coincidencias={[hex(l) for l in locs]} limpias={[hex(l) for l in limpias]}")
 
     if wide_lines:
         print(f"\n!! {len(wide_lines)} lineas superan el presupuesto de {MAX_WIDTH_PX}px (podrian cortarse en pantalla):")
