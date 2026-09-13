@@ -157,3 +157,39 @@ todas) y solo imprime un aviso.** Revisar ese aviso cada vez que se
 regenera una ROM despues de cambios grandes al CSV -- es la señal
 temprana de que este mismo tipo de bug podria estar latente en otra
 escena, esperando el numero "de mala suerte" para manifestarse.
+
+## Leccion aparte (2026-09-13): un preview casero no reemplaza probar la ROM real
+
+Al traducir el dialogo はい/いいえ a "SI/OK"+"NO" (ver `historia-proyecto.md`,
+entrada "2026-09-13 (cierre)"), se ajusto varias veces el espaciado entre
+las 2 letras de はい ("SI"/"OK") ajustando el relleno/centrado de cada
+letra DENTRO de su propio sprite de 16x16. Cada vez que se generaba un
+nuevo render en Python (compose manual de tiles), se veia mas junto y
+"arreglado" -- pero en la ROM real, generada y probada en melonDS por el
+usuario una y otra vez, el espaciado nunca cambiaba ni un pixel.
+
+La causa real no tenia nada que ver con el contenido de los tiles: los 2
+sprites de はい tienen sus posiciones X hardcodeadas en el `.NCER`
+(atributo `attr1`) con un hueco de 16px sin usar entre ellos (mientras
+que いいえ, que si se veia bien, tiene sus 3 sprites perfectamente
+contiguos). Ningun ajuste de relleno interno podia cerrar un hueco que
+estaba en la GEOMETRIA (posicion del sprite), no en el dibujo.
+
+**Por que costo tanto notarlo:** el render de verificacion en Python
+pegaba los tiles uno al lado del otro en un canvas continuo (sin modelar
+la posicion X real de cada OBJ del NCER), asi que el "arreglo" siempre se
+veia bien en el preview aunque el problema real seguia intacto en el
+juego. El usuario insistio en volver a generar y probar la ROM real
+varias veces en vez de aceptar el preview como prueba suficiente, y eso
+fue lo que finalmente forzo a revisar los datos de posicion del NCER en
+vez de seguir iterando sobre el contenido del tile.
+
+**Regla a futuro:** un preview/decoder casero sirve para descartar
+corrupcion de datos (bytes mal escritos, offsets mal calculados), pero
+NO es prueba de que algo se vea bien en el juego real -- sobre todo para
+cosas de geometria de sprites (posicion X/Y, tamaño, flip), que un script
+de verificacion rapido facilmente no esta modelando. Si un cambio de
+contenido no produce NINGUN cambio visible en la ROM real tras mas de un
+intento, es señal de que el problema esta en otro campo de datos
+(posicion/tamaño en el NCER), no en seguir puliendo el contenido del
+tile.
