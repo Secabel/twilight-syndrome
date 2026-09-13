@@ -1649,3 +1649,72 @@ como se hizo con el menu) rompería el efecto visual.
 universal ("toque la pantalla para continuar"), no aporta a la
 comprension de la historia, y no justifica el trabajo extra de preservar
 la animacion por celda. Cierra el pendiente #2 de la entrada anterior.
+
+## 2026-09-13 — Menu de campo (もちもの/ケータイ/はなす) traducido: `SYS/G03S10.NCGR`
+
+Investigacion original: el usuario encontro, jugando, un dialogo de
+confirmacion de carga de partida ("Cargar partida? はい/いいえ") con texto
+japones que no aparecia en ningun CSV. Usando el visor de OAM de no$gba
+confirmo que **cada caracter de はい/いいえ es un sprite OBJ independiente**
+con su propia direccion de tile en VRAM (no un grafico horneado) - texto
+dinamico renderizado por una fuente de sistema separada, todavia sin
+ubicar (no se encontro en `Debug.NFTR` ni en ningun NCGR de SYS/SAVELOAD/
+OPTION revisado; queda pendiente para otra sesion).
+
+Durante esa busqueda se encontro y SI se resolvio un caso distinto: el
+menu de acciones de campo (もちもの="objetos", ケータイ="celular",
+はなす="hablar", con iconos de boton R/L/X) en `extraccion_rom/root/SYS/
+G03S10.NCGR` + `.NCER`. A diferencia del dialogo はい/いいえ, aca el
+visor de celdas NCER (`decode_ncer` + `compose_cell` de
+`scripts/inventario_completo.py`) mostro que **cada palabra completa +
+su icono es UNA sola celda con varios objetos agrupados** (celda 4 =
+もちもの+icono bolsa+boton R, celda 5 = ケータイ+boton L, celda 6 =
+はなす+boton X+icono persona) - osea SI es texto horneado, tile por
+tile, igual que las tarjetas EV9/SAVELOAD.
+
+**Tecnica para separar icono de texto sin romper ninguno de los dos**
+(iterando con el usuario sobre capturas reales, no a ciegas):
+1. Volcar cada pixel de la celda compuesta a un mapa ASCII por color
+   (gris = texto, rojo = icono, negro = ambiguo) para ver la superposicion
+   exacta antes de tocar nada.
+2. El icono/boton (R, L, X) usa el MISMO gris que el texto en algunos
+   casos (la letra "R"/"L"/"X" es texto tambien, visualmente) - hace
+   falta una zona protegida por COORDENADAS (no solo color) alrededor de
+   esa letra especifica, ademas del filtro de color para el resto de la
+   celda.
+3. **Error real cometido y corregido en vivo:** la primera zona protegida
+   para la "L" no cubria su pata horizontal completa (quedo cortada a una
+   sola linea vertical, ilegible) - hubo que volver a medir el limite
+   exacto con un mapa de pixeles mas fino. Mismo problema con el circulo
+   de la "X": la primera zona protegida solo cubria la letra, no el
+   circulo completo alrededor (que se corto en su mitad inferior) - hubo
+   que medir el circulo entero (filas 4-17, no 4-13) y luego, al notar
+   que aun asi quedo un trozo del borde faltante, reconstruir esa parte
+   del circulo a mano con los colores de borde/relleno reales tomados de
+   una zona no dañada de la misma figura.
+4. El texto tiene una SOMBRA degradada (mismo tono rojizo que el icono
+   pero cada vez mas oscuro fila por fila) que el filtro de color simple
+   no atrapaba - hubo que identificarla explicitamente por su gradiente y
+   agregar una regla de "borrar todo en estas filas/columnas
+   especificas", no solo por color.
+5. Texto final dibujado con fuente PIL basica + contorno negro (offset de
+   1px en las 8 direcciones) sobre el icono ya limpio, iterando la
+   posicion exacta a pedido del usuario (probando con capturas reales del
+   juego, no solo el mockup aislado) hasta que coincidio visualmente sin
+   huecos ni superposiciones.
+6. **Reencodeado real a NCGR:** conversion de cada pixel editado (RGBA) al
+   indice de paleta mas cercano dentro del banco de color 1 (16 colores,
+   los mismos que ya usaba esta celda), empaquetado a tiles 4bpp respetando
+   el offset fijo de 32 bytes/tile (`tile_idx*32 + n*tile_bytes`, mismo fix
+   documentado arriba para TITLE/G02M10), y reescritura en una copia del
+   NCGR original. Verificado decodificando el archivo recien escrito con
+   el mismo lector del proyecto antes de darlo por bueno.
+
+**Decision del usuario:** usar la MISMA traduccion en ingles y español
+("ITEMS"/"PHONE"/"TALK") en vez de traducir por separado a "OBJETOS"/
+"TELEFONO"/"HABLAR" - un solo `G03S10.NCGR` compartido para ambos
+`assets/graficos/{esp,eng}/SYS/`.
+
+**Pendiente para otra sesion:** ubicar el mecanismo/fuente real detras del
+dialogo はい/いいえ (texto dinamico via sprites OBJ, confirmado que NO es
+ninguno de los graficos ya revisados) para poder traducirlo tambien.
