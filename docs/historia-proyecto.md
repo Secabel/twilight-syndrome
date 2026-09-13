@@ -1718,3 +1718,135 @@ tile, igual que las tarjetas EV9/SAVELOAD.
 **Pendiente para otra sesion:** ubicar el mecanismo/fuente real detras del
 dialogo はい/いいえ (texto dinamico via sprites OBJ, confirmado que NO es
 ninguno de los graficos ya revisados) para poder traducirlo tambien.
+
+## 2026-09-13 (continuacion) — RESUELTO: el "texto dinamico" はい/いいえ
+en realidad son tiles horneados dentro de SAVELOAD/M10.NCGR
+
+Retomando el pendiente de arriba: se ubico el origen real usando el
+debugger completo de no$gba (no solo el visor OAM) y comparacion directa
+de bytes VRAM-vs-ROM, sin usar breakpoints.
+
+**Metodo:**
+1. Con el visor OAM de no$gba se identifico, para cada sprite de
+   caracter visible en el dialogo "Cargar partida?", su **Tile Address**
+   en VRAM (Engine A, banco OBJ, ej. `06407700` para は).
+2. Se uso el Memory Viewer del debugger completo (`Search` > click
+   derecho en el panel hex > Goto address) para volcar los bytes crudos
+   en esa direccion de VRAM.
+3. Se busco esa secuencia exacta de bytes dentro de todos los archivos
+   del ROM extraido (script de busqueda de patron binario) -> coincidio
+   dentro de `extraccion_rom/root/SAVELOAD/M10.NCGR`, en tiles que
+   **no estan referenciados por ninguna celda del NCER** (por eso
+   renderizar via NCER, como se hizo antes, no los mostraba - el render
+   solo dibuja lo que el NCER compone, no arrastra tiles "sueltos" del
+   pool). El juego arma el sprite de cada letra por codigo, apuntando
+   directo a numeros de tile fijos dentro de este mismo archivo.
+4. Al extraer el bloque de 128 bytes (4 tiles de 32 bytes, sprite 16x16)
+   se detecto un desalineamiento de 3 bytes entre el offset de
+   `tile_data` que devuelve el decoder del proyecto y el limite real de
+   tile usado por la VRAM (el offset encontrado por busqueda de patron
+   caia en `byte_in_tile=3`, no en un multiplo exacto de 32). Restando 3
+   al offset se obtuvo alineacion perfecta (multiplo de 32) y los glifos
+   se ven nitidos y completos.
+
+**Resultado — offsets confirmados dentro de `SAVELOAD/M10.NCGR`
+(relativos al `tile_data` que devuelve `decode_ncgr`):**
+- は -> offset `21376`
+- い (la de "はい") -> offset `21248`
+- い (la de "いいえ", primera y segunda ocurrencia comparten el mismo
+  tile) -> offset `22656` — pixel-por-pixel identico al glifo anterior,
+  confirmando que es el mismo caracter, solo con una copia separada.
+- え -> offset `22528`
+
+**Conclusion:** esto retracta la conclusion original ("es texto
+dinamico, no grafico cocinado"). SI es grafico cocinado (tiles de
+pixeles pre-dibujados, blanco/gris/negro con antialiasing), solo que
+esta organizado como sprites OBJ sueltos en vez de una sola imagen de
+fondo — el mismo tipo de edicion pixel a pixel que `G03S10` sirve aca
+tambien, sin tocar codigo, porque el juego ya apunta a numeros de tile
+fijos en este archivo.
+
+**Pendiente inmediato:** ubicar la copia equivalente en `M11.NCGR` (se
+sospecha que M10/M11 son variantes del mismo dialogo para contextos
+distintos) y tambien un segundo par de botones que el usuario reporta
+que aparecen al cargar partida con texto distinto (probablemente
+tambien tiles sueltos en `SAVELOAD/M11.NCGR`), antes de traducir.
+
+## 2026-09-13 (cierre) — はい/いいえ traducido: SI/NO (esp) y OK/NO (eng)
+
+Continuacion directa de la entrada anterior. El "segundo par de botones"
+resulto ser el MISMO dialogo pero en la pantalla de Guardar partida
+("Guardar partida?"), usando `SAVELOAD/M11.NCGR`/`M11.NCER` en vez de
+M10 — no era texto distinto. Se confirmo que M11 tiene los mismos 3
+glifos unicos (は, い, え) en offsets propios, encontrados buscando los
+bloques de bytes ya conocidos de M10 dentro de M11 (coincidencia exacta,
+alineada a tile):
+
+- M11 は -> offset `24320`, い -> offset `24192` (una sola copia,
+  compartida por はい Y por las 2 posiciones de いいえ, a diferencia de
+  M10 que tenia 2 copias separadas), え -> offset `25472`.
+
+**Traduccion elegida:** en vez de "YES"/"NO" en ingles (3 letras en un
+cuadro de 2), el usuario propuso "OK" (2 letras, calza perfecto). Queda
+はい -> "SI"/"OK" (2 sprites) y いいえ -> "NO" (en los 3 sprites
+disponibles, con el tercero vacio).
+
+**Problema nuevo y su solucion — el NCER, no solo el NCGR, guarda datos
+editables:** para escribir "NO" con N y O como letras independientes
+hacia falta romper la duplicacion: las 2 primeras posiciones de いいえ
+apuntan al MISMO numero de tile (visto en el visor OAM: mismo Tile
+Address para ambas). Igual que con los graficos, este numero de tile
+esta escrito como dato binario simple dentro del `.NCER` (definicion de
+celda `KBEC`, struct de 6 bytes `attr0/attr1/attr2` por objeto) — NO se
+calcula por codigo en tiempo de ejecucion. Fix: se agrego un tile nuevo
+al final del array de `tile_data` del `.NCGR` (con la letra "O"), y se
+repunteo el campo `attr2` de la segunda posicion en el `.NCER` para que
+apunte a ese tile nuevo en vez de reusar el de la primera. Sin tocar
+ARM9 en absoluto — es una edicion de 2 archivos de datos, igual de
+segura que editar pixeles. Verificado antes de aplicarlo: se agrego un
+tile de prueba (patron a rayas) y se comprobo que aparecia de forma
+100% independiente en la posicion repunteada sin afectar la original.
+
+**Bug propio encontrado y corregido durante esta edicion:** al calcular
+donde empieza el array de tiles dentro del `.NCGR` para insertar el
+tile nuevo, se uso por error una busqueda de patron de bytes (buscar los
+primeros 16 bytes del `tile_data` ya decodificado dentro del archivo
+crudo) en vez de leer el campo `data_rel_off` del header RAHC
+directamente. Como los primeros tiles suelen ser mayormente ceros (tiles
+en blanco), la busqueda encontraba una coincidencia falsa 3 bytes antes
+del inicio real, insertando el tile nuevo desalineado y corrompiendo
+visualmente TODOS los tiles leidos despues (letras con fragmentos
+sueltos, sin relacion aparente con el contenido real). Se detecto
+comparando el resultado con un render manual tile-por-tile y se
+confirmo la causa comparando contra `inv.decode_ncgr` (que sí usa el
+campo del header). Fix: usar siempre el campo del header para ubicar
+offsets dentro de un NCGR, nunca busqueda de patron (mismo tipo de
+leccion que el bug de `find_pointer_locations` del freeze — un patron de
+bytes no verificado puede coincidir por casualidad).
+
+**Segundo bug (el importante, el que realmente causaba "no se ve
+cambio"):** despues de arreglar el bug anterior, el usuario probo la ROM
+real varias veces y el espaciado entre las 2 letras de はい ("SI"/"OK")
+seguia identico sin importar cuanto se ajustara el padding de cada
+letra dentro de su propio sprite — incluso con margen 0 (letra pegada al
+borde). La causa real: el hueco no era de relleno de fuente, era de
+**posicion**. Los 2 sprites de はい estan en X=-24 y X=8 en el `.NCER`
+(un hueco de 16px sin usar entre ellos, hardcodeado en los datos
+originales del juego), mientras que los 3 sprites de いいえ ya estaban
+perfectamente contiguos (X=-24,-8,8) — por eso "NO" siempre se veia bien
+y ningun ajuste de relleno interno podia arreglar "SI"/"OK": estaba
+editando el problema equivocado. Fix real: cambiar el campo `attr1`
+(posicion X) del segundo sprite de はい de X=8 a X=-8 en el `.NCER`,
+pegandolo justo donde termina el primero. Leccion: cuando un ajuste de
+contenido no cambia nada visible en la ROM real por mas veces que se
+repita, sospechar de la GEOMETRIA (posicion/tamaño de sprite) antes que
+seguir iterando sobre el contenido — mis propias vistas previas en
+Python siempre pegaban los sprites uno al lado del otro sin hueco (no
+modelaban la posicion X real), por eso a mi SI me parecian arregladas
+mientras la ROM real seguia mostrando el hueco.
+
+**Resultado final:** はい/いいえ traducido y verificado en la ROM real
+(no solo en preview) en ambas pantallas (Cargar/Guardar) y ambos
+idiomas. Assets en `assets/graficos/{esp,eng}/SAVELOAD/M10.NCGR`,
+`M10.NCER`, `M11.NCGR`, `M11.NCER`. Con esto queda cerrado el pendiente
+はい/いいえ que quedaba abierto desde el 2026-09-13 (entrada anterior).
