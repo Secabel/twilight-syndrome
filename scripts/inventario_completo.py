@@ -84,7 +84,7 @@ def decode_nclr(path):
         g = ((v >> 5) & 0x1F) * 8
         b = ((v >> 10) & 0x1F) * 8
         colors.append((r, g, b))
-    while len(colors) < 256:
+    while len(colors) < 4096:
         colors.append((255, 0, 255))
     return colors
 
@@ -240,6 +240,18 @@ def decode_nscr(path):
 
 
 def render_nscr(nscr, ncgr, colors):
+    """FIX (2026-09-13, encontrado durante la traduccion de EV0/S00/1.NCGR):
+    en el branch de 8bpp, el indice de tile debe leerse dentro del BANCO de
+    paleta que indica el campo `pal` de la entrada del NSCR -- colors[pal*256
+    + idx] -- no colors[idx] a secas. Los NCLR "extendidos" (multi-banco,
+    ~8232 bytes / 4096 colores en vez de los 256/512 bytes de un NCLR de un
+    solo banco) usan hasta 16 bancos de 256 colores para fondos NSCR de 8bpp,
+    y sin este offset esas pantallas se renderizaban directo en negro solido
+    (invisibles a cualquier barrido -- asi fue como EV0 entero quedo marcado
+    como "sin hallazgos de texto" en el inventario original, un falso
+    negativo). Es retrocompatible: en un NCLR de un solo banco (256 colores)
+    el campo `pal` de estas entradas siempre viene en 0, asi que
+    colors[0*256+idx] == colors[idx], igual que antes."""
     bpp = 4 if ncgr['bitdepth'] == 3 else 8
     tile_bytes = 32 if bpp == 4 else 64
     tile_data = ncgr['tile_data']
@@ -268,7 +280,7 @@ def render_nscr(nscr, ncgr, colors):
             for row in range(8):
                 for col in range(8):
                     idx = tb[row * 8 + col]
-                    tile_img.putpixel((col, row), colors[idx])
+                    tile_img.putpixel((col, row), colors[pal * 256 + idx])
         if hflip:
             tile_img = tile_img.transpose(Image.FLIP_LEFT_RIGHT)
         if vflip:
