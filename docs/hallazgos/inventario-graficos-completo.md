@@ -120,9 +120,38 @@ nada de lo ya hecho.
 13. Carteles de habitacion en EV9 (理科室, 音楽室, 保健室, 倉庫, 資料室, "2-2") - señaletica ambiental, 1-2 palabras c/u.
 14. STAFFROLL - creditos (nombres de empresas/departamentos, ej. "品質管理", "株式会社ゲームズ") - convencionalmente no se traducen.
 
+## EV0 - revisado a fondo (2026-09-13), corrige el barrido original
+
+El barrido original de esta pagina listaba **EV0 como "sin hallazgos de
+texto"** - eso fue un falso negativo: `render_nscr()`/`render_tile_block()`
+en ese momento no manejaban el modo de "paleta extendida" de los NSCR de 8bpp
+(debian indexar `colors[pal*256+idx]` en vez de `colors[idx]`), asi que las
+pantallas afectadas de EV0 se veian directamente negras y no se detectaban.
+Se re-barrio EV0 completo (16 subcarpetas, 59 graficos, 49/59 decodificados
+con exito) con un decoder corregido (`render_nscr_ext()`, ver
+`docs/historia-proyecto.md` entrada 2026-09-13) y aparecieron 2 hallazgos:
+
+- **EV0/S00/1.NCGR - "ね、知ってる？" ("Oye, ¿sabes?" / "Hey, you know?").**
+  Fondo negro con NSCR 256x256, es la primera pantalla que aparece despues
+  de elegir una partida nueva, justo antes de la imagen de la mano/telefono
+  fantasmal (`EV0/S00/2.NCGR`). **Traducido y redibujado en ESP y ENG**
+  (`assets/graficos/esp/EV0/S00/1.NCGR`, `assets/graficos/eng/EV0/S00/1.NCGR`),
+  tipografia TeX Gyre Chorus (cursiva) para imitar el trazo manuscrito
+  original. Detalle tecnico completo (iteraciones de fuente/tamano/glow) en
+  `docs/historia-proyecto.md`.
+- **EV0/S07/5.NCGR - minijuego de llamada telefonica** ("切断中" = "Colgando/
+  Desconectando...", boton "決定" = "Confirmar"). **Decision: no se traduce
+  por ahora** (pedido explicito del usuario, 2026-09-13) - queda documentado
+  aca para retomarlo si se decide traducirlo mas adelante.
+
+Los otros 10 archivos de EV0 que no se pudieron decodificar (M02/6,9;
+M03/6,7,9; M04/5,6,9; S01/6,9) dan ruido/estatica con el decoder actual -
+visualmente parecen no tener texto pero no esta confirmado al 100%, sería
+necesario investigar mas a fondo su formato para descartarlo con certeza.
+
 ## Sin hallazgos de texto
 
-EV0, EV2, EV4 (fotos/escenas puras, sin texto), R01-R04, R07-R10, R15, R21,
+EV2, EV4 (fotos/escenas puras, sin texto), R01-R04, R07-R10, R15, R21,
 R22, R24 (retratos/animaciones de personajes o UI en blanco), MBP (barras de
 progreso/iconos, sin texto legible), OPTION (fotos + fuente de digitos),
 ERROR (el cartel de mensaje de error es solo el marco - el texto se dibuja

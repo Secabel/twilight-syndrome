@@ -1429,10 +1429,9 @@ corregir o traducir alguna celda más de este mismo archivo, ej. el cartel
    y confirmar en juego las 6 tarjetas nuevas de `TITLE/G02M10` (solo la
    primera fue probada en melonDS) — sigue pendiente, no relacionado a
    `G01M10`.
-2. **`TITLE/G01M10` — cartel "画面をタッチしてください"** (celdas 0-10 del
-   mismo NCER, la pantalla previa al menú, un kanji/kana por celda): todavía
-   sin traducir, no se decidió si vale la pena (es solo un "toque la
-   pantalla para continuar").
+2. ~~`TITLE/G01M10` — cartel "画面をタッチしてください"~~ **CERRADO
+   2026-09-13: decisión final, NO se traduce** (ver entrada del
+   2026-09-13 mas abajo).
 3. Confirmar el banco de paleta real del estado "seleccionado" de las
    tarjetas de `G02M10` (sigue sin verificar, no relacionado a `G01M10`).
 4. Portar el fix del decoder NCER (offset de tile = `tile_idx*32`; soporte
@@ -1492,3 +1491,161 @@ Los 6 archivos binarios nuevos (`TITLE/G02M10.NCGR`+`.NCER` y
 `TITLE/G01M10.NCGR`, esp+eng) quedan para un commit aparte por su
 naturaleza binaria — ver el resto de esta sesión para el detalle de cómo
 se subieron.
+
+### 2026-09-13 - EV0/S00/1.NCGR ("ね、知ってる？"): hallazgo, bug de paleta extendida en NSCR, y traduccion ESP/ENG
+
+El usuario compartio dos capturas: el cartel "下画面をタッチしてください" del
+titulo (ya detectado en `TITLE/G01M10` celdas 0-10+27, pendiente de traducir)
+y una pantalla negra con "ね、知ってる？" que aparecia justo antes de una
+imagen de una mano/telefono fantasmal. Un primer intento de ubicar esta
+segunda frase la confundio con una linea de dialogo del CSV en el capitulo 31
+(offset `0xddb68`, "…ね、知ってる？\nナナシの正体。") - el usuario corrigio
+esto correctamente ("no puede ser en el juego sale sin traducir... si fuera
+como dices yo veria texto en español"): esa linea del CSV es una coincidencia
+de texto en un contexto distinto de la historia, no la fuente real de la
+captura. La frase de la captura es un grafico horneado.
+
+**Ubicacion real: `EV0/S00/1.NCGR`** (NSCR de fondo 256x256), confirmada
+guiandose por el orden de pantallas que describio el usuario (aparece justo
+despues de elegir "nueva partida", justo antes de `EV0/S00/2.NCGR` = la
+imagen de la mano/telefono).
+
+**Bug encontrado en el decoder compartido:** `render_nscr()` (en
+`scripts/inventario_completo.py` y `scripts/traducir_saveload.py`) no
+soporta el modo de "paleta extendida" de los NSCR de 8bpp - debia indexar el
+color como `colors[pal*256+idx]` (bancos de 256 colores, NCLR grandes de
+~8232 bytes / 4096 colores) en vez de `colors[idx]` a secas. Sin este fix,
+las pantallas afectadas (como toda la carpeta `EV0/S00`) se renderizan en
+negro solido y quedan invisibles a cualquier barrido. Esto explica por que
+el inventario visual completo (`docs/hallazgos/inventario-graficos-completo.md`)
+habia marcado **EV0 entero como "sin hallazgos de texto"** - falso negativo.
+El fix (`render_nscr_ext()`, probado localmente) **todavia no se porto** a
+los scripts reales del repo (candidato para una proxima sesion, mismo patron
+que el fix de offset de tile de NCER documentado mas arriba).
+
+Se re-corrio el barrido sobre las 16 subcarpetas de `EV0` (59 graficos) con
+el decoder corregido: 49/59 se decodificaron bien, 10 dieron ruido/estatica
+(M02/6,9; M03/6,7,9; M04/5,6,9; S01/6,9 - formato no identificado, sin
+confirmar si tienen texto). Aparecieron exactamente 2 hallazgos nuevos,
+ambos documentados en `docs/hallazgos/inventario-graficos-completo.md`:
+
+- `EV0/S00/1.NCGR` - la frase de esta sesion. **Se decidio traducir.**
+- `EV0/S07/5.NCGR` - UI de un minijuego de llamada telefonica ("切断中" /
+  "決定"). **El usuario pidio explicitamente no traducirla por ahora**
+  ("el del telefono no lo traduzcas, solo deja anotado en el md que por
+  ahora no lo traduciremos").
+
+**Traduccion e iteracion visual de `EV0/S00/1.NCGR`:**
+
+Texto final: ESP "Oye, ¿sabías?" / ENG "Hey, did you know?" (se ajusto el
+tiempo verbal del ingles de presente a pasado para que combine con el
+"sabias" del español, tras notar el usuario que "Oye, ¿sabes?" sonaba mejor
+como "¿sabías?" - mismo tono que usa el CSV para la frase parecida del
+capitulo 31, "Hey, do you know...?").
+
+El usuario pidio ver un preview antes de aplicar el cambio final, e itero
+sobre 3 problemas encontrados en las primeras versiones:
+
+1. **Recorte**: a 15pt con DejaVu Sans Bold el texto media 110px y el area
+   parcheada tenia 104px de ancho - la "O" inicial y el "?" final quedaban
+   cortados. Fix: medir `textbbox` en varios tamanos candidatos y elegir el
+   mas grande que entra con margen.
+2. **Tipografia**: DejaVu Sans Bold (sans-serif geometrica) no se parecia al
+   trazo suelto/manuscrito del japones original. Se probo bajar fuentes
+   manuscritas reales (Caveat, Shadows Into Light, Permanent Marker) desde
+   Google Fonts y GitHub, pero el entorno de esta sesion no tiene salida a
+   esos hosts (`raw.githubusercontent.com` devolvio error de acceso
+   deshabilitado, `fonts.googleapis.com` devolvio 403 de tunel). Se opto por
+   la mejor alternativa ya instalada localmente (`fc-list`): **TeX Gyre
+   Chorus** (estilo Zapf-Chancery/cursivo), que calzo muy bien de forma
+   visual.
+3. **Restos de brillo del texto original fuera del area parcheada**: incluso
+   despues de arreglar el recorte, quedaban pixeles oscuros-pero-no-negros a
+   los costados del texto nuevo. Diagnostico via analisis de pixeles con
+   numpy: eran restos del anti-aliasing del texto japones ORIGINAL que
+   se extendian 1 columna de tile mas alla del area que se estaba
+   parcheando. Fix: ampliar el area parcheada de 13 a 15 tiles de ancho
+   (de tx 5-17 a tx 4-18 inclusive, manteniendo las mismas 3 filas de tile
+   ty 13-15) - se verifico que los tiles nuevos que entran en el area
+   (compartidos por ID unico en el mapa NSCR) se usan una sola vez cada uno,
+   asi que ampliar no corrompe ningun otro sector de la pantalla.
+
+**Fuente y estilo usados en `EV0/S00/1.NCGR` (ESP/ENG, para replicar si hay
+que corregir o extender esta pantalla):**
+- **Fuente:** TeX Gyre Chorus, variante mediumitalic
+  (`/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrechorus-mediumitalic.otf`
+  en el entorno de render de la nube - equivalente a Zapf Chancery, estilo
+  cursivo/manuscrito). Se probo primero DejaVu Sans Bold (sans-serif
+  geometrica) pero no se parecia al trazo suelto del japones original; se
+  intento bajar fuentes manuscritas reales (Caveat, Shadows Into Light,
+  Permanent Marker) de Google Fonts/GitHub pero el entorno no tiene salida a
+  esos hosts - TeX Gyre Chorus fue la mejor alternativa ya instalada
+  localmente (via `fc-list`).
+- **Tamano:** ESP "Oye, ¿sabías?" a 19pt (92x18px). ENG "Hey, did you know?"
+  no entra a 19pt (mide mas de 120px de ancho), asi que quedo a **16pt**
+  (114x15px) - se nota un poco mas chico que el español pero el usuario
+  confirmo que igual se ve bien ("me parece que igual en ese tamaño se sigue
+  viendo bien"). Se probaron ademas "Did you know?" (entra a 19pt, igual
+  tamano que el español, pero pierde el "Hey" inicial) y "Hey, you know?"
+  (19pt, pero no combina en tiempo verbal con "¿sabías?") - el usuario
+  eligio quedarse con "Hey, did you know?" pese al tamano de fuente mas
+  chico. Igual que en `G02M10`, el tamano se elige probando `textbbox` y
+  bajando de a 1pt hasta que entra, partiendo de 19pt.
+- **Area del parche (tile):** 15 tiles de ancho x 3 de alto = 120x24px,
+  tiles tx=4-18, ty=13-15 del NSCR de fondo (256x256px). Empezo en 13
+  tiles de ancho (tx=5-17) pero se amplio a 15 para tapar restos de glow
+  del texto japones original que sobresalian 1 columna de tile a cada lado.
+  Texto centrado dentro de esa caja de 120x24.
+- **Efecto glow:** texto "core" en escala de grises (fill=255) con
+  antialiasing normal de PIL, `ImageFilter.GaussianBlur(radius=0.6)` sobre
+  una copia, combinados tomando el maximo por pixel entre blur y core nitido
+  (mismo criterio que `G02M10`/`render_glow()` de `traducir_saveload.py`,
+  pero con radio mas chico: 0.6 en vez de 1.2-1.6, porque el area disponible
+  acá es mucho mas chica).
+- **Cuantizacion de color:** valores de gris <=30 se mapean directo al
+  indice 1 del banco (confirmado = negro puro, para fundirse con el fondo);
+  el resto se cuantiza al indice de paleta mas cercano por luminancia
+  (`0.299*R+0.587*G+0.114*B`) dentro del **banco 1** de la paleta extendida
+  de `0.NCLR` (256 colores por banco - ver el bug de paleta extendida mas
+  arriba), **excluyendo siempre el indice 0**: en este banco el indice 0 es
+  un color especial/marcador verde brillante `(0,248,0)` que si no se
+  excluye "gana" por error la comparacion de luminancia en algunos pixeles
+  de tono medio del anti-aliasing, generando pecas verdes visibles.
+
+**Archivos finales generados y aplicados:**
+`assets/graficos/esp/EV0/S00/1.NCGR` (ESP, "Oye, ¿sabías?") y
+`assets/graficos/eng/EV0/S00/1.NCGR` (ENG, "Hey, did you know?"). Ambos entran
+automaticamente en la proxima ROM via el barrido automatico de
+`assets/graficos/<idioma>/` que ya tienen `generar_rom_esp.py`/
+`generar_rom_eng.py` (no hizo falta tocar `GRAPHICS_PATCHES` a mano).
+Pendiente: probar en juego con una ROM y savestate NUEVOS (nunca reusar un
+savestate de una build anterior, por la regla del proyecto).
+
+### 2026-09-13 (misma sesión, continuación) — `TITLE/G01M10`, cartel "下画面をタッチしてください": decisión final, NO se traduce
+
+El usuario probó en melonDS la ROM ya generada con el hallazgo de
+`EV0/S00/1.NCGR` y de paso preguntó por este cartel (visible en la captura
+del arranque: "下画面をタッチしてください" = "Toque la pantalla de abajo",
+el aviso estándar de DS para que el jugador toque la pantalla táctil).
+
+Al describirlo inicialmente como "un solo grafico horneado" (por analogia
+con `EV0/S00/1`), el usuario corrigio correctamente: **no es una imagen
+plana unica, son 11 celdas NCER independientes (una por kanji/kana, celdas
+0-10 de `TITLE/G01M10.NCER`)** - misma estructura que las 7 etiquetas del
+menu (celdas 12-26) ya traducidas. Ademas señalo que **las letras
+tiemblan** en pantalla y que tratarlo como un grafico unico perderia ese
+efecto.
+
+**Verificado con el archivo real (`TITLE/G01M10.NANR`):** el NCER tiene
+**20 secuencias de animacion independientes, 5 frames cada una**, tipo
+"indice+SRT" (rotacion/escala/traslacion por frame, 8 bytes de datos por
+frame). Esto confirma tecnicamente la observacion del usuario: varias de
+las celdas de este cartel tienen su propia animacion de temblor
+independiente, motivo por el cual redibujar esto como una sola imagen
+estatica (en vez de reemplazar el contenido tile por tile de cada celda,
+como se hizo con el menu) rompería el efecto visual.
+
+**Decision final del usuario: NO se traduce.** Motivo: es un aviso de UI
+universal ("toque la pantalla para continuar"), no aporta a la
+comprension de la historia, y no justifica el trabajo extra de preservar
+la animacion por celda. Cierra el pendiente #2 de la entrada anterior.
