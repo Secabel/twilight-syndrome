@@ -233,3 +233,21 @@ En ese caso, antes de rediseñar el asset o el texto, probar primero
 midiendo/eliminando datos muertos (tiles originales sin referencias) del
 archivo traducido — como se hizo aqui — en vez de asumir que hay que
 reducir visualmente el contenido.
+
+**Auditoria preventiva ya hecha (2026-09-14) — no hace falta repetirla:**
+se reviso la estructura de TODOS los graficos traducidos del proyecto
+(esp/eng) buscando cuales tienen `.NCER` (condicion necesaria para este
+patron: solo existe si el archivo mezcla celdas ya traducidas con celdas
+que siguen apuntando a tiles originales del mismo archivo). Resultado:
+`TITLE/G02M10` es el UNICO asset del proyecto con esa estructura (29
+celdas, solo algunas traducidas). Los demas (`SAVELOAD/M10,M11` -- estos
+si tienen `.NCER` pero son chicos y ya se revisaron por otro bug, sin este
+patron --, `SAVELOAD/S00-S06`, `SYS/*`, `EV9/M16-M20`, `EV0/S00`, los 38
+items de `ITM/2D`) son `.NCGR` sueltos, redibujados completos por idioma,
+sin datos originales mezclados adentro. Conclusion: NO hace falta auditar
+ni "limpiar" otros assets de forma preventiva salvo que en el futuro se
+traduzca parcialmente algo que hoy es un redibujado completo (ahi si
+recien aplicaria este mismo chequeo). Lo que SI sigue pendiente es
+distinto: probar en juego las tarjetas 3-7 de este MISMO `G02M10` cuando
+se pueda avanzar mas en el save (no es "revisar otros assets", es
+"terminar de confirmar este mismo fix").

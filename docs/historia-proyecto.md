@@ -1999,3 +1999,35 @@ faltante nuevo (siguen siendo las mismas 3 lineas [REVISAR] de siempre).
 pristino para las 95). Falta confirmar en juego. Entre el fix del ratio y
 este, quedan **112 lineas reales recuperadas en total** hoy (17 + 95) que
 antes se mostraban en japones sin importar el idioma de la ROM.
+
+## 2026-09-14 (cont.) - Auditoria preventiva: ¿el bug de datos muertos de G02M10 puede repetirse en otro asset?
+
+El usuario pidio revisar si el problema de tamano/datos muertos de
+`TITLE/G02M10` podia estar latente en otros graficos traducidos del
+proyecto (no solo corregir si algo se rompe, sino chequear preventivamente).
+
+**Resultado de la auditoria (hecha, no pendiente):** se reviso la
+estructura de TODOS los graficos traducidos (esp y eng): `SAVELOAD/M10,
+M11, S00-S06`, `SYS/G00M14, G03S10`, `EV9/M16-M20` (50 archivos), `EV0/S00`,
+`ITM/2D` (38 items), ademas de `TITLE/G02M10`. De todos ellos, **solo 3
+archivos tienen un `.NCER`** (que es la condicion necesaria para que exista
+el patron de "celdas viejas + celdas traducidas compartiendo el mismo pool
+de tiles"): `TITLE/G02M10.NCER` (29 celdas, el que se rompio) y
+`SAVELOAD/M10.NCER`/`M11.NCER` (iconos si/no, muy chicos, ya revisados
+antes por otro bug -- de posicion, no de tamano -- y sin este patron).
+Todo el resto son `.NCGR` solos, sin `.NCER`: cada uno es un redibujado
+completo por idioma (no reutilizan el archivo original mezclando celdas
+viejas y nuevas), asi que no pueden tener datos japoneses "muertos"
+adentro por construccion.
+
+**Conclusion (confirmada, no es una suposicion a revisar despues):**
+`TITLE/G02M10` es un caso estructuralmente unico en el proyecto tal como
+esta hoy. NO hace falta auditar/limpiar otros assets de forma preventiva.
+
+**Lo que SI queda pendiente (no es lo mismo que lo de arriba):** cuando se
+pueda avanzar mas en el save y desbloquear mas historias, falta probar en
+juego real las tarjetas 3 a 7 de este MISMO asset (`G02M10`) -- el fix es
+simetrico asi que se espera que funcione igual, pero solo se confirmo con
+las historias 1 y 2 hasta ahora (ver entrada del 2026-09-13). Esto es
+"revisar mas tarjetas del mismo caso ya arreglado", no "revisar otros
+assets nuevos" -- ese segundo punto ya se descarto arriba.
