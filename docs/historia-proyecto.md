@@ -1850,3 +1850,152 @@ mientras la ROM real seguia mostrando el hueco.
 idiomas. Assets en `assets/graficos/{esp,eng}/SAVELOAD/M10.NCGR`,
 `M10.NCER`, `M11.NCGR`, `M11.NCER`. Con esto queda cerrado el pendiente
 はい/いいえ que quedaba abierto desde el 2026-09-13 (entrada anterior).
+
+## 2026-09-13 - Bug 3/4 corregido: freeze al final de historia 1 / no se podia elegir historia 2 en el menu
+
+**Sintoma reportado por el usuario:** al terminar la historia 1 el juego se
+quedaba trabado en la pantalla final (no dejaba salir ni volver al menu).
+Por separado, en "Nueva Partida" tras terminar la historia 1, el cursor se
+podia mover entre fichas (sonido de movimiento) pero la ficha en pantalla
+no cambiaba y no se podia seleccionar la historia 2. El usuario confirmo
+que ambos son el mismo bug (misma pantalla del menu de historias) y que
+tambien ocurria en la ROM en ingles.
+
+**Causa real:** el asset traducido `TITLE/G02M10.NCGR` (las "fichas" del
+menu de seleccion de historia) superaba el presupuesto de VRAM/DMA que el
+juego reserva para ese grafico. La version con las 7 fichas traducidas
+completas pesaba 182064 bytes porque, ademas del texto traducido nuevo,
+arrastraba ~41KB de datos de tiles japoneses originales que ya no se
+usaban (quedaban "muertos"/huerfanos en el archivo, referenciados por
+ninguna celda). Al superar el limite, el juego fallaba silenciosamente en
+esa pantalla (freeze / no-cambio visual) en vez de mostrar corrupcion
+grafica evidente.
+
+**Fix aplicado:** se escribio `scripts/build_g02m10_compact.py`, que
+reconstruye `G02M10.NCGR`/`.NCER` a partir del original japones +
+la version traducida, pero:
+- solo conserva del original los tiles que TODAVIA son referenciados por
+  celdas no traducidas (elimina los datos muertos);
+- respeta la alineacion de 8 tiles que exige el `tile_boundary_shift` del
+  NCER (los tiles reubicados deben empezar en multiplos de 8, si no el
+  indice se trunca y el texto sale mezclado/corrupto);
+- remapea los indices de tile de cada OBJ tanto de las celdas mantenidas
+  como de las traducidas a sus nuevas posiciones compactadas.
+
+Resultado: 140848 bytes (vs 182064 con desperdicio, vs 67376 el original
+japones sin traducir) para las 7 fichas traducidas, dentro del
+presupuesto. Se aplico igual para `esp` y `eng` (mismo NCER base en
+ambos idiomas, solo cambia el NCGR con el texto). Uso:
+`python3 scripts/build_g02m10_compact.py <esp|eng> 7 <carpeta_salida>`.
+
+**Estado de verificacion:** confirmado por el usuario en juego que YA NO
+se congela y que se puede navegar/seleccionar entre fichas, tanto en la
+ROM en español como en la de ingles. OJO: solo se pudo probar en la
+practica con las historias 1 y 2 (es lo unico desbloqueado hoy en el save
+de pruebas) — **queda pendiente probar en juego real las historias 3 a 7**
+cuando se disponga de un save mas avanzado (ver pendiente de conseguir un
+save 100% completo). El fix es simetrico para las 7 fichas (mismo
+algoritmo, no hay tratamiento especial por ficha), asi que se espera que
+funcione igual, pero no esta confirmado en juego todavia.
+
+**Nota para el futuro:** si aparece otro bug de freeze/pantalla que no
+cambia, o de corrupcion grafica "tipo estatica", en OTRO asset grafico
+traducido (candidatos logicos: `SAVELOAD`, `EV0/S00`, `EV9/M16-M20`,
+`TITLE/G01M10`, etc.), sospechar primero de este mismo patron: el asset
+traducido puede estar arrastrando datos de tiles originales sin usar y
+superando el presupuesto de VRAM/DMA de esa pantalla. Ver tambien la
+entrada correspondiente en `guia-debugging-bugs-dificiles.md`.
+
+## 2026-09-14 - Bug 2 confirmado: gap real en el extractor de texto (dialogos cortos con muchos "…" se perdian)
+
+**Sintoma reportado por el usuario:** dialogos sin traducir jugando en
+español, principalmente durante escenas de MEGUMI (ej. el minijuego de
+Kokkuri-san / la moneda), mostrando "ああ" y "うん。" en japones en vez de
+traducidos.
+
+**Causa real (confirmada, no teoria):** `scripts/extraer_texto.py` filtraba
+candidatos exigiendo que al menos el 30% de los caracteres de la linea
+fueran japones (`jp/len(s) >= 0.3`). Lineas cortas de reaccion/interjeccion
+tipo "……ああ……。" o "……うん………。" tienen muchos caracteres de puntuacion
+fullwidth ("…", "。") que NO cuentan como japones pero SI sumaban al total,
+bajando el ratio por debajo de 0.3 y descartando la linea aunque fuera
+dialogo real y legible. Confirmado escaneando el `arm9.bin` completo
+comparando ocurrencias crudas de los bytes SJIS de "ああ"/"うん" contra lo
+que habia llegado al CSV: aparecieron 21 lineas reales excluidas solo por
+este motivo (17 nunca habian llegado a ningun CSV; las otras 4 ya se habian
+agregado a mano en una sesion anterior via cruce manual de punteros). Las
+17 nuevas, verificadas una por una: cada offset tiene exactamente 1
+puntero real en el `arm9.bin` (no son texto muerto/no usado).
+
+**Fix aplicado:**
+1. `scripts/extraer_texto.py`: el ratio ahora excluye del denominador la
+   puntuacion/numeros fullwidth (`…。、？！（）“”０-９－−ー・「」`) en vez
+   de contarla en contra. Verificado sobre el `arm9.bin` completo: agrega
+   las lineas reales sin introducir NINGUN falso positivo nuevo de ruido
+   binario (el ruido sigue teniendo bytes de control/ascii/katakana media
+   que si cuentan en contra y lo siguen filtrando bien).
+2. Se agregaron directamente las 17 lineas faltantes a
+   `assets/csv/guion_principal_esp.csv` y `guion_principal_eng.csv`
+   (offsets 0xd5df4, 0xd5ea4, 0xd9dd8, 0xd9f68, 0xf16a8, 0xf1b30, 0xf1e00,
+   0xf29f8, 0xfa834, 0xfaa04, 0x100c4c, 0x100ccc, 0x100cdc, 0x100d1c,
+   0x100edc, 0x100f3c, 0x100fa4), todas cortas reacciones/interjecciones o
+   fechas, traducidas directo en el chat.
+
+**Nota aparte (no forma parte de este fix, caso distinto):** el offset
+`0xd3655` mezcla bytes de datos binarios (una tabla, no texto) pegados
+ANTES del texto real "今さら、コックリさん…？" dentro del mismo chunk
+delimitado por 0x00 -- ese texto especifico ya estaba en el CSV desde antes
+(offset 0xd366c, el sub-offset correcto donde arranca el texto real) por
+el cruce manual de punteros anterior, asi que no hizo falta tocarlo ahora.
+Si aparece un caso parecido (texto real que no llega al CSV ni con este
+fix), sospechar de esto: el puntero real puede apuntar a la MITAD de un
+chunk delimitado por 0x00, no a su inicio.
+
+**Estado de verificacion:** confirmado por script (no en juego todavia) que
+las 17 lineas nuevas tienen puntero real unico en el `arm9.bin` pristino y
+que no se rompio ninguna de las 6665 lineas que ya estaban traducidas.
+Falta que el usuario regenere ambas ROMs y confirme en juego que estas
+lineas especificas (reacciones de MEGUMI en la escena de Kokkuri-san, entre
+otras) ya salen traducidas.
+
+**Pendiente para revisar el resto del guion:** este fix corrige la CAUSA
+del gap (el filtro de extraccion), pero solo se agregaron a mano las 17
+lineas encontradas HOY escaneando `ああ`/`うん` puntual. Si se quiere
+descartar que haya mas lineas perdidas por el mismo motivo en TODO el
+guion (no solo esas dos palabras), correr `extraer_texto.py` corregido de
+nuevo sobre el `arm9.bin` completo y diffear el resultado contra
+`assets/csv/guion_principal_esp.csv` por `offset_hex` para ver si aparecen
+mas offsets nuevos no cubiertos todavia.
+
+## 2026-09-14 (cont.) - Bug 2, segunda pasada: 95 lineas de "silencio" tambien perdidas
+
+El usuario pregunto puntualmente por una pantalla que era solo puntos (un
+caracter que "parecia punto pero se veia distinto") + punto japones, tambien
+de MEGUMI, sin mandar captura. Se investigo igual: existen lineas de guion
+real que son PURO silencio/reaccion sin texto hablado, ej. "………。",
+"……。", "…………。" (el personaje no dice nada, solo puntos suspensivos). Estas
+tienen CERO caracteres japoneses (hiragana/kanji), asi que ni siquiera
+llegaban a evaluarse por el ratio (fix anterior de hoy) -- se descartaban
+antes, en el chequeo de minimo de caracteres japoneses (`min_jp=2`).
+
+Escaneando el arm9.bin completo por chunks compuestos EXCLUSIVAMENTE de
+"…"/"。"/"、": aparecieron **95 lineas reales**, NINGUNA en el CSV
+(a diferencia del fix anterior, este gap era 100% nuevo, cero encontradas a
+mano antes), cada una con exactamente 1 puntero real confirmado.
+
+**Fix:** segundo ajuste en `scripts/extraer_texto.py` (`_SOLO_SILENCIO`):
+si la linea completa esta compuesta solo por esos 3 caracteres de
+puntuacion (min 2 caracteres, nunca aparece un caso de 1 solo en todo el
+juego), se acepta como candidato aunque tenga jp=0. Riesgo de falso
+positivo con ruido binario: practicamente nulo (cada caracter son 2 bytes
+SJIS fijos especificos, `0x8163`/`0x8142`/`0x8141`).
+
+Se agregaron las 95 lineas a ambos CSV (esp/eng), traducidas de forma
+mecanica y consistente: cada "…" -> "...", "。" -> ".", "、" -> ",". Total
+final: 6777 filas en cada CSV (6682 + 95), sin duplicados, sin puntero
+faltante nuevo (siguen siendo las mismas 3 lineas [REVISAR] de siempre).
+
+**Estado:** verificado por script (puntero real unico en el arm9.bin
+pristino para las 95). Falta confirmar en juego. Entre el fix del ratio y
+este, quedan **112 lineas reales recuperadas en total** hoy (17 + 95) que
+antes se mostraban en japones sin importar el idioma de la ROM.

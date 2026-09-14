@@ -193,3 +193,43 @@ contenido no produce NINGUN cambio visible en la ROM real tras mas de un
 intento, es señal de que el problema esta en otro campo de datos
 (posicion/tamaño en el NCER), no en seguir puliendo el contenido del
 tile.
+
+## Patron: freeze/pantalla congelada por asset grafico traducido que supera el presupuesto de VRAM/DMA
+
+**Caso real (2026-09-13):** `TITLE/G02M10.NCGR` (fichas del menu de
+seleccion de historia). Sintoma: el juego no mostraba corrupcion grafica
+evidente, sino un freeze en la pantalla final de la historia 1 y, en el
+menu de "Nueva Partida", el cursor se movia (sonido) pero la ficha en
+pantalla no cambiaba y no se podia seleccionar la historia 2. Ambos eran
+el mismo bug de fondo.
+
+**Como se detecto la causa:** aislando por ensayo y error que carpeta de
+asset causaba el freeze (renombrando carpetas de `assets/graficos/esp/`
+para que el build las ignore), se llego a `TITLE/G02M10`. Comparando el
+tamaño del `.NCGR` traducido (182064 bytes) contra el original japones
+(67376 bytes), la diferencia era demasiado grande para ser solo el texto
+nuevo: el traducido arrastraba datos de tiles japoneses ya no
+referenciados por ninguna celda (huerfanos/muertos), sumando peso inutil.
+
+**Fix generico:** reconstruir el `.NCGR`/`.NCER` conservando solo los
+tiles del original que TODAVIA son usados por celdas no traducidas, mas
+los tiles nuevos de las celdas traducidas, respetando la alineacion de
+tiles que exige `tile_boundary_shift` del NCER (los bloques reubicados
+deben empezar en multiplos de `2**tile_boundary_shift`, tipicamente 8).
+Implementado en `scripts/build_g02m10_compact.py` (generico por N de
+celdas traducidas, reusable como plantilla para otros NCGR/NCER).
+
+**Cuando sospechar este mismo patron:** un asset grafico traducido
+(NCGR/NCER) causa freeze, cuelgue, o "no cambia nada en pantalla" sin
+corrupcion visual obvia, especialmente si:
+- el `.NCGR` traducido pesa notablemente mas que el original japones
+  equivalente (mas alla de lo que explicaria solo el cambio de texto);
+- un preview/decoder casero (Python) muestra el contenido correcto y
+  sin corrupcion, pero en la ROM real la pantalla se congela o no
+  reacciona — esto descarta corrupcion de datos y apunta a un limite de
+  tamaño/VRAM/DMA que el decoder casero no modela.
+
+En ese caso, antes de rediseñar el asset o el texto, probar primero
+midiendo/eliminando datos muertos (tiles originales sin referencias) del
+archivo traducido — como se hizo aqui — en vez de asumir que hay que
+reducir visualmente el contenido.
