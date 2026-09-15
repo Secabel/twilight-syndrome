@@ -2031,3 +2031,574 @@ simetrico asi que se espera que funcione igual, pero solo se confirmo con
 las historias 1 y 2 hasta ahora (ver entrada del 2026-09-13). Esto es
 "revisar mas tarjetas del mismo caso ya arreglado", no "revisar otros
 assets nuevos" -- ese segundo punto ya se descarto arriba.
+
+## 2026-09-14 (cont. 2) - G02M10: aplicado el fix a las tarjetas 3-7 en español (numeracion de subtitulos corregida, tamano de fuente unificado)
+
+Continuando el punto pendiente de arriba ("revisar mas tarjetas del mismo
+caso ya arreglado"): se aplico el mismo fix de posicion/objetos (8->4
+objetos, titulo en fila y=-96, subtitulo en fila y=0, ver entrada
+2026-09-13 para el detalle completo del bug y su causa) a las tarjetas 3 a
+7 de `assets/graficos/esp/TITLE/G02M10`. Las tarjetas 1 y 2 ya estaban
+arregladas y probadas en consola real desde antes; no se les toco la
+posicion ni cantidad de objetos, solo se re-dibujo el subtitulo (ver mas
+abajo, unificacion de tamano).
+
+**Texto real usado (verificado leyendo directo el archivo del usuario, NO
+inventado):** el texto de titulo de las tarjetas 3-7 ya existia de un pase
+de traduccion anterior no relacionado a este bug. El subtitulo tenia un
+error de numeracion heredado (arrastrado desde antes de esta sesion):
+tarjeta 1="Rumor 1", tarjeta 2="Rumor 2", pero tarjeta 3 decia "El segundo
+rumor" (=Rumor 2, repetido), tarjeta 4 "El tercer rumor" (=Rumor 3), etc:
+todo corrido un numero hacia atras desde la tarjeta 3 en adelante. Se
+corrigio la secuencia completa a "Rumor 1".."Rumor 6" y "Rumor final" para
+la septima (a peticion del usuario, en vez de "Rumor 7").
+
+**Texto final por tarjeta (español):**
+1. "Kokkuri-san" / "Rumor 1" (sin cambios, ya aprobada)
+2. "Mail de desaparición" / "Rumor 2" (sin cambios en titulo/posicion; subtitulo re-dibujado solo para unificar tamano, ver abajo)
+3. "El andén fantasma" / "Rumor 3"
+4. "Hitori Kakurenbo" / "Rumor 4"
+5. "Parque del terror" / "Rumor 5" -- el titulo original completo "El parque de diversiones de terror" NO entra ni en 2 lineas a tamano de fuente 16 (necesitaria tamano ~10, considerado muy chico/ilegible); se acorto con aprobacion del usuario.
+6. "100 leyendas urbanas" / "Rumor 6" -- el original "Las cien leyendas urbanas" tampoco entra en 2 lineas a tamano 16; se acorto igual.
+7. "Foto paranormal" / "Rumor final"
+
+**Tamano de fuente:** se detecto que el auto-ajuste (cada texto buscando
+su propio tamano maximo que le entra) dejaba tamanos muy dispares entre
+tarjetas (ej. titulos cortos a tamano 22-24 al lado de uno a tamano 10),
+que se veia inconsistente. Se decidio con el usuario usar un tamano FIJO
+de 16 para TODOS los titulos (2 lineas) y TODOS los subtitulos (1 linea)
+de las 7 tarjetas, incluyendo re-dibujar "Rumor 1" y "Rumor 2" (que tenian
+un tamano mas grande de una sesion anterior) para que las 7 tarjetas
+queden visualmente parejas. Fuente usada: DejaVu Sans Bold (sustituto de
+Segoe UI/Arial Bold, no disponibles en el sandbox de Claude), estilo
+nucleo solido + resplandor gaussiano (blur 1.5) imitando la rampa
+negro->rojo->blanco del juego.
+
+**Mapeo tecnico (para replicar o corregir sin tener que re-derivarlo):**
+cada tarjeta usa 2 tiles de 64x64px (8x8 tiles de 8x8, 32 bytes/tile,
+4bpp) para el titulo y 2 para el subtitulo, reutilizando los indices de
+tile que ya traian los primeros 4 objetos de la fila superior original de
+8 objetos. Indices reales (`CARD_TILES`, `tile_boundary_shift=3`):
+tarjeta0 top=[816,880] bot=[944,1008]; tarjeta1 top=[1328,1392]
+bot=[1456,1520]; tarjeta2 top=[1840,1904] bot=[1968,2032]; tarjeta3
+top=[2352,2416] bot=[2480,2544]; tarjeta4 top=[2864,2928] bot=[2992,3056];
+tarjeta5 top=[3376,3440] bot=[3504,3568]; tarjeta6 top=[3888,3952]
+bot=[4016,4080]. Las celdas NCER 0-6 son las 7 tarjetas; las celdas 14-20
+son un duplicado con otra paleta (probable estado "seleccionado") que
+apunta a LOS MISMOS indices de tile, asi que el tile data se escribe una
+sola vez pero hay que parchear el `obj_count`/posicion de ambas celdas (i
+y 14+i) por separado. Posiciones nuevas de los 4 objetos:
+(-96,-96),(-32,-96) para el titulo, (-96,0),(-32,0) para el subtitulo.
+
+**Estado al cierre de esta entrada:** escrito y confirmado en
+`assets/graficos/esp/TITLE/G02M10.NCGR`/`.NCER` en el PC del usuario.
+Vista previa (render pixel-exacto decodificado del archivo real, mismo
+metodo que `scripts/ncer_decode.py`) revisada y aprobada por el usuario
+antes de escribir. **Pendiente:** confirmar en consola real las tarjetas
+3-7 (el usuario aun no ha desbloqueado esas historias en su partida, asi
+que por ahora solo pudo confirmar 1 y 2 en hardware; ver si el guardado
+se puede editar para desbloquear el resto y probar el glitch de
+transicion tambien ahi). La version en ingles de este mismo asset
+(`assets/graficos/eng/TITLE/G02M10`) TODAVIA NO tiene el fix aplicado
+(sigue con 8 objetos, sin corregir) y su texto (heredado de un pase
+anterior, no confirmado por el usuario) queda documentado en
+`docs/estado-G02M10-tarjetas-historias.md`, pendiente de trabajarse en
+una proxima sesion.
+
+## 2026-09-14 (cont. 3) - G02M10: aplicado el fix completo a las 7 tarjetas en ingles
+
+Se aplico el mismo fix (8->4 objetos, reposicion, tamano de fuente FIJO 16
+para titulo -2 lineas- y subtitulo -1 linea-, ver entrada anterior para el
+detalle tecnico completo del mapeo de tiles/celdas, que es identico entre
+esp/eng) a las 7 tarjetas de `assets/graficos/eng/TITLE/G02M10`, que no
+tenian ningun fix aplicado todavia (las 7 seguian con 8 objetos).
+
+**Subtitulo:** mismo patron que en español, la palabra "Rumor" se
+mantiene igual en ingles: "Rumor 1".."Rumor 6" y "Final Rumor" para la
+septima (equivalente a "Rumor final").
+
+**Titulo, texto final por tarjeta (heredado de un pase de traduccion
+anterior, acortado solo donde no entraba a tamano 16):**
+1. "Kokkuri-san" -- el original completo "The Kokkuri-san of the Old
+   Building" no entra ni en 2 lineas a tamano 16; se acorto a la misma
+   forma corta que ya tenia el español desde antes.
+2. "Vanishing Mail" -- entra completo en 2 lineas, sin acortar.
+3. "The Phantom Platform" -- entra completo en 2 lineas, sin acortar.
+4. "Hitori Kakurenbo" -- sin cambios.
+5. "The Scary Theme Park" -- entra completo en 2 lineas, sin acortar.
+6. "100 Urban Legends" -- el original "The Hundred Urban Legends" no
+   entra ni en 2 lineas a tamano 16 (mismo problema que su equivalente en
+   español); se acorto igual con numero en vez de palabra.
+7. "Psychic Photograph" -- sin cambios.
+
+Importante: la decision de que titulos acortar se tomo de forma
+independiente para cada idioma segun el largo real de SU propio texto a
+tamano 16 (no se copio la lista de "cuales acortar" del español) -- solo
+coincidio la tarjeta 6 porque en ambos idiomas esa traduccion especifica
+resulto larga.
+
+**Estado:** escrito y confirmado en
+`assets/graficos/eng/TITLE/G02M10.NCGR`/`.NCER` en el PC del usuario.
+Vista previa (render pixel-exacto) revisada y aprobada antes de escribir.
+Pendiente: generar la ROM en ingles y probar en consola/emulador (aun no
+confirmado en ningun entorno). El texto en ingles usado aqui NO habia
+sido validado por el usuario antes de esta sesion (era texto heredado de
+un pase anterior); quedo aprobado recien ahora.
+
+Con esto, `TITLE/G02M10` queda con el fix aplicado a las 7 tarjetas en
+AMBOS idiomas (esp y eng). Sigue pendiente confirmar en consola real las
+tarjetas 3-7 quando el usuario pueda desbloquear esas historias en su
+partida (ver entrada anterior).
+
+## 2026-09-14 (cont. 4) - Limpieza de carpetas TITLE de pruebas intermedias (hecha por el usuario)
+
+El usuario elimino del arbol activo del proyecto las carpetas TITLE
+intermedias de pruebas (backups manuales que habia ido dejando durante el
+proceso de arreglo del glitch de G02M10, ver entradas anteriores) y las
+dejo archivadas en `assets/graficos/backups/` con los nombres
+`TITLE_ENG_DISABLED` y `TITLE_ESP_DISABLED`. Son los originales de 8
+objetos que provocaban el freeze/glitch de bloque negro en 3DS real (el
+problema que se investigo y arreglo en las entradas de 2026-09-13 y
+2026-09-14). No se tocaron desde esta sesion de Claude, es una accion que
+hizo el usuario directamente en su PC; queda solo documentado aqui para
+referencia futura por si hace falta comparar contra el estado previo al
+fix.
+
+## 2026-09-14 (cont. 5) - Resumen de estado de pruebas y tradeoff aceptado (para referencia futura)
+
+Para que quede explicito y facil de encontrar despues:
+
+**Que se probo en consola real (3DS) hasta ahora:** solo las tarjetas 1 y
+2 de `TITLE/G02M10` (Kokkuri-san/Rumor 1 y Mail de desaparicion/Rumor 2),
+porque son las unicas dos historias que el usuario tiene desbloqueadas en
+su partida actual. El fix (8->4 objetos, reposicion) fue confirmado
+funcionando en esas dos, tanto en vista estatica como en la transicion
+entre pantallas.
+
+**Que queda pendiente:** validar en consola real las tarjetas 3 a 7 (en
+ambos idiomas) apenas el usuario pueda desbloquear el resto de las
+historias en su partida. El fix aplicado es simetrico/identico al ya
+probado, asi que se espera que se comporte igual, pero esto sigue sin
+confirmarse en hardware real para esas 5 tarjetas.
+
+**Tradeoff aceptado (decision explicita del usuario, ver entrada
+2026-09-14 mas arriba):** con el fix aplicado queda un glitch residual
+menor: durante la transicion entre pantallas se ve un cuarto de bloque
+negro (la mitad inferior de la mitad inferior de la tarjeta) por un
+instante. Este glitch:
+- Solo ocurre en 3DS real, nunca en emuladores.
+- Solo aparece durante la animacion de transicion, no en la vista
+  estatica ya cargada.
+- No deja ningun grafico corrupto de forma permanente.
+
+El usuario decidio tolerar este costo para poder avanzar con la
+traduccion de las 7 pantallas, en vez de bloquear el progreso buscando
+una solucion perfecta. Si en el futuro se retoma este punto para intentar
+eliminarlo del todo, el diagnostico completo de la causa raiz (presupuesto
+de sprites por scanline compartido con la animacion de la flecha de
+navegacion) y todos los experimentos que llevaron a la solucion actual
+estan documentados en la entrada del 2026-09-13 y la primera entrada de
+2026-09-14 de este mismo archivo.
+
+## 2026-09-14 (cont. 6) - Confirmacion en consola: ROM en ingles se comporta igual que la de español
+
+El usuario probo la ROM en ingles generada con el fix de `TITLE/G02M10`
+(tarjetas 1 y 2, las unicas desbloqueadas) y confirmo el mismo
+comportamiento ya validado en español: el pequeno glitch residual de
+transicion solo aparece en 3DS real, y en emulador se ve normal sin
+ningun glitch. Con esto, el fix queda confirmado como equivalente entre
+los dos idiomas para las tarjetas ya accesibles. Sigue pendiente lo mismo
+que en español: validar tarjetas 3-7 cuando se puedan desbloquear (ver
+entrada anterior).
+
+## 2026-09-14 (cont. 7) - Investigacion exploratoria: ¿se puede saber a que historia (rumor) pertenece cada linea del CSV?
+
+El usuario pregunto si, sin poder aun determinar el ORDEN en que el juego
+usa el texto, al menos se podria saber a cual de las 7 historias/rumores
+pertenece cada linea de `guion_principal_{esp,eng}.csv`. Investigacion
+exploratoria (no concluida, queda como pendiente para retomar):
+
+**Hallazgo 1 -- estructura de carpetas de la ROM:** la raiz de la ROM
+extraida (`extraccion_rom/root/`) tiene carpetas `EV0` a `EV6` (7 carpetas)
+ademas de `EV9` (ya sabido: menu de recapitulacion de historias, ver
+`scripts/traducir_menu_historias.py`). El numero exacto (7) coincide con
+las 7 historias del juego, lo que sugiere fuertemente que cada `EVx`
+(0 al 6) es una historia distinta. Cada `EVx` tiene subcarpetas tipo
+`M00`, `M02`, `S00`, `S02`, etc. (probablemente escenas/mapas dentro de
+esa historia). Ejemplo confirmado: `EV1` tiene `M00,M02,M03,M04,M05,M06,
+M07,M08,M09,M10,M11,M13,M15,M16,S00,S02,S04,S05,S06,S07,S08,S09,S10,S13,
+S15,S16`.
+
+**Hallazgo 2 -- estructura real de la tabla de punteros en `arm9.bin`:**
+la "tabla de punteros dominante" descrita en `dossier_tecnico_twilight_
+syndrome.md` (structs de 12 bytes `{pointer,flag1,flag2}`) NO es una unica
+tabla continua para las 6653+ lineas -- escaneando el binario completo y
+agrupando las ocurrencias del patron de puntero por posicion de archivo
+contigua (stride de 12 bytes), aparecen **613 bloques/"runs" separados**,
+cada uno una secuencia de punteros consecutivos que muy probablemente
+corresponde a una escena/conversacion completa del guion (tamanos entre 2
+y 357 lineas; los 10 bloques mas grandes tienen entre 150 y 357 lineas
+cada uno). Esto es informacion nueva, no documentada antes en el dossier
+tecnico.
+
+**Lo que falta para completar el mapeo linea->historia (NO hecho
+todavia):** cruzar estos 613 bloques de punteros con las carpetas `EV0`-
+`EV6` -- o sea, averiguar que archivo/overlay dentro de cada `EVx/M0X` o
+`EVx/S0X` hace referencia a las direcciones de cada bloque de punteros, o
+encontrar una tabla de despacho de escenas que liste "ID de escena -> EVx"
+y "ID de escena -> direccion del bloque de punteros en arm9.bin". Esto
+requiere revisar el contenido interno de las carpetas `EVx` (que formato
+tienen sus archivos, si hay overlays con sus propias tablas de punteros o
+referencias directas a `arm9.bin`), trabajo que todavia no se ha hecho.
+
+**Script usado para el hallazgo 2 (no guardado como script formal
+todavia, solo corrido ad hoc en el chat):** escanea `arm9.bin` buscando
+todas las ocurrencias de `struct.pack('<I', 0x02000000 + offset)` para
+cada `offset_hex` del CSV, ordena las posiciones de archivo encontradas, y
+agrupa en runs consecutivos cuando la diferencia entre dos posiciones es
+exactamente 12 bytes (stride de un struct completo).
+
+**Prioridad:** el usuario indico que esto NO es critico por ahora: queda
+documentado para retomar mas adelante si se decide invertir tiempo en
+esta investigacion (util para, por ejemplo, poder traducir/revisar el
+guion organizado por historia en vez de por orden de aparicion en el
+binario).
+
+## 2026-09-14 (cont. 8) - Fix puntual: error de genero "del cañeria" (y aclaracion importante sobre tildes en el guion)
+
+El usuario reporto haber leido algo raro jugando la historia 1 ("el
+cañería"). Se encontro el texto real en el CSV: offsets `0xd6b44` y
+`0xd6b60`, traduccion "...El sonido...\ndel cañeria\nde la pared...?" --
+el error real es de ARTICULO/GENERO ("del" = "de"+"el", masculino, pero
+"cañeria" es femenino), no de acento.
+
+**Aclaracion importante para no repetir esta confusion despues:** se
+intento en un primer momento "corregir" tambien la falta de tilde
+("cañeria"->"cañería"), pero el usuario recordo correctamente que la
+fuente del guion principal (`TWSFont.NFTR`) NO tiene glifos para ninguna
+vocal acentuada (á,é,í,ó,ú) -- solo se agregaron Ñ/ñ y signos de
+puntuacion en las versiones v18-v21 (ver seccion de la fuente mas arriba
+en este mismo documento). Por lo tanto TODO el guion (miles de lineas)
+carece de tildes de forma intencional/forzada por esta limitacion tecnica,
+NO es un error de traduccion. Se hizo una busqueda amplia de "tildes
+faltantes" en `guion_principal_esp.csv` que encontro cientos de casos
+(asi/tambien/aqui/numero/etc.) -- se descarto COMPLETA, ninguno de esos es
+un bug real, es el comportamiento esperado y no se debe tocar.
+
+**Fix aplicado (unico cambio real):** en `assets/csv/guion_principal_esp.csv`,
+offsets `0xd6b44` y `0xd6b60`: "del cañeria" -> "de la cañeria" (sin
+agregar tilde, coincidiendo con el resto del guion). La linea relacionada
+"las canerias del edificio" (offsets `0xe2314`, `0xe23e4`, `0xe2418`) se
+reviso y SI esta bien gramaticalmente (el articulo "del" ahi se refiere a
+"edificio", que es masculino) -- no se toco.
+
+**Regla practica para futuras revisiones de texto:** cualquier reporte de
+"esto deberia llevar tilde" en el guion principal (no en assets graficos
+como TITLE, que usan fuentes normales renderizadas como imagen y SI
+soportan tildes) se descarta automaticamente salvo que ademas haya un
+error de contenido/gramatica de fondo (como este caso de genero).
+
+**Estado:** escrito y confirmado en el CSV del PC del usuario. Pendiente
+que el usuario regenere la ROM en español y confirme en juego.
+
+## 2026-09-14 (cont. 9) - Fix puntual: "Diganme" (plural) -> "Digame" (usted, singular) al hablarle a Kokkuri-san
+
+El usuario pregunto si tenia sentido usar "Diganme por favor" al hablarle
+a Kokkuri-san (un solo espiritu zorro invocado en el ritual), o si
+deberia ser singular. Se confirmo el error cruzando con el resto del
+guion: en otras lineas donde se le habla directamente a Kokkuri-san se usa
+consistentemente el "usted" formal en SINGULAR, ej. offset `0xe30b0`
+"Si usted es Kokkuri-san, por favor, vuelva a su lugar" y offset `0xf8328`
+"Kokkuri-san, Kokkuri-san, por favor, venga." ("vuelva"/"venga" son
+singulares, no "vuelvan"/"vengan"). El japones original en todos estos
+casos es "教えてください" (oshiete kudasai, "digame por favor" -- el
+japones no marca numero gramatical, asi que la ambiguedad la introdujo
+la traduccion).
+
+**Fix aplicado en `assets/csv/guion_principal_esp.csv`** (sin agregar
+tilde, ver aclaracion de la entrada anterior sobre la fuente):
+offsets `0xd3528`, `0xd353c`, `0xd35ac`, `0xd3aac`, `0xd3c18`, `0xd3cb4`:
+"Diganme" -> "Digame" en las 6.
+
+**Ingles:** revisado, no aplica ("tell me" no distingue singular/plural),
+no se toco `guion_principal_eng.csv`.
+
+**Estado:** escrito y confirmado en el CSV del PC del usuario. Pendiente
+que el usuario regenere la ROM en español y confirme en juego.
+
+## 2026-09-14 (cont. 10) - Fix: texto en ingles filtrado por error dentro del CSV en español
+
+El usuario pregunto por que aparecian palabras en ingles dentro del CSV
+en español. Causa encontrada: de las 17 lineas recuperadas hoy por el fix
+del extractor (ver entrada "Bug 2 confirmado" mas arriba), 5 quedaron con
+el mismo texto en INGLES copiado por error en
+`assets/csv/guion_principal_esp.csv`, en vez de traducirse al español
+(comparado y confirmado contra `guion_principal_eng.csv`, que tenia el
+texto correcto en esas mismas 5 lineas).
+
+**Fix aplicado:**
+- `0xf1b30`: "September 1988...?" -> "Septiembre de 1988...?"
+- `0xf1e00`: "September 1988..." -> "Septiembre de 1988..."
+- `0xf29f8`: 'The "88-09"...' -> '"88-09"...'
+- `0x100edc`: "(A doll...?)" -> "(Una muñeca...?)"
+- `0x100f3c`: "...Letter #84..." -> "...El correo numero 84..." (mismo
+  estilo ya usado en offset `0xea6d0` para el mismo contador "通目" de
+  correos en cadena: "correo numero 84")
+
+Las otras 12 lineas de ese mismo lote de 17 (interjecciones cortas como
+"Ahh", "Eh", "A...ah...", "Si") se revisaron y estan bien: son
+interjecciones que funcionan igual en ambos idiomas, no es texto en
+ingles sin traducir.
+
+**Estado:** escrito y confirmado en el CSV del PC del usuario. Pendiente
+que el usuario regenere la ROM en español y confirme en juego.
+
+**Nota para revisiones futuras:** cuando se agreguen lineas nuevas a
+ambos CSV (esp/eng) al mismo tiempo desde el chat, verificar que cada
+CSV reciba SU PROPIA traduccion y no se traspapele el texto de un idioma
+al otro (esto fue lo que paso hoy con estas 5 lineas).
+
+
+## 2026-09-15 - Investigacion: "rumor inicial" visto jugando la historia 2 (NO es un bug)
+
+El usuario reporto ver una ficha que decia "rumor inicial" mientras jugaba
+la SEGUNDA historia del juego, y sospecho un error de numeracion (aclaro
+el mismo que esta ficha NO es ninguna de las trabajadas en la sesion del
+2026-09-14, es decir, no es TITLE/G02M10).
+
+**Investigacion:** se descarto primero `scripts/traducir_menu_historias.py`
+(EV9/M16-M20, el menu de "recuerdos"/recap de 45 fichas de escenas) porque
+su texto son titulos de ESCENAS individuales numeradas "No.01".."No.16"
+que reinician la numeracion POR historia (ej. "No.01 El anden fantasma" en
+M16/8 es el capitulo 1 de la historia 2) - no contiene el texto "rumor
+inicial" en ningun lado.
+
+**Encontrado en `scripts/traducir_saveload.py`** (asset
+`assets/graficos/{esp,eng}/SAVELOAD/S00.NCGR` .. `S06.NCGR`, 7 fichas):
+este es el menu de GUARDAR/CARGAR partida, que muestra las 7 fichas de
+TODAS las historias (una por historia/arco), cada una con el nombre del
+arco a la izquierda y la etiqueta de rumor a la derecha:
+
+| Ficha | Arco (ES) | Etiqueta rumor (ES) | Arco (EN) | Etiqueta (EN) |
+|---|---|---|---|---|
+| S00 | El Kokkuri-san del edificio viejo | El rumor inicial | The Kokkuri-san of the Old Building | The Beginning Rumor |
+| S01 | Mail de desaparicion | El primer rumor | Vanishing Mail | The First Rumor |
+| S02 | El anden fantasma | El segundo rumor | The Phantom Platform | The Second Rumor |
+| S03 | Hitori Kakurenbo | El tercer rumor | Hitori Kakurenbo | The Third Rumor |
+| S04 | El parque de diversiones de terror | El cuarto rumor | The Scary Theme Park | The Fourth Rumor |
+| S05 | Las cien leyendas urbanas | El quinto rumor | The Hundred Urban Legends | The Fifth Rumor |
+| S06 | Foto paranormal | El ultimo rumor | Psychic Photograph | The Final Rumor |
+
+Esta numeracion (inicial, primero, segundo, tercero, cuarto, quinto,
+ultimo = 7 ordinales para 7 historias, en el mismo orden que las historias
+del juego) es CORRECTA y CONSISTENTE - no hay error de numeracion aca.
+
+**Conclusion / respuesta al usuario:** el menu de guardar/cargar es una
+lista con las 7 fichas de las 7 historias (para elegir en que historia
+guardar/cargar), no una sola ficha que describe la historia que se esta
+jugando en ese momento. Por eso, al abrir el menu de guardar/cargar
+mientras se juega la historia 2, es NORMAL y ESPERADO ver tambien la
+ficha S00 ("El rumor inicial"), porque corresponde al slot de la
+historia 1 (Kokkuri-san) que sigue estando en la lista junto a las demas.
+No es un error de traduccion ni de numeracion: el usuario probablemente
+vio la lista completa (con la ficha de la historia 1 incluida) y penso
+que esa etiqueta describia la historia 2 que estaba jugando, cuando en
+realidad describe a la historia 1, mostrada ahi porque el menu lista las
+7 historias, no la actual.
+
+**Pendiente:** confirmar con el usuario si esto coincide con lo que vio
+(idealmente con una captura de pantalla la proxima vez), pero segun el
+codigo y el mapeo de texto no hay ningun bug de numeracion en este
+archivo. Si el usuario confirma que en pantalla aparecian VARIAS fichas
+a la vez (lista), esto queda cerrado. Si en cambio confirma que aparecio
+UNA SOLA ficha (no una lista) etiquetada especificamente como el "estado
+actual" de la historia 2 y decia "rumor inicial", eso si seria un bug
+real a investigar mas a fondo (revisar si el juego selecciona la ficha
+S00-S06 por un indice incorrecto en vez del indice de la historia activa).
+
+
+## 2026-09-15 (cont.) - G02M10: renumerado el subtitulo de "Rumor 1..6/final" a "Rumor 0..5/final" (para reflejar el patron del japones original)
+
+A raiz de la investigacion de la entrada anterior (SAVELOAD, "rumor
+inicial" visto en juego), el usuario noto algo relevante sobre el
+japones original de SAVELOAD: `はじまりの噂` (tarjeta 0, "el rumor del
+comienzo") + `第1の噂`..`第5の噂` (tarjetas 1-5, "rumor numero 1..5") +
+`最期の噂` (tarjeta 6, "el ultimo rumor"). Es decir, en el esquema
+japones la tarjeta 0 ES la "inicial" y el conteo numerico (1..5) arranca
+recien en la tarjeta 1 - la tarjeta 0 nunca se llama "rumor 0" ni
+"primer rumor" en el original, tiene un nombre propio distinto.
+
+El usuario penso que la forma mas fiel/clara de reflejar esto en
+`TITLE/G02M10` (que ya usaba el esquema simplificado "Rumor 1".."Rumor
+6"/"Rumor final", decidido el 2026-09-14 para evitar la ambiguedad
+"inicial" vs "primero" en español) era correr el numero para que
+coincida con el indice real de tarjeta (0-indexado, como en japones):
+tarjeta0="Rumor 0" (no "Rumor 1"), tarjeta1="Rumor 1", ... tarjeta5=
+"Rumor 5", tarjeta6="Rumor final" (sin cambio, ya coincidia).
+
+**Cambio aplicado (SOLO el subtitulo, nada mas):**
+- ESP: "Rumor 1"->"Rumor 0", "Rumor 2"->"Rumor 1", "Rumor 3"->"Rumor 2",
+  "Rumor 4"->"Rumor 3", "Rumor 5"->"Rumor 4", "Rumor 6"->"Rumor 5".
+  "Rumor final" (tarjeta 6) sin cambios.
+- ENG: mismo patron, "Rumor 1".."Rumor 5" (numeros) -> "Rumor 0".."Rumor
+  4"... "Rumor 5" para la tarjeta 5. "Final Rumor" (tarjeta 6) sin
+  cambios.
+- Titulo, tamano de fuente (16), fuente (DejaVu Sans Bold), posicion de
+  los 4 objetos por tarjeta y todo lo demas: SIN TOCAR, identico a la
+  entrada del 2026-09-14 (cont. 2/3).
+
+**Detalle tecnico del re-render (para replicar sin tener que
+re-derivarlo):** se re-genero SOLO el bloque de tiles del subtitulo
+(2 tiles de 64x64px por tarjeta, ver `CARD_TILES` en la entrada del
+2026-09-14 para los indices exactos de cada tarjeta) usando:
+- `render_glow(text, w=128, h=64, size=16, core_value=15, blur=1.5)`:
+  texto centrado en escala de grises 0-15 (indice de paleta directo,
+  NO 0-255), nucleo solido con `fill=core_value` (15 = blanco/brillo
+  maximo), + copia con `GaussianBlur(radio=1.5)`, combinadas tomando el
+  maximo por pixel entre nucleo y blur, resultado clampeado a 0-15.
+- Empaquetado a 4bpp: cada byte de tile = 2 pixeles (nibble bajo =
+  columna par, nibble alto = columna impar), 32 bytes por tile de 8x8,
+  64 tiles (8x8 tiles) por bloque de 64x64px, en orden de fila.
+- El objeto NCER (posicion, `obj_count`, tile_idx) no se toco para nada
+  - solo cambio el contenido de los tiles a los que ya apuntaba.
+- No hizo falta tocar las celdas duplicadas 14-20 (paleta "seleccionado")
+  porque comparten el mismo pool de tiles que las celdas 0-6 (mismo
+  fundamento que la entrada del 2026-09-14).
+
+**Estado:** vista previa (render pixel-exacto) revisada y aprobada por
+el usuario antes de escribir. Escrito y confirmado en
+`assets/graficos/{esp,eng}/TITLE/G02M10.NCGR` en el PC del usuario (el
+usuario ya habia respaldado las carpetas TITLE antes de aplicar el
+cambio). Pendiente: el usuario regenera la ROM y confirma en juego.
+
+**Nota:** con este cambio, `G02M10` (tarjetas de seleccion de historia)
+y `SAVELOAD` (menu de guardar/cargar) usan CONVENCIONES DE NUMERACION
+DISTINTAS a proposito: `SAVELOAD` sigue con el esquema literal del
+japones ("El rumor inicial"/"El primer rumor".../"El ultimo rumor",
+sin tocar, ver entrada 2026-09-09), mientras que `G02M10` usa el
+esquema numerico simplificado 0-indexado ("Rumor 0".."Rumor 5"/"Rumor
+final"). Esto es una decision deliberada del usuario para este asset
+especifico, no una inconsistencia a corregir despues.
+
+## 2026-09-15 - Investigacion: deteccion de pantallas de opcion multiple (menus de eleccion) via analisis estatico de arm9.bin
+
+El usuario reporto (con capturas) que varias pantallas de opcion multiple
+(2-3 respuestas seleccionables en cuadros amarillo/azul) muestran texto
+mal cortado o que se sale del cuadro, y pregunto si era posible detectar
+sistematicamente esas lineas en el CSV en vez de revisar 1 a 1 jugando
+todo el juego.
+
+**Descarte de enfoques:**
+- Heuristica de texto en el CSV (lineas cortas de 3+ renglones, o que
+  empiezan con "voy a"/"vamos a"): descartada de entrada, produce 1462
+  de 6777 lineas (21%) -- demasiado ruido para ser util.
+- Jugar el juego completo en cada final para reportar cada pantalla mala:
+  descartado por ser trabajo manual excesivo para el usuario (multiples
+  historias x multiples finales x multiples pantallas de pregunta).
+- Trace en vivo con Lua (DeSmuME) de los registros del interprete de
+  bytecode: parcialmente exitoso pero no generalizable (ver abajo).
+
+**Hallazgo por trace en vivo:** el despachador central del interprete de
+bytecode del juego esta en RAM `0x02028974` (instruccion
+`ADDLS PC,PC,R1,LSL#2`, salta segun el opcode en r1, tabla de 122
+entradas en `0x02028980`). Con el usuario parado en una pantalla de
+pregunta real y un script Lua (`Test/choice_watch.lua`) corriendo, se
+confirmo que **opcode 4 = menu de opcion multiple** (handler en
+`0x02028BC4`), distinto del opcode 1 ya conocido (dialogo normal). No se
+logro determinar como el interprete convierte el "ID" leido del guion
+(ej. 4692) en la direccion real de cada texto (un segundo trace,
+`Test/choice_deep_watch.lua`, no dio resultados) -- esa sub-pregunta
+quedo abierta pero termino siendo innecesaria (ver siguiente hallazgo).
+
+**Metodo que si funciono (analisis estatico, sin jugar nada):** los
+punteros a texto de las opciones de un menu de eleccion se guardan en
+`arm9.bin` como 2 a 4 punteros de 4 bytes CONSECUTIVOS, sin relleno
+entre ellos -- a diferencia del dialogo normal, que usa una estructura de
+12 bytes `{puntero, flag1, flag2}` por linea. Escaneando todas las
+palabras de 4 bytes alineadas del binario y buscando corridas maximas de
+2-4 punteros validos consecutivos (que aparezcan en el CSV) se
+encontraron **130 grupos** (91 pares, 38 trios, 1 grupo de 4). Se
+valido el metodo mostrandole al usuario 4 ejemplos en texto plano
+(2 pares, 1 trio, el unico cuadruple) -- los 4 fueron confirmados por el
+usuario como "suenan como opciones de una pregunta".
+
+**Falso positivo detectado:** el grupo de offsets `0xd2c40`, `0xd2c74`,
+`0xd2c14` ("Si tu pulso sube...", "Cuando escuches un ruido...",
+"Puedes guardar tu estado del juego...") NO es un menu de opciones, es
+una lista de consejos generales del juego (ya documentada mas arriba en
+este archivo). Esto deja **129 grupos / 297 lineas individuales**
+consideradas menus de eleccion genuinos (no se re-verificaron uno por
+uno mas alla de este caso).
+
+**Registro maestro:** se genero `docs/menu_opciones_multiples_master.csv`
+(129 grupos, 297 filas, offset + texto JP/ES/EN + cantidad de lineas
+fisicas de cada traduccion + columna `estado`) como catalogo de
+referencia para validar a futuro si una pantalla de pregunta reportada
+como rota ya estaba en este radar (y que paso con ella) o es un caso
+nuevo no detectado por este metodo. **Este CSV es solo para
+referencia/diagnostico, el juego sigue usando unicamente
+`assets/csv/guion_principal_esp.csv` y `guion_principal_eng.csv`.**
+
+**Criterio de largo usado:** el cursor de seleccion en las capturas del
+usuario ocupa la altura de una sola linea, por lo que lo ideal es que
+cada opcion entre en 1 linea; si no entra, el maximo aceptable son 2
+lineas (mas de 2 es un bug de overflow confirmado visualmente en al
+menos 1 caso real). Presupuesto de caracteres calculado empiricamente
+sobre las opciones de los 129 grupos que ya entraban en 1-2 lineas:
+ESP 1 linea <=25c, 2 lineas <=44c totales; ENG 1 linea <=27c, 2 lineas
+<=43c totales.
+
+**Resultado de la clasificacion (129 grupos / 297 opciones):**
+ESP: 158 entran en 1 linea, 137 en 2 lineas, 2 se pasan de 2 lineas.
+ENG: 180 entran en 1 linea, 90 en 2 lineas, 27 se pasan de 2 lineas.
+
+## 2026-09-15 (cont.) - Fix de las 29 opciones de menu que se pasaban de 2 lineas
+
+De las 29 lineas individuales que excedian 2 lineas fisicas (2 ES + 27
+EN, repartidas en 16 grupos), se distinguieron dos causas distintas
+comparando el largo total de cada texto (sin saltos de linea) contra el
+presupuesto de 2 lineas (ESP <=44c, ENG <=43c):
+
+**Grupo A (22 lineas, todas en ingles): "bug de corte", no de largo.**
+El texto en si ya entraba en el presupuesto de 2 lineas, pero estaba
+partido en 3-5 fragmentos cortos por saltos de linea mal puestos (ej.
+offset `0x101184` "That bruise on\nyour\nwrist..." son solo 26
+caracteres, entraban comodo en 2 lineas). Se corrigio unicamente la
+posicion de los saltos de linea, sin cambiar ninguna palabra. Offsets:
+`0x102238, 0x102cb0(EN), 0x1027fc, 0x101a70, 0x1019b0, 0x101e00,
+0x1024d0, 0x101580, 0x102620, 0x1019e0, 0x100f4c, 0x101f50, 0x101f80,
+0x1014f4, 0x102f8c, 0x1020d0, 0x102100, 0x101cf8, 0x100ecc, 0x101814,
+0x101f08, 0x101184`.
+
+**Grupo B (7 lineas: 2 ES + 5 EN): texto genuinamente demasiado largo.**
+Se acorto consultando el japones original para buscar una redaccion mas
+concisa en vez de recortar a la fuerza la traduccion existente
+(instruccion explicita del usuario: no basarse 100% en ES/EN, revisar
+el JP por si hay sinonimos o una redaccion mas corta que sea igual de
+fiel al original):
+
+- `0xdb370` (神隠しって…気になる) ES: "Lo de la desaparicion
+  misteriosa...me preocupa" (46c) -> "La desaparicion
+  misteriosa...me preocupa" (40c). EN: "The mysterious disappearance
+  thing...it worries me" (50c) -> "The mysterious
+  disappearance...worries me" (41c).
+- `0xfba60` (あの白い影に心当たりは？) EN: "Do you have any idea what
+  that white shadow is?" (47c) -> "Any idea about that white shadow?"
+  (33c) -- mas fiel a 心当たりは ("¿alguna idea/pista?").
+- `0x102cb0` (わたしも入ろうかな、水泳部) ES: "Tal vez deberia unirme
+  yo tambien, al club de natacion" (54c) -> "Quizas tambien me una al
+  club de natacion" (41c) -- conserva el "tambien" (も) del japones.
+- `0x102428` (こういう時は人が多い方が) EN: "At times like this, it's
+  better to have more people around" (58c) -> "At times like this,
+  more people are better" (42c).
+- `0x102bd0` (落ちてるの、拾えないかな…) EN: "I wonder if I can grab
+  it, it's lying right there..." (52c) -> "Maybe I can grab it lying
+  there..." (34c).
+- `0x101378` (校内を探すしか…) EN: "There's nothing left to do but
+  search the school..." (51c) -> "All I can do is search the
+  school..." (36c) -- conserva el matiz de しか (no queda otra opcion).
+
+**Estado:** las 29 lineas quedaron escritas y confirmadas en el CSV del
+PC del usuario, y reflejadas con su columna `estado` en
+`docs/menu_opciones_multiples_master.csv`. Pendiente que el usuario
+regenere las ROMs y confirme en juego.
