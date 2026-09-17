@@ -11589,7 +11589,7 @@ miedo a algo, no...?"
 0xfa6f4,12,このイス…。,,Esta silla...
 0xfa704,12,赤い…風船？,,Un globo... rojo?
 0xfa714,12,理念ですか？,,Es una filosofia?
-0xfa724,12,じゃあこれで,,"Bueno, con esto"
+0xfa724,12,じゃあこれで,,"Bueno, es todo"
 0xfa734,12,気をつけて。,,Ten cuidado.
 0xfa744,12,あの子……？,,Esa nina......?
 0xfa754,12,調べてみる。,,Voy a investigar.
@@ -16083,3 +16083,85 @@ tarjeta."
 0x107610,8,………。,,..........
 0x10761c,8,………。,,..........
 0x107640,10,…………。,,.............
+0xd32f8,10,…“き”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd3304,10,…“い”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd3328,10,…“ね”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd334c,10,…“し”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd3358,10,…“つ”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd3364,10,…“の”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd337c,10,…“い”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd3388,10,…“ま”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd3394,10,…“ち”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd33a0,10,…“ほ”…,,"[REVISAR - letra suelta de posible minijuego, ver 0xd32f8-0xd33a0]"
+0xd5a64,8,え……？,,¿Eh......?
+0xd87fc,4,え？,,¿Eh?
+0xd8804,4,へ？,,¿Eh?
+0xd880c,4,ん？,,¿Mm?
+0xd8814,4,え？,,¿Eh?
+0xd881c,4,鏡？,,¿Un espejo?
+0xd8824,4,うん,,Sí
+0xd882c,4,え？,,¿Eh?
+0xd8834,4,ね？,,¿Verdad?
+0xd8844,4,鏡？,,¿Un espejo?
+0xd884c,4,え？,,¿Eh?
+0xd8854,4,え？,,¿Eh?
+0xd8874,6,…え？,,...¿Eh?
+0xd8894,6,…え？,,...¿Eh?
+0xd88a4,6,風…？,,¿Viento...?
+0xd891c,6,っ！？,,¡...!
+0xd8964,6,え…。,,Eh...
+0xd896c,6,え…？,,¿Eh...?
+0xd8974,6,あ…。,,Ah...
+0xd899c,6,あ…。,,Ah...
+0xd89c4,6,あ…。,,Ah...
+0xd8bbc,8,あ……。,,Ah......
+0xd8e8c,8,１組…。,,Clase 1...
+0xda394,16,（…………誰？）,,(...........¿Quién?)
+0xe900c,4,え？,,¿Eh?
+0xea310,6,あ…。,,Ah...
+0xea318,8,…血…！,,...¡Sangre...!
+0xea378,10,…な……。,,"[REVISAR - fragmento de una sola particula, sin contexto suficiente]"
+0xea39c,10,（あ……）,,(Ah......)
+0xeb738,4,え？,,¿Eh?
+0xeb740,4,え？,,¿Eh?
+0xeb758,6,え…。,,Eh...
+0xeb780,6,え！？,,¡¿Eh?!
+0xeb798,6,女…。,,Mujer...
+0xeb7e8,8,え……。,,Eh......
+0xeb830,8,あ……。,,Ah......
+0xeb884,8,あ……。,,Ah......
+0xeb8cc,8,あ……。,,Ah......
+0xf0038,4,飲む,,Beber
+0xf0048,4,うん,,Sí
+0xf0050,4,え？,,¿Eh?
+0xf0058,4,ん？,,¿Mm?
+0xf0068,6,ん…。,,Mm...
+0xf0138,6,水…。,,Agua...
+0xf0148,6,…え？,,...¿Eh?
+0xf0178,6,水…。,,Agua...
+0xf056c,10,（今……）,,(Ahora......)
+0xf05e4,10,（床……）,,(El suelo......)
+0xfa174,4,ん？,,¿Mm?
+0xfa17c,4,何？,,¿Qué?
+0xfa184,4,え？,,¿Eh?
+0xfa18c,4,ん？,,¿Mm?
+0xfa194,4,え？,,¿Eh?
+0xfa19c,4,え？,,¿Eh?
+0xfa1a4,4,え？,,¿Eh?
+0xfa23c,6,あ…。,,Ah...
+0x100040,6,え…？,,¿Eh...?
+0x100050,6,…え？,,...¿Eh?
+0x100060,6,っ！？,,¡...!
+0x100068,6,…え？,,...¿Eh?
+0x1000c8,6,…誰？,,...¿Quién?
+0x10013c,8,水……。,,Agua......
+0x101210,16,（……夢……？）,,(......¿Un sueño......?)
+0x109bf4,4,車内,,Interior del auto
+0x109bfc,4,浴室,,Baño
+0x109c04,4,道路,,Calle
+0x109c0c,4,広場,,Plaza
+0x109c14,4,車内,,Interior del auto
+0x109c1c,4,浴室,,Baño
+0x109c24,4,洞窟,,Cueva
+0x109c2c,4,広場,,Plaza
+0xea2f8,6,７７４,,774
