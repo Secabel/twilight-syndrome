@@ -2602,3 +2602,217 @@ fiel al original):
 PC del usuario, y reflejadas con su columna `estado` en
 `docs/menu_opciones_multiples_master.csv`. Pendiente que el usuario
 regenere las ROMs y confirme en juego.
+
+## 2026-09-16/17 — Investigacion: pantalla "神隠しメール" / "第１の噂" (tarjeta de rumor tras cargar cada historia)
+
+**Hallazgo clave: el texto NO es un grafico estatico.** Se busco en todo
+el ROM el texto literal "神隠しメール" (Shift-JIS, incluso permitiendo
+hasta 8 bytes de relleno/control entre caracteres, orden invertido, y
+como secuencia cruda de indices de glifo) y no aparece en ningun sitio
+como cadena contigua, ni en el ROM ni en un dump completo de RAM (4MB,
+tomado en vivo por el usuario con no$gba mientras la pantalla estaba
+visible). Tampoco esta en `assets/csv/guion_principal_esp.csv`. Los 4
+layers de BG (revisados en vivo por el usuario con el VRAM Viewer de
+no$gba: BG0 vacio, BG1 verde plano, BG2 franja de gradiente sin
+relacion, BG3 "Text Mode" con Tile No cambiante) mas la vista OAM
+confirmaron que el render es dinamico, no una imagen fija cargada de un
+NCGR/NCER de pantalla completa.
+
+**Mecanismo real encontrado:** el juego tiene una fuente dedicada de
+glifos independiente de la fuente normal de dialogo:
+
+- `Font/TWSFont.NCGR` — bitmap de tiles de la fuente (16448 bytes).
+- `Font/TWSFont.NCLR` — paleta (unico banco real: banco 15, indices
+  240-255). Estructura: indice 240 = verde `(0,248,0)` transparente
+  compartido; luego 5 grupos de 3 colores cada uno (color, negro,
+  gris) empezando en 241, 244, 247, 250, 253 =
+  **blanco, rojo, azul, amarillo, cyan**. El grupo rojo (244-246 =
+  `(248,0,0)`/negro/gris) es el que se usa para "第１の噂" y da el
+  efecto "glow rojo" que describio el usuario.
+- `Font/TWSFont.NFTR` — fuente Nitro real (glifos direccionables por
+  codigo Shift-JIS via bloques CMAP tipo tabla y tipo scan). Glifos de
+  16x17 px en 2bpp (68 bytes/glifo, 1229 glifos totales). Se
+  decodificaron y renderizaron en rojo los glifos de
+  神(718) 隠(234) し(76) メ(192) ー(12) ル(202) 第(835) １(33) の(98)
+  噂(240) usando sus indices reales de CMAP -- el render confirma
+  visualmente los kanji/kana correctos.
+- El fondo negro liso detras del texto (grano/VHS) corresponde a
+  `EV9/S00/0.NCGR` + `.NSCR` + `.NCLR` (renderiza solido negro
+  256x192 -- el grano real probablemente se anade via efecto/capa
+  aparte, igual que `SAVELOAD/M00`). `EV9/S00/1` es el mismo fondo en
+  blanco (variante clara, para otro rumor). Los indices 2-9 de esa
+  misma carpeta NO tienen nada que ver -- son fondos decorativos de un
+  menu de telefono (wallpapers con boton "決定"), guardados ahi solo
+  por conveniencia de almacenamiento.
+
+**Confirmado: son 7 fichas, una por historia.** La tabla de "numero de
+rumor" tiene exactamente 7 entradas seguidas en el ROM (arm9, offset de
+archivo ~`0x10e924`, direccion RAM `0x0210a924`), pegada a la
+referencia de `Font/TWSFont.NCLR`:
+
+| Ficha | Numero de rumor (JP) | Nombre de arco (JP) | ES aprobado | EN existente |
+|---|---|---|---|---|
+| 1 | はじまりの噂 | 旧校舎のコックリさん | Kokkuri-san / El rumor inicial | The Kokkuri-san of the Old Building / The Beginning Rumor |
+| 2 | 第１の噂 | 神隠しメール | Mail de desaparicion / Rumor 1 | Vanishing Mail / The First Rumor |
+| 3 | 第２の噂 | 幻のホーム | El anden fantasma / Rumor 2 | The Phantom Platform / The Second Rumor |
+| 4 | 第３の噂 | ひとりかくれんぼ | Hitori Kakurenbo / Rumor 3 | Hitori Kakurenbo / The Third Rumor |
+| 5 | 第４の噂 | こわいテーマパーク | Parque del terror / Rumor 4 | The Scary Theme Park / The Fourth Rumor |
+| 6 | 第５の噂 | 都市伝説百物語 | 100 leyendas urbanas / Rumor 5 | The Hundred Urban Legends / The Fifth Rumor |
+| 7 | 最期の噂 | 心霊写真 | Foto paranormal / Rumor final | Psychic Photograph / The Final Rumor |
+
+Las 7 usan la misma fuente `TWSFont` y comparten el mismo fondo
+(`EV9/S00/0` o `/1`).
+
+**El nombre de arco sigue sin ubicarse en el ROM (dato NO critico).**
+De los 7, 4 SI existen como texto plano en el ROM (幻のホーム,
+ひとりかくれんぼ, 都市伝説百物語, 心霊写真) pero solo como dialogo
+normal disperso -- no como tabla de titulos. Los otros 3
+(旧校舎のコックリさん, 神隠しメール, こわいテーマパーク) no existen en
+ningun lado como texto contiguo. Se calculo la direccion RAM exacta de
+la tabla de "の噂" (`0x0210a924`) y se busco como puntero literal de 4
+bytes en toda la region de codigo+datos de arm9 -- cero coincidencias.
+Esto descarta un literal-pool simple; requeriria desensamblado real
+(no hecho esta sesion). Esta direccion NO es necesaria ni para saber
+que dice cada ficha (ya se sabia, tabla de arriba) ni para poder
+editarlo.
+
+**El verdadero problema para traducir esta pantalla: layout, no el
+asset.** `Font/TWSFont.NFTR` es una fuente puramente japonesa (su CMAP
+scan solo mapea 4 codigos ASCII: espacio, `/`, `\`, `n` -- simbolos de
+rutas, no alfabeto), pero el obstaculo real no es solo agregar glifos
+latinos: el texto se dibuja **vertical, un caracter japones por fila**
+(tategaki), un tile por caracter fuente. Un parche 1-a-1 de "reemplazar
+el dibujo de cada glifo" (la misma tecnica que funciono para
+はい/いいえ en `SAVELOAD/M10`/`M11`) NO alcanza aca por dos razones
+(senaladas por el usuario):
+1. Espacio: "神隠しメール" son 6 caracteres/tiles; "Mail de
+   desaparicion" son 21. No entra 1 letra latina por cada uno de los 6
+   slots ya reservados.
+2. Direccion de lectura: el layout apila los caracteres verticalmente;
+   texto latino necesita leerse horizontal. Un parche de solo-glifo
+   dejaria las letras apiladas en columna, ilegible.
+
+La cantidad de tiles y la direccion de avance las decide codigo en
+tiempo real (probablemente la misma rutina que dibuja dialogo normal,
+que si es horizontal -- hipotesis sin confirmar), no un dato estatico
+editable. Arreglarlo bien requeriria desensamblar esa rutina para ver
+si tiene un flag/parametro de direccion reusable, o escribir un parche
+de codigo. **Pendiente, no se hizo esta sesion.**
+
+**Intentos de esta sesion que no dieron resultado (para no repetirlos
+sin una idea nueva):** dump de VRAM de sprites del motor A en
+`06400000` (el volcado no cayo en la direccion esperada, mayormente
+ceros); busqueda de puntero literal a la tabla de numeros en arm9.
+
+Metodo usado (replicable para casos similares): grep de string
+tables cercanas a nombres de archivo conocidos (`SAVELOAD/M10`,
+`EV9/S00/0.NSCR`, etc.) en vez de solo buscar el texto exacto --
+encontro `Font/TWSFont.NCLR` y la tabla de rumores a menos de 100
+bytes de distancia. Luego decodificacion manual del formato NFTR
+(bloques FINF/CGLP/CWDH/CMAP) para resolver codigo Shift-JIS ->
+indice de glifo -> tile 2bpp, y render con la paleta de banco 15 para
+verificar visualmente. No se toco ningun archivo del juego en esta
+investigacion.
+
+## 2026-09-17 — Bug: dialogos reales sin traducir en el hardware pese a las correcciones previas del extractor (81+1 lineas nuevas agregadas a los CSV)
+
+**Reporte del usuario:** jugando en hardware real (3DS/DS), aparecio
+dialogo de MIZUKI sin traducir ("１組…。") pese a que las correcciones al
+filtro del extractor de la sesion 2026-09-14 (entradas de mas arriba, bug 2)
+ya se habian documentado. El usuario pidio explicitamente: revisar si hay
+mas texto faltante en TODO el binario (no solo el rango ya revisado antes),
+dejar el fix reflejado en los docs del proyecto, dejar el `.py` corregido
+en el PC (no solo en el chat), correr el extractor y agregar lo encontrado
+a ambos CSV (esp/eng), y actualizar git.
+
+**Hallazgo 1 — el fix de 2026-09-14 nunca se habia commiteado.** Se
+confirmo comparando el blob de git de `scripts/extraer_texto.py` contra la
+copia local: eran identicos (el commit `27f58e5` no incluyo el cambio real).
+La copia local de trabajo SI tenia el fix aplicado sin commitear, pero
+igual era insuficiente: ese fix exige `min_jp>=2` (salvo el caso especial
+de puro silencio), y `"１組…。"` tiene `jp=1` (un solo kanji: `組`), asi
+que ni siquiera esa version lo hubiera detectado.
+
+**Hallazgo 2 — el arm9.bin "pristino" del proyecto estaba corrupto en 2
+puntos (69 bytes).** Al comparar `extraccion_rom/root/ftc/arm9.bin` (el
+archivo que todos los scripts de build usan como base, ver comentario
+`ARM9_PRISTINO = ... # SIEMPRE el original sin parchear` en
+`generar_rom_esp.py`) contra una extraccion fresca del ARM9 directamente
+desde `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` (via el
+header NDS: offset `0x4000`, tamano `0x10b2d8`), aparecieron exactamente 2
+rangos distintos: `0xd2c14-0xd2c3d` (41 bytes) y `0xd6fd0-0xd6fec` (28
+bytes) -- ambos coinciden exacto con el largo de 2 lineas ya conocidas del
+CSV (0xd2c14 y 0xd6fd0), reemplazadas por una tabla de bytes ascendente
+(`\xa1\xa2\xa3...`) que no es texto de ningun idioma -- pinta de sobreescritura
+accidental puntual (quiza una prueba de mapeo de fuente), no de corrupcion
+masiva. **Se reparo el archivo in-place restaurando esos 2 rangos desde la
+extraccion fresca, y se verifico que el resultado es byte-a-byte identico
+al ARM9 de la ROM japonesa original.** El resto del archivo (99.99%) ya
+coincidia. Esto no afecto al hallazgo de lineas faltantes (esos 2 puntos
+no se solapan con ninguna de las 82 lineas nuevas), pero es un problema de
+integridad de datos aparte que valia la pena dejar documentado y corregido,
+ya que ese archivo es la base de TODOS los builds (ESP y ENG).
+
+**Hallazgo 3 — escaneo del arm9.bin COMPLETO (no solo el rango ya
+revisado).** Se aplico un filtro nuevo, de charset cerrado (en vez de
+ratio/conteo de caracteres japoneses): acepta una linea si TODOS sus
+caracteres son japones (hiragana/katakana/kanji) o puntuacion/digitos/
+letras fullwidth conocidas del guion (el set se construyo de forma
+empirica, revisando TODOS los caracteres no-japoneses que aparecen en las
+6777 lineas ya traducidas), y tiene al menos un caracter japones real (mas
+2 casos especiales: lineas de puro silencio "………。" y lineas de solo
+digitos fullwidth tipo "４７７１").
+
+Aplicado al archivo COMPLETO (`0x0`-`0x10b2d8`, no solo `0xd118c`-`0x10b242`
+como antes): fuera de ese rango conocido aparecen ~150 "candidatos", pero
+los 150 son ruido -- fragmentos de 2 a 4 caracteres sin ningun sentido
+("溷\n", "大汎聰", "晏  晏"...), producto de reinterpretar bytes de codigo
+ejecutable ARM y tablas de datos no relacionadas como si fueran Shift-JIS.
+Confirma que el rango de texto real del guion es exactamente
+`0xd118c`-`0x10b242` (coincide con el minimo/maximo offset de las 6777
+lineas ya catalogadas) y que no hay texto de dialogo escondido en otra
+parte del binario.
+
+Dentro de ese rango, el filtro nuevo reencuentra 6770 de las 6777 lineas ya
+conocidas (las 7 restantes tienen un offset que no cae justo despues de un
+0x00 -- limitacion ya documentada arriba, ver "encontrar heuristica"; esas
+7 siempre se agregaron a mano cruzando la tabla de punteros, nunca con este
+escaneo lineal) y encuentra **82 lineas nuevas, confirmadas legibles, que
+nunca habian llegado a ningun CSV**: 81 en el rango ya sospechado
+originalmente (`0xd32f8`-`0x109c2c`) + 1 mas nueva (`0xea2f8`, "７７４",
+un codigo numerico de 3 digitos en la misma secuencia que otros 2 codigos
+similares que si estaban ya catalogados) encontrada gracias a extender el
+escaneo. 0 falsos positivos en revision manual de la muestra completa.
+
+**Que se hizo:**
+- `scripts/extraer_texto.py` reescrito con el filtro de charset cerrado
+  (reemplaza el enfoque de ratio/min_jp), documentado con bloques de
+  comentario fechados igual que las correcciones anteriores. Guardado en
+  el PC del usuario (no solo en este chat).
+- Se agregaron las 82 lineas nuevas a `assets/csv/guion_principal_esp.csv`
+  y `assets/csv/guion_principal_eng.csv` (por append al final, sin tocar
+  ni reordenar ninguna de las 6777 filas existentes). De las 82, 45 textos
+  unicos: la gran mayoria son reacciones cortas autocontenidas traducidas
+  con confianza (interjecciones tipo "え？"→"¿Eh?", "ん…。"→"Mm...",
+  etiquetas de lugar como "車内"→"Interior del auto"); **11 lineas
+  quedaron con placeholder `[REVISAR]` en vez de traduccion inventada**:
+  10 son una secuencia de letras kana sueltas entre comillas (offsets
+  `0xd32f8`-`0xd33a0`: き,い,ね,し,つ,の,い,ま,ち,ほ), con pinta de
+  minijuego/adivinanza de letras reveladas una por una, y 1 es un
+  fragmento de una sola particula sin frase previa en el mismo chunk
+  (`0xea378`, "…な……。"). En ambos casos no hay forma de confirmar el
+  sentido sin ver la escena real -- decision tomada siguiendo la misma
+  regla que ya rige el proyecto (no inventar contenido sin base, ver
+  metodologia acordada en
+  `claude/analisis-causas-errores-traduccion-csv.md`). El detalle
+  offset-por-offset completo esta en el CSV mismo.
+- `docs/texto_extraido.csv` regenerado con el extractor corregido (6846
+  filas candidatas, catalogo de trabajo/diagnostico -- NO reemplaza la
+  tabla curada de los CSV principales, ver limitacion de las 7 lineas de
+  arriba).
+- `extraccion_rom/root/ftc/arm9.bin` reparado (hallazgo 2).
+
+**Pendiente / requiere decision del usuario:** confirmar o corregir la
+traduccion de las lineas marcadas `[REVISAR]` (la secuencia de 10 kana
+sueltas y 1-2 fragmentos ambiguos mas) viendo la escena real en el juego,
+ya que ahi si hace falta el contexto visual que un CSV no puede dar.
