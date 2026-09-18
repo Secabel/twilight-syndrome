@@ -15,8 +15,11 @@ in-game menus that store text baked directly into image tiles (title screen,
 story/ending selection menu, save/load menu) are all translated and
 reinserted.
 
-Prebuilt BPS patches are available from the [romhacking.net](https://www.romhacking.net/)
-submission pages, or you can build your own patched ROM from source — see
+Prebuilt BPS patches (`Twilight Syndrome ESP.bps` / `Twilight Syndrome
+ENG.bps`) are included in this repository, and are also listed on
+[romhacking.net](https://www.romhacking.net/) once approved. Apply either one
+with a BPS patcher (e.g. [Floating IPS](https://github.com/Alcaro/Flips))
+over a clean Japanese ROM — or build your own patched ROM from source, see
 below.
 
 ## What this covers
@@ -41,6 +44,8 @@ below.
 
 ## Repository layout
 
+- `Twilight Syndrome ESP.bps` / `Twilight Syndrome ENG.bps` — ready-to-use
+  BPS patches. Apply over a clean Japanese ROM with a BPS patcher.
 - `scripts/` — Python tooling used to build the assets below from a clean
   Japanese ROM: `extraer_texto.py` (script/dialogue extraction to CSV),
   `extraer_todos_items.py` (inventory item text extraction), and
