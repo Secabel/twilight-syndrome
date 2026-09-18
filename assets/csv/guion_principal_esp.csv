@@ -13277,7 +13277,7 @@ del dueño)"
 0x100020,6,よっ。,,Hola.
 0x100028,6,ああ。,,Ah.
 0x100030,6,気配？,,Una presencia?
-0x100038,6,先生？,,Sensei?
+0x100038,6,先生？,,Profesor?
 0x100048,6,俺も。,,Yo tambien.
 0x100058,6,レイカ,,Reika
 0x100070,6,リコ！,,Riko!
@@ -13378,7 +13378,7 @@ del dueño)"
 0x10058c,10,……うん。,,......Si.
 0x100598,10,壁から…。,,Desde la pared...
 0x1005a4,10,どうした？,,Que pasa?
-0x1005b0,10,……先生。,,......Sensei.
+0x1005b0,10,……先生。,,......Profesor.
 0x1005bc,10,あぁ……。,,Ah......
 0x1005c8,10,わたし…。,,Yo...
 0x1005d4,10,おはよっ。,,Buenos dias!
@@ -13543,7 +13543,7 @@ miradas..."
 0x100fb8,16,ミズキよりも…。,,Mas que Mizuki...
 0x100fcc,16,８８通目のメール,,Mensaje numero 88
 0x100fe0,16,まさか、ユウタ？,,No sera Yuuta?
-0x100ff4,16,…お願い、先生。,,"...Por favor, sensei."
+0x100ff4,16,…お願い、先生。,,"...Por favor, profesor."
 0x101008,16,どうしたの急に。,,Que te pasa de repente.
 0x10101c,16,９８通目のメール,,Mensaje numero 98
 0x101030,16,ああ…ミズキ…。,,Ah...Mizuki...
@@ -13672,7 +13672,7 @@ celular..."
 0x10183c,18,マサキ……いるの？,,Masaki......estas ahi?
 0x101850,18,（魂が…宿る…？）,,"(El alma...se
 aloja...?)"
-0x101864,18,…先生……助けて…,,"...Sensei...
+0x101864,18,…先生……助けて…,,"...Profesor...
 ayudeme..."
 0x101878,18,…いないみたいね。,,...Parece que no esta.
 0x10188c,18,レイカ！いるの！？,,Reika! Estas ahi!?
@@ -14051,7 +14051,7 @@ real......)"
 0x102d58,26,ね、昨日のチェンメ、見た？,,"Oye, viste la cadena de
 ayer?"
 0x102d74,26,えっ？だって今、先生と…。,,"Eh? Es que ahora, con el
-sensei..."
+profesor..."
 0x102d90,26,なにやってんだよ、一人で。,,Que haces ahi tu solo.
 0x102dac,28,（口裂け…女……そんな……）,,"(La mujer...de la boca
 rasgada......no puede
