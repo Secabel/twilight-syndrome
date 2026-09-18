@@ -38,7 +38,7 @@ time...?"
 0xd3444,14,あたし…なの？,,Is it me...?
 0xd3454,14,あとひとり…。,,One more to go...
 0xd3464,14,どういうこと？,,What do you mean?
-0xd3474,16,わかってるって。,,"I know, I know."
+0xd3474,16,わかってるって。,,I know that already.
 0xd3488,16,指を離さないで。,,"Don't let go of your
 finger."
 0xd349c,16,あ……指が……。,,Ah...my finger...
@@ -114,13 +114,11 @@ what."
 ですよ。",,"Yeah, yeah, it was my
 fault."
 0xd3920,35,"中央のコインを触り続けて
-ください。",,"Please keep
-touching the center
-coin."
+ください。",,"Please keep touching the
+center coin."
 0xd3944,35,"中央のコインを触り続けて
-ください。",,"Please keep
-touching the center
-coin."
+ください。",,"Please keep touching the
+center coin."
 0xd3968,35,"あたしの結婚相手は、日本人
 ですか？",,"Is my future husband
 Japanese?"
@@ -232,9 +230,9 @@ return to the torii."
 0xd3ef0,8,ひっ…。,,Hii...
 0xd3efc,8,うん…。,,Yeah...
 0xd3f08,8,うん…。,,Yeah...
-0xd3f14,8,大丈夫？,,Are you okay?
+0xd3f14,8,大丈夫？,,You okay?
 0xd3f2c,10,救急箱…。,,The first aid kit...
-0xd3f38,10,そうなの？,,Is that so?
+0xd3f38,10,そうなの？,,Really?
 0xd3f44,10,うーん…。,,Mmm...
 0xd3f50,10,ああっ…。,,Aah...!
 0xd3f5c,10,…うん…。,,...Yeah...
@@ -243,7 +241,7 @@ return to the torii."
 0xd3f80,10,そんな…。,,No way...
 0xd3f8c,10,手帳だ…。,,It's a notebook...
 0xd3f98,10,…足音…。,,...Footsteps...
-0xd3fa4,10,ダメだ…。,,It's no use...
+0xd3fa4,10,ダメだ…。,,It's no good...
 0xd3fb0,12,なにこれ！？,,What is this!?
 0xd3fc0,12,・・・・・・,,......
 0xd3fd0,12,えっ、どれ？,,"Huh, which one?"
@@ -467,11 +465,11 @@ center coin."
 look inside the first aid
 kit?"
 0xd4bc8,35,"調べたい場所をタッチ
-してください。",,"Touch the place you want
-to investigate."
+してください。",,"Touch the spot you want
+to examine."
 0xd4bec,35,"調べたい場所をタッチ
-してください。",,"Touch the place you want
-to investigate."
+してください。",,"Touch the spot you want
+to examine."
 0xd4c10,35,"ほら、ナナシだって
 こう言ってるし。",,"Look, even Nanashi says
 this."
@@ -774,7 +772,7 @@ up in the photo..."
 0xd5a28,8,レイカに,,Call Reika
 0xd5a34,8,だーめ。,,Nooo.
 0xd5a40,8,うん…。,,Yeah...
-0xd5a4c,8,はっ…。,,Ha...
+0xd5a4c,8,はっ…。,,Ah...
 0xd5a58,8,“いま”,,"""now"""
 0xd5a70,8,ホント？,,Really?
 0xd5a7c,8,…カナ？,,...Kana?
@@ -818,12 +816,12 @@ legend?"
 0xd5c44,12,お願い！！！,,Please!!!
 0xd5c54,12,バカバカしい,,How ridiculous
 0xd5c64,12,どこ行くの？,,Where are you going?
-0xd5c74,12,うーん……。,,Mmm......
+0xd5c74,12,うーん……。,,Hmm......
 0xd5c84,12,トイレ…ね。,,"To the bathroom...I
 see."
 0xd5c94,12,どうしたの？,,What's wrong?
 0xd5ca4,12,予定表……。,,The schedule......
-0xd5cb4,12,そうだね…。,,That's right...
+0xd5cb4,12,そうだね…。,,You're right...
 0xd5cc4,12,あたしも…。,,Me too...
 0xd5cd4,12,また、鏡…。,,The mirror again...
 0xd5ce4,12,お願い……。,,Please......
@@ -2042,7 +2040,7 @@ building!"
 0xd9e18,14,１階ってこと？,,You mean the first floor?
 0xd9e28,14,……やめとく。,,......Better not.
 0xd9e38,14,私は行かない！,,I'm not going!
-0xd9e48,14,そうなんだ…。,,"Ah, I see..."
+0xd9e48,14,そうなんだ…。,,I see...
 0xd9e58,14,……やっぱり。,,......I knew it.
 0xd9e68,14,…どうしたの？,,...What's wrong?
 0xd9e78,14,ね、これ見て。,,"Hey, look at this."
@@ -2090,7 +2088,7 @@ purple..."
 0xda0a8,14,いいじゃない。,,Not bad.
 0xda0b8,14,えっ…なに…！,,Huh...what...!
 0xda0c8,14,そうこなきゃ。,,Now you're talking.
-0xda0d8,14,そうなんだ…。,,"Ah, I see..."
+0xda0d8,14,そうなんだ…。,,I see...
 0xda0e8,14,…コイン…だ。,,...It's the coin.
 0xda0f8,14,…失礼なヤツ…,,"...What a rude
 person..."
@@ -2277,7 +2275,7 @@ yeah......"
 0xdabf0,18,えーっ、それだけ？,,"Ehh, that's all?"
 0xdac04,18,なんで、それが…。,,"Why, that..."
 0xdac18,18,…あたし…もう…。,,...I...already...
-0xdac2c,18,それじゃないって。,,"I told you, that's not it."
+0xdac2c,18,それじゃないって。,,I told you that's not it.
 0xdac40,18,なんだ、違うんだ。,,"Ah, that wasn't it."
 0xdac54,18,わたしのクラスで…,,In my class...
 0xdac68,18,そのアドレス教えて,,Give me that address
@@ -2425,12 +2423,12 @@ before..."
 0xdb5c8,20,誰かが言ってたっけ。,,"Someone mentioned it, I
 think."
 0xdb5e0,20,発見されたんだって。,,They say it was found.
-0xdb5f8,20,…まさか……ナナシ？,,Could it be... Nanashi?
+0xdb5f8,20,…まさか……ナナシ？,,"...No
+way......Nanashi?"
 0xdb610,20,薬とかが入ってる…。,,"There's medicine and
 stuff like that..."
 0xdb628,20,それはカンベンして。,,"Please, not that."
-0xdb640,20,聞こえなくなった…。,,"I can't hear it
-anymore..."
+0xdb640,20,聞こえなくなった…。,,I stopped hearing it...
 0xdb658,20,地下の資料室だけど。,,"It's the basement
 archive room."
 0xdb670,22,…廊下に何がいるの…？,,"...What's in the
@@ -5733,7 +5731,7 @@ Sakuma..."
 0xe8c54,16,魔の…カーブ…。,,The curve...cursed...
 0xe8c68,16,これで２つ目…。,,That's two...
 0xe8c7c,18,ユウタ、しっかり！,,"Yuuta, hang in there!"
-0xe8c90,18,それじゃないって。,,That's not it.
+0xe8c90,18,それじゃないって。,,I told you that's not it.
 0xe8ca4,18,曲がりきれない…！,,"I can't make the
 turn...!"
 0xe8cb8,20,これ…もしかして…！,,This...could it be...!
@@ -6612,7 +6610,7 @@ Station..."
 0xebbbc,12,元駅員さん？,,"A former station
 employee?"
 0xebbcc,12,おい、リコ！,,"Hey, Riko!"
-0xebbdc,12,うーん……。,,Hmm...
+0xebbdc,12,うーん……。,,Hmm......
 0xebbec,14,おかしい……。,,That's weird...
 0xebbfc,14,…アイテム…。,,...An item...
 0xebc0c,14,わしはサクマ。,,I'm Sakuma.
@@ -6881,9 +6879,8 @@ night,)"
 that..."
 0xecca0,26,拡張工事は中止するんじゃ！,,"The expansion work is
 canceled!"
-0xeccbc,26,おい！わしの話を聞かんか！,,"Hey! Aren't you going
-to listen to what I'm
-saying!"
+0xeccbc,26,おい！わしの話を聞かんか！,,"Hey! Listen when I'm
+talking!"
 0xeccd8,26,あっ！ここ、メールが届く！,,Ah! I get a signal here!
 0xeccf4,26,ちょっと近づきにくいよね。,,"It's a bit hard to get
 close, isn't it?"
@@ -7958,11 +7955,11 @@ hear a baby crying,"
 0xf0160,6,うん。,,Yeah.
 0xf0168,6,えっ。,,Huh.
 0xf0170,6,はぁ？,,Huh?
-0xf0180,6,へえ。,,Wow.
-0xf0188,6,マジ？,,Seriously?
+0xf0180,6,へえ。,,Huh.
+0xf0188,6,マジ？,,Really?
 0xf0198,6,うん。,,Yeah.
 0xf01a0,8,うん…。,,Yeah...
-0xf01ac,8,うーん。,,Hmm.
+0xf01ac,8,うーん。,,Mmm.
 0xf01b8,8,行こう。,,Let's go.
 0xf01c4,8,教えて。,,Tell me.
 0xf01d0,8,決めた。,,Decided.
@@ -7972,7 +7969,7 @@ hear a baby crying,"
 0xf0224,8,ははっ。,,Ha.
 0xf0230,8,まあね。,,More or less.
 0xf023c,8,先生…。,,Teacher...
-0xf0248,8,次は…。,,Next is...
+0xf0248,8,次は…。,,Next up...
 0xf0260,8,うわ…。,,Whoa...
 0xf026c,8,うん…。,,Yeah...
 0xf0278,8,失礼な。,,How rude.
@@ -8025,7 +8022,7 @@ hear a baby crying,"
 fine."
 0xf0548,10,げほっ…。,,Cough...
 0xf0560,10,安全だよ。,,It's safe.
-0xf0584,10,うーん…。,,Hmm...
+0xf0584,10,うーん…。,,Mmm...
 0xf0590,10,（お願い）,,(Please)
 0xf05b4,10,なぁんだ。,,"Ah, that's what it was."
 0xf05d8,10,（ひっ…）,,(Eek...)
@@ -8064,7 +8061,7 @@ maybe?"
 0xf07dc,10,…ゆみこ？,,...Yumiko?
 0xf07f4,10,特には…。,,Nothing in particular...
 0xf0830,10,実はね…。,,Actually...
-0xf0848,10,よかった。,,That's good.
+0xf0848,10,よかった。,,What a relief.
 0xf0854,10,床に落とす,,Drop it on the floor
 0xf089c,12,行ってみる？,,Want to go take a look?
 0xf08ac,12,何も無い…。,,There's nothing here...
@@ -8181,7 +8178,7 @@ anymore..."
 0xf0f0c,14,知ってますか？,,Do you know that?
 0xf0f1c,14,忘れないでね。,,Don't forget.
 0xf0f2c,14,まずは浴室…。,,"First, the bathroom..."
-0xf0f3c,14,そうこなきゃ。,,That's how it's done.
+0xf0f3c,14,そうこなきゃ。,,Now you're talking.
 0xf0f4c,14,元ネタだって。,,"They say it's the origin
 of the story."
 0xf0f5c,14,えっ……マジ？,,Huh...... seriously?
@@ -8269,7 +8266,7 @@ there?"
 0xf13c4,16,見いつけた……。,,Found you......
 0xf13d8,16,おーい、マサキ。,,"Hey, Masaki."
 0xf13ec,16,あ、マサキだ…。,,"Ah, it's Masaki..."
-0xf1400,16,おいでください。,,Please come.
+0xf1400,16,おいでください。,,"Please, come."
 0xf1414,16,切っちゃった…。,,It got cut off...
 0xf1428,16,（見いつけた…）,,(Found you...)
 0xf143c,16,（もういいよ…）,,"(It doesn't matter
@@ -8421,7 +8418,7 @@ look."
 0xf1d10,18,しょうがないなあ。,,Can't be helped.
 0xf1d24,18,（ひぃぃぃぃぃ！）,,(Eeeeek!)
 0xf1d38,18,（もう…ダメええ）,,(I can't...take it)
-0xf1d4c,18,（…どうしよう…）,,(...What do I do...)
+0xf1d4c,18,（…どうしよう…）,,(...what do I do...)
 0xf1d60,18,まだ…バスタブ…。,,Still... the bathtub...
 0xf1d74,18,（お風呂場かな？）,,"(Could it be the
 bathroom?)"
@@ -10018,7 +10015,7 @@ the bathroom again..."
 Kokkuri-san,......
 let's see..."
 0xf7064,45,"もし現れましたら、『はい』に
-進んでください。",,"If you appear, please
+進んでください。",,"If it appears, please
 move towards Yes."
 0xf7094,45,"それで、目をつむったら、
 心の中で１０数える。",,"And then, when you
@@ -11014,7 +11011,7 @@ too, right...?"
 0xfa20c,6,はい。,,Yes.
 0xfa214,6,うん。,,Yeah.
 0xfa21c,6,別に。,,Nothing in particular.
-0xfa224,6,はっ！,,Ah!
+0xfa224,6,はっ！,,Ha!
 0xfa22c,6,そう。,,That's right.
 0xfa234,6,ああ。,,Ah.
 0xfa244,6,←広場,,<- Plaza
@@ -11048,7 +11045,7 @@ too, right...?"
 0xfa3d8,8,逃げて！,,Run!
 0xfa3e4,8,出口は？,,And the exit?
 0xfa3f0,8,いや…。,,No...
-0xfa3fc,8,ああ…。,,Ah...
+0xfa3fc,8,ああ…。,,Ahh...
 0xfa414,8,待って！,,Wait!
 0xfa420,8,そうだ。,,That's right.
 0xfa438,8,←　広場,,<- Plaza
@@ -11056,13 +11053,13 @@ too, right...?"
 0xfa450,8,はっ…！,,Ah...!
 0xfa45c,10,…ごめん。,,...Sorry.
 0xfa468,10,井戸だ…。,,It's a well...
-0xfa474,10,そうだね。,,You're right.
+0xfa474,10,そうだね。,,That's right.
 0xfa480,10,ほらここ。,,"Look, here."
 0xfa48c,10,電力を…。,,The power...
 0xfa498,10,たしか…。,,I think...
 0xfa4a4,10,…親父…。,,...Dad...
 0xfa4b0,10,どうして？,,Why?
-0xfa4bc,10,そうだね。,,You're right.
+0xfa4bc,10,そうだね。,,That's right.
 0xfa4c8,10,これは…。,,This is...
 0xfa4d4,10,全く……。,,Honestly......
 0xfa4e0,10,こっちだ！,,This way!
@@ -12956,7 +12953,7 @@ spirit.)"
 0x1000d0,8,…ゼロ！,,...Zero!
 0x1000dc,8,逃げる！,,I'm getting out of here!
 0x1000e8,8,ああ…。,,Ahh...
-0x1000f4,8,ええっ。,,Huh?!
+0x1000f4,8,ええっ。,,Ehh.
 0x10010c,8,ああ…。,,Ahh...
 0x100118,8,ああ…。,,Ahh...
 0x100124,8,マサキ！,,Masaki!
@@ -12981,7 +12978,7 @@ spirit.)"
 0x100250,8,あるよ。,,There is.
 0x10025c,8,はっ…！,,Ah...!
 0x100268,8,大丈夫？,,You okay?
-0x100274,8,…あれ？,,...Huh?
+0x100274,8,…あれ？,,Huh?
 0x100280,8,マサキ！,,Masaki!
 0x10028c,8,待って！,,Wait!
 0x100298,8,ごめん。,,Sorry.
@@ -13041,7 +13038,7 @@ spirit.)"
 0x100598,10,壁から…。,,From the wall...
 0x1005a4,10,どうした？,,What's wrong?
 0x1005b0,10,……先生。,,......Sensei.
-0x1005bc,10,あぁ……。,,Ah......
+0x1005bc,10,あぁ……。,,Aah.....
 0x1005c8,10,わたし…。,,I...
 0x1005d4,10,おはよっ。,,Morning!
 0x1005e0,10,そうなの？,,Really?
@@ -13049,10 +13046,10 @@ spirit.)"
 0x1005f8,10,レイカ…。,,Reika...
 0x100604,10,そうか…？,,Is that so...?
 0x100610,10,落ちろ！！,,Fall!!
-0x100628,10,そうだね。,,You're right.
+0x100628,10,そうだね。,,That's right.
 0x100634,10,ユウタ…。,,Yuuta...
 0x100640,10,ああああ！,,Aaaah!
-0x10064c,10,そうだね。,,You're right.
+0x10064c,10,そうだね。,,That's right.
 0x100658,10,……うん。,,......Yeah.
 0x100670,10,ホントか？,,Seriously?
 0x10067c,10,だから…。,,That's why...
@@ -13108,7 +13105,7 @@ neck..."
 0x10095c,12,いやあああ！,,Noooo!
 0x10096c,12,…あ…今…。,,...Ah...right now...
 0x10098c,12,（圏外だ…）,,(No signal...)
-0x10099c,12,わかった…。,,Got it...
+0x10099c,12,わかった…。,,Understood...
 0x1009ac,12,…そんな…。,,...No way...
 0x1009bc,12,…よく見て…,,...Look closely...
 0x1009cc,12,そうなんだ。,,"Huh, I see."
@@ -13143,7 +13140,7 @@ now...)"
 0x100b8c,14,えっ、遊園地？,,"Huh, the
 amusement
 park?"
-0x100b9c,14,どういうこと？,,What does that mean?
+0x100b9c,14,どういうこと？,,What do you mean?
 0x100bac,14,どうしよう…。,,What do I do...
 0x100bbc,14,私も高校時代、,,"Back when I was in
 high
@@ -13163,8 +13160,7 @@ school too,"
 0x100c9c,14,誰もいない…？,,Is nobody here...?
 0x100cac,14,……そんな…。,,......No way...
 0x100cbc,14,トイレはどう？,,"What about
-the
-bathroom?"
+the bathroom?"
 0x100cec,14,…ユウタ……。,,...Yuuta......
 0x100cfc,14,…ううっ……。,,...Ngh......
 0x100d0c,14,リコ！いるの？,,Riko! Are you there?
@@ -16386,8 +16382,7 @@ bathroom..."
 0x1076d0,14,（リコから…）,,(From Riko...)
 0x1076e0,14,ね、それより、,,"Hey, more than that,"
 0x1076f0,16,やばいよ！ひっ！,,This is bad! Hii!
-0x107704,16,…どういうこと？,,"...What does that
-mean?"
+0x107704,16,…どういうこと？,,...What do you mean?
 0x107718,16,えーっ、マジで。,,"Huh, seriously."
 0x10772c,16,ユ、ユカリ先生。,,Yu-Yukari sensei.
 0x107740,16,リコ！？　リコ！,,Riko!? Riko!
