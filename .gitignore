@@ -19,3 +19,6 @@ saves/
 __pycache__/
 **/__pycache__/
 *.pyc
+
+# Configuracion local de Claude Code (no es parte del proyecto)
+.claude/
