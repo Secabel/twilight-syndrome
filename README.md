@@ -15,6 +15,10 @@ in-game menus that store text baked directly into image tiles (title screen,
 story/ending selection menu, save/load menu) are all translated and
 reinserted.
 
+Prebuilt BPS patches are available from the [romhacking.net](https://www.romhacking.net/)
+submission pages, or you can build your own patched ROM from source — see
+below.
+
 ## What this covers
 
 - **Full script** (6653 lines of dialogue) extracted, translated, and
@@ -37,12 +41,10 @@ reinserted.
 
 ## Repository layout
 
-- `docs/` — full project log (`historia-proyecto.md`), technical notes on the
-  ROM/font/graphics formats, glossary, and findings docs. Written in Spanish
-  (the primary development language for this project); happy to translate
-  specific sections on request.
-- `scripts/` — Python tooling: NCGR/NCLR/NCER/NSCR decoders, the graphics
-  inventory scanner, and the per-menu redraw scripts.
+- `scripts/` — Python tooling used to build the assets below from a clean
+  Japanese ROM: `extraer_texto.py` (script/dialogue extraction to CSV),
+  `extraer_todos_items.py` (inventory item text extraction), and
+  `ncer_decode.py` (NCER/NCGR tile-graphics decoder).
 - `assets/` — the actual translated assets (script CSV, custom font, redrawn
   graphics) that get patched into the ROM, split by language
   (`assets/graficos/esp/`, `assets/graficos/eng/`).
@@ -52,9 +54,13 @@ reinserted.
 ## Building a patched ROM
 
 You need your own legally-dumped copy of the original Japanese ROM — it is
-**not** included in this repository. With that in place:
+**not** included in this repository. Clone this repository (it already
+includes the translated `assets/` needed for the build), place the clean ROM
+alongside the build scripts, then:
 
 ```bash
+git clone https://github.com/Secabel/twilight-syndrome.git
+cd twilight-syndrome
 pip install ndspy
 python3 generar_rom_esp.py   # or generar_rom_eng.py
 ```
@@ -62,6 +68,5 @@ python3 generar_rom_esp.py   # or generar_rom_eng.py
 ## Contributing
 
 If you're working on a translation into another language and want to reuse
-the tooling (font injection, pointer relocation, tile-graphics redraw
-technique), feel free to open an issue or PR — the scripts are written to be
-reused with a different script/asset set per language.
+the extraction/build pipeline (`scripts/`, `generar_rom_*.py`) as a starting
+point, feel free to open an issue or PR.
