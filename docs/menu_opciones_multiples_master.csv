@@ -50,7 +50,9 @@ building",2,ok
 15,2,0xda0f8,…失礼なヤツ…,"...Que tipo mas
 grosero...",2,"...What a rude
 person...",2,ok
-15,2,0xdb5f8,…まさか……ナナシ？,No sera... Nanashi?,1,Could it be... Nanashi?,1,ok
+15,2,0xdb5f8,…まさか……ナナシ？,"...No puede
+ser......Nanashi?",2,"...No
+way......Nanashi?",2,sincronizado-2026-09-17
 16,2,0xdbc58,…ちょっと…言いすぎ…,"Eso... fue
 demasiado...",2,"...That... was too
 much...",2,ok
@@ -396,7 +398,7 @@ favor",2,"Please, do me a favor",1,ok
 95,3,0xfa2ac,わかった,Entendido,1,Got it,1,ok
 96,3,0xfaa14,変な夢を見て…,Tuve un sueno raro...,1,I had a weird dream...,1,ok
 96,3,0xfb644,どんなトコなんですか？,Que tipo de lugar es?,1,What kind of place is it?,1,ok
-96,3,0xfa724,じゃあこれで,"Bueno, con esto",1,"Well, with this",1,ok
+96,3,0xfa724,じゃあこれで,"Bueno, es todo",1,"Well, that's it",1,ok
 97,3,0xfa844,変な夢を見て…,Tuve un sueno raro...,1,I had a weird dream...,1,ok
 97,3,0xfb3a4,どんなトコなんですか？,Que tipo de lugar es?,1,What kind of place is it?,1,ok
 97,3,0xfadf8,ホントに大丈夫です,De verdad estoy bien,1,I'm really fine,1,ok
@@ -438,9 +440,9 @@ USE IT",2,ok
 107,2,0x102238,ホントに呪われてるかも,"Puede que de verdad
 este maldito",2,"This place might
 really be cursed",2,rewrap-2026-09-15
-107,2,0x101864,…先生……助けて…,"...Sensei...
-ayudeme...",2,"...Sensei...help
-me...",2,ok
+107,2,0x101864,…先生……助けて…,"...Profesor...
+ayudeme...",2,"...Teacher...help
+me...",2,sincronizado-2026-09-17
 108,2,0x102cb0,わたしも入ろうかな、水泳部,"Quizas tambien me una
 al club de natacion",2,"Maybe I should join
 the swim club too",2,rewrap-2026-09-15;acortado-2026-09-15
