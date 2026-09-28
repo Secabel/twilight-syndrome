@@ -125,7 +125,6 @@ generators again.
 | `scripts/ncer_decode.py` | Decoder for DS tile graphics (NCGR/NCLR/NCER/NSCR) |
 | `scripts/fuente_celular.py`, `scripts/redibujar_correos.py` | Phone font and the script that redraws the phone mails |
 | `images/` | Screenshots used in this README |
-| `Twilight Syndrome ESP.bps`, `Twilight Syndrome ENG.bps` | Version 1.0 patches, kept for existing links (current patches are on the Releases page) |
 
 The Japanese script is included in the main CSVs (`texto_original` column),
 so the files can also be used as a starting point for a translation into
