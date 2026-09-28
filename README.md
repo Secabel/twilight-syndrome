@@ -57,8 +57,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight Syndrome ESP v1.1.bps` (Spanish) or
-   `Twilight Syndrome ENG v1.1.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.1.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.1.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -69,8 +69,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight Syndrome ESP v1.1.bps` | Spanish | 116,146,888 bytes | `3B2D8397` | `c7bc19f5e89028fa6f91cc161e206b4ecf7bf42c` |
-   | `Twilight Syndrome ENG v1.1.bps` | English | 116,155,080 bytes | `55F7125B` | `79e12ec1abb306b16d3bcf59817fbe1cd46bc519` |
+   | `Twilight.Syndrome.ESP.v1.1.bps` | Spanish | 116,146,888 bytes | `3B2D8397` | `c7bc19f5e89028fa6f91cc161e206b4ecf7bf42c` |
+   | `Twilight.Syndrome.ENG.v1.1.bps` | English | 116,155,080 bytes | `55F7125B` | `79e12ec1abb306b16d3bcf59817fbe1cd46bc519` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
