@@ -36,8 +36,9 @@ no previous English or Spanish translation.
   script inside the ARM9 binary with hardcoded pointers, so longer translated
   lines are moved to free space instead of being squeezed in place.
 - **Custom Latin font**: the original font only has kanji/kana and a handful of
-  Latin letters. A full A-Z/a-z alphabet with Ñ, accented vowels, ¿ ¡ and
-  punctuation was designed from scratch in the game's pixel style.
+  Latin letters. A full A-Z/a-z alphabet with Ñ/ñ and basic punctuation was
+  designed from scratch in the game's pixel style (accented vowels and ¿ ¡
+  are planned for a future update, see Known issues).
 - **Character name tags** and the **38 inventory item screens**, whose text is
   drawn directly into the graphics (NCGR/NCER) and was redrawn per language.
 - **Menus with text baked into the graphics**: title screen, story/ending
@@ -132,6 +133,11 @@ another language.
 
 ## Known issues
 
+- **Spanish: no accented vowels or ¿ ¡ yet.** The font does not include
+  á é í ó ú or the opening ¿ ¡ marks yet, so the Spanish text is written
+  without them (for example "Que estara haciendo?" instead of
+  "¿Qué estará haciendo?"). The text itself is fully translated; adding these
+  characters is planned for a future update.
 - **Some phone screens are still in Japanese:** sending a mail
   (送信中 / 送信しました), call history, audio playback, the call screen,
   the "page not found" web screen and the 決定 (OK) button on the phone
