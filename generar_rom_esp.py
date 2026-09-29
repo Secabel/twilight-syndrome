@@ -25,7 +25,7 @@ BASE_ROM = "Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds"
 ROM_OUT  = "Twilight Syndrome - ESP.nds"
 
 ARM9_PRISTINO = "extraccion_rom/root/ftc/arm9.bin"  # SIEMPRE el original sin parchear
-FONT_PATH = "assets/font/TWSFont_v22.NFTR"
+FONT_PATH = "assets/font/TWSFont_v23.NFTR"
 MAX_WIDTH_PX = 220   # presupuesto de ancho por linea antes de avisar
 MARGIN = 0x40000     # colchon en bytes despues de bss_end (256KB)
 
@@ -96,6 +96,14 @@ assert len(_FULL_CHARS) == 63
 BYTE_MAP = {ch: 0xA1 + i for i, ch in enumerate(_FULL_CHARS)}
 for ch in _ASCII_DIRECTO:
     BYTE_MAP[ch] = ord(ch)
+# TWSFont_v23 (2026-09-29): vocales con tilde, u con dieresis y signos de
+# apertura. Codigos ASCII de 1 byte libres (0x41-0x4D, las letras ASCII no se
+# usan porque el alfabeto va en 0xA1+), repunteados dentro del mismo bloque
+# CMAP combinado 0x22-0xE7 (sin agregar bloques). Glifos 219-231 (kanji sin uso),
+# construidos a partir de las letras existentes + acento.
+_TILDES = "áéíóúÁÉÍÓÚü¿¡"
+for i, ch in enumerate(_TILDES):
+    BYTE_MAP[ch] = 0x41 + i
 
 # anchos de avance en pixeles (glyphWidth+1), usados solo para el chequeo de wrap
 ANCHOS = {
@@ -106,6 +114,8 @@ ANCHOS = {
     'v':9,'w':12,'x':9,'y':9,'z':8,'Ñ':9,'ñ':8,
     '.':5,',':5,'?':8,'!':6,'(':6,')':6,'-':6,'"':7,':':5,"'":4,'<':11,'^':11,
     '*':7,'>':11,'/':5,'#':11,
+    'á':9,'é':9,'í':5,'ó':9,'ú':10,'Á':11,'É':9,'Í':5,'Ó':12,'Ú':11,'ü':10,
+    '¿':8,'¡':6,
 }
 SPACE_WIDTH = 6
 
