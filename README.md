@@ -26,7 +26,7 @@ no previous English or Spanish translation.
 <img src="images/en_04_phone_mail.png" width="200" alt="English screenshot: phone mail">
 </p>
 
-> **Version 1.1**
+> **Version 1.2**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -36,9 +36,9 @@ no previous English or Spanish translation.
   script inside the ARM9 binary with hardcoded pointers, so longer translated
   lines are moved to free space instead of being squeezed in place.
 - **Custom Latin font**: the original font only has kanji/kana and a handful of
-  Latin letters. A full A-Z/a-z alphabet with Ñ/ñ and basic punctuation was
-  designed from scratch in the game's pixel style (accented vowels and ¿ ¡
-  are planned for a future update, see Known issues).
+  Latin letters. A full A-Z/a-z alphabet with Ñ/ñ, digits and punctuation was
+  designed from scratch in the game's pixel style. The Spanish version also
+  has accented vowels and ¿ ¡ *(new in 1.2)*.
 - **Character name tags** and the **38 inventory item screens**, whose text is
   drawn directly into the graphics (NCGR/NCER) and was redrawn per language.
 - **Menus with text baked into the graphics**: title screen, story/ending
@@ -58,7 +58,7 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.1.bps` (Spanish) or
+   page: `Twilight.Syndrome.ESP.v1.2.bps` (Spanish) or
    `Twilight.Syndrome.ENG.v1.1.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
@@ -70,14 +70,14 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.1.bps` | Spanish | 116,146,888 bytes | `3B2D8397` | `c7bc19f5e89028fa6f91cc161e206b4ecf7bf42c` |
+   | `Twilight.Syndrome.ESP.v1.2.bps` | Spanish | 116,149,448 bytes | `231527A8` | `90dc5dde9dd277cb0d3c704875e90317fd11057f` |
    | `Twilight.Syndrome.ENG.v1.1.bps` | English | 116,155,080 bytes | `55F7125B` | `79e12ec1abb306b16d3bcf59817fbe1cd46bc519` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
-**Updating from 1.0:** your in-game save (`.sav`) keeps working, but do **not**
-load emulator savestates made with the 1.0 ROM: a savestate stores the graphics
-that were already loaded in memory, so old text can reappear.
+**Updating from an earlier version:** your in-game save (`.sav`) keeps working,
+but do **not** load emulator savestates made with an older ROM: a savestate
+stores the graphics and text already loaded in memory, so old text can reappear.
 
 ## Building the ROMs from source
 
@@ -118,7 +118,8 @@ generators again.
 | `generar_rom_esp.py`, `generar_rom_eng.py` | Build the Spanish / English ROM from the original ROM and `assets/` |
 | `assets/csv/guion_principal_esp.csv`, `assets/csv/guion_principal_eng.csv` | Main script: one row per line, with the ROM offset, the original Japanese text and the translation |
 | `assets/csv/correos_celular.csv` | Phone mails: one row per sprite line (Japanese, Spanish, English) |
-| `assets/font/TWSFont_v22.NFTR` | Game font with the added Latin glyphs |
+| `assets/font/TWSFont_v23.NFTR` | Game font used by the Spanish build: Latin glyphs plus á é í ó ú Á É Í Ó Ú ü ¿ ¡ |
+| `assets/font/TWSFont_v22.NFTR` | Game font used by the English build (same Latin glyphs, without the Spanish accents) |
 | `assets/graficos/esp/`, `assets/graficos/eng/` | Redrawn graphics per language (same folder structure as the ROM); the generators apply everything they find there |
 | `assets/graficos/*.NCGR`, `assets/graficos/I22S10.NCER` | Graphics shared by both languages (character name tags, extended item cell) |
 | `scripts/extraer_texto.py` | Extracts the script from the ARM9 binary to CSV |
@@ -133,11 +134,6 @@ another language.
 
 ## Known issues
 
-- **Spanish: no accented vowels or ¿ ¡ yet.** The font does not include
-  á é í ó ú or the opening ¿ ¡ marks yet, so the Spanish text is written
-  without them (for example "Que estara haciendo?" instead of
-  "¿Qué estará haciendo?"). The text itself is fully translated; adding these
-  characters is planned for a future update.
 - **Some phone screens are still in Japanese:** sending a mail
   (送信中 / 送信しました), call history, audio playback, the call screen,
   the "page not found" web screen and the 決定 (OK) button on the phone
@@ -153,6 +149,16 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.2
+- Spanish: added á é í ó ú Á É Í Ó Ú ü ¿ ¡ to the font, built from the existing
+  letters so they match the original style.
+- Spanish: reviewed the whole script (over 4,200 lines) to add accents, opening
+  ¿ ¡ and some missing ñ; a few lines were rewrapped or slightly reworded to
+  fit the text boxes.
+- Spanish: fixed about 40 short lines that were still shown in Japanese in 1.1
+  because they used characters the font didn't have.
+- English: unchanged (the 1.1 patch is included again in the 1.2 release).
 
 ### 1.1
 - Translated the phone mails: all 12 mailbox sets (around 24 different mails,
