@@ -12,6 +12,7 @@ photograph spirits."
 録音しておくことができる。",,"When you hear a
 noise, you can
 record it."
+0xd3290,6,うん。,,Yeah.
 0xd3298,8,えー…。,,Uhh...
 0xd32a4,8,…えっ？,,...Huh?
 0xd32b0,8,カナ…。,,Kana...
@@ -5711,10 +5712,12 @@ illegible/corrupted text,
 possible game effect]"
 0xe8624,32,ｨyﾀz８８−０９と書いてある。,,"[PARTIAL TEXT] It says
 88-09."
+0xe862c,24,８８−０９と書いてある。,,It says 88-09.
 0xe8648,41,"古い時計……名前が入ってる。
 サクマ……。",,"An old clock...it has a
 name engraved on it.
 Sakuma..."
+0xe8b94,4,え？,,Huh?
 0xe8b9c,8,おおお！,,Oooh!
 0xe8ba8,8,次は…。,,Next up...
 0xe8bb4,8,怨念…！,,A grudge...!
@@ -6045,6 +6048,10 @@ cursed..."
 　見ると呪われる…？）",,"(If you see the oni in
 ""Hitori Kakurenbo"", you
 get cursed...?)"
+0xe9cc8,55,"あたしには昼間届いたよ。
+ソッコーで“墓場”行きだけど。",,"Mine came at noon.
+Straight to the
+graveyard, though."
 0xe9d00,55,"壁一面に貼ることで、霊の力を
 吸収し、弱めることができ、",,"By covering the whole
 wall with it, it absorbs
@@ -6106,6 +6113,9 @@ before?"
 0xea010,35,"調べたい場所を
 タッチしてください。",,"Touch the spot you want
 to examine."
+0xea05c,41,"…もうこんなに怖いことはカンベン
+してね。",,"...No more scary stuff
+like this, okay?"
 0xea088,41,"光が漏れてる…。
 この扉を開けてみよう…。",,"Light's leaking
 through...Let's open
@@ -6192,6 +6202,8 @@ contest"
 illegible/corrupted text]
 (Nothing to do but try
 it...)"
+0xea54c,20,（やってみるしか…）,,"(Nothing to do but
+try...)"
 0xea564,20,（どうか…真実を…）,,"(Please...the
 truth...)"
 0xea57c,20,なぜか…気になる…。,,"I don't know why...but
@@ -17057,7 +17069,7 @@ all"
 0xe900c,4,え？,,Huh?
 0xea310,6,あ…。,,Ah...
 0xea318,8,…血…！,,...Blood...!
-0xea378,10,…な……。,,"[REVISAR - single-particle fragment, not enough context]"
+0xea378,10,…な……。,,...Wha......
 0xea39c,10,（あ……）,,(Ah......)
 0xeb738,4,え？,,Huh?
 0xeb740,4,え？,,Huh?
