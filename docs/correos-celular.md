@@ -269,3 +269,56 @@ color por fila). Las celdas de contacto con texto mas ancho que el original
 reciben OBJs 8x8 extra. Mockups aprobados: `_scratch_claude/auditoria/
 mockup_celular.png`, `mockup_alternativas.png`; verificacion final:
 `ui_celular_final.png`. Falta: probar en emulador (savestate nuevo).
+
+## Segunda pasada: más UI del celular y otros gráficos con texto (2026-10-07)
+
+**Por qué no se vieron antes:** `ncer_decode.compose_cell()` pega los OBJ en
+orden (el último queda arriba), pero en el hardware el OBJ con índice MENOR
+queda arriba. En celdas tipo "texto + recuadro" el recuadro tapaba el texto y
+la celda se veía vacía (ej. `MBP/G12S11` celdas 2-7 "vacías" que en realidad
+dicen 保存しますか? etc.). Para inspeccionar, componer con
+`compose_cell(list(reversed(objs)), ...)` o con `Sprite.compose()` de
+`scripts/redibujar_ui_celular.py` (orden correcto). Barrido completo de todos
+los NCER del ROM ESP con el orden correcto: `_scratch_claude/celular2/barrido.py`;
+láminas en `_scratch_claude/auditoria/hallazgos_celular.png` y
+`hallazgos_otros.png`.
+
+### Celular (a traducir en v1.3, misma herramienta)
+
+| # | Archivo(s) | Texto JP |
+|---|---|---|
+| 1 | `MBP/G12S10`..`G19S10` (8 celulares, NCGR/NCER idénticos; paleta propia `GxxS10.NCLR`) celdas 0-5 | 撮影 / 録音 / 記録 (seleccionado = rosa, normal = gris) |
+| 2 | `MBP/G12S11`..`G19S11` (NCGR idéntico; G12S11.NCER difiere del resto) celdas 2-9, 28-31 | 保存中, 録音中, 保存しました, 録音しました, 保存しますか?, 削除しました, はい, いいえ (8-11), 記録中, 記録しますか?, 記録しました, 失敗しました |
+| 3 | `EV9/T/12S10`..`21S10` celda 13 | 圏外 (sin señal), 10 celulares |
+| 4 | `R02/A_S10`, `R02/B_S10` celda 3 | 電話帳一覧 (encabezado lista de contactos) |
+| 5 | `R07/A_S10` (0-2, 3, 4), `R07/B_S10` (0-2, 4), `R07/C_S10` (0-2, 3, 4) | 呼び出し中, 通話中, 終了しました, 切断中 |
+| 6 | `R21/A_S10` celda 0 | 番号入力 |
+| 7 | `EV9/S01/0`, `EV9/S01/1` (NSCR) | botón 決定 (otros 2 fondos de pantalla) |
+
+### Otros
+
+| | Archivo | Texto | Decisión |
+|---|---|---|---|
+| A | `ERROR/ErrorMessage00` (2 celdas) | errores de partida guardada (no se pudo leer / datos dañados, se inicializó) | traducir en v1.3 |
+| B | `LOGO/P01M01`, `P01M02` (paleta P01M01.NCLR) | aviso "obra de ficción" + "se recomiendan audífonos", al encender | traducir en v1.3 |
+| C | `EV9/M02/0-6` (NSCR) | carteles verticales rojos de capítulo (第1の噂 神隠しメール...) | pendiente: confirmar si se muestran (la tarjeta de rumor que sí se ve es dinámica y ya está traducida, ver historia 2026-09-16) |
+| D | `OPTION/M10-M12`, `S10` | nombres de lugares, "第1の噂 No.01 大吉", fecha 2008年 月 日 | pendiente: confirmar si es menú accesible (¿Galería/Sonidos?) o debug |
+| E | `TITLE/G02M10` 11-13/26-28, `TITLE/G01S00` | sellos 大吉/中吉/凶, logo | se dejan |
+| F | `STAFFROLL/STAFFROLL00` | créditos | se dejan |
+| G | `R23/A_S01` | interruptor 入/切 (objeto del escenario) | se deja |
+| — | `EV9/M00/*.NCBR`, `M01` | teclas del celular físico (スケジュール/メモ, クリア, 電源) | se dejan (como el kana de las teclas) |
+
+Nota: los NCBR (`EV9/M00`, `MBP/GxxM19`, `R*/..._M*`) guardan cada OBJ como
+bitmap lineal de w×h píxeles a partir de `tile_idx*32` (no en tiles 8×8).
+Render: `_scratch_claude/celular2/ncbr.py`.
+
+**Estado (2026-10-07, más tarde):** items 1-7 + A (ERROR) + B (LOGO) generados en
+`assets/graficos/{esp,eng}/` con `scripts/redibujar_ui_celular.py` (soporta
+ahora NCGR de 8bpp, usado por LOGO). Textos: menú FOTO/GRABAR/GUARDAR;
+保存 = GUARDAR, 録音 = GRABAR, 記録 = GUARDAR PARTIDA; 圏外 = SIN/RED (NO/SVC,
+fuente 3x5); llamadas LLAMANDO... / EN LLAMADA / TERMINADA / CORTANDO; avisos de
+inicio con TWSFont (la del diálogo). Se agregó el glifo ¿ a
+`scripts/fuente_celular.py`. Crecen de tamaño (tiles compartidos entre celdas
+que hubo que separar): MBP/GxxS10 6 KB→7.5 KB, MBP/GxxS11 20 KB→32 KB, R02 +672 B.
+Verificación desde las ROMs generadas: `_scratch_claude/auditoria/verificacion_v13_parte*.png`.
+Falta: probar en emulador (savestate nuevo), sobre todo MBP/S11 por el tamaño.

@@ -92,8 +92,8 @@ def erase(im, box, sx):
             im.set(x, y, c)
 
 
-def text(im, s, x, y, stroke, shadow=None, center=None, outline=None, thick=1):
-    m = F.render(s, top=0, cell_h=10); w = len(m[0])
+def text(im, s, x, y, stroke, shadow=None, center=None, outline=None, thick=1, gap=None):
+    m = F.render(s, top=0, cell_h=10, gap=gap); w = len(m[0])
     if center is not None:
         x = center - w // 2
     if outline is not None:
@@ -113,23 +113,44 @@ def text(im, s, x, y, stroke, shadow=None, center=None, outline=None, thick=1):
 
 
 # ---------------------------------------------------------------- sprites (NCER)
-def obj_px(ncgr, g):
-    """(cx, cy, tile, lx, ly) de cada pixel visible del OBJ (con flips)."""
+class Ncgr8(Ncgr):
+    """NCGR de 8bpp: el indice de tile sigue contando en unidades de 32 bytes
+    (un tile 8x8 ocupa 2 unidades)."""
+    def get_px(self, tile, lx, ly):
+        return self.d[self.px_off + tile * 32 + ly * 8 + lx]
+
+    def set_px(self, tile, lx, ly, v):
+        self.d[self.px_off + tile * 32 + ly * 8 + lx] = v
+
+
+def ncgr_bpp(data):
+    magic, blocks = ic.parse_container(bytes(data))
+    rahc = next(o for o, m, s in blocks if m == b'RAHC')
+    return 8 if struct.unpack_from('<I', data, rahc + 12)[0] == 4 else 4
+
+
+def obj_px(ncgr, g, u=1):
+    """(cx, cy, tile, lx, ly) de cada pixel visible del OBJ (con flips).
+    u = unidades de 32 bytes por tile (1 en 4bpp, 2 en 8bpp)."""
     wt = g['w'] // 8
     for oy in range(g['h']):
         for ox in range(g['w']):
             sx = g['w'] - 1 - ox if g['hflip'] else ox
             sy = g['h'] - 1 - oy if g['vflip'] else oy
-            t = g['tile_idx'] + (sy // 8) * wt + sx // 8
+            t = g['tile_idx'] + ((sy // 8) * wt + sx // 8) * u
             yield g['x'] + ox, g['y'] + oy, t, sx % 8, sy % 8
 
 
 class Sprite:
-    def __init__(self, base):
+    def __init__(self, base, nclr=None):
         self.base = base
-        self.ncgr = Ncgr(read_original(base + '.NCGR'))
+        raw = read_original(base + '.NCGR')
+        self.bpp = ncgr_bpp(raw)
+        self.u = 2 if self.bpp == 8 else 1
+        self.ncgr = (Ncgr8 if self.bpp == 8 else Ncgr)(raw)
         self.ncer = Ncer(read_original(base + '.NCER'))
-        self.pal = read_palette(base + '.NCLR')[:16]
+        pal = read_palette(nclr or base + '.NCLR')
+        self.pal = pal[:256] if self.bpp == 8 else pal[:16]
         self.tbs = self.ncer.tbs
 
     def geoms(self, ci):
@@ -147,7 +168,7 @@ class Sprite:
         im = Img(W, H, self.pal)
         # OBJ con indice menor queda arriba: pintar en orden inverso
         for g in reversed(gs):
-            for (x, y, t, lx, ly) in obj_px(self.ncgr, g):
+            for (x, y, t, lx, ly) in obj_px(self.ncgr, g, self.u):
                 v = self.ncgr.get_px(t, lx, ly)
                 if v:
                     im.set(x - ox, y - oy, v)
@@ -158,7 +179,7 @@ class Sprite:
         for c in self.ncer.cells:
             for o in c['objs']:
                 g = ic.obj_geometry(*o, tile_boundary_shift=self.tbs)
-                for t in range(g['tile_idx'], g['tile_idx'] + g['w'] * g['h'] // 64):
+                for t in range(g['tile_idx'], g['tile_idx'] + g['w'] * g['h'] // 64 * self.u):
                     rc[t] = rc.get(t, 0) + 1
         return rc
 
@@ -166,15 +187,18 @@ class Sprite:
         """Le da al OBJ k de la celda ci tiles propios (sin flip)."""
         o = self.ncer.cells[ci]['objs'][k]
         g = ic.obj_geometry(*o, tile_boundary_shift=self.tbs)
-        n = g['w'] * g['h'] // 64
+        n = g['w'] * g['h'] // 64 * self.u
         rc = self.refcount()
-        if not g['hflip'] and not g['vflip'] and all(rc.get(t, 0) == 1 for t in range(g['tile_idx'], g['tile_idx'] + n)):
+        unico = all(rc.get(t, 0) == 1 for t in range(g['tile_idx'], g['tile_idx'] + n))
+        if unico and not g['hflip'] and not g['vflip']:
             return
-        pix = [(x - g['x'], y - g['y'], self.ncgr.get_px(t, lx, ly)) for (x, y, t, lx, ly) in obj_px(self.ncgr, g)]
-        t0 = self.ncgr.add_tiles(n)
+        pix = [(x - g['x'], y - g['y'], self.ncgr.get_px(t, lx, ly)) for (x, y, t, lx, ly) in obj_px(self.ncgr, g, self.u)]
+        # tiles usados solo por este OBJ pero con flip: se des-espejan en el
+        # mismo lugar (no hace falta agrandar el NCGR)
+        t0 = g['tile_idx'] if unico else self.ncgr.add_tiles(n)
         wt = g['w'] // 8
         for (ox, oy, v) in pix:
-            self.ncgr.set_px(t0 + (oy // 8) * wt + ox // 8, ox % 8, oy % 8, v)
+            self.ncgr.set_px(t0 + ((oy // 8) * wt + ox // 8) * self.u, ox % 8, oy % 8, v)
         o[1] &= ~0x3000                                    # sin flips
         o[2] = (o[2] & ~0x3FF) | ((t0 >> self.tbs) & 0x3FF)
         assert ic.obj_geometry(*o, tile_boundary_shift=self.tbs)['tile_idx'] == t0
@@ -204,8 +228,8 @@ class Sprite:
                     continue
                 # OBJ 8x8 nuevo alineado a la grilla de 8 de la celda
                 bx, by = ox + (x // 8) * 8, oy + (y // 8) * 8
-                t0 = self.ncgr.add_tiles(1)
-                o = [by & 0xFF, bx & 0x1FF, pal_bits | ((t0 >> self.tbs) & 0x3FF)]
+                t0 = self.ncgr.add_tiles(self.u)
+                o = [(by & 0xFF) | (0x2000 if self.bpp == 8 else 0), bx & 0x1FF, pal_bits | ((t0 >> self.tbs) & 0x3FF)]
                 cell['objs'].append(o); gs.append(ic.obj_geometry(*o, tile_boundary_shift=self.tbs))
                 for yy in range(8):
                     for xx in range(8):
@@ -220,7 +244,7 @@ class Sprite:
             g = gs[k]
             lx, ly = cx - g['x'], cy - g['y']
             wt = g['w'] // 8
-            self.ncgr.set_px(g['tile_idx'] + (ly // 8) * wt + lx // 8, lx % 8, ly % 8, v)
+            self.ncgr.set_px(g['tile_idx'] + ((ly // 8) * wt + lx // 8) * self.u, lx % 8, ly % 8, v)
         if extra:
             cell['attr'] = (cell['attr'] & ~0x3F) | min(0x3F, cell_radius(cell['objs'], self.tbs))
         return len(changed)
@@ -235,10 +259,11 @@ class Sprite:
         assert chk.w >= new.w and all(chk.get(x, y) == new.get(x, y) for y in range(new.h) for x in range(new.w)), (self.base, ci)
         return n
 
-    def save(self, lang):
-        out = os.path.join(ROOT, 'assets/graficos', lang, os.path.dirname(self.base))
+    def save(self, lang, base=None):
+        base = base or self.base
+        out = os.path.join(ROOT, 'assets/graficos', lang, os.path.dirname(base))
         os.makedirs(out, exist_ok=True)
-        name = os.path.basename(self.base)
+        name = os.path.basename(base)
         open(os.path.join(out, name + '.NCGR'), 'wb').write(bytes(self.ncgr.d))
         open(os.path.join(out, name + '.NCER'), 'wb').write(self.ncer.build())
 
@@ -321,6 +346,20 @@ def nombre(s, ci, name):
     return fn
 
 
+def contactos(L):
+    """Encabezado 電話帳一覧 (celda 3 de R02/A y B): fondo, trazo y sombra =
+    los 3 indices mas usados en la franja del titulo."""
+    def fn(im):
+        cnt = {}
+        for y in range(2, 14):
+            for x in range(2, 70):
+                v = im.get(x, y); cnt[v] = cnt.get(v, 0) + 1
+        o = sorted(cnt, key=lambda v: -cnt[v])
+        erase(im, (2, 2, 75, 14), 100)
+        text(im, ('CONTACTOS', 'CONTACTS')[L], 3, 4, o[1], o[2])
+    return fn
+
+
 def r02a(lang):
     s = Sprite('R02/A_S10'); L = 0 if lang == 'esp' else 1
     def caja(t):
@@ -344,6 +383,7 @@ def r02a(lang):
     for i, n in enumerate(NOMBRES_A):
         for ci in range(4 + 3 * i, 7 + 3 * i):
             s.edit(ci, nombre(s, ci, n))
+    s.edit(3, contactos(L))
     s.save(lang)
 
 
@@ -361,6 +401,7 @@ def r02b(lang):
     for i, n in enumerate(NOMBRES_B):
         for ci in range(4 + 3 * i, 7 + 3 * i):
             s.edit(ci, nombre(s, ci, n))
+    s.edit(3, contactos(L))
     s.save(lang)
 
 
@@ -411,7 +452,7 @@ def r24(lang):
     s.save(lang)
 
 
-def boton_ok():
+def boton_ok(box=(116, 153, 140, 163), sx=114, y=154, cx=128, ref=(114, 158)):
     """Boton 決定 -> OK. Los colores salen del texto original de cada pantalla:
     pixeles que difieren del fondo del boton (muestreado por fila en x=114).
     Texto oscuro -> trazo = color mas usado + sombra con el segundo.
@@ -419,34 +460,33 @@ def boton_ok():
     el color mas claro / mas oscuro del original en esa fila (algunos botones
     tienen degradado en el texto)."""
     def fn(im):
-        box = (116, 153, 140, 163)
         lum = lambda v: sum(im.rgb(v))
         cnt = {}; filas = {}
-        for y in range(box[1], box[3] + 1):
-            bgc = im.get(114, y)
-            difs = [im.get(x, y) for x in range(box[0], box[2] + 1) if im.get(x, y) != bgc]
+        for yy in range(box[1], box[3] + 1):
+            bgc = im.get(sx, yy)
+            difs = [im.get(x, yy) for x in range(box[0], box[2] + 1) if im.get(x, yy) != bgc]
             for v in difs:
                 cnt[v] = cnt.get(v, 0) + 1
             if difs:
-                filas[y] = (max(difs, key=lum), min(difs, key=lum))
+                filas[yy] = (max(difs, key=lum), min(difs, key=lum))
         orden = sorted(cnt, key=lambda v: -cnt[v])
-        claro = lum(max(orden, key=lum)) > lum(im.get(114, 158)) + 150
-        erase(im, box, 114)
+        claro = lum(max(orden, key=lum)) > lum(im.get(*ref)) + 150
+        erase(im, box, sx)
         if not claro:
-            text(im, 'OK', 0, 154, orden[0], orden[1] if len(orden) > 1 else None, center=128)
+            text(im, 'OK', 0, y, orden[0], orden[1] if len(orden) > 1 else None, center=cx)
             return
         gl_claro = max(orden, key=lum); gl_osc = min(orden, key=lum)
-        umbral = lum(im.get(114, 158)) + 150
-        def fila(y):
-            k = min(filas, key=lambda f: abs(f - y)); c, o = filas[k]
+        umbral = lum(im.get(*ref)) + 150
+        def fila(yy):
+            k = min(filas, key=lambda f: abs(f - yy)); c, o = filas[k]
             return (c if lum(c) > umbral else gl_claro), o
         tmp = Img(im.w, im.h, im.pal, fill=-1)
-        text(tmp, 'OK', 0, 154, -2, center=128, outline=-3)
-        for y in range(im.h):
+        text(tmp, 'OK', 0, y, -2, center=cx, outline=-3)
+        for yy in range(im.h):
             for x in range(im.w):
-                v = tmp.get(x, y)
-                if v == -2: im.set(x, y, fila(y)[0])
-                elif v == -3: im.set(x, y, fila(y)[1])
+                v = tmp.get(x, yy)
+                if v == -2: im.set(x, yy, fila(yy)[0])
+                elif v == -3: im.set(x, yy, fila(yy)[1])
     return fn
 
 
@@ -476,9 +516,247 @@ def ev9(lang):
         sc.save(lang)
 
 
+# ------------------------------------------------------------- segunda pasada
+# (2026-10-07; mockup aprobado: _scratch_claude/auditoria/mockup_celular2_parte*.png)
+MENU = [('FOTO', 'PHOTO'), ('GRABAR', 'RECORD'), ('GUARDAR', 'SAVE')]
+AVISOS = {2: ('GUARDANDO...', 'SAVING...'), 3: ('GRABANDO...', 'RECORDING...'),
+          4: ('GUARDADO.', 'SAVED.'), 5: ('GRABADO.', 'RECORDED.'),
+          6: ('¿GUARDAR?', 'SAVE?'), 7: ('BORRADO.', 'DELETED.'),
+          28: ('GUARDANDO PARTIDA', 'SAVING GAME...'), 29: ('¿GUARDAR PARTIDA?', 'SAVE GAME?'),
+          30: ('PARTIDA GUARDADA.', 'GAME SAVED.'), 31: ('ERROR.', 'FAILED.')}
+SINO = {8: ('SI', 'YES'), 9: ('NO', 'NO'), 10: ('SI', 'YES'), 11: ('NO', 'NO')}
+CELULARES = range(12, 20)   # MBP/G12..G19 (8 modelos de celular)
+
+
+def gap_para(s, maxw):
+    return None if F.width(s) <= maxw else 0
+
+
+def mbp_menu(lang):
+    """MBP/GxxS10: 撮影/録音/記録 (pares seleccionado/normal). Los 8 celulares
+    tienen NCGR/NCER identicos: se edita una vez y se guarda con cada nombre."""
+    L = 0 if lang == 'esp' else 1
+    s = Sprite('MBP/G12S10')
+    for k in range(6):
+        t = MENU[k // 2][L]; st, sh = (3, 4) if k % 2 == 0 else (1, 2)
+        def fn(im, t=t, st=st, sh=sh):
+            erase(im, (7, 6, 104, 18), 10)
+            text(im, t, 0, 8, st, sh, center=56)
+        s.edit(k, fn)
+    for n in CELULARES:
+        s.save(lang, f'MBP/G{n}S10')
+
+
+def mbp_avisos(lang):
+    """MBP/GxxS11: avisos (guardar/grabar/borrar/partida) y Si/No. El NCER de
+    G12 difiere del resto, asi que se procesa cada archivo por separado."""
+    L = 0 if lang == 'esp' else 1
+    for n in CELULARES:
+        s = Sprite(f'MBP/G{n}S11', 'MBP/G12S10.NCLR')
+        for ci, t in AVISOS.items():
+            def fn(im, t=t[L]):
+                erase(im, (5, 8, 121, 23), 6)
+                text(im, t, 0, 12, 2, 3, center=64, gap=gap_para(t, 114))
+            s.edit(ci, fn)
+        for ci, t in SINO.items():
+            def fn(im, t=t[L]):
+                erase(im, (6, 8, 57, 23), 7)
+                text(im, t, 0, 12, 2, 3, center=32)
+            s.edit(ci, fn)
+        s.save(lang)
+
+
+MICRO = {
+    'S': ["###", "#..", "###", "..#", "###"], 'I': ["###", ".#.", ".#.", ".#.", "###"],
+    'N': ["#.#", "###", "###", "###", "#.#"], 'R': ["##.", "#.#", "##.", "#.#", "#.#"],
+    'E': ["###", "#..", "##.", "#..", "###"], 'D': ["##.", "#.#", "#.#", "#.#", "##."],
+    'O': ["###", "#.#", "#.#", "#.#", "###"], 'V': ["#.#", "#.#", "#.#", "#.#", ".#."],
+    'C': ["###", "#..", "#..", "#..", "###"],
+}
+
+
+def micro(im, s, cx, y, v):
+    """Fuente 3x5 para el icono 圏外 (18 px de ancho util)."""
+    x = cx - (len(s) * 4 - 1) // 2
+    for i, ch in enumerate(s):
+        for yy, row in enumerate(MICRO[ch]):
+            for xx, c in enumerate(row):
+                if c == '#':
+                    im.set(x + i * 4 + xx, y + yy, v)
+
+
+def sin_senal(lang):
+    """EV9/T/xxS10 celda 13: 圏外 -> SIN/RED (NO/SVC), 10 celulares."""
+    L = 0 if lang == 'esp' else 1
+    a, b = (('SIN', 'RED'), ('NO', 'SVC'))[L]
+    for n in range(12, 22):
+        s = Sprite(f'EV9/T/{n}S10')
+        def fn(im):
+            for y in range(1, 15):
+                vals = [im.get(x, y) for x in range(6, 23) if im.get(x, y) not in (0, 1)]
+                bg = max(set(vals), key=vals.count) if vals else 13
+                for x in range(6, 23):
+                    im.set(x, y, bg)
+            micro(im, a, 14, 2, 1); micro(im, b, 14, 8, 1)
+        s.edit(13, fn)
+        s.save(lang)
+
+
+def r07(lang):
+    """Pantallas de llamada: 呼び出し中 / 通話中 / 終了しました / 切断中."""
+    L = 0 if lang == 'esp' else 1
+    LLAMANDO = ('LLAMANDO...', 'CALLING...')[L]
+    HABLANDO = ('EN LLAMADA', 'ON CALL')[L]
+    def contorno(box, sx, cx, y, t):
+        def fn(im):
+            white = im.idx((240, 240, 240))
+            erase(im, box, sx)
+            text(im, t, 0, y, white, center=cx, outline=1)
+        return fn
+    s = Sprite('R07/A_S10')
+    for ci in (0, 1, 2):
+        s.edit(ci, contorno((44, 85, 116, 102), 40, 80, 90, LLAMANDO))
+    def burbuja(im):
+        for y in range(48, 65):
+            for x in range(30, 92):
+                if im.get(x, y) == 1:
+                    im.set(x, y, 6)
+        text(im, HABLANDO, 0, 52, 1, center=60, gap=gap_para(HABLANDO, 50))
+    s.edit(3, burbuja)
+    def terminada(im):
+        for y in range(56, 69):
+            for x in range(42, 121):
+                im.set(x, y, 6)
+        text(im, ('TERMINADA', 'CALL ENDED')[L], 0, 58, 1, 5, center=81)
+    s.edit(4, terminada)
+    s.save(lang)
+    for x in ('B', 'C'):
+        s = Sprite(f'R07/{x}_S10')
+        for ci in (0, 1, 2):
+            s.edit(ci, contorno((44, 30, 118, 47), 42, 80, 35, LLAMANDO))
+        s.edit(4, contorno((72, 54, 121, 73), 70, 97, 59, HABLANDO))
+        if x == 'C':
+            s.edit(3, contorno((54, 30, 103, 47), 52, 80, 35, ('CORTANDO', 'HANGING UP')[L]))
+        s.save(lang)
+
+
+def r21(lang):
+    """番号入力 -> MARCAR / DIAL."""
+    L = 0 if lang == 'esp' else 1
+    s = Sprite('R21/A_S10')
+    def fn(im):
+        erase(im, (22, 4, 75, 14), 100)
+        text(im, ('MARCAR', 'DIAL')[L], 24, 4, 3, 4)
+    s.edit(0, fn)
+    s.save(lang)
+
+
+def ev9_s01(lang):
+    """Otros 2 fondos de pantalla con boton 決定 (EV9/S01/0-1)."""
+    for n, box, sx, cx, ref in ((0, (114, 155, 141, 161), 113, 128, (116, 157)), (1, (113, 154, 145, 161), 113, 129, (115, 158))):
+        sc = Screen(f'EV9/S01/{n}', 'EV9/S01/0.NCLR')
+        sc.edit(boton_ok(box=box, sx=sx, y=154, cx=cx, ref=ref))
+        sc.save(lang)
+
+
+ERRORES = {0: (["NO SE PUDIERON LEER LOS DATOS.", "APAGA LA CONSOLA Y VUELVE A", "INSERTAR LA TARJETA DE JUEGO."],
+               ["THE DATA COULD NOT BE READ.", "TURN THE POWER OFF AND", "REINSERT THE GAME CARD."]),
+           1: (["LOS DATOS DE GUARDADO ESTABAN", "DAÑADOS Y SE REINICIARON.", "PULSA A PARA EMPEZAR EL JUEGO."],
+               ["THE SAVE DATA WAS CORRUPTED,", "SO IT HAS BEEN RESET.", "PRESS A TO START THE GAME."])}
+
+
+def errores(lang):
+    """ERROR/ErrorMessage00: errores de la partida guardada. Fondo degradado
+    por fila tomado del borde derecho (x 238-243, sin texto)."""
+    L = 0 if lang == 'esp' else 1
+    s = Sprite('ERROR/ErrorMessage00')
+    for ci, lineas in ERRORES.items():
+        def fn(im, lineas=lineas[L]):
+            for y in range(4, 60):
+                vals = [im.get(x, y) for x in range(238, 244)]
+                bg = max(set(vals), key=vals.count)
+                for x in range(12, 244):
+                    im.set(x, y, bg)
+            for i, line in enumerate(lineas):
+                text(im, line, 18, 9 + 18 * i, 1, outline=14)
+        s.edit(ci, fn)
+    s.save(lang)
+
+
+# --- avisos al encender (LOGO, 8bpp) con la fuente de dialogo TWSFont
+from nftr import NFTR
+import importlib.util
+
+
+def _generador(lang):
+    path = os.path.join(ROOT, 'generar_rom_%s.py' % lang)
+    spec = importlib.util.spec_from_file_location('gen_' + lang, path)
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    return m
+
+
+def tws(im, s, x, y, lang, cols, center=None):
+    """Dibuja s con TWSFont (la misma del dialogo del idioma) usando los
+    indices cols[1..3] para los valores 2bpp del glifo."""
+    G = _generador(lang); f = NFTR(open(os.path.join(ROOT, G.FONT_PATH), 'rb').read())
+    gl = [None if c == 0x20 else f.lookup(c) for c in G.encode_text(s)[:-1]]
+    w = sum(G.SPACE_WIDTH if g is None else f.width(g)[2] for g in gl)
+    if center is not None:
+        x = center - w // 2
+    for g in gl:
+        if g is None:
+            x += G.SPACE_WIDTH; continue
+        b, gw, adv = f.width(g)
+        for yy, row in enumerate(f.glyph(g)):
+            for xx, v in enumerate(row):
+                if v:
+                    im.set(x + b + xx, y + yy, cols[v])
+        x += adv
+    return w
+
+
+AVISO_FICCION = (["Esta obra es ficción.", "No guarda relación con", "personas, grupos ni", "hechos reales.", "",
+                  "Por favor, no imites", "nada de lo que ocurre", "en ella."],
+                 ["This work is fiction.", "It has no relation to", "real people, groups", "or events.", "",
+                  "Please do not imitate", "anything that happens", "in it."])
+AVISO_AUDIFONOS = (("Usa audífonos", ["Este juego usa", "sonido 3D.", "Disfrútalo con", "audífonos estéreo."]),
+                   ("Use headphones", ["This game uses", "3D sound.", "Enjoy it with", "stereo headphones."]))
+
+
+def logo(lang):
+    L = 0 if lang == 'esp' else 1
+    for base, ficcion in (('LOGO/P01M01', True), ('LOGO/P01M02', False)):
+        s = Sprite(base, 'LOGO/P01M01.NCLR')
+        def fn(im):
+            cnt = {}
+            for y in range(192):
+                for x in range(256):
+                    v = im.get(x, y); cnt[v] = cnt.get(v, 0) + 1
+            bg = max(cnt, key=cnt.get)
+            cols = [None, im.idx((248, 248, 248), False), im.idx((60, 60, 60), False), im.idx((150, 150, 150), False)]
+            if ficcion:
+                for y in range(192):
+                    for x in range(256):
+                        im.set(x, y, bg)
+                for i, line in enumerate(AVISO_FICCION[L]):
+                    if line:
+                        tws(im, line, 0, 26 + 17 * i, lang, cols, center=128)
+            else:
+                for y in range(36, 157):
+                    for x in range(72, 256):
+                        im.set(x, y, bg)
+                tit, body = AVISO_AUDIFONOS[L]
+                tws(im, tit, 0, 50, lang, cols, center=166)
+                for i, line in enumerate(body):
+                    tws(im, line, 84, 78 + 17 * i, lang, cols)
+        s.edit(0, fn)
+        s.save(lang)
+
+
 def main():
     for lang in ('esp', 'eng'):
-        for f in (r02a, r02b, r09, r10, r24, ev0, ev9):
+        for f in (r02a, r02b, r09, r10, r24, ev0, ev9,
+                  mbp_menu, mbp_avisos, sin_senal, r07, r21, ev9_s01, errores, logo):
             f(lang)
             print(lang, f.__name__, 'ok')
 
