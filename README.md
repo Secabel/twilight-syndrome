@@ -26,7 +26,7 @@ no previous English or Spanish translation.
 <img src="images/en_04_phone_mail.png" width="200" alt="English screenshot: phone mail">
 </p>
 
-> **Version 1.2**
+> **Version 1.3**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -48,6 +48,11 @@ no previous English or Spanish translation.
   phone (around 24 different mails, including the "problem" riddles) are
   sprites, not script text. They were redrawn with a new phone font that
   imitates the original LCD style.
+- **Phone screens** *(new in 1.3)*: camera / recorder / save menu, "Save?"
+  prompts, sending a mail, contacts, call screens, call history, audio
+  playback, the "no signal" icon, the web page and the OK button on the
+  wallpapers, redrawn with the same phone font.
+- **Startup notices and save data error messages** *(new in 1.3)*.
 
 ## Playing the translation (patch users)
 
@@ -58,8 +63,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.2.bps` (Spanish) or
-   `Twilight.Syndrome.ENG.v1.1.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.3.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.3.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -70,8 +75,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.2.bps` | Spanish | 116,149,448 bytes | `231527A8` | `90dc5dde9dd277cb0d3c704875e90317fd11057f` |
-   | `Twilight.Syndrome.ENG.v1.1.bps` | English | 116,155,080 bytes | `55F7125B` | `79e12ec1abb306b16d3bcf59817fbe1cd46bc519` |
+   | `Twilight.Syndrome.ESP.v1.3.bps` | Spanish | 116,256,968 bytes | `C547AD28` | `a7ba6b788a82030b1d5e594833d8925ccc285ad7` |
+   | `Twilight.Syndrome.ENG.v1.3.bps` | English | 116,213,448 bytes | `E6C49839` | `b31cde8b17fc725b4a074432396a91e845dfb1a8` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
@@ -109,7 +114,9 @@ The results should match the checksums listed above.
 To edit a phone mail, change its text in `assets/csv/correos_celular.csv`,
 run `python scripts/redibujar_correos.py` (it rebuilds
 `assets/graficos/{esp,eng}/R08/` from the original ROM) and then the two
-generators again.
+generators again. The rest of the phone screens, the startup notices and the
+save error messages are rebuilt the same way with
+`python scripts/redibujar_ui_celular.py` (texts are inside the script).
 
 ## Repository contents
 
@@ -126,6 +133,7 @@ generators again.
 | `scripts/extraer_todos_items.py` | Extracts the inventory item texts |
 | `scripts/ncer_decode.py` | Decoder for DS tile graphics (NCGR/NCLR/NCER/NSCR) |
 | `scripts/fuente_celular.py`, `scripts/redibujar_correos.py` | Phone font and the script that redraws the phone mails |
+| `scripts/redibujar_ui_celular.py`, `scripts/nftr.py` | Redraws the other phone screens, the startup notices and the save error messages |
 | `images/` | Screenshots used in this README |
 
 The Japanese script is included in the main CSVs (`texto_original` column),
@@ -134,14 +142,11 @@ another language.
 
 ## Known issues
 
-- **Some phone screens are still in Japanese:** sending a mail
-  (送信中 / 送信しました), call history, audio playback, the call screen,
-  the "page not found" web screen and the 決定 (OK) button on the phone
-  wallpapers. They are short and do not affect understanding the story.
 - **Mail photos inside some cutscenes** (blurry or tilted shots of the phone)
   keep their Japanese text; the same mails can be read translated on the phone.
 - **Left untranslated on purpose:** the "touch the bottom screen" prompt on
-  the title screen, and a few props with text drawn into the background art
+  the title screen, the labels printed on the phone's physical keys, the staff
+  credits, and a few props with text drawn into the background art
   (a puzzle sheet with a kana table, whose solution depends on the original
   characters, and a manual page that is not legible even in the original).
 - With many routes and endings, not every route has been re-tested after
@@ -149,6 +154,17 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.3
+- Both languages updated; Spanish and English now share the same version
+  number (English goes from 1.1 straight to 1.3).
+- Translated the remaining phone screens: camera / recorder / save menu,
+  "Save?" prompts and Yes/No, sending a mail and contact names, contact list,
+  call screens, call history, number entry, audio playback, "no signal" icon,
+  "page not found" web page and the OK button on the phone wallpapers.
+- Translated the startup notices (work of fiction / headphones recommended)
+  and the save data error messages.
+- Fixed 7 dialogue lines that were still shown in Japanese.
 
 ### 1.2
 - Spanish: added á é í ó ú Á É Í Ó Ú ü ¿ ¡ to the font, built from the existing
