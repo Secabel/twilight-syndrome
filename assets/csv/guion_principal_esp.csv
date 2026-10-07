@@ -12,6 +12,7 @@ fotografiar espíritus"
 録音しておくことができる。",,"Cuando escuches un
 ruido, puedes
 grabarlo."
+0xd3290,6,うん。,,Sí.
 0xd3298,8,えー…。,,Ehh...
 0xd32a4,8,…えっ？,,...¿Eh?
 0xd32b0,8,カナ…。,,Kana...
@@ -6190,10 +6191,12 @@ ilegible/corrupto,
 posible efecto del juego]"
 0xe8624,32,ｨyﾀz８８−０９と書いてある。,,"[TEXTO PARCIAL] Dice
 88-09."
+0xe862c,24,８８−０９と書いてある。,,Dice 88-09.
 0xe8648,41,"古い時計……名前が入ってる。
 サクマ……。",,"Un reloj viejo... tiene
 un nombre grabado.
 Sakuma..."
+0xe8b94,4,え？,,¿Eh?
 0xe8b9c,8,おおお！,,¡Oooh!
 0xe8ba8,8,次は…。,,Lo siguiente es...
 0xe8bb4,8,怨念…！,,¡Un rencor...!
@@ -6518,6 +6521,10 @@ maldicen..."
 　見ると呪われる…？）",,"(Si ves al oni en ""Hitori
 Kakurenbo"", ¿te
 maldicen...?)"
+0xe9cc8,55,"あたしには昼間届いたよ。
+ソッコーで“墓場”行きだけど。",,"A mí me llegó al
+mediodía. Directo al
+cementerio, eso sí."
 0xe9d00,55,"壁一面に貼ることで、霊の力を
 吸収し、弱めることができ、",,"Pegándolo por toda la
 pared, se absorbe y
@@ -6579,6 +6586,9 @@ destrozado desde antes?"
 0xea010,35,"調べたい場所を
 タッチしてください。",,"Toca el lugar que quieras
 revisar."
+0xea05c,41,"…もうこんなに怖いことはカンベン
+してね。",,"...Ya no más cosas tan
+aterradoras, ¿sí?"
 0xea088,41,"光が漏れてる…。
 この扉を開けてみよう…。",,"Se filtra luz... Vamos a
 abrir esta puerta..."
@@ -6672,6 +6682,8 @@ miradas"
 0xea538,40,悪pｨTｭ発茜（やってみるしか…）,,"[REVISAR ROM - texto
 ilegible/corrupto] (No
 queda otra que
+intentarlo...)"
+0xea54c,20,（やってみるしか…）,,"(No queda otra que
 intentarlo...)"
 0xea564,20,（どうか…真実を…）,,"(Por favor... la
 verdad...)"
@@ -16123,7 +16135,7 @@ tarjeta."
 0xe900c,4,え？,,¿Eh?
 0xea310,6,あ…。,,Ah...
 0xea318,8,…血…！,,...¡Sangre...!
-0xea378,10,…な……。,,"[REVISAR - fragmento de una sola particula, sin contexto suficiente]"
+0xea378,10,…な……。,,...Q-qué......
 0xea39c,10,（あ……）,,(Ah......)
 0xeb738,4,え？,,¿Eh?
 0xeb740,4,え？,,¿Eh?
