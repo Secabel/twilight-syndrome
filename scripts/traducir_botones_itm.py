@@ -60,7 +60,7 @@ FONT = {
 }
 TINTA, ARO1, ARO2 = 12, 9, 10
 X0_BORRAR, Y1_BORRAR = 19, 18      # se borra x >= 19, filas 0..18
-X_TEXTO, Y_TEXTO = 21, 10          # esquina sup. izq. del texto en la celda
+X_TEXTO, Y_TEXTO = 22, 11          # esquina sup. izq. del texto en la celda
 
 
 def ancho(t):
@@ -114,28 +114,33 @@ class Celda:
 
 
 def traducir_celda(c, texto):
-    for y in range(0, Y1_BORRAR + 1):
+    """Borra el texto japones y dibuja una capsula solida (borde 10, relleno 9,
+    como los bloques del original) con el texto nuevo en tinta 12."""
+    for y in range(0, 20):
         for x in range(X0_BORRAR, c.W):
             c.put(x, y, 0)
-    tinta = set()
+    w = ancho(texto)
+    xe = min(c.W - 2, X_TEXTO + w + 1)       # ultima columna de la capsula
+    # barra inferior (sombra de base): solo hasta la capsula, con punta
+    for y, ini in ((20, 0), (21, 0)):
+        for x in range(X0_BORRAR, c.W):
+            c.put(x, y, (c.get(x, y) if x <= xe + (1 if y == 20 else 0) else 0))
+    # capsula: filas 6..19, esquinas redondeadas
+    for y in range(6, 20):
+        for x in range(X0_BORRAR, xe + 1):
+            borde = y in (6, 19) or x in (X0_BORRAR, xe)
+            esquina = (y in (6, 19)) and (x in (X0_BORRAR, xe))
+            if esquina:
+                continue
+            c.put(x, y, ARO2 if borde else ARO1)
     x = X_TEXTO
     for ch in texto:
         for yy, row in enumerate(FONT[ch]):
             for xx, p in enumerate(row):
                 if p == '#':
-                    tinta.add((x + xx, Y_TEXTO + yy))
+                    c.put(x + xx, Y_TEXTO + yy, TINTA)
         x += len(FONT[ch][0]) + 1
-    assert x - 1 <= c.W, f'{texto}: no entra ({x - 1} > {c.W})'
-
-    def vecinos(s, r):
-        return {(px + dx, py + dy) for px, py in s
-                for dx in range(-r, r + 1) for dy in range(-r, r + 1)}
-    r1 = vecinos(tinta, 1) - tinta
-    r2 = vecinos(tinta, 2) - tinta - r1
-    for pts, v in ((r2, ARO2), (r1, ARO1), (tinta, TINTA)):
-        for (px, py) in pts:
-            if X0_BORRAR <= px < c.W and 0 <= py <= Y1_BORRAR:
-                c.put(px, py, v)
+    assert xe <= c.W - 2 and X_TEXTO + w <= xe, f'{texto}: no entra'
 
 
 def render_celda(c, col, banco):
