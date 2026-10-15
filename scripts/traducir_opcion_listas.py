@@ -74,6 +74,12 @@ M12[_c] = ('Último rumor', 'The Final Rumor')
 assert _c == 55
 TEXTOS = {'M10': M10, 'M11': M11, 'M12': M12}
 
+# Boton 戻る (capsula azul y rosa, 2 celdas por archivo): texto (ES, EN)
+BOTON = {'M10': (21, 22), 'M11': (21, 22), 'M12': (56, 57)}
+BOTON_TXT = ('VOLVER', 'BACK')
+B_FILL, B_OUT = 0xB, 0xE          # relleno e indice de contorno del 戻る original
+BX0, BX1, BY0, BY1 = 5, 40, 9, 22  # zona interior de la capsula donde va el texto
+
 
 def fuente(sz):
     for p in FONTS:
@@ -110,6 +116,47 @@ def vaciar(s, ci):
                 s.ncgr.set_px(t, lx % 8, ly % 8, 0)
 
 
+FONT47 = {  # fuente 4x7 para el texto del boton
+    'V': ["#..#", "#..#", "#..#", "#..#", "#..#", ".##.", ".##."],
+    'O': [".##.", "#..#", "#..#", "#..#", "#..#", "#..#", ".##."],
+    'L': ["#...", "#...", "#...", "#...", "#...", "#...", "####"],
+    'E': ["####", "#...", "#...", "###.", "#...", "#...", "####"],
+    'R': ["###.", "#..#", "#..#", "###.", "#.#.", "#..#", "#..#"],
+    'B': ["###.", "#..#", "#..#", "###.", "#..#", "#..#", "###."],
+    'A': [".##.", "#..#", "#..#", "####", "#..#", "#..#", "#..#"],
+    'C': [".###", "#...", "#...", "#...", "#...", "#...", ".###"],
+    'K': ["#..#", "#..#", "#.#.", "##..", "#.#.", "#..#", "#..#"],
+}
+
+
+def traducir_boton(s, ci, texto):
+    """Borra el 戻る de la capsula (relleno 1) y escribe el texto nuevo."""
+    ancho = sum(len(FONT47[c][0]) for c in texto) + len(texto) - 1
+    assert ancho <= BX1 - BX0 - 1, texto
+
+    def fn(im):
+        for y in range(BY0 - 1, BY1 + 1):
+            for x in range(BX0, BX1 + 3):
+                v = im.get(x, y)
+                if v and v != 1 and (x <= BX1 or v in (6, 7)):
+                    im.set(x, y, 1)
+        tinta = set()
+        x = round((BX0 + BX1 + 1 - ancho) / 2)
+        y0 = (BY0 + BY1 + 1 - 7) // 2
+        for c in texto:
+            for yy, fila in enumerate(FONT47[c]):
+                for xx, ch in enumerate(fila):
+                    if ch == '#':
+                        tinta.add((x + xx, y0 + yy))
+            x += len(FONT47[c][0]) + 1
+        ring = {(px + dx, py + dy) for px, py in tinta for dx in (-1, 0, 1) for dy in (-1, 0, 1)} - tinta
+        for (px, py) in ring:
+            im.set(px, py, B_OUT)
+        for (px, py) in tinta:
+            im.set(px, py, B_FILL)
+    s.edit(ci, fn)
+
+
 def traducir(s, ci, texto):
     vaciar(s, ci)
 
@@ -135,7 +182,12 @@ def main():
             orig = {ci: s.compose(ci) for ci in TEXTOS[f]}
             for ci, tx in TEXTOS[f].items():
                 traducir(s, ci, tx[k])
+            for ci in BOTON[f]:
+                orig[ci] = s.compose(ci)
+                traducir_boton(s, ci, BOTON_TXT[k])
             s.save(lang)
+            for ci in BOTON[f]:
+                filas.append((orig[ci], s.compose(ci)))
             for ci in TEXTOS[f]:
                 filas.append((orig[ci], s.compose(ci)))
             print(lang, f, len(TEXTOS[f]), 'barras, NCGR', len(s.ncgr.d), 'bytes')
