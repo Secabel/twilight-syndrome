@@ -60,6 +60,9 @@ no previous English or Spanish translation.
   Close / Zoom +/- buttons.
 - **Save / load screen** *(new in 1.4, not released yet)*: title (Salvar /
   Cargar, Save / Load), Back button and slot numbers 1-6.
+- **Collectibles menu lists** *(new in 1.4, not released yet)*: the ~100 text bars
+  (place names and "Rumor N No.XX" luck labels) of the collectibles menu
+  (`OPTION/M10`-`M12`), redrawn in ES/EN.
 
 ## Playing the translation (patch users)
 
@@ -144,6 +147,7 @@ save error messages are rebuilt the same way with
 | `scripts/traducir_carteles_ev9_m02.py` | Redraws the 7 story intro posters (`EV9/M02`) |
 | `scripts/traducir_botones_itm.py` | Redraws the item menu buttons (`ITM/2D/G04M10`) |
 | `scripts/traducir_pantalla_guardado.py` | Redraws the title, Back button and slot numbers of the save / load screen (`SAVELOAD/M10`, `M11`) |
+| `scripts/traducir_opcion_listas.py` | Redraws the place-name and rumor text bars of the collectibles menu (`OPTION/M10`-`M12`) |
 | `images/` | Screenshots used in this README |
 
 The Japanese script is included in the main CSVs (`texto_original` column),
