@@ -58,6 +58,8 @@ no previous English or Spanish translation.
   into the image, redrawn per language.
 - **Item menu buttons** *(new in 1.4, not released yet)*: Back / Use / Look /
   Close / Zoom +/- buttons.
+- **Save / load screen** *(new in 1.4, not released yet)*: title (Salvar /
+  Cargar, Save / Load), Back button and slot numbers 1-6.
 
 ## Playing the translation (patch users)
 
@@ -141,6 +143,7 @@ save error messages are rebuilt the same way with
 | `scripts/redibujar_ui_celular.py`, `scripts/nftr.py` | Redraws the other phone screens, the startup notices and the save error messages |
 | `scripts/traducir_carteles_ev9_m02.py` | Redraws the 7 story intro posters (`EV9/M02`) |
 | `scripts/traducir_botones_itm.py` | Redraws the item menu buttons (`ITM/2D/G04M10`) |
+| `scripts/traducir_pantalla_guardado.py` | Redraws the title, Back button and slot numbers of the save / load screen (`SAVELOAD/M10`, `M11`) |
 | `images/` | Screenshots used in this README |
 
 The Japanese script is included in the main CSVs (`texto_original` column),
@@ -166,6 +169,7 @@ another language.
 - Translated the 7 story intro posters shown before each story (Spanish and
   English).
 - Translated the item menu buttons (Back, Use, Look, Close, Zoom +/-).
+- Translated the save / load screen (title, Back button, slot numbers).
 
 ### 1.3
 - Both languages updated; Spanish and English now share the same version
