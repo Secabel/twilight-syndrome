@@ -169,8 +169,7 @@ another language.
 - **Mail photos inside some cutscenes** (blurry or tilted shots of the phone)
   keep their Japanese text; the same mails can be read translated on the phone.
 - **Left untranslated on purpose:** the "touch the bottom screen" prompt on
-  the title screen, the labels printed on the phone's physical keys, the staff
-  credits, and a few props with text drawn into the background art
+  the title screen, the staff credits, and a few props with text drawn into the background art
   (a puzzle sheet with a kana table, whose solution depends on the original
   characters, and a manual page that is not legible even in the original).
 - With many routes and endings, not every route has been re-tested after

@@ -33,7 +33,7 @@ Tested in melonDS.
 ## Known issues
 - On the save / load list, the text of each save card (the rumor name and place) is cut off at the right edge.
 - Mail photos inside some cutscenes keep their Japanese text; the same mails can be read translated on the phone.
-- Left untranslated on purpose: the "touch the bottom screen" prompt on the title screen, the labels printed on the phone's physical keys, the staff credits and a few props with text drawn into the background art.
+- Left untranslated on purpose: the "touch the bottom screen" prompt on the title screen, the staff credits and a few props with text drawn into the background art.
 - Not every route has been re-tested after every change, so some typos or inconsistencies may remain.
 
 ## Source
