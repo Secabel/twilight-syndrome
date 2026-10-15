@@ -13,8 +13,10 @@ no previous English or Spanish translation.
 <p>
 <img src="images/es_01_title_menu.png" width="200" alt="Spanish screenshot: title menu">
 <img src="images/es_02_dialogue.png" width="200" alt="Spanish screenshot: dialogue">
-<img src="images/es_03_inventory.png" width="200" alt="Spanish screenshot: inventory">
 <img src="images/es_04_phone_mail.png" width="200" alt="Spanish screenshot: phone mail">
+</p>
+
+<p>
 <img src="images/es_05_item_menu.png" width="200" alt="Spanish screenshot: item menu with translated buttons">
 <img src="images/es_06_item_map.png" width="200" alt="Spanish screenshot: item zoom with translated buttons">
 <img src="images/es_07_phone_menu.png" width="200" alt="Spanish screenshot: phone camera menu">
@@ -26,6 +28,9 @@ no previous English or Spanish translation.
 <img src="images/en_01_rumor_card.png" width="200" alt="English screenshot: rumor card">
 <img src="images/en_02_dialogue.png" width="200" alt="English screenshot: dialogue">
 <img src="images/en_03_dialogue.png" width="200" alt="English screenshot: dialogue">
+</p>
+
+<p>
 <img src="images/en_04_phone_mail.png" width="200" alt="English screenshot: phone mail">
 <img src="images/en_05_item_menu.png" width="200" alt="English screenshot: item menu with translated buttons">
 <img src="images/en_06_item_map.png" width="200" alt="English screenshot: item zoom with translated buttons">
