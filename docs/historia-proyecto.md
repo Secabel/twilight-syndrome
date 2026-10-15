@@ -2939,8 +2939,12 @@ Análisis y archivos de trabajo en `rea_analisis/` (sin versionar).
   y números 一..六 (celdas 26-31) -> 1..6
   (`scripts/traducir_pantalla_guardado.py`; parte de los NCGR ya parcheados
   con はい/いいえ). Verificado en juego.
-- **Pendiente:** `OPTION/M10-M12` y `S10` (menú de coleccionables: ~100 nombres
-  de lugares y rumores "第N の噂 No.XX 大吉/中吉/凶"); celdas 20-22 de
+- **Menú de coleccionables** (`OPTION/M10-M12`, 15+15+44 barras): nombres de
+  lugares y rumores "第N の噂 No.XX 大吉/中吉/凶" -> "Rumor N No.XX Gran/Suerte
+  media/Mala suerte" (Great/Fair/Bad luck), texto con auto-ajuste de fuente
+  (`scripts/traducir_opcion_listas.py`). Los NCGR de M12 crecen (~74 KB ESP);
+  pendiente de verificar en juego.
+- **Pendiente:** `OPTION/S10` (fecha); celdas 20-22 de
   `SAVELOAD/M11` sin identificar; el texto dinámico de las tarjetas de guardado
   se corta en el borde derecho (y la primera letra de la 2.ª línea sale rara).
 - Sin BPS por ahora: v1.4 sigue en desarrollo.
