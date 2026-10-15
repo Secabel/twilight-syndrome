@@ -2949,3 +2949,4 @@ Análisis y archivos de trabajo en `rea_analisis/` (sin versionar).
   `SAVELOAD/M11` sin identificar; el texto dinámico de las tarjetas de guardado
   se corta en el borde derecho (y la primera letra de la 2.ª línea sale rara).
 - Sin BPS por ahora: v1.4 sigue en desarrollo.
+- 2026-10-15: v1.4 preparada. BPS creados con Flips (compilado en la VM) y verificados contra las ROMs: ESP 116,321,480 bytes CRC32 D4725F27; ENG 116,265,160 bytes CRC32 BDD95BB6. README y texto de release en `docs/release-v1.4.md`.
