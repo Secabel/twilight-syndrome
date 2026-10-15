@@ -33,7 +33,7 @@ no previous English or Spanish translation.
 <p>
 <img src="images/en_04_phone_mail.png" width="200" alt="English screenshot: phone mail">
 <img src="images/en_05_item_menu.png" width="200" alt="English screenshot: item menu with translated buttons">
-<img src="images/en_06_item_map.png" width="200" alt="English screenshot: item zoom with translated buttons">
+<img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
 
 > **Version 1.4**
