@@ -15,6 +15,9 @@ no previous English or Spanish translation.
 <img src="images/es_02_dialogue.png" width="200" alt="Spanish screenshot: dialogue">
 <img src="images/es_03_inventory.png" width="200" alt="Spanish screenshot: inventory">
 <img src="images/es_04_phone_mail.png" width="200" alt="Spanish screenshot: phone mail">
+<img src="images/es_05_item_menu.png" width="200" alt="Spanish screenshot: item menu with translated buttons">
+<img src="images/es_06_item_map.png" width="200" alt="Spanish screenshot: item zoom with translated buttons">
+<img src="images/es_07_phone_menu.png" width="200" alt="Spanish screenshot: phone camera menu">
 </p>
 
 **English**
@@ -24,9 +27,11 @@ no previous English or Spanish translation.
 <img src="images/en_02_dialogue.png" width="200" alt="English screenshot: dialogue">
 <img src="images/en_03_dialogue.png" width="200" alt="English screenshot: dialogue">
 <img src="images/en_04_phone_mail.png" width="200" alt="English screenshot: phone mail">
+<img src="images/en_05_item_menu.png" width="200" alt="English screenshot: item menu with translated buttons">
+<img src="images/en_06_item_map.png" width="200" alt="English screenshot: item zoom with translated buttons">
 </p>
 
-> **Version 1.3**
+> **Version 1.4**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -53,14 +58,14 @@ no previous English or Spanish translation.
   playback, the "no signal" icon, the web page and the OK button on the
   wallpapers, redrawn with the same phone font.
 - **Startup notices and save data error messages** *(new in 1.3)*.
-- **Story intro posters** *(new in 1.4, not released yet)*: the 7 posters shown before
+- **Story intro posters** *(new in 1.4)*: the 7 posters shown before
   each story (arc name and rumor label), which were vertical Japanese text baked
   into the image, redrawn per language.
-- **Item menu buttons** *(new in 1.4, not released yet)*: Back / Use / Look /
+- **Item menu buttons** *(new in 1.4)*: Back / Use / Look /
   Close / Zoom +/- buttons.
-- **Save / load screen** *(new in 1.4, not released yet)*: title (Salvar /
+- **Save / load screen** *(new in 1.4)*: title (Salvar /
   Cargar, Save / Load), Back button and slot numbers 1-6.
-- **Collectibles menu lists** *(new in 1.4, not released yet)*: the ~100 text bars
+- **Collectibles menu lists** *(new in 1.4)*: the ~100 text bars
   (place names and "Rumor N No.XX" luck labels) of the collectibles menu
   (`OPTION/M10`-`M12`), redrawn in ES/EN.
 
@@ -73,8 +78,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.3.bps` (Spanish) or
-   `Twilight.Syndrome.ENG.v1.3.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.4.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.4.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -85,8 +90,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.3.bps` | Spanish | 116,256,968 bytes | `C547AD28` | `a7ba6b788a82030b1d5e594833d8925ccc285ad7` |
-   | `Twilight.Syndrome.ENG.v1.3.bps` | English | 116,213,448 bytes | `E6C49839` | `b31cde8b17fc725b4a074432396a91e845dfb1a8` |
+   | `Twilight.Syndrome.ESP.v1.4.bps` | Spanish | 116,321,480 bytes | `D4725F27` | `46d1efcc3f5763d7ff82dcf0a4396f3b26dd089b` |
+   | `Twilight.Syndrome.ENG.v1.4.bps` | English | 116,265,160 bytes | `BDD95BB6` | `8b562fc9318e506acf88c4ca4056ec189df02bbe` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
@@ -169,11 +174,13 @@ another language.
 
 ## Version history
 
-### 1.4 (in development, not released yet)
+### 1.4
 - Translated the 7 story intro posters shown before each story (Spanish and
   English).
 - Translated the item menu buttons (Back, Use, Look, Close, Zoom +/-).
 - Translated the save / load screen (title, Back button, slot numbers).
+- Translated the collectibles menu: about 100 place-name and rumor text bars
+  and its Back button.
 
 ### 1.3
 - Both languages updated; Spanish and English now share the same version
