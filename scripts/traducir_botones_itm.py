@@ -120,7 +120,7 @@ def traducir_celda(c, texto):
         for x in range(X0_BORRAR, c.W):
             c.put(x, y, 0)
     w = ancho(texto)
-    xe = min(c.W - 2, X_TEXTO + w + 1)       # ultima columna de la capsula
+    xe = c.W - 2                              # todas las capsulas miden lo mismo (como en el original)
     # barra inferior (sombra de base): solo hasta la capsula, con punta
     for y, ini in ((20, 0), (21, 0)):
         for x in range(X0_BORRAR, c.W):
@@ -133,14 +133,15 @@ def traducir_celda(c, texto):
             if esquina:
                 continue
             c.put(x, y, ARO2 if borde else ARO1)
-    x = X_TEXTO
+    x = X0_BORRAR + 1 + (xe - X0_BORRAR - 1 - w) // 2 + 1   # texto centrado
+    x_ini = x
     for ch in texto:
         for yy, row in enumerate(FONT[ch]):
             for xx, p in enumerate(row):
                 if p == '#':
                     c.put(x + xx, Y_TEXTO + yy, TINTA)
         x += len(FONT[ch][0]) + 1
-    assert xe <= c.W - 2 and X_TEXTO + w <= xe, f'{texto}: no entra'
+    assert x_ini + w <= xe, f'{texto}: no entra'
 
 
 def render_celda(c, col, banco):
