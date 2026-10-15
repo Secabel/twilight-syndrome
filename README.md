@@ -56,6 +56,8 @@ no previous English or Spanish translation.
 - **Story intro posters** *(new in 1.4, not released yet)*: the 7 posters shown before
   each story (arc name and rumor label), which were vertical Japanese text baked
   into the image, redrawn per language.
+- **Item menu buttons** *(new in 1.4, not released yet)*: Back / Use / Look /
+  Close / Zoom +/- buttons.
 
 ## Playing the translation (patch users)
 
@@ -138,6 +140,7 @@ save error messages are rebuilt the same way with
 | `scripts/fuente_celular.py`, `scripts/redibujar_correos.py` | Phone font and the script that redraws the phone mails |
 | `scripts/redibujar_ui_celular.py`, `scripts/nftr.py` | Redraws the other phone screens, the startup notices and the save error messages |
 | `scripts/traducir_carteles_ev9_m02.py` | Redraws the 7 story intro posters (`EV9/M02`) |
+| `scripts/traducir_botones_itm.py` | Redraws the item menu buttons (`ITM/2D/G04M10`) |
 | `images/` | Screenshots used in this README |
 
 The Japanese script is included in the main CSVs (`texto_original` column),
@@ -162,6 +165,7 @@ another language.
 ### 1.4 (in development, not released yet)
 - Translated the 7 story intro posters shown before each story (Spanish and
   English).
+- Translated the item menu buttons (Back, Use, Look, Close, Zoom +/-).
 
 ### 1.3
 - Both languages updated; Spanish and English now share the same version
