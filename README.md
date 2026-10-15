@@ -53,6 +53,9 @@ no previous English or Spanish translation.
   playback, the "no signal" icon, the web page and the OK button on the
   wallpapers, redrawn with the same phone font.
 - **Startup notices and save data error messages** *(new in 1.3)*.
+- **Story intro posters** *(new in 1.4, not released yet)*: the 7 posters shown before
+  each story (arc name and rumor label), which were vertical Japanese text baked
+  into the image, redrawn per language.
 
 ## Playing the translation (patch users)
 
@@ -134,6 +137,7 @@ save error messages are rebuilt the same way with
 | `scripts/ncer_decode.py` | Decoder for DS tile graphics (NCGR/NCLR/NCER/NSCR) |
 | `scripts/fuente_celular.py`, `scripts/redibujar_correos.py` | Phone font and the script that redraws the phone mails |
 | `scripts/redibujar_ui_celular.py`, `scripts/nftr.py` | Redraws the other phone screens, the startup notices and the save error messages |
+| `scripts/traducir_carteles_ev9_m02.py` | Redraws the 7 story intro posters (`EV9/M02`) |
 | `images/` | Screenshots used in this README |
 
 The Japanese script is included in the main CSVs (`texto_original` column),
@@ -154,6 +158,10 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.4 (in development, not released yet)
+- Translated the 7 story intro posters shown before each story (Spanish and
+  English).
 
 ### 1.3
 - Both languages updated; Spanish and English now share the same version
