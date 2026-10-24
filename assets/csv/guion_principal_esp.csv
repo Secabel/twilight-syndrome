@@ -311,8 +311,8 @@ aquí."
 0xd43d8,22,脚、ケガしてるんだ…。,,"Tiene la pierna
 lastimada..."
 0xd43f0,22,ダメだよ、危ないって！,,"¡No, es peligroso!"
-0xd4408,22,（かくまったようです）,,"(y parece que lo mantuvo
-escondido)"
+0xd4408,22,（かくまったようです）,,"(Parece que lo acogió
+en secreto)"
 0xd4420,22,あ…圏外だ。…なんで？,,"Ah...sin señal.
 ...¿Por qué?"
 0xd4438,22,時間的にはそうかもね。,,"Puede que sea
@@ -323,7 +323,7 @@ Pon el dedo..."
 0xd4468,24,なんで、ミズキのだけ…。,,"¿Por qué solo
 la de Mizuki...?"
 0xd4484,24,大丈夫よ…落ち着いて…。,,Está bien...cálmate...
-0xd44a0,24,（激しく叱責されました）,,"(La reprendieron
+0xd44a0,24,（激しく叱責されました）,,"(La regañaron
 con dureza)"
 0xd44bc,24,…どうぞ戻ってください。,,"...Por favor, regrese
 al torii."
@@ -393,8 +393,7 @@ la nuca!"
 0xd4868,29,"じゃ、始めるよ。
 指を置いて。",,"Bueno, empecemos.
 Pon el dedo."
-0xd4888,30,（１匹のキツネを看病しました）,,"(herido igual que los
-humanos)"
+0xd4888,30,（１匹のキツネを看病しました）,,(ella lo cuidó)
 0xd48a8,30,やっぱ昼とは…なにか違うよね。,,"Se nota que de día
 es distinto, ¿no?"
 0xd48c8,30,…コックリさん、質問します…。,,"...Kokkuri-san,
@@ -661,7 +660,8 @@ heridos en el
 bombardeo,)"
 0xd54b4,51,"（そして彼女はある時、
 　人間と同じように傷ついた）",,"(Y en cierto momento,
-ella cuidó a un zorro)"
+a un zorro herido,
+igual que un humano,)"
 0xd54e8,51,"３人のうち、…メグミとカナの
 行方がわかりません…。",,"De las tres,...no se
 sabe dónde están
@@ -1910,7 +1910,7 @@ sin detonar."
 0xd930c,10,それは…。,,Eso es...
 0xd9318,10,…上の階？,,"...¿El piso de
 arriba?"
-0xd9324,10,さあ……。,,Quien sabe......
+0xd9324,10,さあ……。,,Quién sabe......
 0xd9330,10,ケータイ！,,¡El celular!
 0xd933c,10,そうだね。,,Es cierto.
 0xd9348,10,…ごめん。,,...Perdón.
@@ -2819,7 +2819,7 @@ espiritual aumenta..."
 manera."
 0xdc398,24,他の方法っていっても…。,,"Aunque digas otra
 manera..."
-0xdc3b4,24,じゃあ、カナたちはどこに,,"Entonces, donde están
+0xdc3b4,24,じゃあ、カナたちはどこに,,"Entonces, dónde están
 Kana y los demás"
 0xdc3d0,24,わたしもやってみようかな,,"Creo que yo también
 lo voy a intentar."
@@ -6207,7 +6207,7 @@ esto...?)"
 0xe90dc,18,右側にはメモが…。,,"Del lado derecho hay una
 nota..."
 0xe90f0,18,（どういうこと？）,,(¿Qué significa esto?)
-0xe9104,18,これ、なんだろう。,,¿Qué será esto?
+0xe9104,18,これ、なんだろう。,,Qué será esto.
 0xe9118,20,（でも…気になる…）,,"(Pero... me da
 curiosidad...)"
 0xe9130,20,信じたくないけど…。,,"No quiero creerlo,
@@ -6236,8 +6236,8 @@ viejos..."
 gallina."
 0xe9288,24,見て、あのビデオの山…。,,"Mira, esa pila de
 videos..."
-0xe92a4,24,うわ…文字がびっしり…。,,"Uy... está lleno de
-letra..."
+0xe92a4,24,うわ…文字がびっしり…。,,"Uy... está repleto de
+letras..."
 0xe92c0,24,家賃の支払い記録みたい。,,"Parece un registro de
 pagos de renta."
 0xe92dc,24,あたしは夕方届いたよ…。,,"A mí me llegó en la
@@ -6338,7 +6338,7 @@ acosador..."
 0xe9794,39,"コックリさんと違うのは１人で
 すること。",,"La diferencia con
 Kokkuri-san es que se
-hace sola."
+hace a solas."
 0xe97bc,41,"ね、アルミホイルって…台所に
 あったよね。",,"Oye, el papel
 aluminio... estaba en la
@@ -6377,9 +6377,10 @@ cadenas...)"
 “ひとりかくれんぼ”…。",,"""Kokkuri-san""... y
 ""Hitori Kakurenbo""..."
 0xe997c,45,"……あと……カップに水を浸し、
-箸を立てる…。",,"......y después...se
-llena un vaso con agua
-y se para un palillo..."
+箸を立てる…。",,"Y después... se llena
+un vaso de agua y se
+pone un palillo de
+pie..."
 0xe99ac,45,"でも、このままでも…いけない
 ような気がする。",,"Pero siento que así
 tampoco va a estar bien."
@@ -6622,20 +6623,19 @@ chinche, por si acaso."
 hechizo...)"
 0xea660,24,…ナナシ……お願い……。,,Nanashi... por favor...
 0xea67c,25,（７７４……ナナシ…？）,,(¿774...... Nanashi...?)
-0xea698,26,ったく、ブルッて損したよ。,,"Ay, qué tonto soy, me
-asusté para nada."
+0xea698,26,ったく、ブルッて損したよ。,,"Ay, caray, me asusté
+para nada."
 0xea6b4,26,校長先生…がどうかしたの？,,"¿Le pasó algo al
 director...?"
 0xea6d0,28,間違えた。たしか８４通目…。,,"Me equivoqué. Creo que
 era el correo número
 84..."
-0xea6f0,28,（番号を入力…何番だっけ…）,,"(¿Ingresar el
-número...cuál
-era...?)"
+0xea6f0,28,（番号を入力…何番だっけ…）,,"(Ingresar el número...
+¿cuál era...?)"
 0xea710,28,（思い切って外に出るしか…）,,"(No queda otra que
 animarme y salir...)"
 0xea730,28,まさか…“にらめっこ”…！？,,"¿¡No puede ser... el
-""nirameko""...!?"
+juego de miradas...!?"
 0xea750,32,花壇の中も探したけど、何にも…。,,"También busqué en el
 jardín, pero no había
 nada..."
@@ -6665,9 +6665,9 @@ el lápiz táctil."
 este número...? Lo he
 visto en algún lado..."
 0xea8c0,37,"はっ……４２１９……
-…死に行く……？",,"
-Ah...4219...shiniiku...
-¿voy a morir...?"
+…死に行く……？",,"¡Ah!...4219...
+shiniiku...¿voy a
+morir?"
 0xea8e8,39,"（４７７１……シナナイ
 ……死なない？）",,"(¿4771... shinanai...
 no voy a morir?)"
@@ -6742,9 +6742,9 @@ es...)"
 estuviera riendo... eso
 significa que gané?)"
 0xeac64,57,"……にらめっ…こ……しましょ
-……わらう…と…まけよ……。",,"...Hagamos...
-nirameko... si te
-ríes... pierdes..."
+……わらう…と…まけよ……。",,"...Juguemos...al
+juego de miradas...si
+te ríes...pierdes..."
 0xeaca0,57,"待って、屋上はさすがにコックリ
 さんでこりてるんじゃない？",,"Espera, ¿no que ya
 habíamos aprendido la
@@ -6756,7 +6756,7 @@ rato, pero algo que
 sirviera de pista sobre
 Riko,"
 0xead18,59,"あいつが恋のおまじないなんて、
-ちょっと信じられないけどね。",,"Cuesta creer que ella
+ちょっと信じられないけどね。",,"Cuesta creer que él
 haga un hechizo de
 amor, la verdad."
 0xead54,60,"揺れた場所と同じ場所を
@@ -6972,7 +6972,7 @@ Riko!"
 0xeb9a4,10,じゃあな。,,Nos vemos.
 0xeb9b0,10,…そうだ。,,Es cierto.
 0xeb9bc,10,まさか…。,,No puede ser...
-0xeb9c8,10,無視しよう,,Ignoremoslo
+0xeb9c8,10,無視しよう,,Ignorémoslo
 0xeb9d4,10,それだれ？,,¿Quién es ese?
 0xeb9e0,10,そうなの？,,¿En serio?
 0xeb9ec,10,地下水だ。,,Es agua subterránea.
@@ -8366,7 +8366,7 @@ llanto de un bebé,"
 0xf0284,8,ちっ…、,,"Tsk...,"
 0xf0290,8,うん…。,,Sí...
 0xf02a8,8,えーっ！,,¡Eeeh!
-0xf02b4,8,さあ…。,,Quien sabe...
+0xf02b4,8,さあ…。,,Quién sabe...
 0xf02c0,8,お願い！,,¡Por favor!
 0xf02cc,8,なに…？,,¿Qué...?
 0xf02d8,8,えっ…。,,Eh...
@@ -9238,7 +9238,7 @@ cabeza...)"
 0xf3618,26,『つかまえたあ』と３回言う,,Decir Te atrapé 3 veces
 0xf3634,26,何言ってんの、ほら行くよ。,,"Qué estás diciendo,
 anda, vamos."
-0xf3650,26,…さあ…そんな昔のこと…。,,"...Quien sabe... eso
+0xf3650,26,…さあ…そんな昔のこと…。,,"...Quién sabe... eso
 fue hace tanto..."
 0xf366c,26,（マサキたちが帰っちゃう）,,"(Masaki y los demás se
 van a ir)"
@@ -11512,12 +11512,12 @@ miedo a algo, ¿no...?"
 0xfa694,12,何これ……？,,¿Qué es esto......?
 0xfa6a4,12,１番先がいい,,Prefiero ir primero
 0xfa6b4,12,……ミズキ。,,......Mizuki.
-0xfa6c4,12,理念ですか？,,¿Es una filosofía?
+0xfa6c4,12,理念ですか？,,¿Su filosofía?
 0xfa6d4,12,ミラーハウス,,Casa de espejos
 0xfa6e4,12,う、うん…。,,S-sí...
 0xfa6f4,12,このイス…。,,Esta silla...
 0xfa704,12,赤い…風船？,,¿Un globo... rojo?
-0xfa714,12,理念ですか？,,¿Es una filosofía?
+0xfa714,12,理念ですか？,,¿Su filosofía?
 0xfa724,12,じゃあこれで,,"Bueno, es todo"
 0xfa734,12,気をつけて。,,Ten cuidado.
 0xfa744,12,あの子……？,,¿Esa niña......?
@@ -11541,7 +11541,7 @@ miedo a algo, ¿no...?"
 0xfa874,14,夜光塗料…か。,,"Pintura fosforescente...
 ya veo."
 0xfa884,14,なにかの暗号？,,¿Será algún código?
-0xfa894,14,あなたは……。,,Usted es......
+0xfa894,14,あなたは……。,,Tú eres......
 0xfa8a4,14,うん、わかった,,"Sí, entendido"
 0xfa8b4,14,え？どうして？,,¿Eh? ¿Por qué?
 0xfa8c4,14,子供の落書き？,,¿Un garabato de niño?
@@ -11579,8 +11579,8 @@ favor"
 0xfaab4,14,あったあった。,,"Sí, sí, eso existía."
 0xfaac4,16,夢の遊園地……。,,"El parque de diversiones
 de los sueños......"
-0xfaad8,16,観覧車の設計図？,,"¿Los planos de la rueda
-de la fortuna?"
+0xfaad8,16,観覧車の設計図？,,"¿Los planos de la
+noria?"
 0xfaaec,16,（ここは……？）,,(¿Este lugar es......?)
 0xfab00,16,…ありがとう…。,,...Gracias...
 0xfab14,16,ハセガワさん…。,,Señor Hasegawa...
@@ -11623,7 +11623,7 @@ esa época,"
 0xfada8,18,親父のイタズラで、,,"Por una broma de mi
 papá,"
 0xfadbc,18,メリーゴーラウンド,,Carrusel
-0xfadd0,18,ついてなかったよ。,,No estaba encendida.
+0xfadd0,18,ついてなかったよ。,,No estaban encendidas.
 0xfade4,18,じゃあ、まずは…、,,"Bueno, primero...,"
 0xfadf8,18,ホントに大丈夫です,,De verdad estoy bien
 0xfae0c,18,物好きな人たちね。,,Qué gente tan curiosa.
@@ -11635,7 +11635,7 @@ papá,"
 salida?"
 0xfae84,18,ハセガワさん……。,,Señor Hasegawa......
 0xfae98,18,し……黙って……。,,"Shh......
-callados......"
+silencio......"
 0xfaeac,18,やだ！逃げて早く！,,"¡No! ¡Corran, rápido!"
 0xfaec0,18,正反対な内容だね。,,"Es un contenido
 totalmente opuesto."
@@ -11676,10 +11676,10 @@ subterráneo."
 escape?"
 0xfb0bc,20,鍵がかかっている…。,,Está con llave...
 0xfb0d4,20,（こんな太ったら…）,,(Si engordara así...)
-0xfb0ec,20,それは、どこに……。,,Eso... ¿dónde......?
+0xfb0ec,20,それは、どこに……。,,Eso... ¿dónde?......
 0xfb104,20,っていう内容だった。,,Ese era el contenido.
-0xfb11c,20,（真っ暗…じゃない）,,"(No está...
-completamente oscuro)"
+0xfb11c,20,（真っ暗…じゃない）,,"(Oscuridad total...
+no, no lo es)"
 0xfb134,20,ここはもう入ったよ。,,Aquí ya entramos.
 0xfb14c,20,お前たちの仕業だろ？,,"Esto es obra de ustedes,
 ¿no?"
@@ -11694,8 +11694,8 @@ Nanashi..."
 0xfb1c4,20,レイカに電話しなきゃ,,Tengo que llamar a Reika
 0xfb1dc,20,人の声に聞こえたぞ。,,"Sonó como una voz
 humana."
-0xfb1f4,20,心にとめていたもの？,,"¿Algo que llevaba en el
-corazón?"
+0xfb1f4,20,心にとめていたもの？,,"¿Lo que guardaba
+en el corazón?"
 0xfb20c,20,こっち側は出口だな。,,Este lado es la salida.
 0xfb224,20,…ピエロ…そんな…。,,"...El payaso... no
 puede ser..."
@@ -11703,12 +11703,12 @@ puede ser..."
 0xfb254,22,ここはもういいっしょ。,,"Ya está bien con este
 lugar, ¿no?"
 0xfb26c,22,（それから間もなく、）,,"(Poco después de eso,)"
-0xfb284,22,遊園地を楽しんでいる。,,"están disfrutando del
+0xfb284,22,遊園地を楽しんでいる。,,"Están disfrutando del
 parque de diversiones."
 0xfb29c,22,一通り回ってみようぜ。,,"Vamos a recorrer todo un
 poco."
 0xfb2b4,22,今のなんだったんだ！？,,¿¡Qué fue eso!?
-0xfb2cc,22,わたしたちがするの…。,,nosotros mismos...
+0xfb2cc,22,わたしたちがするの…。,,Lo haremos nosotros...
 0xfb2e4,22,まだ確信はないけど…。,,"Todavía no estoy
 segura, pero..."
 0xfb2fc,22,あの白い影も…幽霊…。,,"Esa sombra blanca
@@ -11716,8 +11716,8 @@ también... un
 fantasma..."
 0xfb314,22,レイカも誘ってみない？,,"¿No invitamos a Reika
 también?"
-0xfb32c,22,ツケナクテ　ヨカッタナ,,"QUE BUENO QUE NO LO
-USASTE"
+0xfb32c,22,ツケナクテ　ヨカッタナ,,"QUE BUENO QUE NO
+ENCENDISTE LA LUZ"
 0xfb344,22,ははっ、びっくりした？,,"Jaja, ¿te asusté?"
 0xfb35c,22,あ、ちょっと待ってよ。,,"Ah, espera un momento."
 0xfb374,22,これは…関係ないか…。,,"Esto... no tendrá que
@@ -11748,8 +11748,8 @@ la energía,"
 0xfb50c,22,こんな仕掛けあったか？,,"¿Había un
 mecanismo así?"
 0xfb524,22,やなこと言わないでよ。,,No digas cosas feas.
-0xfb53c,22,……なんでここに……。,,"......¿Por qué está
-aquí...?"
+0xfb53c,22,……なんでここに……。,,"......¿Por qué
+aquí?......"
 0xfb554,22,やっぱりそうなんだな。,,"Así que era eso, ¿eh?"
 0xfb56c,22,ハセガワさん、待って！,,"¡Señor Hasegawa,
 espere!"
@@ -11761,7 +11761,8 @@ no..."
 0xfb5e4,22,逃げないと殺されるっ！,,"¡Si no huimos nos van a
 matar!"
 0xfb5fc,22,どこから出てきたんだ？,,¿De dónde salieron?
-0xfb614,22,あたしたち、小さい時は,,"Cuando éramos chicos,"
+0xfb614,22,あたしたち、小さい時は,,"Nosotros, cuando
+éramos pequeños,"
 0xfb62c,22,（あ、写真とらなきゃ）,,"(Ah, tengo que tomar
 una foto)"
 0xfb644,22,どんなトコなんですか？,,¿Qué tipo de lugar es?
@@ -11884,9 +11885,8 @@ del rumor......)"
 preocupes por nada."
 0xfbd00,26,中は暗いから気をつけろよ。,,"Adentro está oscuro, ten
 cuidado."
-0xfbd1c,26,なんで最初に電話したとき、,,"¿Cómo es que cuando
-te llamé la primera
-vez,"
+0xfbd1c,26,なんで最初に電話したとき、,,"¿Por qué, cuando te
+llamé por primera vez,"
 0xfbd38,26,仕掛けになっているんだよ。,,Es un mecanismo.
 0xfbd54,26,お化け屋敷で見たような…。,,"Parece algo que vi en la
 casa embrujada..."
@@ -11901,8 +11901,8 @@ rápido."
 0xfbde0,26,空気がひんやりしてる……。,,El aire está frío......
 0xfbdfc,26,ドリームパークのオーナー？,,"¿El dueño del Dream
 Park?"
-0xfbe18,26,何で、こんな時間にここに？,,"¿Por qué está aquí a
-esta hora?"
+0xfbe18,26,何で、こんな時間にここに？,,"¿Por qué está usted
+aquí a esta hora?"
 0xfbe34,26,特に変わった様子はないな。,,"No hay nada raro en
 particular."
 0xfbe50,26,ううん、前はそう思ってた。,,"No, antes pensaba eso."
@@ -11930,8 +11930,8 @@ elaborado."
 reales."
 0xfbf90,28,警察にも連絡しておくけど…。,,"Voy a avisarle a la policía
 también, pero..."
-0xfbfb0,28,ちっちゃいとき好きだったな。,,"Cuando era pequeña
-me gustaba."
+0xfbfb0,28,ちっちゃいとき好きだったな。,,"Cuando era pequeña me
+gustaba."
 0xfbfd0,28,楽しいものは、より楽しく…。,,"Lo divertido, más
 divertido todavía..."
 0xfbff0,28,もう１度よく見直してみたら？,,"¿Por qué no lo revisas de
@@ -12042,8 +12042,8 @@ no tiene gracia."
 0xfc630,30,（これからも守られていきます）,,"(Seguirá siendo
 protegido de ahora en
 adelante)"
-0xfc650,30,（あの遊園地の中に見たのか、）,,"(una ilusión de mí
-misma de pequeña,)"
+0xfc650,30,（あの遊園地の中に見たのか、）,,"(dentro de ese
+parque?)"
 0xfc670,30,何か言いたいことがあるんだろ？,,"Tienes algo que quieres
 decir, ¿no?"
 0xfc690,30,なんでこんなことになるのよぅ。,,"¿Por qué tiene que
@@ -12141,8 +12141,8 @@ atacaba un payaso."
 0xfcc7c,33,"→　観覧車
 ↓　メリーゴーラウンド",,-> Noria v Carrusel
 0xfcca0,33,"あ、私…
-てっきり怒られるのかと。",,"Ah, yo... pensé que
-me iba a regañar."
+てっきり怒られるのかと。",,"Ah, yo... creí que me
+iba a regañar."
 0xfccc4,33,"地下通路？
 わかった、ありがとう。",,"¿Un pasadizo
 subterráneo? Entendido,
@@ -12205,7 +12205,7 @@ preocuparla."
 聞いていなかったから。",,"Es que no estaba
 escuchando en serio."
 0xfcf70,35,"なにをする必要があるか
-考えないと。",,"Tengo que pensar que
+考えないと。",,"Tengo que pensar qué
 hay que hacer."
 0xfcf94,35,"乗ってみれば？
 写真とってあげるよ。",,"¿Por qué no te subes? Te
@@ -12322,8 +12322,8 @@ globos con gas él mismo,"
 行ったことあるんだ。",,"estuvimos en Dream
 Park."
 0xfd4bc,37,"こいつ、ピエロが怖くて
-泣き出してさ。",,"Esta se puso a llorar
-del miedo que le dio el
+泣き出してさ。",,"Esta se puso a llorar del
+miedo que le dio el
 payaso."
 0xfd4e4,37,"…ま、解体前に最後の
 お別れにいくか。",,"...Bueno, vayamos a
@@ -12337,8 +12337,8 @@ esta noche."
 personal tiene cerradura
 electrónica."
 0xfd55c,37,"『電気をつけなくて
-　良かったな』は、",,"La de ""qué bueno que
-no encendimos la luz"","
+　良かったな』は、",,"""Qué bueno que no
+encendiste la luz"":"
 0xfd584,37,"わかった、気をつける。
 じゃ、またね。",,"Entendido, tendré
 cuidado. Nos vemos."
@@ -12381,8 +12381,8 @@ Pregúntale a Yuuta."
 puerta! ¡Haz algo!"
 0xfd764,37,"（ラッキー！
 　扉のカギがかかった！）",,"(¡Qué suerte!
-¡La puerta se cerró con
-llave!)"
+¡La puerta se cerró
+con llave!)"
 0xfd78c,37,"早くしてよ！
 もうすぐそこまで来てる！",,"¡Apúrate! ¡Ya casi llega
 hasta aquí!"
@@ -12497,7 +12497,7 @@ infancia son poco
 fiables."
 0xfdcb4,39,"追いついちゃったな。
 じゃあ、戻ろうか。",,"Ya te alcancé. Bueno,
-¿volvemos?"
+¿volvamos?"
 0xfdcdc,39,"マサキの『死に顔』
 見せてもらおうかな。",,"A ver si me muestras la
 cara de muerto de
@@ -12545,8 +12545,9 @@ Hasegawa, ¿verdad?"
 恐ろしいものはより恐ろしく、だ。",,"Y lo que da miedo, que
 dé más miedo aún."
 0xfdf18,41,"それがあのピエロじゃないか
-と思うんです。",,"Creo que ese podría ser
-el payaso."
+と思うんです。",,"Creo que eso es
+justamente ese
+payaso."
 0xfdf44,41,"ピエロに変装した変質者が
 子供をさらう…。",,"Un pervertido disfrazado
 de payaso secuestra
@@ -12584,8 +12585,8 @@ Yuuta, Riko y Mizuki."
 やめとけって。",,"Total vas a llorar de
 nuevo, mejor no vayas."
 0xfe128,41,"（これで違和感のある顔に
-　うつるんだわ）",,"(Por esto se refleja
-una cara extraña)"
+　うつるんだわ）",,"(Esto hace que el rostro
+se vea extraño)"
 0xfe154,41,"俺のケータイ、暗いところだと
 写り悪くて。",,"Mi celular saca fotos
 malas en lugares
@@ -12695,8 +12696,7 @@ otro favor que
 pedirte..."
 0xfe650,43,"慣れちゃってぜんぜん
 怖がらなくなってたし。",,"Se acostumbró y ya no
-le daba nada de
-miedo."
+le daba nada de miedo."
 0xfe67c,43,"（それから間もなく、
 　ハセガワさんの手で）",,"(Poco después, por
 mano del señor
@@ -12958,16 +12958,16 @@ curiosidad, ¿verdad?"
 decirte que dejes de salir
 de noche."
 0xff34c,49,"ドリームパークに行ったことが
-あるってことですか？",,"¿Quiere decir que yo
-ya había estado en
-Dream Park?"
+あるってことですか？",,"¿Eso quiere decir que
+yo estuve en Dream
+Park?"
 0xff380,49,"（これだけやせれば、
 　ダイエットしなくて済むね）",,"(Con adelgazar así, ya
 no necesito hacer dieta)"
 0xff3b4,49,"ドリームパークに行ったことが
-あるってことですか？",,"¿Quiere decir que yo
-ya había estado en
-Dream Park?"
+あるってことですか？",,"¿Eso quiere decir que
+yo estuve en Dream
+Park?"
 0xff3e8,49,"今までこういう流れで
 大事にならなかったことある？",,"¿Alguna vez esto no
 terminó siendo un
@@ -12977,9 +12977,9 @@ problema grave?"
 hasta el fondo y
 saquemos la foto."
 0xff450,49,"（ただ、どうして幼いころの
-　わたし自身の幻を、）",,"(Pero por qué vi,
-dentro de ese parque
-de diversiones,)"
+　わたし自身の幻を、）",,"(Pero, ¿por qué vi un
+espejismo de mí misma
+de pequeña,)"
 0xff484,49,"そうね、まずはここでじっくり対策
 を考えましょう。",,"Es verdad, pensemos
 bien un plan aquí
@@ -13049,7 +13049,7 @@ el globo pareció
 recuperar la cordura por
 un instante..."
 0xff7cc,53,"ガスって…ヘリウムガス？
-それってどこかにありますか？",,"Gas... ¿se refiere al
+それってどこかにありますか？",,"Gas... ¿se refiere a
 helio? ¿Hay algo de eso
 por aquí?"
 0xff804,53,"以前…、お化け屋敷の
@@ -13068,17 +13068,18 @@ salimos frente a la
 entrada."
 0xff8ac,53,"ここは潰す予定だ……。
 今さら私にどうしろというんだ？",,"Este lugar se va a
-demoler... ¿Y qué se
-supone que haga yo
+demoler... ¿Qué
+esperas que haga
 ahora?"
 0xff8e4,53,"ドリームパークが閉鎖されて、
 何年も経つと言うのに…。",,"Aunque ya pasaron
 varios años desde que
 cerró Dream Park..."
 0xff91c,53,"ここは潰す予定だ……。
-今さら私にどうしろというんだ？",,"¿Van a demoler este
-lugar...? ¿Qué quieres
-que haga yo ahora?"
+今さら私にどうしろというんだ？",,"Este lugar se va a
+demoler... ¿Qué
+esperas que haga
+ahora?"
 0xff954,55,"そこまでビビらなくても。
 よっぽどコワイ夢でも見てたの？",,"No hace falta que te
 asustes tanto. ¿Tuviste
@@ -13128,10 +13129,10 @@ personal."
 parque teñido de
 sangre)"
 0xffb88,57,"オーナーが大好きだった、
-大掛かりなサプライズで見せるの。",,"Se lo mostramos con
-una gran sorpresa,
-como las que le
-encantaban al dueño."
+大掛かりなサプライズで見せるの。",,"se lo mostramos con
+una gran sorpresa, de
+las que le encantaban
+al dueño."
 0xffbc4,57,"幽霊役の人がいて怖かったって
 言われたことがあったらしい。",,"dijo que le dio miedo
 porque había alguien
