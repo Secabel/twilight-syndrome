@@ -98,7 +98,7 @@ no previous English or Spanish translation.
    | `Twilight.Syndrome.ESP.v1.5.3.bps` | Spanish | 116,326,600 bytes | `950DFA4E` | `29d15da9b8a9e14e863651b192de9c4d1e7f7420` |
    | `Twilight.Syndrome.ENG.v1.5.3.bps` | English | 116,267,720 bytes | `C1FF834F` | `a4a8a72b3c034de05d2a5aefda523f36fc0b18a2` |
 
-Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
+Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS (TWiLight Menu++).
 
 **Updating from an earlier version:** your in-game save (`.sav`) keeps working,
 but do **not** load emulator savestates made with an older ROM: a savestate
