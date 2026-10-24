@@ -201,7 +201,7 @@ def redraw_cell(ncgr, ncer, idx, text, tipo):
         size = 32 if falta > 16 else (16 if falta > 8 else 8)
         shape, sz = OBJ_16H[size]
         t0 = ncgr.add_tiles(size // 8 * 2)
-        pal = text_objs[0][2] & 0xF000
+        pal = text_objs[0][2] & 0xFC00   # paleta + prioridad de la celda
         o = [(shape << 14) | 0xF8, (sz << 14) | (x & 0x1FF), pal | ((t0 >> tbs) & 0x3FF)]
         extra.append(o); gs.append(geom(o, tbs))
         assert gs[-1]['w'] == size and gs[-1]['tile_idx'] == t0 and gs[-1]['x'] == x, gs[-1]

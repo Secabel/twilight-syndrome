@@ -118,11 +118,13 @@ matter what."
 ですよ。",,"Yeah, yeah, it's my
 fault, I get it."
 0xd3920,35,"中央のコインを触り続けて
-ください。",,"Please keep touching the
-center coin."
+ください。",,"Please keep
+touching the center
+coin."
 0xd3944,35,"中央のコインを触り続けて
-ください。",,"Please keep touching the
-center coin."
+ください。",,"Please keep
+touching the center
+coin."
 0xd3968,35,"あたしの結婚相手は、日本人
 ですか？",,"Is my future husband
 Japanese?"
@@ -138,16 +140,15 @@ you."
 動いたんだよ。",,"at that moment, the
 coin moved a little."
 0xd3a00,39,"携帯電話のメール画面は、
-下画面もしくは",,"The phone's email
-screen is on the
-bottom, or"
+下画面もしくは",,"On the email
+screen, scroll with
+the bottom screen"
 0xd3a28,41,"あたしも昨日もらった時、
 笑ったんだけど。",,"I laughed too when I got
 it yesterday."
 0xd3a54,41,"十字ボタンの上下で、
-スクロールできます。",,"You can scroll with
-up and down on the
-pad."
+スクロールできます。",,"or ""up"" and ""down""
+on the pad."
 0xd3a80,41,"ホントかな…。
 …ありがとうございます…。",,"I wonder if it's true...
 ...thank you very
@@ -292,8 +293,8 @@ before..."
 0xd421c,18,そ、ならいいけど。,,"Ah, well, that's fine
 then."
 0xd4230,18,中に入ってみよう。,,Let's go in and see.
-0xd4244,18,（悩んでるのに…）,,"(And here I am
-worried...)"
+0xd4244,18,（悩んでるのに…）,,"(And here I am,
+agonizing over it...)"
 0xd4258,20,じゃあ、もう１回…。,,"Alright, one more
 time..."
 0xd4270,20,…キツネを抱いてる。,,"...She's holding a fox
@@ -451,11 +452,11 @@ somewhere else."
 いますか？",,"Where are Kana and
 Megumi...?"
 0xd4af0,35,"中央のコインを触り続けて
-ください。",,"Please keep touching the
-center coin."
+ください。",,"Please keep touching
+the center coin."
 0xd4b14,35,"中央のコインを触り続けて
-ください。",,"Please keep touching the
-center coin."
+ください。",,"Please keep touching
+the center coin."
 0xd4b38,35,"うーん、たしか…９ばっかり
 ズラリ。",,"Mmm, if I remember
 right, it was just a row
@@ -464,8 +465,8 @@ of nines."
 メール。",,"This...is an email I got
 before."
 0xd4b80,35,"中央のコインを触り続けて
-ください。",,"Please keep touching the
-center coin."
+ください。",,"Please keep touching
+the center coin."
 0xd4ba4,35,"とりあえず救急箱の中を見て
 みない？",,"For now, why don't we
 look inside the first aid
@@ -870,7 +871,7 @@ either..."
 0xd5f74,14,用意がいいね。,,You're so prepared.
 0xd5f84,14,あっ、そうか。,,"Ah, I see."
 0xd5f94,16,どうする、カナ？,,"What do we do, Kana?"
-0xd5fa8,16,ど、どうしよう。,,W-what do we do.
+0xd5fa8,16,ど、どうしよう。,,W-what do I do.
 0xd5fbc,16,いいんじゃない？,,isn't that fine?
 0xd5fd0,16,鏡があるのは…。,,"The places with mirrors
 are..."
@@ -889,7 +890,7 @@ Hanako-san"
 0xd6098,16,なにしてんだろ？,,"What could she be
 doing?"
 0xd60ac,16,そうだ！　電気！,,That's right! The light!
-0xd60c0,16,どうしよう……。,,What do we do......
+0xd60c0,16,どうしよう……。,,What do I do......
 0xd60d4,16,鍵がかかってる。,,It's locked.
 0xd60e8,16,アリサがやりなよ,,"You do it, Arisa"
 0xd60fc,16,鍵がかかってる。,,It's locked.
@@ -922,11 +923,11 @@ building..."
 Hanako-san after all."
 0xd628c,18,宿直の当番表……？,,"The night-duty
 schedule......?"
-0xd62a0,18,地図なんかあるの？,,Is there a map?
+0xd62a0,18,地図なんかあるの？,,You have a map?
 0xd62b4,18,そんなことないよ。,,That's not true.
 0xd62c8,18,んじゃ、あたしが。,,"Alright, I'll do it."
 0xd62dc,18,いいよ、やってみよ,,"Okay, let's try it"
-0xd62f0,18,退散してもらうの。,,make it leave this place.
+0xd62f0,18,退散してもらうの。,,to make it leave.
 0xd6304,18,それ、なんだっけ？,,"That, what was it?"
 0xd6318,18,いいよ、あたしが。,,"Alright, I'll do it."
 0xd632c,18,…ちょっと待って。,,...Wait a moment.
@@ -1006,8 +1007,8 @@ stall"
 email......"
 0xd67c0,22,マタサケオンナでしょ。,,"That's the split-crotch
 woman, right?"
-0xd67d8,22,…なんか違くない…？？,,"...Isn't that kinda
-off...??"
+0xd67d8,22,…なんか違くない…？？,,"...That's not quite
+it......"
 0xd67f0,22,あたしに言われても…。,,"Even if you tell me
 that..."
 0xd6808,22,…なに…？　なんなの？,,"...What...? What is
@@ -1143,7 +1144,7 @@ run anymore..."
 chemicals..."
 0xd6ef0,28,ウワサがあった気がする……。,,"I feel like there was a
 rumor......"
-0xd6f10,28,どうしよう…このままじゃ…。,,"What do we do...like
+0xd6f10,28,どうしよう…このままじゃ…。,,"What do I do...like
 this..."
 0xd6f30,28,昔、花子さん、流行ったよね。,,"The Hanako-san thing
 used to be popular."
@@ -1203,8 +1204,9 @@ about it...a friend said
 she saw it..."
 0xd7274,32,やってみるしかないんじゃないの？,,"There's nothing left to
 do but try it, right?"
-0xd7298,32,まさか…これもコックリさんの！？,,"No way...is this from
-Kokkuri-san too!?"
+0xd7298,32,まさか…これもコックリさんの！？,,"No way... is this
+Kokkuri-san's doing
+too!?"
 0xd72bc,32,そりゃずっと使われていないから。,,"It's just that it hasn't
 been used in a long
 time."
@@ -1352,9 +1354,9 @@ go to the third floor."
 true that if we go
 outside..."
 0xd79d4,39,"メグミの声で、心臓が止まるかと
-思った。",,"With Megumi's voice, I
-thought my heart was
-going to stop."
+思った。",,"Megumi's scream
+nearly made my
+heart stop."
 0xd79fc,39,"あ、ケータイ。柱が１本だけ
 立ってるよ！",,"Ah, my phone. There's
 only one signal bar!"
@@ -1521,8 +1523,9 @@ it after we go to the
 music room."
 0xd81a0,49,"コックリさんはキツネの霊だから
 苦手な犬を使って、",,"Since Kokkuri-san is a
-fox spirit, using a dog,
-which it fears,"
+fox spirit, we use the
+dog, which it can't
+stand,"
 0xd81d4,51,"コックリさんって、たしか狐の霊を
 呼び出すんでしょ。",,"Kokkuri-san, I think,
 summons a fox spirit."
@@ -1820,7 +1823,7 @@ direction."
 0xd91a4,10,地図……。,,The map......
 0xd91b0,10,やめておく,,Better not
 0xd91bc,10,あ、いや。,,"Ah, no."
-0xd91c8,10,…ないよ。,,...There isn't.
+0xd91c8,10,…ないよ。,,...I don't have any.
 0xd91d4,10,まだ不安？,,Still nervous?
 0xd91e0,10,そうなの？,,Really?
 0xd91ec,10,ダメだ…。,,It's no good...
@@ -1854,7 +1857,7 @@ bomb."
 0xd9348,10,…ごめん。,,...Sorry.
 0xd9354,10,やろうよ。,,Let's do it.
 0xd9360,10,（カナ…）,,(Kana...)
-0xd936c,10,…ないよ。,,...There isn't.
+0xd936c,10,…ないよ。,,...I don't have any.
 0xd9378,10,そんな…。,,No way...
 0xd9384,10,せっかく、,,"After all that trouble,"
 0xd9390,10,やったね！,,We did it!
@@ -2097,8 +2100,7 @@ purple..."
 0xda0c8,14,そうこなきゃ。,,Now you're talking.
 0xda0d8,14,そうなんだ…。,,I see...
 0xda0e8,14,…コイン…だ。,,...It's the coin.
-0xda0f8,14,…失礼なヤツ…,,"...What a rude
-person..."
+0xda0f8,14,…失礼なヤツ…,,...How rude...
 0xda108,14,じゃ、本物…？,,"So, it's real...?"
 0xda118,14,えっ、なにを？,,"Huh, what thing?"
 0xda128,14,じゃ、本物…？,,"So, it's real...?"
@@ -2246,8 +2248,7 @@ feeling..."
 0xda9e8,18,かもしれないわね。,,Could be.
 0xda9fc,18,……ダメみたい…。,,"......Looks like it
 doesn't work..."
-0xdaa10,18,１通ずつって事…？,,"you mean one at
-a
+0xdaa10,18,１通ずつって事…？,,"you mean one at a
 time...?"
 0xdaa24,18,…そう、じゃあね。,,"...Alright, see you."
 0xdaa38,18,わかんないって…。,,"I told you, I don't
@@ -2344,9 +2345,7 @@ here."
 0xdb010,20,聞こえなくなった…。,,I stopped hearing it...
 0xdb028,20,これ以上は無理か…。,,"I guess we can't go any
 further..."
-0xdb040,20,発見されたんだって。,,"they say she
-was
-found."
+0xdb040,20,発見されたんだって。,,they say she was found.
 0xdb058,20,また…逃げられた…？,,Again...it got away...?
 0xdb070,20,えっ？メール………？,,"Huh? An
 email........?"
@@ -2369,8 +2368,7 @@ office?"
 0xdb1a8,20,落ち着け…わたし…。,,Calm down...me...
 0xdb1c0,20,彼女がイズミレイカ。,,That's Izumi Reika.
 0xdb1d8,20,それじゃないでしょ。,,"That's not it, is it?"
-0xdb1f0,20,行方が分からないの。,,"her whereabouts
-are
+0xdb1f0,20,行方が分からないの。,,"her whereabouts are
 unknown."
 0xdb208,20,聞こえなくなった…。,,I stopped hearing it...
 0xdb220,20,聞こえなくなった…。,,I stopped hearing it...
@@ -2392,8 +2390,7 @@ legend."
 it worries me"
 0xdb388,20,（強い磁場の乱れ…）,,"(A strong magnetic
 disturbance...)"
-0xdb3a0,20,…まさか……ナナシ？,,"...No
-way......Nanashi?"
+0xdb3a0,20,…まさか……ナナシ？,,...No way...Nanashi?
 0xdb3b8,20,カギが…かかってる。,,It's...locked.
 0xdb3d0,20,やっぱり、やめようよ,,"Let's just drop it, after
 all"
@@ -2428,14 +2425,10 @@ but..."
 0xdb598,20,ね、さっきのカギ…。,,"Hey, that key from
 before..."
 0xdb5b0,20,…しょうがないな…。,,There's no other way...
-0xdb5c8,20,誰かが言ってたっけ。,,"someone mentioned it,
-I
+0xdb5c8,20,誰かが言ってたっけ。,,"someone mentioned it, I
 think."
-0xdb5e0,20,発見されたんだって。,,"they say she
-was
-found."
-0xdb5f8,20,…まさか……ナナシ？,,"...No
-way......Nanashi?"
+0xdb5e0,20,発見されたんだって。,,they say she was found.
+0xdb5f8,20,…まさか……ナナシ？,,...No way...Nanashi?
 0xdb610,20,薬とかが入ってる…。,,"There's medicine and
 stuff like that..."
 0xdb628,20,それはカンベンして。,,"Please, not that."
@@ -2468,8 +2461,7 @@ something like that..."
 dangerous?"
 0xdb7d8,22,ね、それ割れないかな。,,"Hey, can't we break
 that?"
-0xdb7f0,22,選ばれた人らしいって。,,"they say it's
-someone
+0xdb7f0,22,選ばれた人らしいって。,,"they say it's someone
 chosen."
 0xdb808,22,たぶん…そうだと思う。,,"I think so, maybe."
 0xdb820,22,カナはいそうにないね。,,"Kana doesn't seem to be
@@ -2497,8 +2489,7 @@ that's strange?"
 0xdb940,22,あんた、転校生でしょ？,,"You're the new girl,
 right?"
 0xdb958,22,リコも手伝いなさいよ。,,"Riko, you help too."
-0xdb970,22,この屋上に呼んだのか。,,"so it called us to
-this
+0xdb970,22,この屋上に呼んだのか。,,"so it called us to this
 rooftop."
 0xdb988,22,あ、信じてないでしょ。,,"Ah, you don't believe
 me, do you?"
@@ -2586,8 +2577,7 @@ up, seriously..."
 little more..."
 0xdbdcc,24,…ミズキは怖くないの…？,,"...Mizuki, aren't you
 scared...?"
-0xdbde8,24,気が向いたら使ってみて。,,"use it whenever you
-feel
+0xdbde8,24,気が向いたら使ってみて。,,"use it whenever you feel
 like it."
 0xdbe04,24,いまどき神隠しなんて…。,,"A kamikakushi in this day
 and age..."
@@ -2609,8 +2599,7 @@ to do with it."
 power increases..."
 0xdbf00,24,何に使われてたんだろう？,,"What could this have
 been used for?"
-0xdbf1c,24,架空のアドレスに送るの。,,"it's sent to a
-fake
+0xdbf1c,24,架空のアドレスに送るの。,,"it's sent to a fake
 address."
 0xdbf38,24,広げるような気がして…。,,chain even further...
 0xdbf54,24,すぐ削除すればいいのよ。,,"You just have to delete it
@@ -2657,8 +2646,7 @@ wall."
 introducing yourself?"
 0xdc1a0,24,気のせいでしょ…急ごっ。,,"It's probably your
 imagination, hurry up."
-0xdc1bc,24,その直後に電話が切れた。,,"right after that, the
-call
+0xdc1bc,24,その直後に電話が切れた。,,"right after that, the call
 cut off."
 0xdc1d8,24,それは鏡じゃないでしょ。,,"That's not a mirror, is
 it?"
@@ -2749,10 +2737,8 @@ fire extinguisher..."
 0xdc6e0,26,…わたしのクラスで、２人、,,"...In my class, two
 people,"
 0xdc6fc,26,あたしたち…帰ってきたの？,,Did we... make it back?
-0xdc718,26,ウワサは昔からあったから。,,"the rumor's
-been
-around for a
-while."
+0xdc718,26,ウワサは昔からあったから。,,"the rumor's been
+around for a while."
 0xdc734,26,じゃあ…ウワサはホント…？,,"So... the rumor is
 true...?"
 0xdc750,26,ね、やっぱり、やめようよ。,,"Hey, let's not do it after
@@ -3128,8 +3114,7 @@ them know..."
 too."
 0xddca0,32,（事件は解決したかに見えました）,,"(It seemed like the case
 had been resolved)"
-0xddcc4,32,いろいろ怖いウワサがあるけど…。,,"there are various
-scary
+0xddcc4,32,いろいろ怖いウワサがあるけど…。,,"there are various scary
 rumors, but..."
 0xddce8,32,入院したアリサが何か話したかも。,,"Maybe Arisa, who's in
 the hospital, said
@@ -3341,10 +3326,8 @@ originated from."
 メーワクなだけ。",,"Being chosen by Nanashi
 is just a hassle."
 0xde84c,35,"コックリさんしたこと
-あるんだから。",,"because I've
-already
-done the
-Kokkuri-san
+あるんだから。",,"because I've already
+done the Kokkuri-san
 thing."
 0xde870,35,"今窓を割ったら、外の霊に
 襲われる。",,"If we break the window,
@@ -3895,10 +3878,8 @@ same thing."
 watching us from a
 distance?"
 0xe00d4,41,"神隠しにあったってウワサだし…
-やめとく。",,"they say a
-kamikakushi
-happened
-to
+やめとく。",,"they say a kamikakushi
+happened to
 them...better not."
 0xe0100,41,"大丈夫だって。
 あたし、昔、小学校の屋上で",,"Really, don't worry.
@@ -4091,8 +4072,7 @@ meet you."
 coming from the
 basement, was it?"
 0xe09f0,43,"あたしたちに探させようと
-してるんじゃない？",,"isn't it trying to get
-us
+してるんじゃない？",,"isn't it trying to get us
 to look for it?"
 0xe0a1c,43,"げほっ…マスクでも持ってくれば
 よかった…。",,"*cough cough*...I
@@ -4271,12 +4251,12 @@ a trash address for that."
 blackboard has music
 staffs, it fits..."
 0xe1254,45,"不安なら『チェーンメールの墓場』
-を使ったら？",,"If it worries you, use the
-""chain email
+を使ったら？",,"If it worries you, use
+the ""chain email
 graveyard."""
 0xe1284,45,"じゃあ…先生…、もしも…悪い
-チェーンメールが",,"So...teacher...if a bad
-chain email"
+チェーンメールが",,"So...teacher...if a
+bad chain email"
 0xe12b4,45,"おかしいなあ、背後霊でも撮れる
 と思ったのに。",,"That's strange, I
 thought a spirit would
@@ -4342,8 +4322,8 @@ Restless spirits"
 Reika mentioned, when
 spirits become active,"
 0xe15b4,45,"じゃあ…先生…、もしも…悪い
-チェーンメールが",,"So...teacher...if a bad
-chain email"
+チェーンメールが",,"So...teacher...if a
+bad chain email"
 0xe15e4,45,"そうなんだけど…すごくイヤな
 予感がするの…。",,"That's true, but...I
 have a really bad
@@ -4561,8 +4541,8 @@ sing Kagome Kagome,"
 0xe2008,49,"だから歌詞の『うしろの正面
 だあれ』には背後の霊と",,"That's why the lyric
 ""who's behind you?""
-also has the meaning
-of facing"
+also has the meaning of
+facing"
 0xe203c,49,"さっきのカナの声…おかしいよ…
 あれは霊の声だよ。",,"That voice of Kana's
 from earlier...it was
@@ -4573,12 +4553,9 @@ spirit's voice."
 Takimoto Arisa, from
 class 1..."
 0xe20a4,49,"うちのクラスのカナとメグミと
-一緒にいたらしいの。",,"they say she was
-with
-Kana and
-Megumi, from
-our
-class."
+一緒にいたらしいの。",,"they say she was with
+Kana and Megumi, from
+our class."
 0xe20d8,49,"（霧が晴れると、屋上にはカナが
 　倒れていました）",,"(When the fog cleared,
 Kana was found
@@ -4850,8 +4827,8 @@ then...)"
 0xe2e0c,51,"視線の気配が現れては消えてるの、
 …あちこちから…。",,"I feel gazes appearing
 and
-disappearing...from
-all directions..."
+disappearing...from all
+directions..."
 0xe2e40,51,"声は身近に聞こえるけど、別の空間
 をさまよっている。",,"The voice sounds close,
 but it's wandering in
@@ -4907,8 +4884,8 @@ place."
 0xe30e4,51,"要するに…新校舎の屋上は、
 旧校舎の位置からは北東、",,"So that means the new
 building's rooftop is to
-the northeast of the
-old one,"
+the northeast of the old
+one,"
 0xe3118,51,"さっき拾ったカギで開く、ほかの
 教室を開けてみない？",,"Shall we try opening
 another classroom with
@@ -5218,20 +5195,17 @@ class 1, was found
 collapsed in the nearby
 park,"
 0xe4154,57,"コックリさんをすると、絶対に
-はずれない…っていうウワサが",,"they say if you
-do
-Kokkuri-san, it
-never
+はずれない…っていうウワサが",,"they say if you do
+Kokkuri-san, it never
 fails..."
 0xe4190,57,"（転校生だったわたしに、最初に
 　仲良くしてくれたっけ…）",,"(She was the first one to
 be kind to me when I
 transferred here...)"
 0xe41cc,57,"（カナもメグミもアリサと同じで、
-　行方不明の時の記憶が）",,"(Kana and Megumi,
-just like Arisa, had lost
-all memory of when
-they"
+　行方不明の時の記憶が）",,"(Kana and Megumi, just
+like Arisa, had lost all
+memory of when they"
 0xe4208,57,"…でも…神隠しにあったってことは
 …うまくいかなかった…。",,"But...if a kamikakushi
 happened to them...it
@@ -5463,18 +5437,18 @@ anyone."
 Kokkuri-san. It was in
 the chain email..."
 0xe4e9c,61,"リコが言ってたみたいに、もし地下
-に大きな空洞なんかがあると、",,"Like Riko said, if there's
-a big hollow space in the
-basement,"
+に大きな空洞なんかがあると、",,"Like Riko said, if
+there's a big hollow
+space in the basement,"
 0xe4edc,61,"（…今…鋭い視線を感じた…。
 　誰かが…後ろから…わたしを…）",,"(Just now I felt a
 piercing gaze...
 someone... behind...
 me...)"
 0xe4f1c,61,"リコが言ってたみたいに、もし地下
-に大きな空洞なんかがあると、",,"Like Riko said, if there's
-a big hollow space in the
-basement,"
+に大きな空洞なんかがあると、",,"Like Riko said, if
+there's a big hollow
+space in the basement,"
 0xe4f5c,61,"成仏されないキツネの霊が、邪悪な
 獣霊＝コックリさんと化して、",,"The restless fox spirit
 turns into an evil beast
@@ -5491,9 +5465,9 @@ Nanashi's email and
 came up to the rooftop
 without thinking,"
 0xe501c,61,"リコが言ってたみたいに、もし地下
-に大きな空洞なんかがあると、",,"Like Riko said, if there's
-a big hollow space in the
-basement,"
+に大きな空洞なんかがあると、",,"Like Riko said, if
+there's a big hollow
+space in the basement,"
 0xe505c,61,"カナとメグミも、旧校舎でコックリ
 さんをして神隠しにあったって",,"They say Kana and
 Megumi also did
@@ -5586,9 +5560,9 @@ collapsed in the nearby
 park this morning,"
 0xe54dc,63,"やり場に困ったチェーンメールを
 そのホームページに書かれている、",,"If you don't know what
-to do with a chain email,
-write it to the address on
-that page,"
+to do with a chain
+email, write it to the
+address on that page,"
 0xe551c,63,"そうだ、前にナナシからもらった
 チェンメに、こんなのがあったの。",,"That's right, a chain
 email Nanashi sent me
@@ -6084,8 +6058,8 @@ graveyard, though."
 0xe9d00,55,"壁一面に貼ることで、霊の力を
 吸収し、弱めることができ、",,"By covering the whole
 wall with it, it absorbs
-and weakens the spirits'
-power,"
+and weakens the
+spirits' power,"
 0xe9d38,55,"コックリさんみたいに、何か教えて
 くれるんじゃないんだ。",,"It's not like
 Kokkuri-san, where it
@@ -7269,10 +7243,8 @@ is going to happen."
 weirdo, let's just ignore
 him."
 0xedf30,37,"後ろの人ににらまれたりするん
-だよね。",,"sometimes the
-person
-behind you
-glares at
+だよね。",,"sometimes the person
+behind you glares at
 you."
 0xedf58,37,"昔も色々な不思議なことが
 起こったよ。",,"A lot of strange things
@@ -7844,8 +7816,8 @@ into you. You two are
 going to help too, right?"
 0xef97c,53,"中でも開通目前、東桐塚駅と
 三ツ谷公園駅の間で起きた、",,"Among them, right
-before opening, the
-one between
+before opening, the one
+between
 Higashi-Kirizuka and
 Mitsuya Koen stations,"
 0xef9b4,53,"わたしは電車通学じゃないから、
@@ -7954,9 +7926,8 @@ something very
 important to him..."
 0xefee8,61,"その区画にあった旧三ツ谷公園駅も
 封鎖し、新しい三ツ谷公園駅を",,"They also closed off the
-old Mitsuya Koen
-Station in that area,
-and"
+old Mitsuya Koen Station
+in that area, and"
 0xeff28,63,"ああ。そもそもこの沿線が開通した
 のは、戦前の物資の足りなかった",,"Ah. To begin with, this
 line opened before the
@@ -8242,10 +8213,8 @@ there."
 0xf102c,16,９月頃ですけど。,,"It was around
 September."
 0xf1040,16,縫い合わせる…。,,sew it up...
-0xf1054,16,人影を見たとか、,,"that they saw
-a
-silhouette, or
-something
+0xf1054,16,人影を見たとか、,,"that they saw a
+silhouette, or something
 like that,"
 0xf1068,16,急にどうしたの？,,"What's gotten into you
 all of a sudden?"
@@ -8379,8 +8348,7 @@ phone..."
 bath...)"
 0xf1824,18,心の中で３回言う。,,"Say it 3 times in your
 mind."
-0xf1838,18,すぐに浴室を出る！,,"get out of the
-bath
+0xf1838,18,すぐに浴室を出る！,,"get out of the bath
 immediately!"
 0xf184c,18,携帯にメールが…。,,"A message came to my
 phone..."
@@ -8668,8 +8636,7 @@ hour?"
 you?"
 0xf2968,22,……うん……思う…よ。,,"......Yeah...I
 think...so."
-0xf2980,22,時間がかかりそうだな。,,"it looks like it's going
-to
+0xf2980,22,時間がかかりそうだな。,,"it looks like it's going to
 take a while."
 0xf2998,22,あさって、帰ってくる。,,"She'll be back the day
 after tomorrow."
@@ -8697,8 +8664,7 @@ animal..."
 0xf2ae8,22,ストーカー殺人について,,About the stalker murder
 0xf2b00,22,ここも…少し反応が…。,,"Here too... there's a
 bit of a reaction..."
-0xf2b18,22,びくっとしちゃうんだ。,,"it startles me
-without
+0xf2b18,22,びくっとしちゃうんだ。,,"it startles me without
 meaning to."
 0xf2b30,22,（何か…引っかかる…）,,"(Something... doesn't
 add up...)"
@@ -8775,8 +8741,7 @@ murdered..."
 0xf2f6c,24,（…わたしの…勝ち……）,,(...I...win......)
 0xf2f88,24,『見いつけた』と３回言う,,Say 'Found you' 3 times
 0xf2fa4,24,（…わたしの…勝ち……）,,(...I...win......)
-0xf2fc0,24,幽霊退治に行ってやるよ。,,"we'll go take out
-the
+0xf2fc0,24,幽霊退治に行ってやるよ。,,"we'll go take out the
 ghost."
 0xf2fdc,24,（なに…なんの音なの？）,,"(Wh-what is that
 sound?)"
@@ -8907,8 +8872,7 @@ fine......"
 0xf3714,26,えっ、なにをしかられるの？,,"Huh, why will he get
 scolded?"
 0xf3730,26,（中には何も入っていない）,,(There's nothing inside)
-0xf374c,26,別に殺されちゃいないって。,,"it's not like she
-was
+0xf374c,26,別に殺されちゃいないって。,,"it's not like she was
 murdered."
 0xf3768,26,だから…単なる老朽化で…。,,"So... it's just due to
 age and wear..."
@@ -8966,10 +8930,8 @@ seeker...)"
 seeker...)"
 0xf3a60,28,（…最初は…あなたがオニ…）,,"(...First... you'll be
 the seeker...)"
-0xf3a80,28,かくれんぼ気分も盛り上がる！,,"it really gets
-the
-hide-and-seek
-mood
+0xf3a80,28,かくれんぼ気分も盛り上がる！,,"it really gets the
+hide-and-seek mood
 going!"
 0xf3aa0,28,コップの塩水を口に入れて…。,,"Put the salt water from
 the glass in your
@@ -9025,10 +8987,8 @@ trip abroad, right?"
 told me,"
 0xf3da0,28,でも、マサキの話のおかげで、,,"But, thanks to what you
 told me,"
-0xf3dc0,28,地元だけど、聞いた事ないよ。,,"even though I'm
-from
-around here,
-I've never
+0xf3dc0,28,地元だけど、聞いた事ないよ。,,"even though I'm from
+around here, I've never
 heard of it."
 0xf3de0,28,念のため、探知機見てみたら？,,"Just in case, why don't
 you check the detector?"
@@ -9128,12 +9088,9 @@ something might show
 up."
 0xf4340,30,あはは、うちらと同じってこと？,,"Haha, so you're just
 like us?"
-0xf4360,30,ヘンな音や声もそのせいだよね。,,"those weird
-sounds
-and voices are
-because
-of that too,
-right?"
+0xf4360,30,ヘンな音や声もそのせいだよね。,,"those weird sounds and
+voices are because of
+that too, right?"
 0xf4380,30,なんか、ミョーに親しげじゃん。,,"That's weird, they seem
 pretty close."
 0xf43a0,30,ほら、マサキ、言ってやりなよ。,,"Come on, Masaki, tell
@@ -9144,8 +9101,7 @@ happened."
 knife of all things!"
 0xf4400,30,（バスタブにぬいぐるみがある）,,"(There's a stuffed
 animal in the bathtub)"
-0xf4420,30,彼女、入院しちゃったんだって。,,"they say she ended
-up
+0xf4420,30,彼女、入院しちゃったんだって。,,"they say she ended up
 in the hospital."
 0xf4440,30,一度、見てもらった方がいいよ。,,"You should get it
 looked at sometime."
@@ -9284,8 +9240,7 @@ with her..."
 watching me...)"
 0xf4c70,32,（勝手に蛇口が開いてるなんて…）,,"(The faucet turning on
 by itself...)"
-0xf4c94,32,魔よけをすれば大丈夫じゃないの？,,"wouldn't it be fine if
-we
+0xf4c94,32,魔よけをすれば大丈夫じゃないの？,,"wouldn't it be fine if we
 used a protective
 charm?"
 0xf4cb8,32,（聞こえたような気がしました…）,,(I felt like I heard it...)
@@ -9428,8 +9383,7 @@ while ago..."
 しれない、",,"She said Mizuki might
 be feeling down,"
 0xf52c4,35,"こっちの方がずっと反応が
-いいって。",,"this gives a much
-better
+いいって。",,"this gives a much better
 reaction."
 0xf52e8,35,"この前のは、
 燃やしちゃったでしょ。",,"We burned the one from
@@ -9555,10 +9509,8 @@ around."
 クマゾウを沈めないと…。",,"This isn't it. I need to
 sink Kumazou..."
 0xf58ac,39,"３回言って、ぬいぐるみをナイフで
-刺す。",,"say it 3 times and
-stab
-the stuffed
-animal with
+刺す。",,"say it 3 times and stab
+the stuffed animal with
 the knife."
 0xf58d4,39,"（部屋全体が霊の力を弱める
 　効果を…）",,"(The whole room has the
@@ -9569,10 +9521,8 @@ spirit's power...)"
 unless you're completely
 alone."
 0xf5924,39,"まだ協力してもらいたいことも
-あるから。",,"it's just that
-there's
-still something
-I want
+あるから。",,"it's just that there's
+still something I want
 your help with."
 0xf594c,39,"じゃあさ、横にいてくれるだけで
 いいよ。",,"Then, it's enough if you
@@ -9860,10 +9810,8 @@ it..."
 this is a woman's room,
 right?"
 0xf6668,41,"いまさら誰がなんのために置いて
-いったの？",,"who left it there and
-for
-what, at this
-point?"
+いったの？",,"who left it there and for
+what, at this point?"
 0xf6694,41,"方位磁針、あまり役に立たなかった
 ようね。",,"It seems the compass
 wasn't much use."
@@ -9986,8 +9934,7 @@ was hanging around in
 front of the entrance..."
 0xf6c6c,43,"あそこ幽霊マンションで有名
 だったんだから。",,"that building was
-famous
-for being
+famous for being
 haunted."
 0xf6c98,43,"若い女の住民が、ストーカーに
 殺される事件が",,"A case where a young
@@ -10011,27 +9958,18 @@ About the murder."
 the building's old, after
 all."
 0xf6da0,43,"“心霊現象”の正体も分かったし、
-安心した。",,"the truth behind
-the
-paranormal
-phenomenon
-came
-out, and I felt
-at
+安心した。",,"the truth behind the
+paranormal phenomenon
+came out, and I felt at
 ease."
 0xf6dcc,43,"“心霊現象”の正体も分かったし、
-安心した。",,"the truth behind
-the
-paranormal
-phenomenon
-came
-out, and I felt
-at
+安心した。",,"the truth behind the
+paranormal phenomenon
+came out, and I felt at
 ease."
 0xf6df8,43,"ったく、ヘンな言いがかりをつけて
 くるよな。",,"Geez, they come up
-with weird
-accusations."
+with weird accusations."
 0xf6e24,43,"（建物のきしみとは違う…。
 　なんの音…？）",,"(It's not the building
 creaking... what is that
@@ -10160,10 +10098,8 @@ something strange,"
 the day Riko said
 something strange,"
 0xf7454,45,"キッチンのガスの火が急に大きく
-なったりして、",,"the kitchen's gas
-flame
-suddenly got
-bigger,"
+なったりして、",,"the kitchen's gas flame
+suddenly got bigger,"
 0xf7484,45,"さっきもまたヘンなチェーンメール
 が来てたよ。",,"A little while ago another
 weird chain email
@@ -10360,12 +10296,9 @@ scratching? ...what
 could be
 scratching...?)"
 0xf7de0,49,"大気の熱で筋肉が収縮して
-ムクムク起き上がるって。",,"they say the
-ambient
-heat contracts
-the
-muscles and makes
-it
+ムクムク起き上がるって。",,"they say the ambient
+heat contracts the
+muscles and makes it
 slowly rise up."
 0xf7e14,49,"（必死にはい出ようとした…、
 　その音なのかも…）",,"(Maybe it's the sound of
@@ -10397,10 +10330,8 @@ the building, and the
 spirit's identity,)"
 0xf7f4c,49,"変な音や声を耳にするように
 なったってウワサだよ。",,"it's a rumor that
-strange
-sounds and
-voices
-started being
+strange sounds and
+voices started being
 heard."
 0xf7f80,49,"幽霊やヘンな音もすべて勘違い
 だったって聞いたよ。",,"I heard that the ghost
@@ -10419,10 +10350,8 @@ properly)"
 ままだったっけ。",,"A call? Ah, I left my
 phone in my room."
 0xf8050,49,"ストーカーのようなトラブルは昔
-あったらしいけど、",,"it seems there
-were
-stalker problems
-in the
+あったらしいけど、",,"it seems there were
+stalker problems in the
 past, but,"
 0xf8084,49,"（電波が悪そうだから、リビングに
 　行って話そう）",,"(Since the signal seems
@@ -10542,12 +10471,9 @@ weird..."
 　のか、今となっては）",,"(What really happened
 in this room, now)"
 0xf86a0,53,"ぬいぐるみ、ナイフ、お米、
-食塩水、赤い糸、ぬい針…。",,"stuffed animal,
-knife,
-rice, salt
-water, red
-thread,
-sewing
+食塩水、赤い糸、ぬい針…。",,"stuffed animal, knife,
+rice, salt water, red
+thread, sewing
 needle..."
 0xf86d8,53,"（２人が遊びに来てくれて、
 　わたしは不安な一夜を、）",,"(The two of them came
@@ -10556,8 +10482,8 @@ able"
 0xf8710,53,"まず、ぬいぐるみの中の詰め物を
 取り出して米を入れて、",,"First, take out the
 stuffing from inside the
-stuffed animal and put in
-rice,"
+stuffed animal and put
+in rice,"
 0xf8748,53,"（部屋で“ひとりかくれんぼ”
 　をしなかったことで、）",,"(For not having done
 hitorikakurenbo in my
@@ -10605,19 +10531,16 @@ but...)"
 0xf8978,53,"じゃあさ、今度何かあったら俺と
 ユウタでマンションに、",,"So, if something
 happens next time,
-Yuuta and I will go to the
-building,"
+Yuuta and I will go to
+the building,"
 0xf89b0,53,"（とにかく…今は“かくれんぼ”を
 　終わらせないと…）",,"(Anyway... now I need
 to finish the
 hide-and-seek...)"
 0xf89e8,53,"別れ話でもつれたけど、結局は
-話し合いで別れたみたい。",,"the breakup
-got
-complicated, but
-in the
-end it seems
-they
+話し合いで別れたみたい。",,"the breakup got
+complicated, but in the
+end it seems they
 worked it out by
 talking."
 0xf8a20,53,"この前もキッチンのガスの火が急に
@@ -10772,12 +10695,9 @@ anything)"
 various rumors, like that
 it's a haunted building."
 0xf9190,55,"あのマンションで一人暮らしを
-してた時、つきあってた男と",,"when she was
-living
-alone in that
-building,
-with the man
-she was
+してた時、つきあってた男と",,"when she was living
+alone in that building,
+with the man she was
 dating,"
 0xf91c8,55,"あ、ごめんね。　自分の部屋、
 なんか電波の入りが悪いの。",,"Ah, sorry. It's just that
@@ -10872,12 +10792,9 @@ with old rumors... think
 about the person who
 actually lives here."
 0xf9658,57,"あのマンション、ずっと前に、
-ちゃんとオハライしているから",,"that building had
-a
-proper exorcism
-done a
-long time ago
-already,
+ちゃんとオハライしているから",,"that building had a
+proper exorcism done a
+long time ago already,
 so"
 0xf9694,57,"だね、ナナシのメールを見た時には
 ちょっと落ち込んだけど。",,"That's true, when I saw
@@ -11026,12 +10943,9 @@ apartment I live in now
 is on the first floor and
 I can't relax."
 0xf9dec,61,"だから幽霊マンションって言われて
-いるのは、見た目が古いだけ。",,"so, being called
-a
-haunted building is
-just
-because it looks
-old."
+いるのは、見た目が古いだけ。",,"so, being called a
+haunted building is just
+because it looks old."
 0xf9e2c,61,"たしかに、昔この部屋に住んでいた
 女の人…つまり倉田裕見子に、",,"It's true that the woman
 who used to live in this
@@ -11075,12 +10989,9 @@ hitorikakurenbo, the
 scream heard from the
 kitchen, and,)"
 0xfa06c,63,"実はマンションって、上の階の方が
-ドロボーに狙われやすいんだよ。",,"actually, in
-apartment
-buildings,
-burglars
-target the
-upper floors
+ドロボーに狙われやすいんだよ。",,"actually, in apartment
+buildings, burglars
+target the upper floors
 more."
 0xfa0ac,63,"（リコは喋っていないというけど、
 　ウワサが広まるのも早かった）",,"(Riko says she didn't
@@ -11553,8 +11464,8 @@ wheel."
 0xfbbe8,26,はじめは誰もが青ざめるね。,,"At first, everyone turns
 pale."
 0xfbc04,26,それで奥までいった証拠に、,,"And as proof that you
-made it all the way to the
-back,"
+made it all the way to
+the back,"
 0xfbc20,26,待って。一度話し合おうよ。,,"Wait. Let's talk it over
 first."
 0xfbc3c,26,うん、やってやろうじゃん。,,"Yeah, let's do it."
@@ -11728,8 +11639,8 @@ up..."
 of a haunted house."
 0xfc630,30,（これからも守られていきます）,,"(It will continue to be
 protected from now on)"
-0xfc650,30,（あの遊園地の中に見たのか、）,,"(inside that
-amusement park?)"
+0xfc650,30,（あの遊園地の中に見たのか、）,,"(inside that amusement
+park?)"
 0xfc670,30,何か言いたいことがあるんだろ？,,"You've got something
 you want to say, don't
 you?"
@@ -12165,8 +12076,8 @@ unreliable."
 You look pale."
 0xfdb74,39,"イヤ。だって、
 こんなところに座ったら、",,"I don't want to. It's
-just that if I sit in a place
-like that,"
+just that if I sit in a
+place like that,"
 0xfdb9c,39,"もしもしリコ？
 お願いがあるんだけど…。",,"Hello, Riko? I need to
 ask you a favor..."
@@ -12357,9 +12268,8 @@ already told you I'm not
 going."
 0xfe498,43,"それに、ドリームパークは
 特に行きたくない。",,"Besides, Dream Park in
-particular is
-somewhere I don't
-want to go."
+particular is somewhere
+I don't want to go."
 0xfe4c4,43,"よくわかんないけど……
 行くなら気をつけて。",,"I don't really get it...
 but if you go, be
@@ -12431,8 +12341,7 @@ these stairs we reach the
 Ferris wheel."
 0xfe808,43,"よくピエロの格好で
 パーク内をまわっていた。",,"he used to go around
-the
-park dressed as a
+the park dressed as a
 clown."
 0xfe834,45,"あの正面のゲート以外は
 完全に封鎖されている。",,"Other than the main
@@ -12525,10 +12434,8 @@ abroad."
 もう少し調べてみる。",,"I'm going to look into
 Dream Park a bit more."
 0xfec84,47,"オーナーの思い出の品って、
-なにかありませんか？",,"isn't there some
-item
-that reminds you
-of the
+なにかありませんか？",,"isn't there some item
+that reminds you of the
 owner?"
 0xfecb4,47,"私も他の子供のように
 親父と遊びたかったんだ…。",,"I also wanted to play
@@ -12540,9 +12447,9 @@ close to Dream Park
 much either."
 0xfed14,47,"遊園地の楽しい雰囲気を
 求めてやってきている…。",,"they come looking for
-the cheerful
-atmosphere of the
-amusement park..."
+the cheerful atmosphere
+of the amusement
+park..."
 0xfed44,47,"こうして仕掛けが分かると、
 なんかマヌケだよね。",,"Now that we get the
 trick, it looks kind of
@@ -12561,8 +12468,8 @@ park..."
 集まっているんだと思う。",,"I think they stayed that
 way and gathered here."
 0xfee04,47,"そう、恐ろしいものを
-より恐ろしくしたいという、",,"Yeah, the desire to make
-what's scary even
+より恐ろしくしたいという、",,"Yeah, the desire to
+make what's scary even
 scarier,"
 0xfee34,47,"たしか防犯のため、電源が
 供給されていない夜間は",,"As I recall, for safety,
@@ -13092,8 +12999,7 @@ spirit.)"
 0x10089c,12,う…ううっ。,,Ngh...ngh.
 0x1008ac,12,ホントかよ。,,For real?
 0x1008bc,12,レイカ……。,,Reika......
-0x1008cc,12,突然首を…。,,"all of a sudden,
-my
+0x1008cc,12,突然首を…。,,"all of a sudden, my
 neck..."
 0x1008dc,12,（ナナシ…）,,(Nanashi...)
 0x1008ec,12,どうして…？,,Why...?
@@ -13138,8 +13044,7 @@ now...)"
 0x100b5c,14,これ、見ろよ。,,Look at this.
 0x100b6c,14,おい、待てよ。,,"Hey, wait."
 0x100b7c,14,…やばいな…。,,...This is bad...
-0x100b8c,14,えっ、遊園地？,,"Huh, the
-amusement
+0x100b8c,14,えっ、遊園地？,,"Huh, the amusement
 park?"
 0x100b9c,14,どういうこと？,,What do you mean?
 0x100bac,14,どうしよう…。,,What do I do...
@@ -13159,8 +13064,8 @@ high school too,"
 0x100c8c,14,…あれ、人間？,,...Is that a person?
 0x100c9c,14,誰もいない…？,,Is nobody here...?
 0x100cac,14,……そんな…。,,......No way...
-0x100cbc,14,トイレはどう？,,"What about
-the bathroom?"
+0x100cbc,14,トイレはどう？,,"What about the
+bathroom?"
 0x100cec,14,…ユウタ……。,,...Yuuta......
 0x100cfc,14,…ううっ……。,,...Ngh......
 0x100d0c,14,リコ！いるの？,,Riko! Are you there?
@@ -13228,8 +13133,7 @@ a sudden."
 0x1010d0,16,８４通目のメール,,Message #84
 0x1010e4,16,冗談でもやめろ。,,"Don't do that, not
 even as a joke."
-0x1010f8,16,気のせいだろ…。,,"You must be
-imagining
+0x1010f8,16,気のせいだろ…。,,"You must be imagining
 things..."
 0x10110c,16,みたいだな……。,,Looks like it......
 0x101120,16,ハヤカワさん…。,,Hayakawa...
@@ -13312,13 +13216,11 @@ nothing, sorry"
 0x1015d0,18,…いないみたいね。,,"...Looks like she's
 not here."
 0x1015e4,18,まだ完全じゃない。,,It's still not complete.
-0x1015f8,18,やっぱりやめておく,,"I'll just drop it after
-all"
+0x1015f8,18,やっぱりやめておく,,I'll just drop it after all
 0x10160c,18,これが９９通目…。,,This is number 99...
 0x101620,18,いったい…何が…。,,"What on earth...is
 going on..."
-0x101634,18,…何かがあるのよ。,,"...There's
-something
+0x101634,18,…何かがあるのよ。,,"...There's something
 there."
 0x101648,18,じゃあ、どこなの？,,"So where is it, then?"
 0x10165c,18,（行くしかない！）,,"(There's no choice but
@@ -13377,8 +13279,7 @@ Riko...)"
 completely dark out."
 0x101908,20,水泳部でもそうなの？,,"Is it the same way in
 the swim club too?"
-0x101920,20,（……この着信番号）,,"(......This
-incoming
+0x101920,20,（……この着信番号）,,"(......This incoming
 number)"
 0x101938,20,（…電話に出ない…）,,"(...She's not picking
 up the phone...)"
@@ -13399,10 +13300,8 @@ again...?)"
 that..."
 0x101a28,20,……俺は祈り続けた。,,"......I kept on
 praying."
-0x101a40,20,みんなウワサしてる。,,"everyone's
-been
-gossiping about
-it."
+0x101a40,20,みんなウワサしてる。,,"everyone's been
+gossiping about it."
 0x101a58,20,やっぱり…こいつ…。,,"I knew it...this
 guy..."
 0x101a70,20,わたし、もう帰るね…,,"I'm heading
@@ -13445,12 +13344,10 @@ some kind of noise...?"
 0x101c50,20,…あたし、キレイ…？,,...Am I pretty...?
 0x101c68,20,他のところを探そう。,,"Let's look somewhere
 else."
-0x101c80,20,ここだな、２年１組。,,"Here it is,
-second-year
+0x101c80,20,ここだな、２年１組。,,"Here it is, second-year
 class 1."
 0x101c98,20,レイカ！いるのか！？,,Reika! Are you there!?
-0x101cb0,20,ここだな、２年１組。,,"Here it is,
-second-year
+0x101cb0,20,ここだな、２年１組。,,"Here it is, second-year
 class 1."
 0x101cc8,20,いい機会なんだけど。,,"It's a good chance,
 but..."
@@ -13614,10 +13511,8 @@ dawn..."
 traffic accident?"
 0x1024ec,24,存在になってしまった…。,,"the same kind of being
 as Nanashi..."
-0x102508,24,百物語は効力を失った…。,,"the hundred
-stories
-lost their
-power..."
+0x102508,24,百物語は効力を失った…。,,"the hundred stories lost
+their power..."
 0x102524,24,ユウタは…そう言ってた。,,"That's...what Yuuta
 said."
 0x102540,24,…妙な…気配があるの…。,,"...There's a strange
@@ -13634,15 +13529,13 @@ phone...)"
 typical of Riko."
 0x1025e8,24,…にらめっこ、しましょ。,,"...Let's play the
 staring contest."
-0x102604,24,ユウタだけプール行くか？,,"is Yuuta the only
-one
+0x102604,24,ユウタだけプール行くか？,,"is Yuuta the only one
 going to the pool?"
 0x102620,24,でもレイカはナナシだって,,"But they say
 Reika is Nanashi"
 0x10263c,24,…う……ん………ユウタ？,,...Mm......Yuuta?
 0x102658,24,でも、なんでプールなの。,,"But, why the pool."
-0x102674,24,（……気味悪い…シミ…）,,"(......A
-creepy...
+0x102674,24,（……気味悪い…シミ…）,,"(......A creepy...
 stain...)"
 0x102690,24,（水に濡れた…足あと？）,,"(Footprints...wet with
 water?)"
@@ -13650,8 +13543,7 @@ water?)"
 voice...!)"
 0x1026c8,24,２−１の教室は２階だな。,,"Class 2-1's classroom
 is on the second floor."
-0x1026e4,24,（これを上れば…屋上…）,,"(If I climb
-this...the
+0x1026e4,24,（これを上れば…屋上…）,,"(If I climb this...the
 rooftop...)"
 0x102700,24,フッ、のんきでいいわね。,,"Heh, must be nice
 being so carefree."
@@ -13671,8 +13563,7 @@ there."
 0x1027fc,24,リコの話になると楽しそう,,"She looks happy
 whenever Riko comes up"
 0x102818,24,（…まさか…人形…！？）,,"(...Don't tell
-me...it's
-a doll...!?)"
+me...it's a doll...!?)"
 0x102834,24,（人形に…魂が宿る……）,,"(The soul...takes up
 residence in the
 doll......)"
@@ -13692,21 +13583,17 @@ there!?"
 0x1028dc,26,（ゴーグルを水に落とす…）,,"(I drop the goggles
 into the water...)"
 0x1028f8,26,（うそ…なんで…口裂け…）,,"(No way...
-why...the
-slit-mouthed
+why...the slit-mouthed
 woman...)"
-0x102914,26,いつも中止になってたんだ。,,"it always ended
-up
+0x102914,26,いつも中止になってたんだ。,,"it always ended up
 getting cancelled."
 0x102930,26,…いいか…よく聞くんだ…。,,"...Listen closely...to
 what I'm about to tell
 you..."
 0x10294c,26,…おまえのせいさ…ミズキ。,,"...It's your
 fault...Mizuki."
-0x102968,26,不動産屋めぐりをした時よ。,,"that was when we
-went
-around checking
-real
+0x102968,26,不動産屋めぐりをした時よ。,,"that was when we went
+around checking real
 estate offices."
 0x102984,26,番号は１００へのカウント。,,"The number is the
 countdown to 100."
@@ -13716,13 +13603,11 @@ number's different..."
 borrowed it?"
 0x1029d8,26,レシピ本……なんじゃない？,,"Isn't it just a recipe
 book......?"
-0x1029f4,26,…そのために…わたしを…。,,"...That's
-why...to
+0x1029f4,26,…そのために…わたしを…。,,"...That's why...to
 me..."
 0x102a10,26,信じられない…わたしは…。,,"I can't believe
 it...I..."
-0x102a2c,26,（なんなの…この気持ち…）,,"(What is
-this...this
+0x102a2c,26,（なんなの…この気持ち…）,,"(What is this...this
 feeling...)"
 0x102a48,26,なんで…地震が起きない…？,,"Why...isn't the
 earthquake
@@ -13740,17 +13625,13 @@ hundred stories
 thing..."
 0x102ad4,26,リコはその犠牲になった…、,,"Riko fell victim to it...,"
 0x102af0,26,…僕は…都市伝説の闇に…。,,"...I...in the darkness
-of
-the urban legend..."
-0x102b0c,26,“都市伝説百物語”の実行。,,"the execution of
-the
-Hundred Urban
-Legend
+of the urban legend..."
+0x102b0c,26,“都市伝説百物語”の実行。,,"the execution of the
+Hundred Urban Legend
 Stories."
 0x102b28,26,えっ、どうしたんだよ急に。,,"Huh, what's with you
 all of a sudden."
-0x102b44,26,ナナシが…見守っている…。,,"Nanashi...is
-watching
+0x102b44,26,ナナシが…見守っている…。,,"Nanashi...is watching
 over us..."
 0x102b60,26,うーん、ユウタはどう思う？,,"Hmm, what do you
 think, Yuuta?"
@@ -13784,8 +13665,7 @@ little off..."
 0x102d04,26,ちょっと…だいじょう…ぶ？,,Are you...o-okay?
 0x102d20,26,（…大きい…なんの音…？）,,"(...Loud...what was
 that sound...?)"
-0x102d3c,26,（…妙に生々しかった……）,,"(...It felt
-strangely
+0x102d3c,26,（…妙に生々しかった……）,,"(...It felt strangely
 real......)"
 0x102d58,26,ね、昨日のチェンメ、見た？,,"Hey, did you see
 yesterday's chain
@@ -13859,8 +13739,7 @@ Reika!!"
 place with water..."
 0x10314c,29,"あ、おい！
 …………あたた…。",,"Ah, hey!
-......Ow,
-ow..."
+......Ow, ow..."
 0x10316c,30,（…ミズキとも友達でいたい…）,,"(...I want to stay
 friends with Mizuki
 too...)"
@@ -13879,9 +13758,8 @@ Pomade!"
 it'll probably curse
 me..."
 0x10322c,30,俺…小学生の時…この交差点で、,,"When I was in
-elementary
-school...at this
-intersection,"
+elementary school...at
+this intersection,"
 0x10324c,30,それってドリームパークのこと？,,"Is that about Dream
 Park?"
 0x10326c,30,（どうしちゃったの…わたし…）,,"(What's happening to
@@ -13891,17 +13769,13 @@ to get close..."
 0x1032ac,30,ああ、おかげでついに実現する。,,"Ah, thanks to that,
 it's finally about to
 come true."
-0x1032cc,30,その時……君と出会ったんだ…。,,"at that
-moment......I
-met
-you..."
+0x1032cc,30,その時……君と出会ったんだ…。,,"at that moment......I
+met you..."
 0x1032ec,30,そんな単純な話じゃないでしょ。,,"It's not that simple a
 story, is it."
 0x10330c,30,俺は、ユウタを信じてるからな。,,I trust Yuuta.
-0x10332c,30,その点はレイカと考えは同じだ。,,"on that point, I
-think
-the same as
-Reika."
+0x10332c,30,その点はレイカと考えは同じだ。,,"on that point, I think
+the same as Reika."
 0x10334c,30,（…今なら、まだ間に合う…？）,,"(...If it's now, I can
 still make it in
 time...?)"
@@ -13910,11 +13784,9 @@ messages"
 0x10338c,30,（あれは…正夢…だったの…？）,,"(That...was it a
 prophetic dream...?)"
 0x1033ac,30,（…ナナシ…が…見守ってる…）,,"(...Nanashi...is
-watching
-over us...)"
+watching over us...)"
 0x1033cc,30,ね、ねえ、今はリコのことが…。,,"Hey, hey, right now
-what
-matters is Riko..."
+what matters is Riko..."
 0x1033ec,30,じゃ、俺たちは教室に行くから、,,"Well, we're heading to
 the classroom,"
 0x10340c,30,プールでおまじないをしたら…。,,"If we do the charm at
@@ -13952,12 +13824,10 @@ check...)"
 second floor first."
 0x1035ec,30,じゃ、あのコがナナシってこと？,,"So, that girl is
 Nanashi?"
-0x10360c,30,メールのこと…生徒から聞いた。,,"About the
-messages...I heard it
-from a student."
-0x10362c,30,…わたし、最近…不安なんです。,,"...I've
-been...feeling uneasy
-lately."
+0x10360c,30,メールのこと…生徒から聞いた。,,"About the messages...I
+heard it from a student."
+0x10362c,30,…わたし、最近…不安なんです。,,"...I've been...feeling
+uneasy lately."
 0x10364c,30,自分がナナシじゃないかって…。,,"That maybe I myself am
 Nanashi..."
 0x10366c,30,（なんか…様子が…おかしい…）,,"(Something...
@@ -14014,18 +13884,14 @@ doesn't seem to be
 anything special)"
 0x10394c,32,なんかね、不穏な空気を感じるの。,,"I feel like there's an
 unsettling atmosphere."
-0x103970,32,“にらめっこ”のやり方がある…。,,"there's a way to
-do
-the staring
-contest..."
+0x103970,32,“にらめっこ”のやり方がある…。,,"there's a way to do the
+staring contest..."
 0x103994,32,おそらく…ナナシの最終目的は…、,,"Probably...Nanashi's
 ultimate goal is...,"
 0x1039b8,32,（あいつのこと、好きだったの？）,,(Did I like him?)
-0x1039dc,32,こんなおいしい情報を教えるかい？,,"you think I'd
-hand
-over juicy info
-like that
-just like that?"
+0x1039dc,32,こんなおいしい情報を教えるかい？,,"you think I'd hand over
+juicy info like that just
+like that?"
 0x103a00,32,…その情報だって本当かどうか…。,,"...I don't even know
 if that information is
 true..."
@@ -14033,10 +13899,9 @@ true..."
 message...the
 hundred stories will be
 complete..."
-0x103a48,32,（ただのウワサ…当たるわけない）,,"(It's just a
-rumor...
-there's no
-way it's true)"
+0x103a48,32,（ただのウワサ…当たるわけない）,,"(It's just a rumor...
+there's no way it's
+true)"
 0x103a6c,32,（天国をイメージするものって…）,,"(Something that
 represents heaven...)"
 0x103a90,32,（ポスターが…はがれかかってる）,,"(The poster...is
@@ -14052,8 +13917,7 @@ feels...off...)"
 0x103b44,32,プッ…あははは、バカじゃないの。,,"Pfft...hahaha, you're
 such an idiot."
 0x103b68,32,落ち着いて…ちゃんと調べないと。,,"Calm down...we need
-to
-properly investigate."
+to properly investigate."
 0x103b8c,32,よし、片っ端から調べてみようぜ。,,"Alright, let's check
 everything, one by
 one."
@@ -14125,11 +13989,8 @@ intersection..."
 to get Mizuki
 suspected,"
 0x103ec8,35,"俺がナナシってことでも
-いいけどな。",,"it'd be fine even
-if
-they
-said I was
-Nanashi."
+いいけどな。",,"it'd be fine even if they
+said I was Nanashi."
 0x103eec,35,"親父の会社、通信メーカーだから
 ね。",,"That's because my old
 man's company is a
@@ -14187,8 +14048,7 @@ happen."
 ついたのかな…。",,"Maybe I got it...when
 Reika attacked me..."
 0x10410c,37,"“呪いの交差点”って
-言われてるんだ。",,"they call it the
-cursed
+言われてるんだ。",,"they call it the cursed
 intersection."
 0x104134,37,"…わたしより…リコの方が
 お似合い…。",,"...Riko suits
@@ -14206,12 +14066,9 @@ Park?"
 intersection with the
 big tree?"
 0x1041d4,37,"救急車に運ばれている
-最中だったのよ。",,"you were being
-carried
-into the
-ambulance at
-that
-moment."
+最中だったのよ。",,"you were being carried
+into the ambulance at
+that moment."
 0x1041fc,37,"でも、どうしたの？
 急にそんなこと…。",,"But, what's wrong?
 Asking something like
@@ -14243,8 +14100,7 @@ about this one..."
 worried about that idiot
 too."
 0x10433c,37,"最近、ナナシからの
-チェーンメールに、",,"Lately, in
-Nanashi's
+チェーンメールに、",,"Lately, in Nanashi's
 chain email,"
 0x104364,37,"霊的な力が宿ってきている気が
 するの。",,"I feel like a spiritual
@@ -14260,8 +14116,7 @@ got suspected of being
 the culprit."
 0x1043dc,37,"…ユウタ？
 ユウタはナナシじゃないよ。",,"...Yuuta?
-Yuuta isn't
-Nanashi."
+Yuuta isn't Nanashi."
 0x104404,37,"仮に本物のナナシじゃないと
 しても…。",,"Even if he's not the
 real Nanashi..."
@@ -14271,17 +14126,14 @@ definitely answer your
 questions..."
 0x104454,37,"何か大事なことを隠してる…
 気がする。",,"I feel like he's hiding
-something
-important..."
+something important..."
 0x10447c,37,"ふ…ふざけんな！
 あと一歩だったのに！",,"D-don't screw with
 me! I was one step
 away!"
 0x1044a4,37,"おびただしい数の人間に
-広まっている。",,"it's spread among
-an
-enormous number
-of
+広まっている。",,"it's spread among an
+enormous number of
 people."
 0x1044cc,37,"届いている最後のメールは、
 ９８通目。",,"The last message that
@@ -14297,14 +14149,12 @@ future?)"
 プールで。",,"So, Yuuta and...me
 at the pool."
 0x10456c,37,"レイカって名前、“霊感”の
-ダジャレ？",,"Is the name Reika a
-pun
+ダジャレ？",,"Is the name Reika a pun
 on spiritual power?"
 0x104594,37,"２階には教室のほかに、
-何があったけ？",,"Besides the
-classrooms, what else
-was on the second
-floor?"
+何があったけ？",,"Besides the classrooms,
+what else was on the
+second floor?"
 0x1045bc,37,"じゃあ、この赤い液体は…
 錆びた水…？",,"So, this red liquid...
 is rusty water...?"
@@ -14328,12 +14178,9 @@ the library..."
 earthbound spirit
 anyway?"
 0x1046ac,37,"トイレに行きたくなるって話
-知らない？",,"don't you know
-that
-story about
-suddenly
-needing to
-go to the
+知らない？",,"don't you know that
+story about suddenly
+needing to go to the
 bathroom?"
 0x1046d4,37,"もっとあなたに
 ふさわしい人がいるわ。",,"There's someone more
@@ -14463,8 +14310,7 @@ probably two of a kind."
 0x104c34,41,"ここに来てから…なんだか気分が
 悪くて…。",,"Ever since I got
 here...I've been
-feeling sick
-somehow..."
+feeling sick somehow..."
 0x104c60,41,"ああ、この辺り…
 昔から交通事故が多くて、",,"Ah, around this
 area...there've
@@ -14475,10 +14321,9 @@ traffic accidents, and"
 pretty...Riko...
 really pretty..."
 0x104cb8,41,"深夜に通ると、人のうめき声が
-聞こえたり、",,"If you pass through
-late at night, you can
-hear people moaning,
-or"
+聞こえたり、",,"If you pass through late
+at night, you can hear
+people moaning, or"
 0x104ce4,41,"（…呪文があったはず………、
 　たしか…）",,"(...There should be
 an incantation...
@@ -14519,8 +14364,7 @@ message,"
 捨ててるけど。",,"I throw them into the
 chain email graveyard."
 0x104e9c,41,"やっぱり、わたしも…プールに
-行ってみる。",,"In the end, I'm going
-to
+行ってみる。",,"In the end, I'm going to
 go to the pool too..."
 0x104ec8,41,"（ホントにそうなの…？
 　冷静に考えて…）",,"(Is that really
@@ -14539,22 +14383,17 @@ searching?"
 where should we start
 searching?"
 0x104f78,41,"家庭科室にも、面白いウワサが
-あったよな。",,"There was an
-interesting
-rumor about
-the home
+あったよな。",,"There was an interesting
+rumor about the home
 ec room too."
 0x104fa4,41,"こういうのが都市伝説に
 なっていくのね…。",,"This is exactly how
 urban legends get
 formed..."
 0x104fd0,41,"トイレに行きたくなるってウワサ
-知らない？",,"don't you know
-the
-rumor about
-suddenly
-needing to
-go to the
+知らない？",,"don't you know the
+rumor about suddenly
+needing to go to the
 bathroom?"
 0x104ffc,41,"ほら、一年の先生で
 ハセガワユカリって…。",,"Look, there's a
@@ -14595,12 +14434,9 @@ chain email message..."
 who the new Nanashi
 really is...,"
 0x1051b4,43,"１００通目に向けて、徐々に
-力をつけている。",,"it's gradually
-gaining
-strength as it
-builds
-toward the
-100th
+力をつけている。",,"it's gradually gaining
+strength as it builds
+toward the 100th
 message."
 0x1051e0,43,"僕が子供の頃流行ったウワサを
 話しただけさ。",,"I just told a rumor that
@@ -14657,10 +14493,9 @@ bathroom......)"
 Anyway, to the boys'
 bathroom......)"
 0x10541c,43,"ハセガワユカリ……。
-……聞いたことないな。",,"Hasegawa
-Yukari......
-......Never heard
-that name before."
+……聞いたことないな。",,"Hasegawa Yukari......
+......Never heard that
+name before."
 0x105448,45,"その手のプールネタはリコの方が
 くわしいかな。",,"Riko probably knows
 more about that kind of
@@ -14683,13 +14518,9 @@ happen!"
 Nanashi back in
 elementary school..."
 0x105538,45,"ウワサを限りなくリアルに実体化
-するような力。",,"a power
-that
-materializes
-rumors in
-an
-incredibly
-realistic
+するような力。",,"a power that
+materializes rumors in
+an incredibly realistic
 way."
 0x105568,45,"ちょっと変わってるけど、
 根はいい奴なんだよ。",,"He's a little weird, but
@@ -14731,8 +14562,7 @@ a wash basin or
 something..."
 0x105718,45,"（もし、にらめっこに成功して
 　いたとしたら）",,"(If I had managed to
-win
-the staring contest)"
+win the staring contest)"
 0x105748,45,"（…床に水が……。
 　どこから…もれてるの？）",,"(...There's water on
 the floor......
@@ -14812,8 +14642,7 @@ watching me lying on
 the ground..."
 0x105aa8,47,"うん……ちょっと聞きたいことが
 あるんだけど…。",,"Yeah......there's
-something
-I wanted to
+something I wanted to
 ask you..."
 0x105ad8,47,"（遊園地…じゃあ、あの子は…
 　わたし…なの？）",,"(The amusement
@@ -14833,13 +14662,9 @@ find out who Nanashi
 really is, no matter
 what?"
 0x105b98,47,"発信源のナナシの正体を…
-突き止めるしかない…。",,"there's nothing left
-to
-do but find
-out...who
-the
-source,
-Nanashi,
+突き止めるしかない…。",,"there's nothing left to
+do but find out...who
+the source, Nanashi,
 really is..."
 0x105bc8,47,"なあ、ユウタ、この際、はっきり
 否定した方が…。",,"Hey, Yuuta, since
@@ -14851,14 +14676,14 @@ deny it clearly..."
 Yuuta is Nanashi,
 Reika?"
 0x105c28,47,"（これが１００通目のチェーン
-　メール…………）",,"(This is the 100th
-chain email
+　メール…………）",,"(This is the 100th chain
+email
 message.........)"
 0x105c58,47,"（男子トイレ……。
 　さすがに入りたくないな…）",,"(The boys'
 bathroom......
-Honestly I don't want
-to go in...)"
+Honestly I don't want to
+go in...)"
 0x105c88,47,"すでにナナシのチェンメは
 リアルなウワサとして、",,"Nanashi's chain email
 has already spread as
@@ -14933,10 +14758,9 @@ plants and animals.
 Chapter 4, dangerous
 plants and animals."
 0x105f90,49,"ばあちゃんなんかは、
-戦争で死んだ人たちの怨念が、",,"My grandma used to
-say the grudges of
-those who died in the
-war,"
+戦争で死んだ人たちの怨念が、",,"My grandma used to say
+the grudges of those
+who died in the war,"
 0x105fc4,49,"それを百物語で蘇らせたユウタを
 影から見ていた…。",,"and Yuuta, who
 brought you back to
@@ -14954,13 +14778,9 @@ something grabbed my
 foot and I nearly
 drowned..."
 0x106060,49,"結局、車を避けて転んでケガした
-だけって言われた。",,"in the end they
-said
-you just
-tripped
-dodging the
-car and
-hurt yourself."
+だけって言われた。",,"in the end they said you
+just tripped dodging the
+car and hurt yourself."
 0x106094,49,"うん、まあ…あ、でもそれより
 聞きたいことが……。",,"Yeah, well...oh, but
 more than that,
@@ -14976,23 +14796,14 @@ know...whether the
 urban legend would
 really come true..."
 0x106130,49,"この学校で最近、失踪や家出が
-相次いでいるでしょ。",,"lately there's been
-a
-string
-of
-disappearances
-and
-runaways at
-this
+相次いでいるでしょ。",,"lately there's been a
+string of disappearances
+and runaways at this
 school, right?"
 0x106164,49,"これから起きる最高の地獄を、
-二人で見届けようぜ！",,"let's watch the
-best
-hell that's about
-to
-happen together,
-the
-two of us!"
+二人で見届けようぜ！",,"let's watch the best hell
+that's about to happen
+together, the two of us!"
 0x106198,49,"俺はあいつを信じたい。
 昔から誤解されやすいんだ。",,"I want to trust him.
 He's always been easy
@@ -15026,10 +14837,9 @@ lab...... doesn't
 seem to be anything
 unusual...)"
 0x106304,49,"（音楽室……特に変わったところは
-　ないみたい…）",,"(The music
-room...... doesn't
-seem to be anything
-unusual...)"
+　ないみたい…）",,"(The music room......
+doesn't seem to be
+anything unusual...)"
 0x106338,49,"墓場に捨てても同じさ。
 チェンメとしては成立する。",,"It doesn't matter if
 you throw them in the
@@ -15094,9 +14904,8 @@ chance of a transfer to
 Tokyo, and"
 0x1065dc,51,"最初はそう思ったの。
 だって、わたしが駆けつけた時は",,"At first that's what I
-thought. Because
-when I rushed over
-there,"
+thought. Because when
+I rushed over there,"
 0x106610,51,"プールでにらめっこ……。
 …にらめっこ……そうか…。",,"The staring contest at
 the pool......The
@@ -15148,13 +14957,9 @@ friends. I guess that's
 why I'm so easy for
 her to tease."
 0x106854,53,"木の皮のシワが人の苦しんでいる
-顔に見えたりするんだ。",,"the wrinkles in the
-tree
-bark sometimes
-look
-like a
-person's
-suffering
+顔に見えたりするんだ。",,"the wrinkles in the tree
+bark sometimes look like
+a person's suffering
 face."
 0x10688c,53,"あんなに行きたいってダダを
 こねていたのに。変な子ね。",,"And you were throwing
@@ -15178,12 +14983,9 @@ messages grew, it
 started gaining power,
 and"
 0x10696c,53,"自分がナナシであることを
-明かしているような口ぶりね。",,"the way you talk,
-it's
-like you're
-revealing
-that you're
-Nanashi."
+明かしているような口ぶりね。",,"the way you talk, it's
+like you're revealing
+that you're Nanashi."
 0x1069a4,53,"（わたしには…もう…。
 　…どうせ…都市伝説でしょ？）",,"(For me...it doesn't
 matter anymore...it's
@@ -15226,19 +15028,12 @@ so many, I haven't
 even forwarded them
 to the graveyard."
 0x106b64,55,"そのたびに関係者が急死したり、
-作業にトラブルが起きて、",,"every time
-that
-happened,
-someone
-involved
-would
-suddenly die,
-or
-trouble would crop
-up
-during
-construction,
-and"
+作業にトラブルが起きて、",,"every time that
+happened, someone
+involved would suddenly
+die, or trouble would
+crop up during
+construction, and"
 0x106b9c,55,"いい子にしてたら遊園地に
 連れてってあげるって約束した。",,"I promised you that if
 you were good, I'd
@@ -15260,10 +15055,10 @@ given to a nameless
 spirit...tied to urban
 legends,"
 0x106c7c,55,"（玄関…この先は外……。
-　今すぐ逃げ出したい…でも…）",,"(The front
-entrance... beyond it
-is outside......I want
-to run away right
+　今すぐ逃げ出したい…でも…）",,"(The front entrance...
+beyond it is
+outside......I want to
+run away right
 now...but...)"
 0x106cb4,55,"…僕は…ケータイを使った
 “にらめっこのおまじない”で…",,"...I...with the
@@ -15296,11 +15091,10 @@ too, so there might be
 a clue."
 0x106e3c,55,"（たしかノックされた場所に
 　同じ回数のノックを返す…）",,"(I think you're
-supposed to knock
-back the same number
-of times at the spot
-where they
-knocked...)"
+supposed to knock back
+the same number of
+times at the spot where
+they knocked...)"
 0x106e74,57,"そして俺もナナシとなって、百物語
 で奇跡を起こそうとした。",,"And so I too became
 Nanashi, trying to
@@ -15317,12 +15111,9 @@ Nanashi's chain email
 was popular back then
 too."
 0x106f28,57,"時にナナシを装って…、君に
-助け船を出したことがあった…。",,"sometimes,
-pretending
-to be
-Nanashi...I lent
-you a
-hand..."
+助け船を出したことがあった…。",,"sometimes, pretending
+to be Nanashi...I lent
+you a hand..."
 0x106f64,57,"ああ。ナナシが１００通のチェーン
 メールを成立させることが",,"Ah. For Nanashi to
 complete all 100 chain
@@ -15504,10 +15295,8 @@ quickly."
 0x107848,28,…１年にそんな先生いたっけ？,,"...Was there a
 teacher like that in
 first year?"
-0x107868,28,死んでも…逃れられないわ…。,,"Not even in
-death...will
-you escape
-it..."
+0x107868,28,死んでも…逃れられないわ…。,,"Not even in death...will
+you escape it..."
 0x107888,29,"災いの元よ。
 早く消しなさい。",,"It's the source of
 misfortune. Erase it
@@ -15638,8 +15427,7 @@ times too."
 0x107dec,51,"…モリモト…ハラ…クリタ…アラセ
 …カンザキでしょ。",,"...Morimoto...
 Hara...Kurita...
-Arase...and
-Kanzaki,
+Arase...and Kanzaki,
 right?"
 0x107e20,51,"（ユカリ先生と会っていたのは
 　こっちの方じゃない）",,"(The one who was

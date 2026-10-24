@@ -36,7 +36,7 @@ no previous English or Spanish translation.
 <img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
 
-> **Version 1.5.2**
+> **Version 1.5.3**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -83,8 +83,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.5.2.bps` (Spanish) or
-   `Twilight.Syndrome.ENG.v1.5.2.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.5.3.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.5.3.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -95,8 +95,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.5.2.bps` | Spanish | 116,321,480 bytes | `D2B0B90B` | `679b3407e7f034fb207560bb3dc0038b18bdab31` |
-   | `Twilight.Syndrome.ENG.v1.5.2.bps` | English | 116,264,648 bytes | `A649E618` | `0198f9a09a4d2c5c6ba901d0baaafc35a650f67e` |
+   | `Twilight.Syndrome.ESP.v1.5.3.bps` | Spanish | 116,326,600 bytes | `950DFA4E` | `29d15da9b8a9e14e863651b192de9c4d1e7f7420` |
+   | `Twilight.Syndrome.ENG.v1.5.3.bps` | English | 116,267,720 bytes | `C1FF834F` | `a4a8a72b3c034de05d2a5aefda523f36fc0b18a2` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
@@ -177,6 +177,19 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.5.3
+- Fixed the phone graphics glitches in the contacts list and the "Sending..." screen
+  (garbled status icons and OK button, and a stray mark next to the text). The same
+  defect was fixed in the email inbox and collectibles-list graphics in both languages.
+- Fixes from a second playthrough: wrong gender in several lines (broken doors,
+  "rude" remarks), "Where was the music room floor?", Megumi's scream, the Matasake-onna
+  joke, the map exchange, "Don't forget to close it?", the Kokkuri-san coin help screen
+  and several lines that were cut off or badly phrased.
+- Choice screens: options that fit on a single line are no longer split in two, and a
+  few were shortened so they fit.
+- Reflowed about 250 Spanish and 140 English texts that left one or two words alone on
+  a line.
 
 ### 1.5.2
 - Line-by-line review of the whole script in both languages against the Japanese text:

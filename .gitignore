@@ -22,3 +22,13 @@ __pycache__/
 
 # Copias automaticas del motor de revision (regenerables)
 docs/backups/
+
+# Savestates de emuladores, copias de ROM y carpetas locales del usuario
+*.mln
+*.ml1
+*.ml2
+*.dsv
+*.BKP
+parches/
+flips-windows/
+rea_analisis/

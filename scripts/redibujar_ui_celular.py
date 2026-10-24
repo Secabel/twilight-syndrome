@@ -219,7 +219,7 @@ class Sprite:
             self.privatize(ci, k)
         gs = self.geoms(ci)
         extra = 0
-        pal_bits = cell['objs'][0][2] & 0xF000
+        pal_bits = cell['objs'][0][2] & 0xFC00   # paleta + PRIORIDAD de la celda (sin esto el OBJ nuevo queda delante del panel)
         for (x, y), k in owner.items():
             v = new.get(x, y)
             cx, cy = x + ox, y + oy
@@ -258,6 +258,91 @@ class Sprite:
         chk = self.compose(ci, pad=64)
         assert chk.w >= new.w and all(chk.get(x, y) == new.get(x, y) for y in range(new.h) for x in range(new.w)), (self.base, ci)
         return n
+
+    def compactar(self):
+        """Deja el NCGR con el tamano ORIGINAL (el juego carga otros sprites justo
+        despues del tamano original; si el NCGR crece los pisa). Los tiles nuevos
+        (agregados al final) se reubican en huecos del NCGR. REGLA DE SEGURIDAD:
+        el juego referencia por indice absoluto algunos tiles del original que no
+        aparecen en el NCER (p.ej. rellenos planos 61/62), asi que NUNCA se
+        libera ni se mueve un tile que no hayamos modificado nosotros; solo se
+        reutilizan los tiles de texto japones ya reemplazado cuyo contenido nuevo
+        es un duplicado de otro."""
+        assert self.bpp == 4
+        orig = read_original(self.base + '.NCGR')
+        N0 = (len(orig) - self.ncgr.px_off) // 32
+        if self.ncgr.ntiles() <= N0:
+            return
+        tbs, al = self.tbs, 1 << self.tbs
+        po = self.ncgr.px_off
+        refs = []                                   # (obj, ini, n)
+        for c in self.ncer.cells:
+            for o in c['objs']:
+                g = ic.obj_geometry(*o, tile_boundary_shift=tbs)
+                refs.append((o, g['tile_idx'], g['w'] * g['h'] // 64))
+        rangos = sorted(set((a, n) for _, a, n in refs))
+        for i, (a, n) in enumerate(rangos):         # solo rangos identicos o disjuntos
+            for (b, m) in rangos[i + 1:]:
+                if b >= a + n:
+                    break
+                assert (a, n) == (b, m), ('rangos solapados', (a, n), (b, m))
+        def blk(a, n):
+            return bytes(self.ncgr.d[po + a * 32: po + (a + n) * 32])
+        def blk_orig(a, n):
+            return bytes(orig[po + a * 32: po + (a + n) * 32])
+        cont = [blk(a, n) for _, a, n in refs]      # antes de mover nada
+        def modificado(a, n):
+            return a + n > N0 or blk(a, n) != blk_orig(a, n)
+        grupos = {}
+        for (a, n) in rangos:
+            grupos.setdefault(blk(a, n), []).append((a, n))
+        canon = {}                                  # contenido -> (a, n) que se conserva
+        liberar = set()                             # rangos que se pueden reutilizar
+        for k, rs in grupos.items():
+            fijos = [r for r in rs if not modificado(*r)]
+            c = fijos[0] if fijos else rs[0]
+            canon[k] = c
+            for r in rs:
+                if r != c and modificado(*r):
+                    liberar.add(r)
+        mapa = {}                                   # rango liberado -> rango canonico
+        for k, rs in grupos.items():
+            for r in rs:
+                if r in liberar:
+                    mapa[r] = canon[k]
+        # huecos: solo rangos liberados de la zona original
+        libre = [False] * N0
+        for (a, n) in liberar:
+            if a + n <= N0:
+                for t in range(a, a + n):
+                    libre[t] = True
+        nuevos = sorted(((k, c) for k, c in canon.items() if c[0] + c[1] > N0), key=lambda kv: -kv[1][1])
+        reub = {}
+        for k, (a, n) in nuevos:
+            for t0 in range(0, N0 - n + 1, al):
+                if all(libre[t0:t0 + n]):
+                    for t in range(t0, t0 + n):
+                        libre[t] = False
+                    reub[k] = t0
+                    break
+            else:
+                raise AssertionError('no hay hueco seguro para %d tiles' % n)
+        for k, t0 in reub.items():
+            n = len(k) // 32
+            self.ncgr.d[po + t0 * 32: po + (t0 + n) * 32] = k
+        for (o, a, n), k in zip(refs, cont):
+            if k in reub and (a, n) in grupos[k] and canon[k][0] + canon[k][1] > N0:
+                t = reub[k]
+            elif (a, n) in mapa:
+                t = mapa[(a, n)][0] if mapa[(a, n)][0] + mapa[(a, n)][1] <= N0 else reub[k]
+            else:
+                t = a
+            o[2] = (o[2] & ~0x3FF) | ((t >> tbs) & 0x3FF)
+        del self.ncgr.d[po + N0 * 32:]
+        size = len(self.ncgr.d) - po
+        struct.pack_into('<I', self.ncgr.d, self.ncgr.rahc_off + 24, size)
+        struct.pack_into('<I', self.ncgr.d, self.ncgr.rahc_off + 4, len(self.ncgr.d) - self.ncgr.rahc_off)
+        struct.pack_into('<I', self.ncgr.d, 8, len(self.ncgr.d))
 
     def save(self, lang, base=None):
         base = base or self.base
@@ -384,6 +469,7 @@ def r02a(lang):
         for ci in range(4 + 3 * i, 7 + 3 * i):
             s.edit(ci, nombre(s, ci, n))
     s.edit(3, contactos(L))
+    s.compactar()
     s.save(lang)
 
 
@@ -402,6 +488,7 @@ def r02b(lang):
         for ci in range(4 + 3 * i, 7 + 3 * i):
             s.edit(ci, nombre(s, ci, n))
     s.edit(3, contactos(L))
+    s.compactar()
     s.save(lang)
 
 
