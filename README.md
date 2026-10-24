@@ -95,7 +95,7 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.5.1.bps` | Spanish | 116,321,480 bytes | `21FF2235` | `7b715a7612dcbfe86d3dc985245e8ab09c5da9f7` |
+   | `Twilight.Syndrome.ESP.v1.5.1.bps` | Spanish | 116,321,480 bytes | `B9C1EA51` | `964eddeba72410d612b658a46224a1477b9851cb` |
    | `Twilight.Syndrome.ENG.v1.5.1.bps` | English | 116,264,648 bytes | `3171B361` | `26046191cd251b80efbb740dc94b9fb6ee6d7c34` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.

@@ -2355,7 +2355,7 @@ vemos."
 0xdaa4c,18,…………そうだね。,,..........Es cierto.
 0xdaa60,18,うっ…空気悪っ…。,,"Ugh...qué aire tan
 malo..."
-0xdaa74,18,バッカじゃないの。,,Qué idiotas.
+0xdaa74,18,バッカじゃないの。,,Qué tontas.
 0xdaa88,18,廊下の奥ってこと？,,"¿Te refieres al
 fondo del pasillo?"
 0xdaa9c,18,鏡よ、鏡を使うの。,,"El espejo, hay
@@ -2459,7 +2459,7 @@ buscarlas."
 0xdaf50,20,ええっ、なにそれ…。,,"Eeh, que es
 eso..."
 0xdaf68,20,どうしたらいいの…。,,¿Qué debo hacer...?
-0xdaf80,20,（しまったようです）,,(o eso parece)
+0xdaf80,20,（しまったようです）,,(sin poder salir)
 0xdaf98,20,…わかんないよ……。,,...No sé......
 0xdafb0,20,やっぱり下？いこっ！,,"El de abajo,
 ¿no? ¡Vamos!"
@@ -3866,8 +3866,8 @@ por alto?"
 según la estructura
 del edificio."
 0xdf7b8,39,"ヤツにエラそうに言われたくない
-けどね。",,"pero no tolero que me
-den lecciones."
+けどね。",,"pero no me gusta que
+me den sermones."
 0xdf7e0,39,"わたしだって霊感なんて
 ないと思うし…。",,"Yo tampoco creo
 tener sexto
@@ -5243,10 +5243,10 @@ revisar abajo y
 tener que
 volver, ¿no?"
 0xe3180,53,"（どうやら、カナとは別の闇の世界
-　に閉じこめられて）",,"(Por lo visto, nos
-encerraron en otro
-mundo de oscuridad,
-distinto al de Kana)"
+　に閉じこめられて）",,"(Parece que quedamos
+encerradas en un mundo
+oscuro distinto al de
+Kana)"
 0xe31b8,53,"カバンの中にならあるけど、
 さすがに手持ちにはないや。",,"En mi mochila
 sí tengo, pero
@@ -5847,11 +5847,11 @@ cadena de Nanashi e
 hicieron Kokkuri-san en
 el edificio viejo."
 0xe4fdc,61,"ま、こうやって、ナナシのメールに
-釣られて、のこのこ屋上に来た",,"Bueno, no soy quién
+釣られて、のこのこ屋上に来た",,"Bueno, no soy quien
 para hablar: piqué con
 el correo de Nanashi y
-vine a la azotea sin
-pensarlo,"
+subí a la azotea sin
+pensar,"
 0xe501c,61,"リコが言ってたみたいに、もし地下
 に大きな空洞なんかがあると、",,"Como decía Riko, si hay
 un hueco grande en el
