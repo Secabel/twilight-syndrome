@@ -36,7 +36,7 @@ no previous English or Spanish translation.
 <img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
 
-> **Version 1.5.1**
+> **Version 1.5.2**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -83,8 +83,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.5.1.bps` (Spanish) or
-   `Twilight.Syndrome.ENG.v1.5.1.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.5.2.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.5.2.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -95,8 +95,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.5.1.bps` | Spanish | 116,321,480 bytes | `B9C1EA51` | `964eddeba72410d612b658a46224a1477b9851cb` |
-   | `Twilight.Syndrome.ENG.v1.5.1.bps` | English | 116,264,648 bytes | `3171B361` | `26046191cd251b80efbb740dc94b9fb6ee6d7c34` |
+   | `Twilight.Syndrome.ESP.v1.5.2.bps` | Spanish | 116,321,480 bytes | `D2B0B90B` | `679b3407e7f034fb207560bb3dc0038b18bdab31` |
+   | `Twilight.Syndrome.ENG.v1.5.2.bps` | English | 116,264,648 bytes | `A649E618` | `0198f9a09a4d2c5c6ba901d0baaafc35a650f67e` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
@@ -177,6 +177,14 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.5.2
+- Line-by-line review of the whole script in both languages against the Japanese text:
+  fixed mistranslated lines, wrong speaker gender/pronouns and formal/informal address.
+- Fixed broken line breaks, missing opening question/exclamation marks and ellipses.
+- Unified terminology (e.g. Hasegawa's father is always "my old man" / "mi viejo",
+  "refugio", "bodega", "dirección maldita"); "kamikakushi" left untranslated.
+- Fixed a missing line break in the theme-park signpost.
 
 ### 1.5.1
 - Second review pass cross-checking the story against a walkthrough: puzzle solutions
