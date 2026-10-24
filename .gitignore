@@ -11,14 +11,11 @@ melonDS-1.1-windows-x86_64/
 TinkeDSi-v0.9.6-x64/
 
 # Carpetas de trabajo temporal / regenerables (ver docs/historia-proyecto.md)
-_scratch_claude/
+_scratch/
 inventario_graficos/
-Claude outputs/
 dumps/
 saves/
 __pycache__/
 **/__pycache__/
 *.pyc
 
-# Configuracion local de Claude Code (no es parte del proyecto)
-.claude/

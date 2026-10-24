@@ -44,7 +44,7 @@ GRAPHICS_PATCHES = [
     ("SYS", "G00M15.NCGR", "assets/graficos/G00M15.NCGR"),
     ("SYS", "G00M16.NCGR", "assets/graficos/G00M16.NCGR"),
     # I22 (palillos): layout de celdas EXTENDIDO (caja de nombre 16x16 -> 48x16px,
-    # ver claude/investigacion-items-graficos.md). El NCER es compartido entre
+    # ver docs/investigacion-items-graficos.md). El NCER es compartido entre
     # ESP y ENG porque solo define geometria/tiles-de-layout, no texto -- el
     # texto en si vive en el .NCGR de cada idioma (ver bloque ITM/2D mas abajo).
     ("ITM/2D", "I22S10.NCER", "assets/graficos/I22S10.NCER"),

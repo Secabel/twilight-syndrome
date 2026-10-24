@@ -13,7 +13,7 @@ spec.loader.exec_module(ncer_decode)
 from PIL import Image, ImageDraw
 
 ROOT = "extraccion_rom/root/ITM/2D"
-OUT_DIR = "_scratch_claude"
+OUT_DIR = "_scratch"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 def get_item_images(name):

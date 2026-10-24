@@ -12,7 +12,7 @@ import os
 from PIL import Image
 
 ROOT = "extraccion_rom/root/ITM/2D"
-OUT_DIR = "_scratch_claude"
+OUT_DIR = "_scratch"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 SHAPE_SIZE_TABLE = {

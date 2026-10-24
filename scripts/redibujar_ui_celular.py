@@ -21,7 +21,7 @@ pixeles que cambiaron. Si un OBJ modificado comparte tiles con otro (o usa
 flip) se le dan tiles propios al final del NCGR, para no ensuciar otras
 celdas. Pixeles nuevos fuera de todo OBJ -> OBJ 8x8 extra.
 NSCR (8bpp, 768 tiles unicos, sin flips): edicion directa de los tiles.
-Mockup aprobado: _scratch_claude/auditoria/mockup_celular.png y
+Mockup aprobado: _scratch/auditoria/mockup_celular.png y
 mockup_alternativas.png (2026-10-07).
 """
 import os, sys, struct, math
@@ -517,7 +517,7 @@ def ev9(lang):
 
 
 # ------------------------------------------------------------- segunda pasada
-# (2026-10-07; mockup aprobado: _scratch_claude/auditoria/mockup_celular2_parte*.png)
+# (2026-10-07; mockup aprobado: _scratch/auditoria/mockup_celular2_parte*.png)
 MENU = [('FOTO', 'PHOTO'), ('GRABAR', 'RECORD'), ('GUARDAR', 'SAVE')]
 AVISOS = {2: ('GUARDANDO...', 'SAVING...'), 3: ('GRABANDO...', 'RECORDING...'),
           4: ('GUARDADO.', 'SAVED.'), 5: ('GRABADO.', 'RECORDED.'),
