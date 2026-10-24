@@ -97,11 +97,33 @@ for tb, filas in por_bloque.items():
             avisar('Genero: forma masculina dicha por mujer', tb, idx, off, hab, e)
         if hab in MASC and FEM_EN_BOCA_MASC.search(t):
             avisar('Genero: forma femenina dicha por hombre', tb, idx, off, hab, e)
+
+        # 4b. trato: japones cortes (です/ます) con tuteo en ES, o llano con usted
+        JP_CORTES = re.search(r'です|ます|ください|ません|でした|ました|でしょう', jp)
+        ES_TU = re.search(r'\b(tú|tu|ti|tienes|eres|puedes|estás|quieres|sabes|vienes|vas|haces|dices|crees|piensas|ves|oyes)\b', t, re.I)
+        ES_USTED = re.search(r'\busted\b|\b(puede|tiene|quiere|sabe|piensa|dice)\s+(usted)\b', t, re.I)
+        if JP_CORTES and ES_TU and not ES_USTED:
+            avisar('Trato: JP cortes pero ES tutea', tb, idx, off, hab, e)
+        if ES_USTED and not JP_CORTES and not re.search(r'先生|さん|様', jp):
+            avisar('Trato: ES usted pero JP llano', tb, idx, off, hab, e)
+
+        # 5b. nombres propios del JP ausentes en ES y EN (suelen ser pronombres legitimos)
+        for jn, en_ in (('ミズキ', 'Mizuki'), ('リコ', 'Riko'), ('レイカ', 'Reika'), ('マサキ', 'Masaki'), ('ユウタ', 'Yuuta'), ('カナ', 'Kana'), ('メグミ', 'Megumi'), ('アリサ', 'Arisa'), ('ナナシ', 'Nanashi'), ('ユカリ', 'Yukari')):
+            if jn in jp and en_ not in t and g and en_ not in g:
+                avisar('Sentido: nombre en JP ausente en ES y EN', tb, idx, off, en_, jp.replace('\n', '') + '  ||  ' + e)
         # 5. ES vs EN
         if g:
             gt = g.replace('\n', ' ')
             if re.findall(r'\d+', t) != re.findall(r'\d+', gt): avisar('ES/EN: cifras distintas', tb, idx, off, '', e + '  ||  ' + g)
             if ('(' in t) != ('(' in gt): avisar('ES/EN: parentesis distintos', tb, idx, off, '', e + '  ||  ' + g)
+            hay_f_en = re.search(r"\b(she|her|hers|herself)\b", gt, re.I); hay_m_en = re.search(r"\b(he|his|him|himself)\b", gt, re.I)
+            hay_f_es = re.search(r"\b(ella|ellas|la|las|le|les|su|sus)\b|\b\\w+(a|as)\b", t, re.I)
+            if hay_f_en and not hay_m_en and re.search(r"\b(él|ellos)\b", t, re.I) and not re.search(r"\b(ella|ellas|la|las)\b", t, re.I):
+                avisar('ES/EN: EN femenino, ES masculino', tb, idx, off, '', e + '  ||  ' + g)
+            if hay_m_en and not hay_f_en and re.search(r"\b(ella|ellas)\b", t, re.I) and not re.search(r"\b(él|ellos)\b", t, re.I):
+                avisar('ES/EN: EN masculino, ES femenino', tb, idx, off, '', e + '  ||  ' + g)
+            if re.search(r"\b(they|them|their)\b", gt, re.I) and re.search(r"\b(él|ella)\b", t, re.I) and not re.search(r"\b(ellos|ellas|ustedes)\b", t, re.I) and not re.search(r"\b(dicen|dijeron|cuentan)\b", t, re.I):
+                avisar('ES/EN: EN plural, ES singular', tb, idx, off, '', e + '  ||  ' + g)
 
 # 6. cobertura: lineas tocadas en las revisiones registradas en docs/revision_contexto
 tocadas = set()
