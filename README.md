@@ -36,7 +36,7 @@ no previous English or Spanish translation.
 <img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
 
-> **Version 1.4**
+> **Version 1.5**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -83,8 +83,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.4.bps` (Spanish) or
-   `Twilight.Syndrome.ENG.v1.4.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.5.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.5.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -95,8 +95,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.4.bps` | Spanish | 116,321,480 bytes | `D4725F27` | `46d1efcc3f5763d7ff82dcf0a4396f3b26dd089b` |
-   | `Twilight.Syndrome.ENG.v1.4.bps` | English | 116,265,160 bytes | `BDD95BB6` | `8b562fc9318e506acf88c4ca4056ec189df02bbe` |
+   | `Twilight.Syndrome.ESP.v1.5.bps` | Spanish | 116,321,480 bytes | `3046495B` | `95859a8a7333695938283c35f6385c32da90b3d6` |
+   | `Twilight.Syndrome.ENG.v1.5.bps` | English | 116,264,648 bytes | `5443ABF4` | `c4e20dec0f40fb012e93d014df425acbe365acdf` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS.
 
@@ -177,6 +177,19 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.5
+- Full dialogue review in both languages using the game's real display order and
+  speaker nameplates for context (about 1,500 lines revised across the main
+  story blocks).
+- Fixed wrong genders and referents (Riko, Reika, Arisa, Kana, Megumi, Masaki,
+  Yuuta), plural/singular mismatches, and the narrator's person in the endings.
+- Fixed mistranslated lines whose meaning was wrong (for example who forwarded
+  the chain mail, "it was you", the Kokkuri-san ending lines).
+- Spanish: consistent usted/tuteo, accents and question marks fixed in many
+  lines, Kokkuri-san scenes revised.
+- English: broken line breaks fixed globally and several lines reworded.
+- All lines re-checked against the 215 px text box width.
 
 ### 1.4
 - Translated the 7 story intro posters shown before each story (Spanish and
