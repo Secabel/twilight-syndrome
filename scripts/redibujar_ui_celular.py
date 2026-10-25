@@ -753,20 +753,23 @@ ERRORES = {0: (["NO SE PUDIERON LEER LOS DATOS.", "APAGA LA CONSOLA Y VUELVE A",
 
 
 def errores(lang):
-    """ERROR/ErrorMessage00: errores de la partida guardada. Fondo degradado
-    por fila tomado del borde derecho (x 238-243, sin texto)."""
+    """ERROR/ErrorMessage00: errores de la partida guardada. Cada celda tiene 2
+    capas: abajo el panel degradado (OBJs 4-7, paleta 0, no se toca) y arriba el
+    texto (OBJs 0-3, paleta 1 de solo 3 colores: 1 blanco, 2 negro, 3 gris).
+    Se vacia la capa del texto y se dibuja solo el texto nuevo con los indices
+    de SU paleta (usar indices de la paleta 0 ahi sale negro)."""
     L = 0 if lang == 'esp' else 1
     s = Sprite('ERROR/ErrorMessage00')
     for ci, lineas in ERRORES.items():
-        def fn(im, lineas=lineas[L]):
-            for y in range(4, 60):
-                vals = [im.get(x, y) for x in range(238, 244)]
-                bg = max(set(vals), key=vals.count)
-                for x in range(12, 244):
-                    im.set(x, y, bg)
-            for i, line in enumerate(lineas):
-                text(im, line, 18, 9 + 18 * i, 1, outline=14)
-        s.edit(ci, fn)
+        ox, oy = s.origin(ci)
+        top = Img(256, 64, s.pal)
+        for i, line in enumerate(lineas[L]):
+            text(top, line, 18, 9 + 18 * i, 1, outline=2)
+        for g in s.geoms(ci)[:4]:
+            assert not g['hflip'] and not g['vflip']
+            for (cx, cy, t, lx, ly) in obj_px(s.ncgr, g, s.u):
+                x, y = cx - ox, cy - oy
+                s.ncgr.set_px(t, lx, ly, top.get(x, y) if 0 <= x < 256 and 0 <= y < 64 else 0)
     s.save(lang)
 
 
@@ -829,11 +832,20 @@ def logo(lang):
                     if line:
                         tws(im, line, 0, 26 + 17 * i, lang, cols, center=128)
             else:
+                # rombos blancos del titulo (originales, antes de borrar): 16 px de ancho
+                # a cada lado del titulo; el par no debe pasar de x=238 (borde del original)
+                rl = [(x - 77, y - 46, im.get(x, y)) for y in range(46, 64) for x in range(77, 93) if im.get(x, y) != bg]
+                rr = [(x - 223, y - 46, im.get(x, y)) for y in range(46, 64) for x in range(223, 239) if im.get(x, y) != bg]
                 for y in range(36, 157):
                     for x in range(72, 256):
                         im.set(x, y, bg)
                 tit, body = AVISO_AUDIFONOS[L]
-                tws(im, tit, 0, 50, lang, cols, center=166)
+                w0 = tws(im, tit, 0, -100, lang, cols)           # solo para medir (fuera de la celda)
+                cen = min(166, 238 - 15 - 4 - (w0 - w0 // 2))
+                tws(im, tit, 0, 50, lang, cols, center=cen)
+                x0 = cen - w0 // 2; x1 = x0 + w0
+                for (dx, dy, v) in rl: im.set(x0 - 20 + dx, 46 + dy, v)
+                for (dx, dy, v) in rr: im.set(x1 + 4 + dx, 46 + dy, v)
                 for i, line in enumerate(body):
                     tws(im, line, 84, 78 + 17 * i, lang, cols)
         s.edit(0, fn)
