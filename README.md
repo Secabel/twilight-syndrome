@@ -36,7 +36,7 @@ no previous English or Spanish translation.
 <img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
 
-> **Version 1.5.3**
+> **Latest release: 1.5.3** (the repository already includes the unreleased fixes listed under 1.5.4)
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -177,6 +177,11 @@ another language.
   in [Issues](../../issues).
 
 ## Version history
+
+### 1.5.4 (unreleased: in the repository, no patch published yet)
+- Fixed the "save data corrupted / could not be read" error screens in both languages:
+  the text box showed leftover Japanese and a black background instead of the grey gradient.
+- Restored the white diamonds around the title of the headphones notice shown at startup.
 
 ### 1.5.3
 - Fixed the phone graphics glitches in the contacts list and the "Sending..." screen
