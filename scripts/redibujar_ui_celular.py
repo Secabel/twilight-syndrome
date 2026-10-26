@@ -355,7 +355,7 @@ class Sprite:
 
 # ---------------------------------------------------------------- fondos (NSCR 8bpp)
 class Screen:
-    def __init__(self, base, nclr):
+    def __init__(self, base, nclr, pal_bank=None):
         self.base = base
         self.ncgr = bytearray(read_original(base + '.NCGR'))
         magic, blocks = ic.parse_container(bytes(self.ncgr))
@@ -371,6 +371,8 @@ class Screen:
         assert all(not (e >> 10) & 3 for e in self.ent)
         bank = self.ent[0] >> 12
         assert all(e >> 12 == bank for e in self.ent)
+        if pal_bank is not None:
+            bank = pal_bank
         self.pal = read_palette(nclr)[bank * 256:(bank + 1) * 256]
 
     def off(self, x, y):

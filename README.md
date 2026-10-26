@@ -153,6 +153,8 @@ save error messages are rebuilt the same way with
 | `scripts/extraer_todos_items.py` | Extracts the inventory item texts |
 | `scripts/ncer_decode.py` | Decoder for DS tile graphics (NCGR/NCLR/NCER/NSCR) |
 | `scripts/fuente_celular.py`, `scripts/redibujar_correos.py` | Phone font and the script that redraws the phone mails |
+| `scripts/redibujar_fotos_correo.py`, `scripts/redibujar_fotos_correo2.py` | Redraw the phone mail photos shown inside cutscenes (`EV1/M08`, `EV3/M06`, `EV5/M14`, `EV5/M15`) |
+| `scripts/redibujar_titulo_bandeja.py` | Translates the inbox title of the phone mail graphics (`R08`) |
 | `scripts/redibujar_ui_celular.py`, `scripts/nftr.py` | Redraws the other phone screens, the startup notices and the save error messages |
 | `scripts/traducir_carteles_ev9_m02.py` | Redraws the 7 story intro posters (`EV9/M02`) |
 | `scripts/traducir_botones_itm.py` | Redraws the item menu buttons (`ITM/2D/G04M10`) |
@@ -166,8 +168,6 @@ another language.
 
 ## Known issues
 
-- **Mail photos inside some cutscenes** (blurry or tilted shots of the phone)
-  keep their Japanese text; the same mails can be read translated on the phone.
 - **Left untranslated on purpose:** the "touch the bottom screen" prompt on
   the title screen, the staff credits, and a few props with text drawn into the background art
   (a puzzle sheet with a kana table, whose solution depends on the original
@@ -186,6 +186,12 @@ another language.
   rewording of lines in the mail story, and choice options shortened to fit on one line.
 - Lines that were still showing in Japanese ("OK" and the "3, 2, 1" countdowns) are now translated;
   "OK" is written the same way everywhere.
+- The phone mail photos shown in some cutscenes are now translated (6 images, both languages):
+  the mails of the old building / Kokkuri-san (with the glitched "kamikakushi" letters),
+  the "Urban legend" and "Send this to 6 people" mails, and the "I'm behind you" mail
+  (also its cracked-screen version). Their buttons now say OK.
+- The inbox title of the phone mails ("受信メール") is translated in all mail graphics
+  (BANDEJA / INBOX), matching the photos.
 
 ### 1.5.3
 - Fixed the phone graphics glitches in the contacts list and the "Sending..." screen
