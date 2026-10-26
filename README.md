@@ -182,6 +182,10 @@ another language.
 - Fixed the "save data corrupted / could not be read" error screens in both languages:
   the text box showed leftover Japanese and a black background instead of the grey gradient.
 - Restored the white diamonds around the title of the headphones notice shown at startup.
+- Script fixes from another playthrough: "What's wrong?" / "Me neither" agreement fixes in several stories,
+  rewording of lines in the mail story, and choice options shortened to fit on one line.
+- Lines that were still showing in Japanese ("OK" and the "3, 2, 1" countdowns) are now translated;
+  "OK" is written the same way everywhere.
 
 ### 1.5.3
 - Fixed the phone graphics glitches in the contacts list and the "Sending..." screen

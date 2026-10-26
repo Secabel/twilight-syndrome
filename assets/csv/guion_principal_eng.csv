@@ -261,19 +261,19 @@ return to the torii."
 0xd4050,12,時間は違う？,,Is the time different?
 0xd4060,12,…うん……。,,...Yeah......
 0xd4070,12,…ごめん…。,,...Sorry...
-0xd4080,12,どうしたの？,,What's wrong?
+0xd4080,12,どうしたの？,,What is it?
 0xd4090,12,文字はどう？,,"And the letters, how are
 they?"
 0xd40a0,14,よっしゃ……。,,Alright......
 0xd40b0,14,何か写ってる？,,"Is there something in the
 photo?"
 0xd40c0,14,なんだろう…。,,What could this be...
-0xd40d0,14,…どうしたの？,,...What's wrong?
+0xd40d0,14,…どうしたの？,,...What is it?
 0xd40e0,14,（…ナナシ…）,,(...Nanashi...)
 0xd40f0,14,もうやめよっ！,,Let's just stop!
 0xd4100,14,あ、そっか…。,,"Ah, I see..."
 0xd4110,14,題名って同じ？,,Is the title the same?
-0xd4120,14,あたしもだよ。,,Me too.
+0xd4120,14,あたしもだよ。,,Me neither.
 0xd4130,14,数字？どんな？,,A number? Which one?
 0xd4140,16,うん、今度こそ。,,"Yes, for real this time."
 0xd4154,16,知っていますか？,,do you know them?
@@ -823,21 +823,21 @@ legend?"
 0xd5c64,12,どこ行くの？,,Where are you going?
 0xd5c74,12,うーん……。,,Hmm......
 0xd5c84,12,トイレ…ね。,,The bathroom...huh.
-0xd5c94,12,どうしたの？,,What's wrong?
+0xd5c94,12,どうしたの？,,What is it?
 0xd5ca4,12,予定表……。,,The schedule......
 0xd5cb4,12,そうだね…。,,You're right...
-0xd5cc4,12,あたしも…。,,Me too...
+0xd5cc4,12,あたしも…。,,Me neither...
 0xd5cd4,12,また、鏡…。,,The mirror again...
 0xd5ce4,12,お願い……。,,Please......
-0xd5cf4,12,あたしも…。,,Me too...
+0xd5cf4,12,あたしも…。,,Me neither...
 0xd5d04,12,……そんな。,,......No way.
 0xd5d14,12,あ、レイカ？,,"Ah, Reika?"
-0xd5d24,12,どうしたの？,,What's wrong?
+0xd5d24,12,どうしたの？,,What is it?
 0xd5d34,12,…ごめん…。,,...Sorry...
 0xd5d44,12,なぜって…。,,"Why, you ask..."
 0xd5d54,12,えっ、どれ？,,"Huh, which one?"
 0xd5d64,12,あれ？先生？,,Huh? Teacher?
-0xd5d74,12,どうしたの？,,What's wrong?
+0xd5d74,12,どうしたの？,,What is it?
 0xd5d84,12,ゴミが……。,,The trash......
 0xd5d94,12,入ってみる？,,Should we go in?
 0xd5da4,12,犬の漢字…。,,The kanji for dog...
@@ -852,7 +852,7 @@ legend?"
 0xd5e44,14,誰か！　誰か！,,Someone! Anyone!
 0xd5e54,14,…あたし……。,,...I......
 0xd5e64,14,よかった……。,,What a relief......
-0xd5e74,14,…どうしたの？,,...What's wrong?
+0xd5e74,14,…どうしたの？,,...What is it?
 0xd5e84,14,そうだね……。,,That's right......
 0xd5e94,14,もしかして…、,,"Could it be...,"
 0xd5eb4,14,花子さぁぁん。,,Hanako-saaan.
@@ -865,7 +865,7 @@ either..."
 0xd5f14,14,誰か！　誰か！,,Someone! Anyone!
 0xd5f24,14,やだ…マジで？,,No...seriously?
 0xd5f34,14,もしかして…、,,"Could it be...,"
-0xd5f44,14,…どうしたの？,,...What's wrong?
+0xd5f44,14,…どうしたの？,,...What is it?
 0xd5f54,14,あ、…うん…。,,"Ah,...yeah..."
 0xd5f64,14,今の、ナニ…？,,What was that...?
 0xd5f74,14,用意がいいね。,,You're so prepared.
@@ -1724,6 +1724,7 @@ least 3 people."
 0xd8bec,8,じゃあ。,,Alright.
 0xd8bf8,8,私も！？,,Me too!?
 0xd8c04,8,ホント？,,Really?
+0xd8c10,8,…ＯＫ。,,...OK.
 0xd8c28,8,さあ…。,,Who knows...
 0xd8c34,8,うん…。,,Yeah...
 0xd8c40,8,お願い！,,Please!
@@ -1746,7 +1747,7 @@ least 3 people."
 0xd8d54,8,呪い…？,,A curse...?
 0xd8d60,8,（はっ）,,(Ha)
 0xd8d6c,8,うん…。,,Yeah...
-0xd8d78,8,シセン？,,The gaze...?
+0xd8d78,8,シセン？,,Watched...?
 0xd8d84,8,リコ…。,,Riko...
 0xd8d90,8,ごめん。,,Sorry.
 0xd8d9c,8,ひっ…。,,Hii...
@@ -1845,7 +1846,7 @@ bomb."
 0xd92ac,10,よかった。,,What a relief.
 0xd92b8,10,キツネ！？,,A fox!?
 0xd92c4,10,よかった。,,What a relief.
-0xd92d0,10,オッケー。,,Okay.
+0xd92d0,10,オッケー。,,OK.
 0xd92dc,10,…ホント？,,...Really?
 0xd92e8,10,アリサ…？,,Arisa...?
 0xd9300,10,おはよー。,,Morning.
@@ -1899,28 +1900,28 @@ bomb."
 0xd9578,12,２時ぐらい？,,"Around 2, maybe?"
 0xd9588,12,コトダマ…。,,Kotodama...
 0xd9598,12,風の抜け道？,,An air vent?
-0xd95a8,12,どうしたの？,,What's wrong?
+0xd95a8,12,どうしたの？,,What is it?
 0xd95b8,12,とおりゃんせ,,Toryanse
 0xd95c8,12,…ミズキ…。,,...Mizuki...
 0xd95d8,12,あったぁ…！,,Found it...!
-0xd95e8,12,どうしたの？,,What's wrong?
+0xd95e8,12,どうしたの？,,What is it?
 0xd95f8,12,さてと……。,,Well then......
 0xd9608,12,…声？誰の？,,...A voice? Whose?
 0xd9618,12,大丈夫だよ。,,It's okay.
-0xd9628,12,どうしたの？,,What's wrong?
-0xd9638,12,どうしたの？,,What's wrong?
+0xd9628,12,どうしたの？,,What is it?
+0xd9638,12,どうしたの？,,What is it?
 0xd9648,12,そうかなあ？,,Is that it?
 0xd9658,12,ね、ミズキ。,,"Hey, Mizuki."
-0xd9668,12,どうしたの？,,What's wrong?
+0xd9668,12,どうしたの？,,What is it?
 0xd9678,12,…神隠し…。,,...Kamikakushi...
 0xd9688,12,…まあね…。,,...More or less...
 0xd9698,12,よかった…。,,What a relief...
-0xd96a8,12,どうしたの？,,What's wrong?
+0xd96a8,12,どうしたの？,,What is it?
 0xd96b8,12,なるほどね。,,I see.
 0xd96c8,12,あ……うん。,,Ah......yeah.
 0xd96d8,12,え？トイレ？,,Huh? The bathroom?
 0xd96e8,12,たぶん…ね。,,Maybe...
-0xd96f8,12,どうしたの？,,What's wrong?
+0xd96f8,12,どうしたの？,,What is it?
 0xd9708,12,…足音が…。,,...Footsteps...
 0xd9718,12,メグミじゃ…,,Could it be Megumi...
 0xd9728,12,……ごめん。,,......Sorry.
@@ -1949,9 +1950,9 @@ the war..."
 0xd9898,12,え……なに？,,Huh......what?
 0xd98a8,12,別の空間…。,,A different space...
 0xd98b8,12,ね、お願い。,,"Hey, please."
-0xd98c8,12,どうしたの？,,What's wrong?
+0xd98c8,12,どうしたの？,,What is it?
 0xd98d8,12,…うそ……。,,...No way......
-0xd98e8,12,どうしたの？,,What's wrong?
+0xd98e8,12,どうしたの？,,What is it?
 0xd98f8,12,“ホント？”,,"""Really?"""
 0xd9908,12,………動物？,,..........An animal?
 0xd9918,12,…消えた…？,,...It disappeared...?
@@ -1963,14 +1964,14 @@ the war..."
 0xd9978,12,…はいはい。,,"...Yeah, yeah."
 0xd9988,12,この鳴き声…,,This sound...
 0xd9998,12,誰よ、それ。,,And who are they?
-0xd99a8,12,どうしたの？,,What's wrong?
+0xd99a8,12,どうしたの？,,What is it?
 0xd99b8,12,ごめん……。,,Sorry......
 0xd99c8,12,ね…あれ…。,,Hey...that...
 0xd99d8,12,ケータイで？,,On the phone?
 0xd99e8,12,くわしいね。,,You know a lot.
 0xd99f8,12,あ、リコっ。,,"Ah, Riko."
-0xd9a08,12,どうしたの？,,What's wrong?
-0xd9a18,12,どうしたの？,,What's wrong?
+0xd9a08,12,どうしたの？,,What is it?
+0xd9a18,12,どうしたの？,,What is it?
 0xd9a28,12,なんで紫色？,,Why is it purple?
 0xd9a38,12,キツネが…。,,A fox...
 0xd9a48,12,そのまま帰る,,Just go back like this
@@ -1981,7 +1982,7 @@ the war..."
 0xd9a98,12,神隠し……。,,Kamikakushi......
 0xd9aa8,12,意外だね…。,,What a surprise...
 0xd9ab8,12,かごめかごめ,,Kagome Kagome
-0xd9ac8,12,……ここは？,,......And here?
+0xd9ac8,12,……ここは？,,......Where are we?
 0xd9ad8,14,そうとしか…。,,"It can't be anything
 else..."
 0xd9ae8,14,うん、ごめん。,,"Yeah, sorry."
@@ -1996,6 +1997,7 @@ it..."
 say......?"
 0xd9b68,14,わかんない…。,,I don't know...
 0xd9b78,14,わかった……。,,Got it......
+0xd9b88,14,３…２…１…。,,3...2...1...
 0xd9b98,14,なにこれ……。,,What is this......
 0xd9ba8,14,そうみたい…。,,Looks like it...
 0xd9bb8,14,…あ、はい…。,,"...Ah, yes..."
@@ -2052,10 +2054,11 @@ building!"
 0xd9e38,14,私は行かない！,,I'm not going!
 0xd9e48,14,そうなんだ…。,,I see...
 0xd9e58,14,……やっぱり。,,......I knew it.
-0xd9e68,14,…どうしたの？,,...What's wrong?
+0xd9e68,14,…どうしたの？,,...What is it?
 0xd9e78,14,ね、これ見て。,,"Hey, look at this."
 0xd9e88,14,鏡を持ってる？,,mirror?
-0xd9e98,14,水…？…下水？,,Water...? ...A sewer?
+0xd9e98,14,水…？…下水？,,"Water...?
+...The pipes?"
 0xd9ea8,14,もう帰ろうよ。,,"Let's head back
 already."
 0xd9eb8,14,ここの鏡も…。,,This mirror too...
@@ -2124,8 +2127,8 @@ already..."
 0xda22c,16,ひょっとして…。,,Could it be...?
 0xda240,16,…旧校舎…か…。,,...The old building...
 0xda254,16,……わかった…。,,......Got it...
-0xda268,16,……無いみたい。,,"......Doesn't seem to
-be one."
+0xda268,16,……無いみたい。,,"......Doesn't seem
+to be here."
 0xda27c,16,（掲示板……か）,,"(A bulletin
 board......)"
 0xda290,16,あったでしょ…。,,"There was one, right?"
@@ -2181,12 +2184,13 @@ sense...huh..."
 0xda614,16,えっ？なにそれ。,,Huh? What's that.
 0xda628,16,私はしなかった。,,I didn't do it.
 0xda63c,16,鍵がかかってる。,,It's locked.
-0xda650,16,“どうしたの？”,,"""What's wrong?"""
+0xda650,16,“どうしたの？”,,"""What is it?"""
 0xda664,16,上からじゃない？,,"Isn't it coming from
 above?"
 0xda678,16,タチが悪いのよ。,,they're nastier.
 0xda68c,16,ちょっと不安が…,,I'm a little scared...
 0xda6a0,16,“あたしもだよ”,,"""Me too"""
+0xda6b4,16,…３…２…１…。,,3...2...1...
 0xda6c8,16,なんで、ここに。,,"Why, here."
 0xda6dc,16,しっかりしてよ。,,Get it together.
 0xda6f0,16,旧校舎を見てみる,,"I'll check the old
@@ -2215,8 +2219,7 @@ further in..."
 0xda81c,18,たしかめないと…。,,We need to confirm it...
 0xda830,18,やってみたいけど…,,"I want to try it, but..."
 0xda844,18,じゃあ、カナが…。,,"So, Kana..."
-0xda858,18,……落ち着かない…,,"......I can't calm
-down..."
+0xda858,18,……落ち着かない…,,I can't calm down...
 0xda86c,18,ホントだったんだ。,,It was true.
 0xda880,18,どこで鳴いてるの？,,"Where's that sound
 coming from?"
@@ -2242,8 +2245,7 @@ something?"
 0xda998,18,ユウタ、何かない？,,"Yuuta, don't you have
 something?"
 0xda9ac,18,ムラサキババア…？,,The purple hag...?
-0xda9c0,18,なに…この胸騒ぎ…,,"What is...this uneasy
-feeling..."
+0xda9c0,18,なに…この胸騒ぎ…,,What is this unease...
 0xda9d4,18,ムラサキカガミ…？,,Murasaki Kagami...?
 0xda9e8,18,かもしれないわね。,,Could be.
 0xda9fc,18,……ダメみたい…。,,"......Looks like it
@@ -2282,7 +2284,7 @@ yeah......"
 0xdabc8,18,カギがかかってる。,,It's locked.
 0xdabdc,18,カナに電話してみる,,I'll call Kana
 0xdabf0,18,えーっ、それだけ？,,"Ehh, that's all?"
-0xdac04,18,なんで、それが…。,,"Why, that..."
+0xdac04,18,なんで、それが…。,,Why here...?
 0xdac18,18,…あたし…もう…。,,...I...already...
 0xdac2c,18,それじゃないって。,,I told you that's not it.
 0xdac40,18,なんだ、違うんだ。,,"Ah, that wasn't it."
@@ -2384,7 +2386,7 @@ legend."
 0xdb2f8,20,メグミに電話してみる,,I'll call Megumi
 0xdb310,20,あ、うん。そうだね。,,"Ah, yeah. That's right."
 0xdb328,20,この鳴き声…カナ…？,,This sound...Kana...?
-0xdb340,20,…やっぱり…キツネ…,,...After all...a fox...
+0xdb340,20,…やっぱり…キツネ…,,"...A fox, after all..."
 0xdb358,20,…うーん、わかった。,,"...Mmm, got it."
 0xdb370,20,神隠しって…気になる,,"The kamikakushi...
 it worries me"
@@ -2392,8 +2394,7 @@ it worries me"
 disturbance...)"
 0xdb3a0,20,…まさか……ナナシ？,,...No way...Nanashi?
 0xdb3b8,20,カギが…かかってる。,,It's...locked.
-0xdb3d0,20,やっぱり、やめようよ,,"Let's just drop it, after
-all"
+0xdb3d0,20,やっぱり、やめようよ,,Let's just drop it
 0xdb3e8,20,あ、ちょっと待って。,,"Ah, wait a moment."
 0xdb400,20,今の…リコ？ミズキ？,,"Was that...Riko?
 Mizuki?"
@@ -2403,7 +2404,7 @@ thing..."
 0xdb448,20,もう、分かったよ…。,,"Alright, I get it..."
 0xdb460,20,どこから…聞こえる？,,"Where...is it coming
 from?"
-0xdb478,20,あ、そうだっけ……。,,"Ah, was that it......"
+0xdb478,20,あ、そうだっけ……。,,"Ah, was it?......"
 0xdb490,20,（早く歌わないと…）,,"(I need to sing
 quickly...)"
 0xdb4a8,20,（早く歌わないと…）,,"(I need to sing
@@ -2471,8 +2472,7 @@ library)"
 0xdb850,22,どう？学校には慣れた？,,"So? Have you gotten
 used to school yet?"
 0xdb868,22,キツネのはくせい……。,,A stuffed fox...
-0xdb880,22,早くここから出ないと…,,"We need to get out of
-here fast..."
+0xdb880,22,早くここから出ないと…,,Let's get out fast...
 0xdb898,22,玄関から出れるかも…。,,"Maybe we can get out
 through the entrance..."
 0xdb8b0,22,きたっ！ナナシからだ。,,"It's here! It's from
@@ -2619,8 +2619,7 @@ anything, I'm heading
 home."
 0xdc018,24,かわいくてびっくりした？,,"Were you surprised
 how pretty I am?"
-0xdc034,24,レイカに相談してみない？,,"Why don't we ask Reika
-about it?"
+0xdc034,24,レイカに相談してみない？,,Should we ask Reika?
 0xdc050,24,しっかり探して、ミズキ。,,"Search carefully,
 Mizuki."
 0xdc06c,24,じゃあ、このキツネも…。,,"So, this fox too..."
@@ -2664,8 +2663,7 @@ emails...?"
 0xdc29c,24,ここはどこ？この音は…？,,"Where am I? What is this
 sound...?"
 0xdc2b8,24,ナナシはそれを知ってて、,,"Nanashi knew that, and"
-0xdc2d4,24,…動物の…鳴き声じゃない,,"...It's not the sound of
-an animal..."
+0xdc2d4,24,…動物の…鳴き声じゃない,,...Not an animal...
 0xdc2f0,24,押さえてるような感じ…。,,"It feels like something is
 holding it back..."
 0xdc30c,24,…すごく重い空気だった。,,"...The atmosphere felt
@@ -3521,8 +3519,8 @@ book over there."
 だけど…、",,"Old buildings always
 have rumors, but..."
 0xdf0d8,37,"やっぱ、コックリさんしかない
-でしょ。",,"In the end, there's
-nothing left but
+でしょ。",,"In the end, we have no
+choice but to do
 Kokkuri-san."
 0xdf100,37,"本当のことになったら…
 どうしたら…。",,"If it comes true...what
@@ -4058,7 +4056,7 @@ basement, was it?"
 0xe0914,43,"（わたしたちにできるのは、ここ
 　までです）",,(This is all we can do)
 0xe0940,43,"オッケー。じゃあ、そっちの方へ
-行ってみよ！",,"Okay. Then, let's head
+行ってみよ！",,"OK. Then, let's head
 that way!"
 0xe096c,43,"あたしもなんだ。
 “屋上に来い”ってメール。",,"Me too. An email saying
@@ -4716,8 +4714,9 @@ looking for it."
 私たちは見えてない…。",,"Probably...Kana and
 Megumi can't see us..."
 0xe2890,49,"ちょうどミズキが立ってるあたり
-だったような……。",,"I think it was right where
-Mizuki was standing..."
+だったような……。",,"I think it was right
+where Mizuki is
+standing..."
 0xe28c4,49,"（下に行くのは、この階を
 　調べてからにしよう…）",,"(Let's go down after
 checking this floor...)"
@@ -6173,6 +6172,7 @@ or off."
 0xea33c,8,はっ…。,,Ah...
 0xea348,8,テンゴク,,TENGOKU (Heaven)
 0xea354,8,４２１９,,4219
+0xea360,8,３……。,,3...
 0xea36c,10,ジュウゴク,,JUUGOKU
 0xea384,10,電源を切る,,Turn off
 0xea3a8,10,そっか…。,,I see...
@@ -8081,7 +8081,7 @@ maybe?"
 0xf08ac,12,何も無い…。,,There's nothing here...
 0xf08cc,12,らしいって。,,that's what they say.
 0xf08dc,12,（ユミコ…）,,(Yumiko...)
-0xf08ec,12,どうしたの？,,What's wrong?
+0xf08ec,12,どうしたの？,,What is it?
 0xf08fc,12,いやあああ！,,Noooo!
 0xf090c,12,うん………。,,Yeah.........
 0xf091c,12,……ばれた？,,...Caught me?
@@ -8110,8 +8110,8 @@ store..."
 back..."
 0xf0a7c,12,さ、どうぞ。,,"Come on, go ahead."
 0xf0a8c,12,やばくねえ？,,Isn't that bad?
-0xf0a9c,12,どうしたの？,,What's wrong?
-0xf0aac,12,どうしたの？,,What's wrong?
+0xf0a9c,12,どうしたの？,,What is it?
+0xf0aac,12,どうしたの？,,What is it?
 0xf0abc,12,ああ………。,,Aaah.........
 0xf0acc,12,（ひぃぃ！）,,(Eeek!)
 0xf0adc,12,そうだね…。,,You're right...
@@ -8179,7 +8179,7 @@ just us two"
 0xf0e4c,14,まさか…恋人…,,"No way... her
 partner..."
 0xf0e5c,14,これで、よし。,,"There, done."
-0xf0e6c,14,…どうしたの？,,...What's wrong?
+0xf0e6c,14,…どうしたの？,,...What is it?
 0xf0e7c,14,あ、止まった。,,"Ah, it stopped."
 0xf0e8c,14,え？　うちの？,,Huh? Ours?
 0xf0e9c,14,…サイズかな？,,...Could it be the size?
@@ -8207,7 +8207,7 @@ story."
 0xf0fdc,14,用意したけど。,,"I got it ready, but."
 0xf0fec,14,いないのかな。,,"I wonder if she's not
 there."
-0xf0ffc,14,…どうしたの？,,...What's wrong?
+0xf0ffc,14,…どうしたの？,,...What is it?
 0xf100c,14,なんかあった？,,Did something happen?
 0xf101c,14,（なにこれ…）,,(What is this...)
 0xf102c,16,９月頃ですけど。,,"It was around
@@ -8687,7 +8687,7 @@ kidding, just kidding."
 0xf2c24,24,あっ、ダメだよ！ミズキ！,,"Ah, no, Mizuki!"
 0xf2c40,24,本番はちゃんと刺してね。,,"For the real thing, stab
 it properly, okay."
-0xf2c5c,24,…………………オッケー。,,..............Okay.
+0xf2c5c,24,…………………オッケー。,,..............OK.
 0xf2c78,24,ここからは急ぐらしいの！,,"They say from here on
 you have to hurry!"
 0xf2c94,24,その間、じっとしてるの？,,"Meanwhile, do I have to
@@ -11101,7 +11101,7 @@ too, right...?"
 anymore!"
 0xfa654,12,これって…。,,This is...
 0xfa664,12,ヤバくない？,,Isn't this dangerous?
-0xfa674,12,どうしたの？,,What's wrong?
+0xfa674,12,どうしたの？,,What is it?
 0xfa684,12,ギロチン…。,,A guillotine...
 0xfa694,12,何これ……？,,What is this......?
 0xfa6a4,12,１番先がいい,,I'd rather go first
@@ -12844,7 +12844,7 @@ spirit.)"
 0x100028,6,ああ。,,Yeah.
 0x100030,6,気配？,,A presence?
 0x100038,6,先生？,,Teacher?
-0x100048,6,俺も。,,Me too.
+0x100048,6,俺も。,,Me neither.
 0x100058,6,レイカ,,Reika
 0x100070,6,リコ！,,Riko!
 0x100078,6,えっ。,,Huh.
@@ -12879,6 +12879,7 @@ spirit.)"
 0x1001f0,8,大丈夫？,,You okay?
 0x100208,8,…うん。,,...Yeah.
 0x100214,8,ふうん。,,"Huh, I see."
+0x100220,8,２……。,,2...
 0x10022c,8,…うん。,,...Yeah.
 0x100238,8,大丈夫？,,You okay?
 0x100244,8,うん…。,,Yeah...
@@ -12901,6 +12902,7 @@ spirit.)"
 0x100358,8,…なに？,,...What?
 0x100364,8,えっ…。,,Huh...
 0x100370,8,マサキ！,,Masaki!
+0x10037c,8,１……。,,1...
 0x100388,8,ほらな。,,See? Told you.
 0x100394,8,あああ？,,Ahh?
 0x1003ac,8,ユウタ！,,Yuuta!
@@ -13004,8 +13006,8 @@ neck..."
 0x1008dc,12,（ナナシ…）,,(Nanashi...)
 0x1008ec,12,どうして…？,,Why...?
 0x1008fc,12,…プール…。,,...The pool...
-0x10090c,12,どうしたの？,,What's wrong with you?
-0x10091c,12,どうしたの？,,What's wrong with you?
+0x10090c,12,どうしたの？,,What is it?
+0x10091c,12,どうしたの？,,What is it?
 0x10092c,12,どうしたの？,,What's wrong with you?
 0x10093c,12,あ…うん…。,,Ah...yeah...
 0x10094c,12,…そうする。,,...I'll do that.
@@ -13060,7 +13062,7 @@ high school too,"
 0x100c3c,14,プールは違う？,,It's not the pool?
 0x100c5c,14,顔色…悪いね…,,You look...pale...
 0x100c6c,14,リコ！いるか？,,Riko! Are you there?
-0x100c7c,14,…どうしたの？,,...What's wrong?
+0x100c7c,14,…どうしたの？,,...What is it?
 0x100c8c,14,…あれ、人間？,,...Is that a person?
 0x100c9c,14,誰もいない…？,,Is nobody here...?
 0x100cac,14,……そんな…。,,......No way...
@@ -15309,7 +15311,7 @@ the dead rise again"
 the phone."
 0x107910,32,（じゃあ…わたしが会ったのは…）,,"(Then...who I met
 was...)"
-0x107934,32,どうしたの、ミズキ、首かしげて。,,"What's wrong,
+0x107934,32,どうしたの、ミズキ、首かしげて。,,"What is it,
 Mizuki, tilting your
 head like that."
 0x107958,32,ほら、１年の担任、長谷川ユカリ。,,"Look, the first-year

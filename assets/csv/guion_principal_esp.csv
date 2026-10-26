@@ -256,17 +256,17 @@ regrese al torii."
 0xd4050,12,時間は違う？,,¿La hora es distinta?
 0xd4060,12,…うん……。,,...Sí......
 0xd4070,12,…ごめん…。,,...Perdón...
-0xd4080,12,どうしたの？,,¿Qué te pasa?
+0xd4080,12,どうしたの？,,¿Qué pasa?
 0xd4090,12,文字はどう？,,"¿Y las letras, qué tal?"
 0xd40a0,14,よっしゃ……。,,Bien......
 0xd40b0,14,何か写ってる？,,¿Sale algo en la foto?
 0xd40c0,14,なんだろう…。,,¿Qué será esto...?
-0xd40d0,14,…どうしたの？,,...¿Qué te pasa?
+0xd40d0,14,…どうしたの？,,...¿Qué pasa?
 0xd40e0,14,（…ナナシ…）,,(...Nanashi...)
 0xd40f0,14,もうやめよっ！,,¡Ya paremos!
 0xd4100,14,あ、そっか…。,,"Ah, ya veo..."
 0xd4110,14,題名って同じ？,,¿El título es el mismo?
-0xd4120,14,あたしもだよ。,,Yo también.
+0xd4120,14,あたしもだよ。,,Yo tampoco.
 0xd4130,14,数字？どんな？,,¿Un número? ¿Cuál?
 0xd4140,16,うん、今度こそ。,,"Sí, esta vez de verdad."
 0xd4154,16,知っていますか？,,¿Las conoce?
@@ -820,21 +820,21 @@ urbana?"
 0xd5c64,12,どこ行くの？,,¿A dónde vas?
 0xd5c74,12,うーん……。,,Mmm......
 0xd5c84,12,トイレ…ね。,,El baño...ya veo.
-0xd5c94,12,どうしたの？,,¿Qué te pasa?
+0xd5c94,12,どうしたの？,,¿Qué pasa?
 0xd5ca4,12,予定表……。,,El horario......
 0xd5cb4,12,そうだね…。,,Tienes razón...
-0xd5cc4,12,あたしも…。,,Yo también...
+0xd5cc4,12,あたしも…。,,Yo tampoco...
 0xd5cd4,12,また、鏡…。,,"Otra vez, el espejo..."
 0xd5ce4,12,お願い……。,,Por favor......
-0xd5cf4,12,あたしも…。,,Yo también...
+0xd5cf4,12,あたしも…。,,Yo tampoco...
 0xd5d04,12,……そんな。,,......No puede ser.
 0xd5d14,12,あ、レイカ？,,"Ah, ¿Reika?"
-0xd5d24,12,どうしたの？,,¿Qué te pasa?
+0xd5d24,12,どうしたの？,,¿Qué pasa?
 0xd5d34,12,…ごめん…。,,...Perdón...
 0xd5d44,12,なぜって…。,,¿Que por qué?...
 0xd5d54,12,えっ、どれ？,,"Eh, ¿cuál?"
 0xd5d64,12,あれ？先生？,,¿Eh? ¿Profesora?
-0xd5d74,12,どうしたの？,,¿Qué te pasa?
+0xd5d74,12,どうしたの？,,¿Qué pasa?
 0xd5d84,12,ゴミが……。,,La basura......
 0xd5d94,12,入ってみる？,,¿Entramos?
 0xd5da4,12,犬の漢字…。,,El kanji de perro...
@@ -849,7 +849,7 @@ urbana?"
 0xd5e44,14,誰か！　誰か！,,¡Alguien! ¡Alguien!
 0xd5e54,14,…あたし……。,,...Yo......
 0xd5e64,14,よかった……。,,Qué alivio......
-0xd5e74,14,…どうしたの？,,...¿Qué te pasa?
+0xd5e74,14,…どうしたの？,,...¿Qué pasa?
 0xd5e84,14,そうだね……。,,Es cierto......
 0xd5e94,14,もしかして…、,,"Será que...,"
 0xd5eb4,14,花子さぁぁん。,,Hanako-saaan.
@@ -861,7 +861,7 @@ urbana?"
 0xd5f14,14,誰か！　誰か！,,¡Alguien! ¡Alguien!
 0xd5f24,14,やだ…マジで？,,¿No...en serio?
 0xd5f34,14,もしかして…、,,"Será que...,"
-0xd5f44,14,…どうしたの？,,...¿Qué te pasa?
+0xd5f44,14,…どうしたの？,,...¿Qué pasa?
 0xd5f54,14,あ、…うん…。,,"Ah,...sí..."
 0xd5f64,14,今の、ナニ…？,,¿Qué fue eso...?
 0xd5f74,14,用意がいいね。,,Qué preparada estás.
@@ -1757,6 +1757,7 @@ personas."
 0xd8bec,8,じゃあ。,,Bueno.
 0xd8bf8,8,私も！？,,¿¡Yo también!?
 0xd8c04,8,ホント？,,¿En serio?
+0xd8c10,8,…ＯＫ。,,...OK.
 0xd8c28,8,さあ…。,,Quién sabe...
 0xd8c34,8,うん…。,,Sí...
 0xd8c40,8,お願い！,,¡Por favor!
@@ -1779,7 +1780,7 @@ personas."
 0xd8d54,8,呪い…？,,¿Una maldición...?
 0xd8d60,8,（はっ）,,(Ha)
 0xd8d6c,8,うん…。,,Sí...
-0xd8d78,8,シセン？,,¿La mirada...?
+0xd8d78,8,シセン？,,¿Una mirada...?
 0xd8d84,8,リコ…。,,Riko...
 0xd8d90,8,ごめん。,,Perdón.
 0xd8d9c,8,ひっ…。,,Hii...
@@ -1881,7 +1882,7 @@ sin detonar."
 0xd92ac,10,よかった。,,Qué alivio.
 0xd92b8,10,キツネ！？,,¿¡Un zorro!?
 0xd92c4,10,よかった。,,Qué alivio.
-0xd92d0,10,オッケー。,,Okey.
+0xd92d0,10,オッケー。,,OK.
 0xd92dc,10,…ホント？,,...¿En serio?
 0xd92e8,10,アリサ…？,,¿Arisa...?
 0xd9300,10,おはよー。,,Buenos días.
@@ -1939,29 +1940,29 @@ detonar..."
 0xd9588,12,コトダマ…。,,Kotodama...
 0xd9598,12,風の抜け道？,,"¿Un paso de
 aire?"
-0xd95a8,12,どうしたの？,,¿Qué te pasa?
+0xd95a8,12,どうしたの？,,¿Qué pasa?
 0xd95b8,12,とおりゃんせ,,Toryanse
 0xd95c8,12,…ミズキ…。,,...Mizuki...
 0xd95d8,12,あったぁ…！,,¡Lo encontré...!
-0xd95e8,12,どうしたの？,,¿Qué te pasa?
+0xd95e8,12,どうしたの？,,¿Qué pasa?
 0xd95f8,12,さてと……。,,Bueno......
 0xd9608,12,…声？誰の？,,"...¿Una voz?
 ¿De quién?"
 0xd9618,12,大丈夫だよ。,,Está bien.
-0xd9628,12,どうしたの？,,¿Qué te pasa?
-0xd9638,12,どうしたの？,,¿Qué te pasa?
+0xd9628,12,どうしたの？,,¿Qué pasa?
+0xd9638,12,どうしたの？,,¿Qué pasa?
 0xd9648,12,そうかなあ？,,¿Será eso?
 0xd9658,12,ね、ミズキ。,,"Oye, Mizuki."
-0xd9668,12,どうしたの？,,¿Qué te pasa?
+0xd9668,12,どうしたの？,,¿Qué pasa?
 0xd9678,12,…神隠し…。,,...Kamikakushi...
 0xd9688,12,…まあね…。,,...Más o menos...
 0xd9698,12,よかった…。,,Qué alivio...
-0xd96a8,12,どうしたの？,,¿Qué te pasa?
+0xd96a8,12,どうしたの？,,¿Qué pasa?
 0xd96b8,12,なるほどね。,,Ya veo.
 0xd96c8,12,あ……うん。,,Ah......sí.
 0xd96d8,12,え？トイレ？,,¿Eh? ¿El baño?
 0xd96e8,12,たぶん…ね。,,Tal vez...
-0xd96f8,12,どうしたの？,,¿Qué te pasa?
+0xd96f8,12,どうしたの？,,¿Qué pasa?
 0xd9708,12,…足音が…。,,...Los pasos...
 0xd9718,12,メグミじゃ…,,No será Megumi...
 0xd9728,12,……ごめん。,,......Perdón.
@@ -1978,7 +1979,7 @@ revista?"
 0xd97c8,12,当然でしょ。,,Obvio que sí.
 0xd97d8,12,あ、ミズキ。,,"Ah, Mizuki."
 0xd97e8,12,キツネが…。,,Un zorro...
-0xd97f8,12,どうしたの？,,¿Qué te pasa?
+0xd97f8,12,どうしたの？,,¿Qué sucede?
 0xd9808,12,に、逃げよ！,,¡H-huyamos!
 0xd9818,12,ううっ……。,,Uhh......
 0xd9828,12,どうしたの？,,¿Qué te pasa?
@@ -1992,9 +1993,9 @@ de la guerra..."
 0xd9898,12,え……なに？,,Eh......¿qué?
 0xd98a8,12,別の空間…。,,Un espacio distinto...
 0xd98b8,12,ね、お願い。,,"Oye, por favor."
-0xd98c8,12,どうしたの？,,¿Qué te pasa?
+0xd98c8,12,どうしたの？,,¿Qué pasa?
 0xd98d8,12,…うそ……。,,...No puede ser......
-0xd98e8,12,どうしたの？,,¿Qué te pasa?
+0xd98e8,12,どうしたの？,,¿Qué pasa?
 0xd98f8,12,“ホント？”,,"""¿En serio?"""
 0xd9908,12,………動物？,,..........¿Un animal?
 0xd9918,12,…消えた…？,,...¿Desapareció...?
@@ -2006,14 +2007,14 @@ de la guerra..."
 0xd9978,12,…はいはい。,,"...Sí, sí."
 0xd9988,12,この鳴き声…,,Este sonido...
 0xd9998,12,誰よ、それ。,,¿Y quiénes son?
-0xd99a8,12,どうしたの？,,¿Qué te pasa?
+0xd99a8,12,どうしたの？,,¿Qué pasa?
 0xd99b8,12,ごめん……。,,Perdón......
 0xd99c8,12,ね…あれ…。,,Oye...eso...
 0xd99d8,12,ケータイで？,,¿En el celular?
 0xd99e8,12,くわしいね。,,Sabes bastante.
 0xd99f8,12,あ、リコっ。,,"Ah, Riko."
-0xd9a08,12,どうしたの？,,¿Qué te pasa?
-0xd9a18,12,どうしたの？,,¿Qué te pasa?
+0xd9a08,12,どうしたの？,,¿Qué pasa?
+0xd9a18,12,どうしたの？,,¿Qué pasa?
 0xd9a28,12,なんで紫色？,,¿Por qué morado?
 0xd9a38,12,キツネが…。,,Un zorro...
 0xd9a48,12,そのまま帰る,,Volver así sin más
@@ -2024,7 +2025,8 @@ de la guerra..."
 0xd9a98,12,神隠し……。,,Kamikakushi......
 0xd9aa8,12,意外だね…。,,Que sorpresa...
 0xd9ab8,12,かごめかごめ,,Kagome Kagome
-0xd9ac8,12,……ここは？,,......¿Y aquí?
+0xd9ac8,12,……ここは？,,"......¿Dónde
+estamos?"
 0xd9ad8,14,そうとしか…。,,"No puede ser
 otra cosa..."
 0xd9ae8,14,うん、ごめん。,,"Sí, perdón."
@@ -2038,6 +2040,7 @@ pienso..."
 0xd9b58,14,近くって……？,,"¿Cerca, dices......?"
 0xd9b68,14,わかんない…。,,No sé...
 0xd9b78,14,わかった……。,,Entendido......
+0xd9b88,14,３…２…１…。,,3...2...1...
 0xd9b98,14,なにこれ……。,,¿Qué es esto......?
 0xd9ba8,14,そうみたい…。,,Parece que sí...
 0xd9bb8,14,…あ、はい…。,,"...Ah, sí..."
@@ -2093,11 +2096,11 @@ primer piso?"
 0xd9e38,14,私は行かない！,,¡Yo no voy!
 0xd9e48,14,そうなんだ…。,,Ya veo...
 0xd9e58,14,……やっぱり。,,......Lo sabía.
-0xd9e68,14,…どうしたの？,,...¿Qué te pasa?
+0xd9e68,14,…どうしたの？,,...¿Qué pasa?
 0xd9e78,14,ね、これ見て。,,"Oye, mira esto."
 0xd9e88,14,鏡を持ってる？,,mejor?
 0xd9e98,14,水…？…下水？,,"¿Agua...?
-...¿Alcantarilla?"
+...¿Las tuberías?"
 0xd9ea8,14,もう帰ろうよ。,,Volvamos ya.
 0xd9eb8,14,ここの鏡も…。,,"El espejo de
 aquí también..."
@@ -2174,8 +2177,8 @@ paz..."
 0xda240,16,…旧校舎…か…。,,"...El edificio
 viejo..."
 0xda254,16,……わかった…。,,......Entendido...
-0xda268,16,……無いみたい。,,"......Parece que
-no hay."
+0xda268,16,……無いみたい。,,"......Parece que no
+está."
 0xda27c,16,（掲示板……か）,,"(Un tablón de
 anuncios......)"
 0xda290,16,あったでしょ…。,,"Había un rumor así,
@@ -2232,19 +2235,20 @@ esperando!"
 fantasma?"
 0xda5b0,16,先生を信頼して。,,confía en tu profesora.
 0xda5c4,16,…どういうこと？,,...¿Qué quieres decir?
-0xda5d8,16,すごいホコリ…。,,Qué polvo...
+0xda5d8,16,すごいホコリ…。,,Cuánto polvo...
 0xda5ec,16,……なに、今の？,,......¿Qué fue eso?
 0xda600,16,タチが悪いのよ。,,son más malignos.
 0xda614,16,えっ？なにそれ。,,¿Eh? ¿Qué es eso?
 0xda628,16,私はしなかった。,,Yo no lo hice.
 0xda63c,16,鍵がかかってる。,,Está con llave.
-0xda650,16,“どうしたの？”,,"""¿Qué te pasa?"""
+0xda650,16,“どうしたの？”,,"""¿Qué pasa?"""
 0xda664,16,上からじゃない？,,"¿No será de
 arriba?"
 0xda678,16,タチが悪いのよ。,,son más malignos.
 0xda68c,16,ちょっと不安が…,,"Tengo un poco
 de miedo..."
 0xda6a0,16,“あたしもだよ”,,"""Yo también"""
+0xda6b4,16,…３…２…１…。,,3...2...1...
 0xda6c8,16,なんで、ここに。,,¿Por qué estás aquí?
 0xda6dc,16,しっかりしてよ。,,Ponte las pilas.
 0xda6f0,16,旧校舎を見てみる,,"Voy a revisar el
@@ -2273,8 +2277,7 @@ más allá..."
 0xda81c,18,たしかめないと…。,,Hay que confirmarlo...
 0xda830,18,やってみたいけど…,,"Quisiera, pero..."
 0xda844,18,じゃあ、カナが…。,,"Entonces, Kana..."
-0xda858,18,……落ち着かない…,,"......No me
-puedo calmar..."
+0xda858,18,……落ち着かない…,,......No me puedo calmar...
 0xda86c,18,ホントだったんだ。,,Era verdad.
 0xda880,18,どこで鳴いてるの？,,¿Dónde está sonando?
 0xda894,18,なにこれ……ゴミ？,,"¿Qué es
@@ -2298,8 +2301,7 @@ algo?"
 0xda998,18,ユウタ、何かない？,,"Yuuta, ¿no tienes
 algo?"
 0xda9ac,18,ムラサキババア…？,,¿La vieja morada...?
-0xda9c0,18,なに…この胸騒ぎ…,,"Qué es...esta
-inquietud..."
+0xda9c0,18,なに…この胸騒ぎ…,,¿Qué es esta inquietud?
 0xda9d4,18,ムラサキカガミ…？,,¿Murasaki Kagami...?
 0xda9e8,18,かもしれないわね。,,Puede ser.
 0xda9fc,18,……ダメみたい…。,,"......Parece que
@@ -2325,7 +2327,7 @@ eso...?"
 edificio viejo..."
 0xdaaec,18,開かないんでしょ？,,"No se abre, ¿no?"
 0xdab00,18,そうだよ、行こっ！,,"¡Así es, vamos!"
-0xdab14,18,あんたらしいって。,,dicen que fuiste tú.
+0xdab14,18,あんたらしいって。,,dice que fuiste tú.
 0xdab28,18,…そんな気がする。,,"...Tengo esa
 sensación."
 0xdab3c,18,（…カミカクシ…）,,(...Kamikakushi...)
@@ -2342,7 +2344,7 @@ escuché..."
 0xdabc8,18,カギがかかってる。,,Está con llave.
 0xdabdc,18,カナに電話してみる,,Voy a llamar a Kana
 0xdabf0,18,えーっ、それだけ？,,"Eeh, ¿eso es todo?"
-0xdac04,18,なんで、それが…。,,¿Por qué eso...?
+0xdac04,18,なんで、それが…。,,¿Por qué aquí...?
 0xdac18,18,…あたし…もう…。,,...Yo...ya...
 0xdac2c,18,それじゃないって。,,Te digo que no es eso.
 0xdac40,18,なんだ、違うんだ。,,"Ah, no era eso."
@@ -2389,7 +2391,7 @@ el examen de
 vista."
 0xdae90,20,さっきの着メロの…？,,"¿El del tono de llamada
 de antes...?"
-0xdaea8,20,この階の奥の方……。,,"Al fondo de este
+0xdaea8,20,この階の奥の方……。,,"Al final de este
 piso......"
 0xdaec0,20,やっぱり、やめておく,,"Mejor no, al final"
 0xdaed8,20,廊下の奥の方から…？,,"¿Desde el fondo
@@ -2408,14 +2410,14 @@ eso..."
 0xdaf98,20,…わかんないよ……。,,...No sé......
 0xdafb0,20,やっぱり下？いこっ！,,"El de abajo,
 ¿no? ¡Vamos!"
-0xdafc8,20,楽譜とかが残ってる。,,"Queda algo de
-partitura."
+0xdafc8,20,楽譜とかが残ってる。,,"Quedan partituras
+y cosas así."
 0xdafe0,20,…イタチのはくせい？,,"...¿Una comadreja
 disecada?"
 0xdaff8,20,あぁ……いてて……。,,Ah......ay......
 0xdb010,20,聞こえなくなった…。,,Dejé de escucharlo...
-0xdb028,20,これ以上は無理か…。,,"Será que no se
-puede más..."
+0xdb028,20,これ以上は無理か…。,,"Parece que no se
+puede avanzar más..."
 0xdb040,20,発見されたんだって。,,"dicen que la
 encontraron."
 0xdb058,20,また…逃げられた…？,,"¿Otra vez...se
@@ -2426,7 +2428,8 @@ correo........?"
 bodega?"
 0xdb0a0,20,……あの、先生……。,,"......Este,
 profesora......"
-0xdb0b8,20,うーん、無いなぁ…。,,"Mmm, no hay..."
+0xdb0b8,20,うーん、無いなぁ…。,,"Mmm, no está
+por aquí..."
 0xdb0d0,20,（鍵がかかってる…）,,(Está con llave...)
 0xdb0e8,20,私は、怒ったけどね。,,"Yo me enojé, eso
 sí."
@@ -2468,8 +2471,7 @@ urbana famosa."
 cierto."
 0xdb328,20,この鳴き声…カナ…？,,"¿Este sonido...
 Kana...?"
-0xdb340,20,…やっぱり…キツネ…,,"...Al final...
-un zorro..."
+0xdb340,20,…やっぱり…キツネ…,,...Será un zorro...
 0xdb358,20,…うーん、わかった。,,"...Mmm, entendido."
 0xdb370,20,神隠しって…気になる,,"La desaparición
 misteriosa...me preocupa"
@@ -2477,7 +2479,7 @@ misteriosa...me preocupa"
 magnética...)"
 0xdb3a0,20,…まさか……ナナシ？,,...¿Será...Nanashi?
 0xdb3b8,20,カギが…かかってる。,,Está...con llave.
-0xdb3d0,20,やっぱり、やめようよ,,"Mejor dejémoslo, al final"
+0xdb3d0,20,やっぱり、やめようよ,,Mejor dejémoslo
 0xdb3e8,20,あ、ちょっと待って。,,"Ah, espera un
 poco."
 0xdb400,20,今の…リコ？ミズキ？,,"¿Eso fue...Riko?
@@ -2487,7 +2489,7 @@ poco."
 0xdb448,20,もう、分かったよ…。,,"Ya, entendí..."
 0xdb460,20,どこから…聞こえる？,,"¿De dónde...se
 escucha?"
-0xdb478,20,あ、そうだっけ……。,,"Ah, era así......"
+0xdb478,20,あ、そうだっけ……。,,"Ah, ¿era así?......"
 0xdb490,20,（早く歌わないと…）,,"(Hay que cantar
 rápido...)"
 0xdb4a8,20,（早く歌わないと…）,,"(Hay que cantar
@@ -2532,7 +2534,7 @@ hacemos...?"
 decir eso?"
 0xdb700,22,アリサは入院中でしょ。,,"Arisa está internada,
 ¿no?"
-0xdb718,22,奥……向こう廊下の方？,,"¿Al fondo... del otro
+0xdb718,22,奥……向こう廊下の方？,,"¿Al final... del otro
 pasillo?"
 0xdb730,22,毛…だ……動物の毛…？,,"¿Es pelo... pelo de
 animal...?"
@@ -2556,8 +2558,7 @@ biblioteca)"
 0xdb850,22,どう？学校には慣れた？,,"¿Y? ¿Ya te acostumbraste
 a la escuela?"
 0xdb868,22,キツネのはくせい……。,,Un zorro disecado...
-0xdb880,22,早くここから出ないと…,,"Hay que salir de aquí
-rápido..."
+0xdb880,22,早くここから出ないと…,,Hay que salir rápido...
 0xdb898,22,玄関から出れるかも…。,,"Tal vez podamos salir
 por la entrada..."
 0xdb8b0,22,きたっ！ナナシからだ。,,¡Llegó! Es de Nanashi.
@@ -2693,8 +2694,7 @@ puede escuchar."
 hacer, ya me voy."
 0xdc018,24,かわいくてびっくりした？,,"¿Te sorprendió lo linda
 que soy?"
-0xdc034,24,レイカに相談してみない？,,"¿Por qué no le
-preguntamos a Reika?"
+0xdc034,24,レイカに相談してみない？,,¿Preguntamos a Reika?
 0xdc050,24,しっかり探して、ミズキ。,,"Busca bien, Mizuki."
 0xdc06c,24,じゃあ、このキツネも…。,,"Entonces, este zorro
 también..."
@@ -2737,8 +2737,7 @@ cadenas de correo...?"
 0xdc29c,24,ここはどこ？この音は…？,,"¿Dónde estoy? ¿Qué es
 este sonido...?"
 0xdc2b8,24,ナナシはそれを知ってて、,,"Nanashi sabía eso, y"
-0xdc2d4,24,…動物の…鳴き声じゃない,,"No es el sonido de un
-animal..."
+0xdc2d4,24,…動物の…鳴き声じゃない,,...No es un animal...
 0xdc2f0,24,押さえてるような感じ…。,,"Se siente como si algo
 lo detuviera..."
 0xdc30c,24,…すごく重い空気だった。,,"El ambiente se sentía
@@ -3523,7 +3522,7 @@ estufa eléctrica, foco..."
 refugio está en
 el sótano, ¿no?"
 0xded18,37,"さびたりしてるけど…。
-使えるのかな？",,"Está oxidado,
+使えるのかな？",,"Está oxidada,
 pero... ¿servirá?"
 0xded40,37,"上に行こうよ。
 他に手はあると思うし。",,"Vamos arriba.
@@ -3615,9 +3614,8 @@ libro allí."
 siempre tienen
 rumores, pero..."
 0xdf0d8,37,"やっぱ、コックリさんしかない
-でしょ。",,"Al final, no
-queda otra que
-Kokkuri-san."
+でしょ。",,"Al final, no queda otra
+que hacer Kokkuri-san."
 0xdf100,37,"本当のことになったら…
 どうしたら…。",,"Si se hace
 realidad... qué
@@ -3691,7 +3689,7 @@ cadena de correo
 de Nanashi..."
 0xdf3f8,37,"あのカギを使って、
 他を調べてみない？",,"Con esa llave,
-¿no revisamos
+¿revisamos
 otro lugar?"
 0xdf420,37,"そうだね、何かヒントが見つかる
 かも。",,"Es cierto, tal vez
@@ -4187,7 +4185,7 @@ del sótano, ¿no?"
 lo que podemos
 hacer)"
 0xe0940,43,"オッケー。じゃあ、そっちの方へ
-行ってみよ！",,"Okey. Entonces,
+行ってみよ！",,"OK. Entonces,
 ¡vamos hacia
 allá!"
 0xe096c,43,"あたしもなんだ。
@@ -4897,8 +4895,8 @@ no nos pueden
 ver..."
 0xe2890,49,"ちょうどミズキが立ってるあたり
 だったような……。",,"Creo que era justo
-donde estaba parada
-Mizuki..."
+por donde está
+parada Mizuki..."
 0xe28c4,49,"（下に行くのは、この階を
 　調べてからにしよう…）",,"(Bajemos después de
 revisar este piso...)"
@@ -5083,10 +5081,9 @@ su lugar."
 edificio nuevo queda al
 noreste del viejo,"
 0xe3118,51,"さっき拾ったカギで開く、ほかの
-教室を開けてみない？",,"¿No probamos
-abrir otra aula
-con la llave que
-encontramos?"
+教室を開けてみない？",,"¿Probamos abrir otra
+aula con la llave
+que encontramos?"
 0xe314c,51,"下の階調べてまた戻ってくる
 なんて、メンドーでしょ？",,"Qué fastidio revisar
 abajo y tener que
@@ -6400,6 +6397,7 @@ apagar."
 0xea33c,8,はっ…。,,Ah...
 0xea348,8,テンゴク,,TENGOKU (Cielo)
 0xea354,8,４２１９,,4219
+0xea360,8,３……。,,3...
 0xea36c,10,ジュウゴク,,JUUGOKU
 0xea384,10,電源を切る,,Apagar
 0xea3a8,10,そっか…。,,Ya veo...
@@ -8285,7 +8283,7 @@ alumnos?"
 0xf08ac,12,何も無い…。,,No hay nada...
 0xf08cc,12,らしいって。,,eso dicen.
 0xf08dc,12,（ユミコ…）,,(Yumiko...)
-0xf08ec,12,どうしたの？,,¿Qué te pasa?
+0xf08ec,12,どうしたの？,,¿Qué pasa?
 0xf08fc,12,いやあああ！,,¡Noooo!
 0xf090c,12,うん………。,,Sí.........
 0xf091c,12,……ばれた？,,...¿Me descubriste?
@@ -8312,8 +8310,8 @@ conveniencia..."
 0xf0a6c,12,奥の物置…。,,El depósito del fondo...
 0xf0a7c,12,さ、どうぞ。,,"Vamos, adelante."
 0xf0a8c,12,やばくねえ？,,¿No es peligroso eso?
-0xf0a9c,12,どうしたの？,,¿Qué te pasa?
-0xf0aac,12,どうしたの？,,¿Qué te pasa?
+0xf0a9c,12,どうしたの？,,¿Qué pasa?
+0xf0aac,12,どうしたの？,,¿Qué pasa?
 0xf0abc,12,ああ………。,,Aaah.........
 0xf0acc,12,（ひぃぃ！）,,(¡Hiii!)
 0xf0adc,12,そうだね…。,,Tienes razón...
@@ -8378,7 +8376,7 @@ pared..."
 0xf0e4c,14,まさか…恋人…,,"No puede ser... su
 pareja..."
 0xf0e5c,14,これで、よし。,,"Con esto, listo."
-0xf0e6c,14,…どうしたの？,,...¿Qué te pasa?
+0xf0e6c,14,…どうしたの？,,...¿Qué pasa?
 0xf0e7c,14,あ、止まった。,,"Ah, se detuvo."
 0xf0e8c,14,え？　うちの？,,¿Eh? ¿La nuestra?
 0xf0e9c,14,…サイズかな？,,...¿Será la talla?
@@ -8404,7 +8402,7 @@ historia."
 0xf0fcc,14,そうなんだ…。,,Ya veo...
 0xf0fdc,14,用意したけど。,,"Lo preparé, pero."
 0xf0fec,14,いないのかな。,,¿No estará?
-0xf0ffc,14,…どうしたの？,,...¿Qué te pasa?
+0xf0ffc,14,…どうしたの？,,...¿Qué pasa?
 0xf100c,14,なんかあった？,,¿Pasó algo?
 0xf101c,14,（なにこれ…）,,(¿Qué es esto...?)
 0xf102c,16,９月頃ですけど。,,"Fue como en
@@ -8891,7 +8889,7 @@ es broma."
 0xf2c24,24,あっ、ダメだよ！ミズキ！,,"¡Ah, no, Mizuki!"
 0xf2c40,24,本番はちゃんと刺してね。,,"En la de verdad, apuñala
 bien, eh."
-0xf2c5c,24,…………………オッケー。,,..............Okey.
+0xf2c5c,24,…………………オッケー。,,..............OK.
 0xf2c78,24,ここからは急ぐらしいの！,,"¡Dicen que de aquí en
 adelante hay que
 apurarse!"
@@ -11329,7 +11327,7 @@ miedo a algo, ¿no...?"
 0xfa644,12,もうやだっ。,,¡Ya no quiero!
 0xfa654,12,これって…。,,Esto es...
 0xfa664,12,ヤバくない？,,¿No es peligroso esto?
-0xfa674,12,どうしたの？,,¿Qué te pasa?
+0xfa674,12,どうしたの？,,¿Qué pasa?
 0xfa684,12,ギロチン…。,,Una guillotina...
 0xfa694,12,何これ……？,,¿Qué es esto......?
 0xfa6a4,12,１番先がいい,,Prefiero ir primero
@@ -13040,7 +13038,7 @@ del dueño)"
 0x100028,6,ああ。,,Ah.
 0x100030,6,気配？,,¿Una presencia?
 0x100038,6,先生？,,¿La profesora?
-0x100048,6,俺も。,,Yo también.
+0x100048,6,俺も。,,Yo tampoco.
 0x100058,6,レイカ,,Reika
 0x100070,6,リコ！,,¡Riko!
 0x100078,6,えっ。,,Eh.
@@ -13075,6 +13073,7 @@ del dueño)"
 0x1001f0,8,大丈夫？,,¿Estás bien?
 0x100208,8,…うん。,,...Sí.
 0x100214,8,ふうん。,,"Ah, ya veo."
+0x100220,8,２……。,,2...
 0x10022c,8,…うん。,,...Sí.
 0x100238,8,大丈夫？,,¿Estás bien?
 0x100244,8,うん…。,,Sí...
@@ -13097,6 +13096,7 @@ del dueño)"
 0x100358,8,…なに？,,...¿Qué?
 0x100364,8,えっ…。,,Eh...
 0x100370,8,マサキ！,,¡Masaki!
+0x10037c,8,１……。,,1...
 0x100388,8,ほらな。,,¿Ves? Te lo dije.
 0x100394,8,あああ？,,¿Ahh?
 0x1003ac,8,ユウタ！,,¡Yuuta!
@@ -13199,8 +13199,8 @@ del dueño)"
 0x1008dc,12,（ナナシ…）,,(Nanashi...)
 0x1008ec,12,どうして…？,,¿Por qué...?
 0x1008fc,12,…プール…。,,...La piscina...
-0x10090c,12,どうしたの？,,¿Qué te pasa?
-0x10091c,12,どうしたの？,,¿Qué te pasa?
+0x10090c,12,どうしたの？,,¿Qué pasa?
+0x10091c,12,どうしたの？,,¿Qué pasa?
 0x10092c,12,どうしたの？,,¿Qué te pasa?
 0x10093c,12,あ…うん…。,,Ah...sí...
 0x10094c,12,…そうする。,,...Eso haré.
@@ -13254,7 +13254,7 @@ estaba en la secundaria,"
 0x100c3c,14,プールは違う？,,¿La piscina no es?
 0x100c5c,14,顔色…悪いね…,,Te ves...pálida...
 0x100c6c,14,リコ！いるか？,,¡Riko! ¿Estás ahí?
-0x100c7c,14,…どうしたの？,,...¿Qué te pasa?
+0x100c7c,14,…どうしたの？,,...¿Qué pasa?
 0x100c8c,14,…あれ、人間？,,"...¿Eso, es una
 persona?"
 0x100c9c,14,誰もいない…？,,¿No hay nadie...?
@@ -13306,8 +13306,8 @@ agua..."
 0x100fe0,16,まさか、ユウタ？,,¿No será Yuuta?
 0x100ff4,16,…お願い、先生。,,"...Por favor,
 profesora."
-0x101008,16,どうしたの急に。,,"¿Qué te pasa de
-repente?"
+0x101008,16,どうしたの急に。,,"¿Qué pasa? Tan de
+repente."
 0x10101c,16,９８通目のメール,,Mensaje número 98
 0x101030,16,ああ…ミズキ…。,,Ah...Mizuki...
 0x101044,16,え……なに……。,,Eh......qué......
@@ -14197,7 +14197,7 @@ a Dream Park?"
 最中だったのよ。",,"ya te estaban subiendo
 a la ambulancia."
 0x1041fc,37,"でも、どうしたの？
-急にそんなこと…。",,"Pero, ¿qué te pasa?
+急にそんなこと…。",,"Pero, ¿qué pasa?
 Preguntar eso de
 repente..."
 0x104224,37,"…そろそろ気づくと
@@ -15400,7 +15400,7 @@ los muertos resucitan"
 el celular."
 0x107910,32,（じゃあ…わたしが会ったのは…）,,"(Entonces...con quien
 me encontré yo era...)"
-0x107934,32,どうしたの、ミズキ、首かしげて。,,"¿Qué te pasa, Mizuki?
+0x107934,32,どうしたの、ミズキ、首かしげて。,,"¿Qué pasa, Mizuki?
 Ladeando la cabeza
 así."
 0x107958,32,ほら、１年の担任、長谷川ユカリ。,,"Mira, la tutora de primer
