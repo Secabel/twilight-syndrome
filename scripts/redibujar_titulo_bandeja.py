@@ -23,7 +23,7 @@ def main():
             s.ncer = Ncer(open(f'{d}/{g}_S10.NCER', 'rb').read())
             antes = len(s.ncgr.d)
             def fn(im):
-                R.erase(im, (14, 2, 90, 12), 100)           # kanji (el icono llega hasta x=13)
+                R.erase(im, (14, 1, 90, 12), 100)           # kanji (el icono llega hasta x=13; la fila 1 es el borde, los kanji la rebasan)
                 R.text(im, TITULO[lang], 17, 3, 1, 2)       # trazo = indice 1, sombra = indice 2
             s.edit(0, fn)
             s.save(lang)
