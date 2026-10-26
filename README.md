@@ -12,8 +12,8 @@ no previous English or Spanish translation.
 
 <p>
 <img src="images/es_01_title_menu.png" width="200" alt="Spanish screenshot: title menu">
-<img src="images/es_02_dialogue.png" width="200" alt="Spanish screenshot: dialogue">
-<img src="images/es_04_phone_mail.png" width="200" alt="Spanish screenshot: phone mail">
+<img src="images/es_02_dialogue.png?v=2" width="200" alt="Spanish screenshot: dialogue">
+<img src="images/es_04_phone_mail.png?v=2" width="200" alt="Spanish screenshot: phone mail">
 </p>
 
 <p>
@@ -31,7 +31,7 @@ no previous English or Spanish translation.
 </p>
 
 <p>
-<img src="images/en_04_phone_mail.png" width="200" alt="English screenshot: phone mail">
+<img src="images/en_04_phone_mail.png?v=2" width="200" alt="English screenshot: phone mail">
 <img src="images/en_05_item_menu.png" width="200" alt="English screenshot: item menu with translated buttons">
 <img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
