@@ -36,7 +36,7 @@ no previous English or Spanish translation.
 <img src="images/en_06_phone_menu.png" width="200" alt="English screenshot: phone camera menu">
 </p>
 
-> **Latest release: 1.5.3** (the repository already includes the unreleased fixes listed under 1.5.4)
+> **Latest release: 1.5.4**
 > This repository does **not** contain the game. You need your own copy of the original Japanese ROM.
 
 ## What is translated
@@ -83,8 +83,8 @@ no previous English or Spanish translation.
    | `Twilight Syndrome - Kinjirareta Toshi Densetsu (Japan).nds` | 134,217,728 bytes | `76F1DB67` | `129880d90ecc1b322255e56d4968b259a3e1aa15` |
 
 2. Download the `.bps` patch for your language from the [Releases](../../releases)
-   page: `Twilight.Syndrome.ESP.v1.5.3.bps` (Spanish) or
-   `Twilight.Syndrome.ENG.v1.5.3.bps` (English).
+   page: `Twilight.Syndrome.ESP.v1.5.4.bps` (Spanish) or
+   `Twilight.Syndrome.ENG.v1.5.4.bps` (English).
 3. Apply it to the original ROM with any BPS patcher (for example
    [Flips](https://github.com/Alcaro/Flips) or
    [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
@@ -95,8 +95,8 @@ no previous English or Spanish translation.
 
    | Patch | Result | Size | CRC32 | SHA-1 |
    |---|---|---|---|---|
-   | `Twilight.Syndrome.ESP.v1.5.3.bps` | Spanish | 116,326,600 bytes | `950DFA4E` | `29d15da9b8a9e14e863651b192de9c4d1e7f7420` |
-   | `Twilight.Syndrome.ENG.v1.5.3.bps` | English | 116,267,720 bytes | `C1FF834F` | `a4a8a72b3c034de05d2a5aefda523f36fc0b18a2` |
+   | `Twilight.Syndrome.ESP.v1.5.4.bps` | Spanish | 116,326,600 bytes | `20C90778` | `5a6d098eb3a663cec057947569f1c0cd2cc13743` |
+   | `Twilight.Syndrome.ENG.v1.5.4.bps` | English | 116,267,208 bytes | `F2FCD94B` | `da8da0f92faa6323ca8875692ef905460f24ddc8` |
 
 Tested in [melonDS](https://melonds.kuribo64.net/) and on a real New 3DS (TWiLight Menu++).
 
@@ -178,7 +178,7 @@ another language.
 
 ## Version history
 
-### 1.5.4 (unreleased: in the repository, no patch published yet)
+### 1.5.4
 - Fixed the "save data corrupted / could not be read" error screens in both languages:
   the text box showed leftover Japanese and a black background instead of the grey gradient.
 - Restored the white diamonds around the title of the headphones notice shown at startup.
